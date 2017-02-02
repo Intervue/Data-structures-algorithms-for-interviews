@@ -59,7 +59,7 @@ printf("%d",2);
 - 'getchar()' reads the next input character from a text stream and returns that as its value
 - 'putchar()' prints a character each time it is called
 
-## Example explained with comments:
+### Example explained with comments:
 
 [File here!](/programs/put-get-char.c)
 
@@ -82,8 +82,37 @@ int main(void){
 }
 ```
 
+# Data Types in C
 
+All variable start with a name which is a character and can include underscore (_). It should not start with a number or _.
 
+- `char' - A single byte used to represent a character (numbers from 0-255 can be stored). Each decimal number is encoded as a character
+- `int' - an integer (size is machine and compiler dependent) 
+- `float' - A single byte (single-precision floating point number). Machine must have atleast 32 bits.
+- `double' - A single byte (double-precision flaoting point number). Machine must have atleast 64 bits.
+
+## Qualifiers that can be added to data types
+- `short' - eg short int (will have a size smaller than int and long int)
+- `long' - eg long int (size greater than short int and int)
+- `signed' - generally used for int and char types (range -128 to 127 for int)
+- `unsigned' - used for int and char (range 0 - 255 for int)
+
+## Note:
+`sizeof(int)` returns number of bytes `int` is taking in the system. Similarly char and float can be found. 
+For floating point numbers larger than double `long double` can be used
+
+## Program to find sizeof()
+
+```C
+#include <stdio.h>
+
+int main(){
+	//sizeof() can be passed any data type along with a qualifier
+	//it returns the number of bytes that data type is occupying as per your system and compiler
+	printf("%lu\n",sizeof(long int));
+
+}
+```
 
 
 
