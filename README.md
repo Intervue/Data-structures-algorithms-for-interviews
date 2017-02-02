@@ -148,5 +148,30 @@ int main(){
 }
 ```
 
+## Type conversion
+
+Sometimes we need to convert variable from one type to another.
+
+For eg: when adding double to long double, we need to convert both of them to long double so that we dont loose any information. The result will be given automatically in the bigger one of all.
+
+### Priority order for conversion is as follows:
+
+1. long double
+2. double
+3. float
+4. short or int
+5. char
+
+Such conversions are also done in assignments. The right hand side is always converted to the type of left hand side in that case. There will be loss in information while doing so if the right hand side is lies upper in the priority order as compared to left hand side.
+
+## Casting
+
+When type conversion is done explicitly, it is called casting
+
+Eg: converting int to float to store in float variable f
+
+`f = (float) 10`
+
+
 
 
