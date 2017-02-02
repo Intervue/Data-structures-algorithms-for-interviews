@@ -172,6 +172,23 @@ Eg: converting int to float to store in float variable f
 
 `f = (float) 10`
 
+## Example
 
+```C
+#include <stdio.h>
+
+int main(){
+	
+	int i = 17; 
+	char c = 'c'; //ascii value 99
+
+	float sum;
+   	//type conversion happens here	
+	sum = i + c;
+
+	printf("%f\n",sum); //prints 116.000000
+
+}
+```
 
 
