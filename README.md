@@ -30,4 +30,9 @@ gcc hello-world.c
 3. ```printf``` prints the output on the screen
 4. ```gcc hello-world.c``` creates output file a.out.
 5. ```./a.out``` is run to see the output
+6. ```#include``` is the pre-processor directive which will fetch the file ```stdio.h``` for predefined functionalities of C
+
+### Note:
+
+`#define` is another preprocessor used in C discussed ahead
 

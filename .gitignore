@@ -1,3 +1,4 @@
 # output files in C
 */*.out
 *.out
+.swp
