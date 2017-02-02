@@ -48,6 +48,41 @@ gcc hello-world.c
 - `%6.2d` prints as floating point number with 6 places before decimal and 2 after decimal
 - `%c` prints as ascii character
 
+These specifiers can be used as example shown below:
+
+```C
+printf("%d",2);
+```
+
+## Character input and output in C
+
+- 'getchar()' reads the next input character from a text stream and returns that as its value
+- 'putchar()' prints a character each time it is called
+
+## Example explained with comments:
+
+[File here!](/programs/put-get-char.c)
+
+```C
+#include <stdio.h>
+
+//default function that is run by C everytime
+int main(void){
+	//declaring a variable c that will take the input given
+	int c;
+	//assigning input using this function to variable c
+	c = getchar();
+	//this will keep printing until end of file is there
+	while(c != EOF){
+		//this function will print output on the screen
+		putchar(c);
+		//after printing the output it takes input until while loop ends
+		c = getchar();
+	}
+}
+```
+
+
 
 
 
