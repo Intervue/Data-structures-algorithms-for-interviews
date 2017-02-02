@@ -34,8 +34,22 @@ gcc hello-world.c
 
 ### Note:
 
-`#define` is another preprocessor used in C discussed ahead
+`#define` is another preprocessor used in C discussed ahead.
 `gcc -Wall -save-temps hello-world.c` is used to see all the temporary files that are created while a C program in executed and converted from high level language to assembly language to machine code and finally to the output
+
+
+## Format specifiers to print different things
+
+- `%d` prints as decimal number
+- `%6d` prints as decimal number but atleast 6 characters wide 
+- `%f` prints as floating point number
+- `%6f` prints as floating point number in atleast 6 characters
+- `%.2f` prints as floating point number but should have two characters after decimal
+- `%6.2d` prints as floating point number with 6 places before decimal and 2 after decimal
+- `%c` prints as ascii character
+
+
+
 
 
 
