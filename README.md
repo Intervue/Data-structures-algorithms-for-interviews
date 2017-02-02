@@ -198,6 +198,7 @@ int main(){
 	
 	int i = 17; 
 	char c = 'c'; //ascii value 99
+	// "c" cannot be used. only 'c' can be used as single inverted commas will convert it to ascii value
 
 	float sum;
    	//type conversion happens here	
@@ -235,6 +236,78 @@ int strlen(char s[]){
 }
 ```
 
+## Assignment Operators
+
+`i = i + 2;` 
+
+increment the value of i by 2 and store it in i
+
+shorthand for this
+
+`i += 2;`
+
+### In general:
+
+```
+expr1 = expr1 op expr2
+
+can be written as:
+
+expr1 op = expr2
+
+```
+
+## Bit Operators 
+
+Some bit wise operators are discussed as below:
+
+A (60) = 00111100
+B (13) = 00001101
+
+then:
+
+- A & B (AND operations) = 00001100
+- A | B (OR operation) = 00111101 
+- A ^ B (XOR operation = add both of them and divide by 2 and write the remainder) = 00110001
+- ~A (NOT operation) = 11000011 
+- A << 2 (left shift by two) = 11110000 which is equal to 240 (it is nothing but multiplying by 2 power 2)
+- A >> 2 (right shift by 2) = 00001111 which is 15 (it is nothing but dividing by 2 power 2) 
+
+
+## Ternary Operator
+
+### Example:
+
+```C
+#include <stdio.h>
+
+int main(){
+	
+	int num;
+
+	printf("enter a number:\n");
+	//this will take input from user and assign it to vairable num
+	scanf("%d",&num);
+	//ternary operator to get the output
+	(num%2 == 0 )? printf("number is even\n"): printf("number is odd\n");
+
+}
+```
+
+## Increment and decrement operator
+
+- `++n` increments n before its value is used
+-  `n++` increments n after its value is used
+
+```C
+n = 2;
+X = n++; //it will assign 2 to X and then increment n to 3;
+```
+
+```C
+n = 2;
+X = ++n; //it will increment n to 3 and assign it to X
+```
 
 
 
