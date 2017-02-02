@@ -172,6 +172,23 @@ Eg: converting int to float to store in float variable f
 
 `f = (float) 10`
 
+
+## Constants
+
+If the following is specified in programs, they will automatically be characterized as the corresponding datatypes 
+
+- 1234 - int
+- 1234l - long int
+- 12.34 - float
+- 037 - octal (3X8+7)
+- 0X12 - hexadecimal 
+- 0x12l - long octal
+- 'x' - character constant (ascii value of character is taken if used along with int)
+
+## Note:
+
+`const float pi = 3.14` makes the variable pi a constant which cannot be changed. If it is changed compilter throws an error.
+
 ## Example
 
 ```C
@@ -190,5 +207,6 @@ int main(){
 
 }
 ```
+
 
 
