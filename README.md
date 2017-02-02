@@ -309,5 +309,55 @@ n = 2;
 X = ++n; //it will increment n to 3 and assign it to X
 ```
 
+## Precedence and order of evaluation of operators
 
+`precedence`: which ever operator has higher priority is evaluated first
+
+`associativity`: if precedence of two operators is same, which one is evaluated first is found out using associativity
+
+[Click here!](http://www.difranco.net/compsci/C_Operator_Precedence_Table.htm) to see the full chart
+
+
+## Note:
+
+These can be remembered from top to bottom from the chart as `u asc blac` (unary, arithmetic, shift, comparison, bitwise, logical, ternary, assignment, comma)
+
+
+## Program to print Fahrenheit - Celsius Table
+
+[File here!](/programs/fahrenheit-celsius.c)
+
+```C
+#include <stdio.h>
+
+int main(){
+	
+	int fahr, celsius;
+
+	int lower, upper, step;
+
+	lower = 0; // this is the lower limit of temperature table
+	upper = 300; // this is the upper limit of temperature table
+	step = 20; //step size
+
+	fahr = lower; //initialized with lower value
+
+	while(fahr <= upper){
+
+		celsius = 5*(fahr - 32)/9; //here the precedence and associativity can be seen
+
+		//will print the result in table format
+		printf("%d\t %d\n", fahr, celsius);
+
+		fahr += step; //incrementing by step size
+ 
+	}
+
+}
+```
+
+## Note:
+
+Before using any function or variable in C we need to declare it always.
+If function is from library then no need to declare it
 
