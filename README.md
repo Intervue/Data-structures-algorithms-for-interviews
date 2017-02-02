@@ -208,5 +208,33 @@ int main(){
 }
 ```
 
+## String constants
+
+Generally they are represented using double quotes. 
+
+`"string"`
+
+The above example is having 6 bytes but we need 7 character space to store it because every string constant ends with null (\0).
+
+## Example
+
+[File here!](/programs/count-string-constant.c)
+
+```C
+//strlen is the name of the function which is taking character as argument
+int strlen(char s[]){
+	
+	int i = 0;
+	//this loop increments i until end of string \0 is reached
+	while(s[i] != '\0'){
+		i = i + 1;
+	}
+
+	return i;
+
+}
+```
+
+
 
 
