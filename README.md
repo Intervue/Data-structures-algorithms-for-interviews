@@ -1,4 +1,4 @@
-# Introduction
+# Topic1: Introduction
 
 ## Simple program to print '```hello world```' in C
 
@@ -82,7 +82,7 @@ int main(void){
 }
 ```
 
-# Data Types in C
+# Topic2: Data Types in C
 
 All variable start with a name which is a character and can include underscore (_). It should not start with a number or _.
 
@@ -114,8 +114,39 @@ int main(){
 }
 ```
 
+## Enumeration datatype
 
+Type of constant which is helpful in improving the readability of the program
 
+```C
+//it will enumerate 0 as NO and 1 as YES. This can be used throughout the program
+//default value of first will be zero and second will be 1 and it keeps on increasing unless some specific numbers are mentioned there
+enum boolean {NO, YES};
+
+//in this case value is specified for jan which is 1, so other values will have 2, 3 and so on values
+enum months {JAN = 1, FEB, MAR, APR, MAY, JUN, JUL, AUG, SEP, OCT, NOV, DEC}
+
+```
+
+## Example using enumeration
+
+[File here!](/programs/enumeration.c)
+
+```C
+#include <stdio.h>
+
+int main(){
+	//this will interpret no as 0 and yes as 1. So these can now be used conditionally
+	enum boolean {no, yes};
+
+	if(yes){
+		printf( "hello world\n");
+	}else{
+		printf( "nothing\n");
+	}
+
+}
+```
 
 
 
