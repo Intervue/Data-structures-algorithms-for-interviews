@@ -510,9 +510,27 @@ int main(){
 
 ### Note:
 
-`Difference continue and break statement is that continue will move the loop to the next iteration and skip all the statements present between continue and the end of the loop whereas break will exit the loop`
+`Difference continue and break statement is that continue will move the loop to the next iteration and skip all the statements present between continue and the end of the loop whereas break will exit the loop. Continue statement should be used wisely in for loop, eg continue statement if before the increment of the variable which is under check in while loop can make the loop infinite`
 
+## Example
 
+```C
+int main(){
+	
+	int sum = 0;
+
+	while(sum < 20){
+
+		if(sum == 0){
+			continue;
+		}
+
+		sum++;
+	}
+
+	return 0;
+}
+```
 
 
 
