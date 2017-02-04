@@ -373,6 +373,7 @@ There are various ways to do that:
 - while loop
 - do while loop
 - for loop
+- continue and break statements
 
 
 ## Example
@@ -467,7 +468,7 @@ int main(){
 `Difference between while and do while loop is that while loop will check the condition first and execute the body, do while will check the condition after executing the body once, the decide whether to exit the loop or not`
 
 ```C
-nt main(){
+int main(){
 	
 	int a = 20;
 	//do has its own body following by while statement
@@ -481,9 +482,34 @@ nt main(){
 		printf("%d\n", a);
 		a++;
 	} //output nothing
+
+	//for loop
+	for(int i = 1; i<a; i++){
+		printf("value of i %d", i);
+	}
+	
+	return 0;
+
+}
+```
+
+```C
+//program to probe the user until he enters a positive value
+int main(){
+	//do while loop is beneficial in this case	
+	int num;
+	do{
+		printf("enter a positive integer\n");
+		scanf("%d", &num);
+	}while(num <= 0);
+	
+	printf("number now is %d\n", num);
 	
 }
 ```
+
+
+
 
 
 
