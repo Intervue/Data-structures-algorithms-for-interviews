@@ -8,7 +8,7 @@ int main(){
 	
 	int num;
 
-	int isPrime = 0;
+	int isPrime = 1;
 
 	printf("enter a number\n");
 	scanf("%d", &num);
@@ -16,7 +16,7 @@ int main(){
 	for(int i = 2; i <=num/2; i++){
 
 		if(num%i == 0){
-			isPrime = 1;
+			isPrime = 0;
 			break;//breaking out of the loop once out check is satisfied
 		}
 
