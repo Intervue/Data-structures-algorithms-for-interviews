@@ -370,7 +370,9 @@ There are various ways to do that:
 
 - conditional statements (`if, elseif, else`)
 - switch statement
-- 
+- while loop
+- do while loop
+- for loop
 
 
 ## Example
@@ -459,3 +461,30 @@ int main(){
 	
 }
 ```
+
+### Note:
+
+`Difference between while and do while loop is that while loop will check the condition first and execute the body, do while will check the condition after executing the body once, the decide whether to exit the loop or not`
+
+```C
+nt main(){
+	
+	int a = 20;
+	//do has its own body following by while statement
+	do{
+		printf("%d\n", a);
+		a++;
+	} while(a<20); //output: 20. as it executes the body once
+
+	//this is the while loop
+	while(a<20){
+		printf("%d\n", a);
+		a++;
+	} //output nothing
+	
+}
+```
+
+
+
+
