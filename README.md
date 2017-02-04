@@ -508,6 +508,12 @@ int main(){
 }
 ```
 
+### Note:
+
+`Difference continue and break statement is that continue will move the loop to the next iteration and skip all the statements present between continue and the end of the loop whereas break will exit the loop`
+
+
+
 
 
 
