@@ -548,7 +548,7 @@ int main(){
 	
 	int num;
 
-	int isPrime = 0;
+	int isPrime = 0; //assuming number is not prime
 
 	printf("enter a number\n");
 	scanf("%d", &num);
