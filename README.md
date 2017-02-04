@@ -510,13 +510,13 @@ int main(){
 
 ### Note:
 
-`Difference continue and break statement is that continue will move the loop to the next iteration and skip all the statements present between continue and the end of the loop whereas break will exit the loop. Continue statement should be used wisely in for loop, eg continue statement if before the increment of the variable which is under check in while loop can make the loop infinite`
+`Difference continue and break statement is that continue will move the loop to the next iteration and skip all the statements present between continue and the end of the loop whereas break will exit the loop. Continue statement should be used wisely in for loop, eg continue statement if before the increment of the variable which is under check in while loop can make the loop infinite. Break and continue will exit the loop that contains it. If the loops are nested, it will exit or continue for the respective loop only.`
 
 ## Example
 
 ```C
 int main(){
-	
+	//infinite loop as continue statement is placed at wrong place
 	int sum = 0;
 
 	while(sum < 20){
@@ -531,6 +531,48 @@ int main(){
 	return 0;
 }
 ```
+
+## Example program:
+
+Check whether a number is prime
+
+*Logic*: 
+
+`One way is to start from 2 and go till n-1 to check if a number is prime`
+`Better way is if no factors are found till root of a number or half of number there wont be any factors after that. The idea is to reduce the loop iterations`
+
+[File here!](/programs/check-prime.c)
+
+```C
+int main(){
+	
+	int num;
+
+	int isPrime = 0;
+
+	printf("enter a number\n");
+	scanf("%d", &num);
+
+	for(int i = 2; i <=num/2; i++){ //dividing the number by two and running the loop till then
+
+		if(num%i == 0){
+			isPrime = 1;
+			break;//breaking out of the loop once out check is satisfied
+		}
+
+	}
+
+	if(isPrime == 0){
+		printf("number is not prime\n");
+	}else{
+		printf("number is prime\n");
+	}
+
+
+}
+```
+
+
 
 
 
