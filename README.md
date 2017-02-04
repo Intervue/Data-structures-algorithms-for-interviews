@@ -361,3 +361,38 @@ int main(){
 Before using any function or variable in C we need to declare it always.
 If function is from library then no need to declare it
 
+
+# Topic3: Flow Control
+
+Flow control means controlling the flow of program as per need.
+
+There are various ways to do that:
+
+- conditional statements (`if, elseif, else`)
+- 
+
+## Example
+
+Program to check whether a given number is even or odd
+
+[File here!](/programs/even-odd.c)
+
+```C
+#include <stdio.h>
+
+//default function that is run by C everytime
+int main(){
+	int num;
+
+	printf("enter some number: \n");
+	scanf("%d", &num); //address of num will be returned when we write &num
+
+	if(num%2 == 0){
+		printf("number is even\n");
+	}else{
+		printf("number is odd\n");
+	}
+
+	printf("Hello world \n"); 
+}
+````
