@@ -16,5 +16,5 @@ int main(){
 		printf("number is odd\n");
 	}
 
-	printf("Hello world \n"); 
+	return 0;
 }

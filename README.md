@@ -369,11 +369,13 @@ Flow control means controlling the flow of program as per need.
 There are various ways to do that:
 
 - conditional statements (`if, elseif, else`)
+- switch statement
 - 
+
 
 ## Example
 
-Program to check whether a given number is even or odd
+Program to check whether a given number is even or odd using if else
 
 [File here!](/programs/even-odd.c)
 
@@ -393,6 +395,67 @@ int main(){
 		printf("number is odd\n");
 	}
 
-	printf("Hello world \n"); 
+	return 0;
 }
 ````
+
+## Example of switch statement
+
+```C
+int main(){
+	
+	int weekday;	
+	printf("enter weekday numbers between 1 and 6\n");
+	scanf("%d",&weekday);
+
+	switch(weekday){
+		//break statement is important because if one case turns true no other case should execute
+		//cases can contain expressions but only constants. No variables are allowed in cases
+		// default case can be present anywhere
+		case 0: printf("monday"); break; 
+		case 1: printf("tuesday"); break;
+		case 2: printf("wednesday"); break;
+		case 3: printf("thur"); break;
+		case 4: printf("fri"); break;
+		case 5: printf("sat"); break;
+		case 6: printf("sun"); break;
+		default: printf("enter a valid weekday\n"); break;
+
+	}
+
+	
+}
+```
+
+## Example
+
+Simple calculator
+
+[File here!](/programs/simple-calculator.c)
+
+```C
+#include <stdio.h>
+
+int main(){
+	
+	char operator;
+	double a,b;	
+	printf("enter an operator (+, -, *, /)\n");
+	scanf("%c",&operator);
+
+	printf("enter two operators \n");
+	//lf is the format specifier for double
+	scanf("%lf %lf",&a, &b);
+
+	switch(operator){
+		//representing operators in single quotes will convert them to integers (ascii values)
+		case '+': printf("additon of a and b: %lf\n", a+b); break;
+		case '-': printf("subtraction of a and b: %lf\n", a-b); break;
+		case '/': printf("division of a and b: %lf\n", a/b); break;
+		case '*': printf("multiplication of a and b: %lf\n", a*b); break;
+		default: printf("please enter a valid operator\n"); break;
+	}
+
+	
+}
+```
