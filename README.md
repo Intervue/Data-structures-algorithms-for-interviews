@@ -983,22 +983,56 @@ Eg: if A represents 100, then A+1 represents next element in the array (irrespec
 
 *Therefore if A is at 100, and each int is occupying 2 bytes, then A+1 is 102*
 
-`A+i == A+ (i* size of int in this case). It represents Ith element
+A+i == A+ (i* size of int in this case). It represents Ith element
 
 A + 3 is the 3rd element starting from A[0] i.e A[3].
 
 *(A+3) will give you value at A[3]. Therefor compilter uses pointer in the background
 
-Therefor A+3 is nothing but address of A[3] i.e &A[3]`
+Therefor A+3 is nothing but address of A[3] i.e &A[3]
+
+```C
+int *p
+p = &a[0] //p now contains address of array 0th element
+
+p = p + 1 //address of a[1] is now stored in p
+
+p = p + i //address of a[i] is now stored in p
+
+/* 
+
+Compiler knows how many bytes to add when you increment value of p is by the declaration
+Therefore int *p, char *p is used in respective scenarios depending on the type on which pointer is used 
+
+*/
+
+//Therefore
+*(p + 3) ==  a[3] == p[3] // true
+
+//Above line shows that pointer can be used as array
+
+p + 3 == p[3] == a + 3 == &a[3] //true
+
+//There a[3] holds value and a+3 holds address
+```
+
+## Note
+`Pointer name is variable and array name is just mneumonic. Whenever we pass an array to a function, we really pass the starting address of the array which is taken by a pointer in the function call. Therefore is array name A is passed to a function, function can use a pointer to get values from the array and do same functions that could be done on an array. Therefore array name and pointers both are same`
+
+Therefore when a is array
+
+- a = a + 1 //not valid
+- a++ //not valid
+- a = p //not valid
+
+BUT the one below is valid
+
+- p = p + 1
+- p++
+- p = a
 
 
-
-
-
-
-
-
-
+## Pointer Arithmetic OR address Arithmetic
 
 
 
