@@ -1034,6 +1034,34 @@ BUT the one below is valid
 
 ## Pointer Arithmetic OR address Arithmetic
 
+Various operations allowed on pointers
+
+- Assignment of pointers of same type. If two pointers are of same type we can assign them to same type.
+
+```C
+int *p, *q; //pointers of same type
+p=q; //valid
+q=p; //valid
+
+int *p, a[];
+
+p = a; //valid
+a = p; //not valid
+
+//if type is not same, typecasting needs to be done
+
+char *c;
+int *p;
+
+p = (int *)c; //typecasting can be done if c is not of type void
+```
+
+- Adding or subtracting a pointer and an int (as we did in arrays). Addition of float or double or long is not allowed. Also pointer cannot be multiplied to an integer
+
+- Subtracting or comparing two pointers to members of same array. If p and q are two pointers pointing to the same array, then we can compare or subtract them. (if q is ahead of p then q-p will give number of elements between p and q including q). Subtraction is also scaled down. Pointer subtraction is used to see space b/w two pointers. Two pointers cannot be added or divided or left or right shift
+
+- Assigning or comparing to zero. Assigning a value to a pointer is meaningless. Assigning a zero or comparing with a zero only is allowed. Zero is used for error case 
+
 
 
 
