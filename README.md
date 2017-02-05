@@ -733,7 +733,163 @@ Program to print fibonacci series
 
 
 ```C
+#include <stdio.h>
 
+//default function that is run by C everytime
+int main(){
+	//predefined function from the library which prints the output given to it
+	int num, prev, last, sum;
+
+	printf("enter a number\n");
+	scanf("%d", &num);
+
+	for(int i=0; i <=num; i++){
+
+		if(i < 2){
+			prev = 0;
+			last = 1;	
+		}
+		
+		sum = prev + last;
+
+		printf("%d ", sum);
+
+		prev = last;
+		last = sum;
+
+
+
+	}
+	
+	return 0;
+}
 ```
+
+# Topic4: Functions
+
+## Introduction
+
+If we want to reuse a functionality again and again anywhere randomly, wrap them into functions
+When we want to reuse it we call that function. Eg: printf
+
+## Example
+
+```C
+#include <stdio.h>
+
+/* 
+function to return the maximum of two numbers supplied to it as arguments
+function needs to be defined before its call so that compiler knows
+in case the function needs to be defined somewhere else you atleast need to include its declaration 
+above the call somewhere 
+
+Declaration in this case
+int max(int, int); ->name of the function and the type of arguments it will take
+
+*/
+int max(int x, int y){
+	
+	//function can return a value of expression. Expression can be evaluated and converted to return type
+	return (x>y)? x: y;
+
+}
+
+//default function that is run by C everytime
+int main(){
+	
+	int a = 10, b = 20, maximum;
+	
+	//calling the function with equal number of parameters and also the same type is important
+	//in case the type of parameters supplied does not match, there will be type coercion
+	maximum = max(a,b); 
+
+	printf("%d\n",maximum);
+
+	return 0;	
+}
+```
+
+### Note
+
+`A function can return anything but an array or another function. A function is meant to return only one thing and array is a collection of things
+
+The arguments to the function are passed by call by value
+
+C programming language only provides call by value
+`
+
+## Swap two variables
+
+```C
+void swap(int *, int *); //declaration or prototype
+
+void main(){
+	int x = 10,y = 20;
+
+	swap(&x,*y); //address of x and y are sent to function
+
+	printf("after swapping %d %d ", a, b);
+}
+
+void swap(int *a, int *b){ //pointer to fetch the value from address 
+	*a = *a + *b;
+	*b = *a - *b;
+	*a = *b - *a;
+}
+//this is how we can change actual parameters from the function call. Passing the address and accessing it from pointers
+This will be call by value only. In this value of address is being passed and pointers point to it.
+Still call by value only
+```
+
+##Note:
+
+`For javascript developers: The function execution context is created for C as well and local variables are popped of from the stack as they are used.
+The division of the memory in OS is as follows
+
+- Stack (execution context) -> grows downwards
+- Heap (dynamic memory allocation) -> grows upwards
+- SV and GV (local variables and global variables)
+- Code
+`
+
+## Example
+
+Custom C program to implement a pow function
+
+Logic: number raised to some power is, multiplying that number power number of times. So we can implement a loop
+
+```C
+//function to return the maximum of two numbers supplied to it as arguments
+int pow(int base,int n){
+
+	int result = 1;
+
+    for(int i = 1; i <= n; i ++){
+
+    	result *= base; //multiplying the base for each iteration with the base itself
+
+    }
+
+    return result;
+}
+
+//default function that is run by C everytime
+int main(){
+	
+	int base = 5;
+	int n = 3;
+	
+	int result = pow(base,3); //calling the function
+
+	printf("%d \n", result);
+
+	return 0;	
+}
+```
+
+
+
+
+
 
 
