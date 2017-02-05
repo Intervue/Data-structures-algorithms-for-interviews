@@ -896,6 +896,77 @@ int main(){
 
 ## Introduction
 
+In C programming language memory is accessed or visualized as one dimensional array, no matter what data structure is there. (visualize memory as one dimensional array)
+
+The size of char, int, long depends on the implementation (platform or OS eg 32 or 64 bit). There it is not true that char is always 1 byte or int is always 2 etc. (most of them has char size 1 but it is not standard)
+
+## Note:
+
+- 32-bit operating system:
+It can process 32 bits in parallel
+
+- 64-bit operating system:
+It can process 64 bits in parallel
+
+
+The entity in memory can be accessed either by address or name. By address it can be faster by using addresses.
+It is because if you access it by name, name is converted to logical address and logical address is converted to physical address.
+
+Names are generally better readable. That is where pointers come into pictures.
+
+They are used to access value if address is given. And dynamically assigned values that do not have a name use pointers to access them.
+
+*Pointer*: Variable containing address of another variable. The size of pointer depends on platform.
+Platforms having 16 bits addresses have pointer size of 16 bits and so on.
+
+## Declaring a pointer
+
+```C
+int *p // p is pointer or *p is a variable of type integer`
+
+p = &b //&b contains address of b which is assigned to p. *p will fetch value from that address
+//therefore in the above case b and *p both will have the same value
+
+//Note: you cannot get addresses of constants or expressions as they cannot be declared in memory. Only variables or other structures can have address
+
+Address will always be of same size, no matter what is the size of value of it holds.
+Address has some arithmetic that is done, so it is always declared as int
+```
+
+`Address is like standing at door of a house. When * is there, we enter the house. * is called as dereferencing or indirection operation`
+
+## Example
+
+//For address format specifier is %p. %u is format specifier for unsigned int
+
+```C
+//default function that is run by C everytime
+int main(){
+	
+	int x = 5;
+	int *y = &x;
+
+	printf("%d\n", x); //will print 5
+	printf("%p\n", &x); //will give address of x
+	printf("%p\n", y); //will give address of x
+	printf("%d\n", *y); //will give value of x
+	printf("%p\n", &y); //will give address of y
+
+	return 0;	
+}
+```
+
+## Pointers and functions
+
+
+
+
+
+
+
+
+
+
 
 
 
