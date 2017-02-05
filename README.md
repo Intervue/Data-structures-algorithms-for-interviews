@@ -815,7 +815,7 @@ int main(){
 
 The arguments to the function are passed by call by value
 
-C programming language only provides call by value
+C programming language only provides call by value (which means creating a copy)
 `
 
 ## Swap two variables
@@ -957,6 +957,49 @@ int main(){
 ```
 
 ## Pointers and functions
+
+Good example of this is the swap function we did earlier where value of addresses was passed to the function and pointers were used to access the value and modify them
+
+## Pointers and arrays
+
+Whatever you could do with array and suffix, can be done with pointers.
+
+- Byte addressable: every byte will get a new address
+- Word addressable: every word will get a new address. If a world is of 2 bits, every two bit has a new address and so on.
+
+`Even though an int may occupy two addresses, whenever address of that int is talked about, always starting address is taken`
+
+## Note:
+
+`In case of array int a[]. Array name A is not a variable but other way of representing the address. No where in the memory name is allocated any space. Therefore array name A is just a mnemonic. So if array A starts from address 100, A is as good as writing 100`
+
+### Address arithmatic
+
+- Since A is nothing but starting address of A. Therefore *A is A[0]
+
+Whenever an integer is added to an array name A or a pointer, the addition will be scaled addition.
+
+Eg: if A represents 100, then A+1 represents next element in the array (irrespective of the size of that value stored in the address)
+
+*Therefore if A is at 100, and each int is occupying 2 bytes, then A+1 is 102*
+
+`A+i == A+ (i* size of int in this case). It represents Ith element
+
+A + 3 is the 3rd element starting from A[0] i.e A[3].
+
+*(A+3) will give you value at A[3]. Therefor compilter uses pointer in the background
+
+Therefor A+3 is nothing but address of A[3] i.e &A[3]`
+
+
+
+
+
+
+
+
+
+
 
 
 
