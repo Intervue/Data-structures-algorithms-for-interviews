@@ -870,6 +870,8 @@ int pow(int base,int n){
 
     }
 
+    //Note this can be optimized further by decreasing the number of iterations in the loop
+
     return result;
 }
 
@@ -886,6 +888,16 @@ int main(){
 	return 0;	
 }
 ```
+### Practice Question
+
+`Implement the above using optimized algo`
+
+# Topic4: Pointers
+
+## Introduction
+
+
+
 
 
 
