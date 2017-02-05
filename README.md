@@ -656,4 +656,84 @@ int main(){
 
 ## Example program
 
+Program to print star 3 pattern
+
+[File here!](/programs/star-3.c)
+
+```C
+//pre-process fetching contents of library stdio.h which contains predefined functions in C
+#include <stdio.h>
+
+//default function that is run by C everytime
+int main(){
+	
+	for(int i = 0; i < 5; i++){
+		
+		for(int j = 5; j >=i; j--){
+			printf(" ");
+		}
+
+		for(int k = 0; k <= 2*i; k++){ 
+			printf("*");
+		}	
+		
+		printf("\n");
+
+	}	
+	
+	return 0;
+}
+```
+
+## Example program
+
+Program to check if the number is a palindrome or not
+
+`Palindrome: When reverse of something is equal to that something`
+
+[File here!](/programs/check-palindrome.c)
+
+
+```C
+//default function that is run by C everytime
+int main(){
+	//predefined function from the library which prints the output given to it
+	int num, lastdigit, result = 0;
+	printf("enter a number: \n");
+	scanf("%d", &num);
+
+	int originalnum = num;
+
+	while(originalnum !=0){ //making that number in reverse
+		lastdigit = originalnum%10;
+
+		//concatenate
+		result = result*10 + lastdigit; 
+		//to make that number in reverse we multiply result with 10 and add remainder to it
+
+		originalnum /= 10;
+	}
+
+	if(num == result){
+		printf("number is palindrome\n");
+	}else{
+		printf("number is not palindrome\n");
+	}
+
+}
+```
+
+## Example program
+
+Program to print fibonacci series
+
+[File here!](/programs/fibonacci.c)
+
+`Fibonacci: When sum of prev two numbers is equal to next number`
+
+
+```C
+
+```
+
 
