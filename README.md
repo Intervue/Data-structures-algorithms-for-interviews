@@ -1121,9 +1121,19 @@ Therefore in C array of pointers is more popular than multidimensional array
 In C we cannot pass full array at once to any function. It is always element by element. So we just have to pass the starting address of the array
 
 ```C
-
+fun(int a[]) 
+//a in this case will be considered as pointer to the argument which is the first element or the element to be considered in the array.You may are may not use * in this case
 ```
 
+Passing a two dimensional array
+
+```C
+fun(int a[][6]) //the calling function can send an array with max array size as 6 and the called function 'a' is array of pointers pointing to the actual array passed.By default pointer will point to first row first element address
+
+//above can also be written as
+fun(int (*a)[6]) //a is a pointer which points to an integer array of 6 elements
+fun(int *a[6]) //a is an array of pointers having 6 elements. The difference is cause of operator precedence
+```
 
 
 
