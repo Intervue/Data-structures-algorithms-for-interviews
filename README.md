@@ -1220,7 +1220,47 @@ void* (*gp)(void*, void*)
 gp = (void* (void*,void*))sum; //therefore generic pointer can be pointed to any by typecasting
 ```
 
+## Some complex declarations
 
+```C
+
+//all have been evaluated using precedence table and associativity. So keep that in mind
+
+char **argv
+/*
+it is useful in case of command line arguments. argv is a pointer to a pointer to a character
+ */
+
+int (* daytab)[13]
+/*
+daytab is a pointer to an array of 13 integers
+*/
+
+int * daytab[13]
+/*
+daytab is an array of 13 integers which are pointers to integers
+*/ 
+
+void *comp()
+/*
+comp is a function which is return a pointer to void
+*/
+
+char(* comp)()
+/*
+comp is a pointer to a function which returns a character
+*/
+
+char(*(*f())[])()
+/*
+a is a function which returns a pointer to an array of pointers to function which returns a character
+*/
+
+char(*(*f[3])())[5]
+/*
+f is an array of pointers (3 elements) pointing a function returning pointer pointing to array containing characters (5 elements)
+*/
+```
 
 
 
