@@ -1063,8 +1063,66 @@ p = (int *)c; //typecasting can be done if c is not of type void
 - Assigning or comparing to zero. Assigning a value to a pointer is meaningless. Assigning a zero or comparing with a zero only is allowed. Zero is used for error case 
 
 
+## Character arrays and pointers
 
+Most of the time we deal with character arrays in C programming. Eg printf we pass string constants which is nothing but array of characters.
 
+Eg:
+
+```C
+char a[] = "rahul"; //valid way to declare string constant or array of characters
+//we can go inside the array in this and modify characters
+
+char *p = "rahul"; //valid way to declare string constant or array of characters
+//in this case we cannnot modify anything, just access the value
+
+//Both the array above have not 5 but 6 characters as additional \0 character is there
+//Basically in a string constant and array is created in the background always with a \0 character at the end
+//Simple array options apply to it
+//In case of pointer p will point to starting of the array i.e at 'r' and all rules apply as we discussed about pointers and array above
+```
+
+```C
+//program to copy one string to another (t to s)
+//before this both of these arrays need to be passed to this function. The second empty array should be declared with equal memory
+void strcpy(char *s, char *t){
+	while(*s++ = *t++) //copy first then increment till \0
+}
+
+```
+
+## Array of pointers and multidimensional arrays
+
+Since pointer is a variable, we can declare an array of pointers
+
+```C
+//name is an array of pointers to character
+char *name[] = {"ritu","rahul"}
+//these pointers will have memory somewhere and they will be pointing to other memory locations to these string constants
+
+name //will give address of starting of pointer array
+name + 1 // will give address of second pointer in pointer array
+*(name + 1)// will give value of that address which is nothing but address of "rahul"
+*(name + 1) + 2 //will give address of 'a' in "rahul"
+//total space is space taken by each row plus space taken by pointers
+
+//the above can also be implemented as multidimensional array
+char array[3][13]; //this will declare an array of 3 rows having 13 characters each
+//Note in this case since maximum length is 13, if other rows do not have 13 characters, the space will go wasted. IN the pointer notation there was not waste in memory as each array has right memory
+
+name[1][2] ////will give address of 'a' in "rahul"
+//total space taken is space taken by array
+```
+
+Therefore in C array of pointers is more popular than multidimensional array
+
+## Multidimensional arrays, pointers and function calls
+
+In C we cannot pass full array at once to any function. It is always element by element. So we just have to pass the starting address of the array
+
+```C
+
+```
 
 
 
