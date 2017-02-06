@@ -1135,11 +1135,64 @@ fun(int (*a)[6]) //a is a pointer which points to an integer array of 6 elements
 fun(int *a[6]) //a is an array of pointers having 6 elements. The difference is cause of operator precedence
 ```
 
+## Example:
+
+```C
+*p++ //by precendence incrementing the value of p, and then applying * to it
+a = *p++ //assigning *p to a and then incrementing p
+
+//llarly other way round for ++p
+```
+
+## Note
+
+- *Left associativity*: Whenever two operators of same precedence are present then first take into consideration the one that is present left to the operand
+- *Right associativity*: Whenever two operators of same precedence are present then first take into consideration the one that is present right to the operand 
 
 
+## Example
 
+```C
+main(){
+	int a[] = {10,20,30,40,50,60}; //a contains 6 elements
+	int *p[] = {a,a+1,a+2, a+3, a+4, a+5}; //p is an array of pointers to integers and initialized with the values given
+	
+	int **pp = p; //pp is a pointer to a pointer to an integer. 
+	//If p contains the address 200, then pp will have 200 as its value
+	//*pp will be value in p
+	//**pp will be value in a
+	pp++; //will increment the value of pp and make it point to second address of p
+	//subrac
+	printf("%d %d %d",pp-p,*pp-a,**pp); //1, 1, 20
+	*pp++; //increment pp first and then apply *
+	
+	printf("%d %d %d",pp-p,*pp-a,**pp); //2, 2, 30
+	++*pp; //increment value pointed by pp
+	
+	printf("%d %d %d",pp-p,*pp-a,**pp); //2, 3, 40
+	++**pp; //incrementing the value of a[3]
+	
+	printf("%d %d %d",pp-p,*pp-a,**pp); 2, 3, 41
+}
+```
 
+## 'IMPORTANT NOTE or Golden rules for pointers and arrays':
 
+In the above example if value of 3 element in array a was to be found, various ways of doing that
+
+```C
+a[3] = *(a+3) = *(p[3]) = **(p+3) = **(pp+3)//all will give the same value
+
+//Therefore golden rule
+
+a[something] //gives value
+a + something //gives address
+
+//If 'a' is assigned to a pointer p, then p++ can be done but a++ cannot be done. Remember this rule
+//Subtraction b/w pointers is possible only if they are pointing to the same array
+
+//Replace anything with 'a' and rule remains same
+```
 
 
 
