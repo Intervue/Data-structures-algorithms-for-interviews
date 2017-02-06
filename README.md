@@ -1194,6 +1194,34 @@ a + something //gives address
 //Replace anything with 'a' and rule remains same
 ```
 
+## Pointers to Functions
+
+Even though function is not a variable C still allows you pointers to point to functions and make a call to function.
+This is not widely used.
+
+```C
+int sum(int, int);
+
+//generic pointer pointing to such functions
+int (*fp)(int, int);
+fp = sum //storing address of function in fp
+
+s = sum(5,6)
+
+//is equivalent to
+
+s = (*fp)(5,6); //calling function via pointer
+
+void* (*gp)(void*, void*)
+//gp is a pointer to a function that contains two args which are void pointers which returns a void pointer
+
+//typecasting to make it point to sum
+
+gp = (void* (void*,void*))sum; //therefore generic pointer can be pointed to any by typecasting
+```
+
+
+
 
 
 
