@@ -1282,8 +1282,54 @@ To access A[2] if array is starting from index 0, you will have to cover 2 eleme
 To access A[2] if array is starting from index 1, you will have to cover 1 elements. If starting is from 100, then you have to conver 100 + 2-1 elements. In general to access Ith element you have to do 100 + i-1 and so on other things can be derived
 `
 
+## Two dimensional arrays
 
+A is a two dimensional array with size 3 X 4. It means (horizontal X vertical)
 
+- A has 3 rows
+- A has 4 columns
 
+Now to enable random access, even this has to be stored contiguously. Therefore, to save it two-dimensional array is converted to one-dimensional array.
+
+There are two ways
+
+*Row major order*
+1) Take each row and put it in memory (elements continous to each other, rows contiguous to rows)
+
+### Example
+
+```C
+//starting with index 0
+00 01 02 03, 10 11 12 13, 20 21 22 23
+
+//Now whenever element 21 is to be accessed
+A[2][1] //cross two rows and 2 elements i.e 2*4 (two rows having 4 elements each) + 1(element in the last row)
+
+//therefore if array was starting with 100
+// ((2*4) + 1) + 100
+// ((2*4) + 1)*size of each element + 100 //number of words or exact address
+
+//Size of A is M X N then, starting index 0, address of array for 
+A[i][j] = ((i*n) + (j))*size of each element + BASE
+
+// llarly for index 1 can be done as explained aboved
+((i-1)*n + j-1)*size + BASE
+```
+
+*Column major order*
+
+```C
+00 10 20, 01 11 21, 02 12 22, 03 13 23
+
+//Now for A[2][1]
+
+A[2][1] = ((1*3) (1 column each having 3 elements) + 2 (total elements to be crossed in that column))*2 + 100(base address assume)
+
+//Therefore in general A of size MXN, index 0
+
+A[i][j] = ((j*m)+i)*size + BASE
+
+//If index starts from 1 subtract 1 as done above
+```C
 
 
