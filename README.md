@@ -1332,4 +1332,34 @@ A[i][j] = ((j*m)+i)*size + BASE
 //If index starts from 1 subtract 1 as done above
 ```C
 
+## Binary addressing of two dimensional arrays
+
+- Row major (row column size) in binary written as is
+- Column major (column row size) in binary written as is
+
+## Example program
+
+Determine if two arrays have an element in common
+
+```C
+int isCommon(int a[], int b[], int n, int m){ //sizes are sent as we need the end of the array
+		
+	int i, j;
+	
+	for(i = 0; i<n; i++){
+		for(j=0; j<m; j++){
+			if(a[i]==b[j]){
+				return 1; //will return from the function
+			}
+		}
+	}
+
+	return 0; // return 0 if full for loop executes
+
+}
+```
+
+
+#Topic 6: Strings
+
 
