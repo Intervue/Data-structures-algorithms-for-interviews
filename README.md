@@ -892,7 +892,7 @@ int main(){
 
 `Implement the above using optimized algo`
 
-# Topic4: Pointers
+# Topic5: Pointers
 
 ## Introduction
 
@@ -1262,8 +1262,25 @@ f is an array of pointers (3 elements) pointing a function returning pointer poi
 */
 ```
 
+Topic6: Arrays
+
+Simplest data structure which are random accessed. We can access it randomly because while storing it is stored contiguously. Since size of each element is known we can access any element.
+
+## Note
+`Storing is not contiguous and only way to access it is to go through a chain or list`
 
 
+## One dimensional arrays
+
+Explained above.
+
+`
+To access A[2] if array is starting from index 0, you will have to cover 2 elements. If starting is from 100, then you have to conver 100 + 2 elements. In general to access Ith element you have to do 100 + i.
+`
+
+`
+To access A[2] if array is starting from index 1, you will have to cover 1 elements. If starting is from 100, then you have to conver 100 + 2-1 elements. In general to access Ith element you have to do 100 + i-1 and so on other things can be derived
+`
 
 
 
