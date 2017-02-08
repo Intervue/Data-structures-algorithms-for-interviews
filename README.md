@@ -1561,7 +1561,7 @@ int main(){
 
 `If a function does not find the variable in its own activation record(execution context) it will go to the outer environment to search for that variable (same as javascript). Therefore local and variable is same as javascript`
 
-
+`Variable declared inside a function has a lifetime equal to the lifetime of activation record of the function`
 
 
 
