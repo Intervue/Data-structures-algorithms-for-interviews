@@ -1564,4 +1564,56 @@ int main(){
 `Variable declared inside a function has a lifetime equal to the lifetime of activation record of the function`
 
 
+## Storage Management
+
+We need to declare variables dynamically and free memory when it has been used. To do that we need to manage out storage.
+
+For Local variables and global variables we need not do anything.
+
+We can allocate space by using the following:
+
+- *malloc*: it will allocate size passed to it in heap and return pointer to the starting address of the space allocated. if the heap is out of space it will return NULL
+
+```C
+int *i;
+i = (int *) malloc(sizeof(int)) //sizeof int lets say is 2 so it will allocate 2 bytes and pointer is typecasted to int
+i++ // will increment address by 2 as we have used integer pointer. character pointer would have incremented it by 1 as pointer arithmetic is scaled
+```
+
+- *calloc*: Simillar to malloc but also initializes all elements to zero. You can pass number of elements to be initialized and allocated space along with the size of each element. In malloc garbage values are present by default if not initialized explicitly. Both malloc and calloc gives space in a contiguous manner only
+
+- *realloc*: If already some space is allocated (lets say 10 bytes) and that has been used (data is filled) and we want to extend it to 20 bytes, then realloc is used. Pointer to the starting address of the space is sent along with the size with which we want it to be extended. If initally its 10 and we want to grow it to 20, pass 20. If the space of additional 10 bytes is not present contiguously, it will find somewhere else space of 20 bytes and copy all the information from previous space without any loss of data
+
+- *free*: used to free up the space once used. 
+
+These functions are defined in *stdlib.h*
+
+```C
+//size_t is any datatype which is unsigned and whose size is atleast 16 bits. 
+//malloc(10): we are sending a number (lets say 10) to malloc, it will allocate a size of 10 bytes in the heap and will return the pointer of the starting address of the space. Any datatype pointer can be returned.
+void *malloc (size_t n)
+
+//similar to malloc but the size is given in a different way. first parameter is the number of elements to be stored, second is the size of each element
+//eg: calloc(2,2): store 2 elements each of size 2 (4 bytes total)
+//It will also return pointer to the starting address of space allocated. It will additionally initialize all the elements to zero
+void *calloc (size_t n, size_t size)
+
+//If already some space is allocated (lets say 10 bytes) and that has been used (data is filled) and we want to extend it to 20 bytes, then realloc is used
+//pointer to the starting address of the space is sent along with the size with which we want it to be extended. If initally its 10 and we want to grow it to 20, pass 20. If the space of additional 10 bytes is not present contiguously, it will find somewhere else space of 20 bytes and copy all the information from previous space without any loss of data
+void *realloc (void *ptr, size_t size). It will return NULL if no space found
+
+//used to free up the space once done using it.
+//Pass the pointer to the starting address of space allocated.
+void free (void *ptr)
+```
+
+## Note
+
+`Both malloc and calloc give space in contiguous manner only in the heap. If the space present is not contiguous, it wont allocate anything`
+
+`Free knows how much space to free because while using malloc and calloc, if you allocate 10 bytes, system allocates 11 bytes, the extra byte is used to save number of bytes allocated for this function call. Free will read that info and free those bytes`
+
+`If space is not freed up, it wont be reusable as it wont be allocated, that is called memory leak`
+
+
 
