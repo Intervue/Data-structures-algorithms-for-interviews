@@ -1616,4 +1616,72 @@ void free (void *ptr)
 `If space is not freed up, it wont be reusable as it wont be allocated, that is called memory leak`
 
 
+#Topic9: Structures and Unions
+
+## Introduction to structures
+
+Sometimes we want group elements. Eg: grouping integer, for that we use arrays. But there may be scenarios when elements are not of the same type, then we use structures.
+
+Eg: storing employee record (age, salary, address etc.)
+
+## Example
+
+```C
+struct{ //declaration for a structure
+	int i; //declarations inside the structure
+	char c;
+} x, y, z; //three structures will be created x y and z with the same structure having an integer i and char c
+
+//Therefore, we can create it in continuous manner separated by commas 
+
+//Members can be accessed using dot
+
+x.i = 10;
+x.c = 'a'
+
+//dot is known as the member operator. This is simillar to javascript object dot
+
+//defining a structure containing a structure
+struct{
+	struct{
+		int i;
+		char c;
+	}
+}
+
+//Another way is to name the structure made eg:
+
+struct ex{ //ex here is called tag. Later if we want to declare multiple structures we can use ex
+	int i;
+	char c;
+}; //this is the structure blueprint and no memory is allocated to any variable as of now
+
+//later this can be done
+
+struct ex x,y,z; //this will declare three structure with same body and now memory will be allocated
+
+//Declaring nested structures with tag
+struct ex1{
+	struct ex a; //members of a structure can be other structures as well. Structure a having body of ex and member of new struct ex1
+}
+
+//Initializing the structure
+
+struct ex x = {5,'a'}; //similar to javascript objects but here w/o keys
+
+struct ex1{
+	struct ex a; 
+	struct ex b;
+}; //blue print only
+
+//now we can use it as
+
+struct ex1 t; //then a structure will be created with name t containing two structures a and b which will contain both i and c.
+
+//Accessing members can be something like this
+t.a.i = 10 //similar to javascript objects
+
+//Any levels of nesting can be defined
+```
+
 
