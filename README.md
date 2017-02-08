@@ -1415,6 +1415,20 @@ int main(){
 ### strcat()
 
 ```C
+char *strcatnew(char *d, char *s){
 
+  char *saved = d;
+
+  while(*d != '\0'){
+    *d++; //finding end of d string;
+  }
+
+  while(*s){
+    *d++ = *s++; 
+  }
+  *d = 0; 
+  return saved;
+
+}
 ```
 
