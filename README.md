@@ -1362,4 +1362,59 @@ int isCommon(int a[], int b[], int n, int m){ //sizes are sent as we need the en
 
 #Topic 6: Strings
 
+There are a lot of built in functions for C in string.h
+
+```C
+strcat(s,t) // concatenate string t to the end of string s. It returns char * (pointer to starting address of s)
+strncat(s,t) //concatenate n characters of string t to the end to string s. It returns char * (pointer to starting address of s)
+strcmp(s,t) // return negative, zero or positive for s<t, s==t or s>t
+//this will basically do subtraction of characters (ascii values are taken and subtracted) and string is compared
+//negative or positive is the difference that comes out
+strncmp(s,t,n) //same as strcmp but only in first n characters
+strcpy(s,t) //copy t to s. t will be copied to s starting from beginning so chars in s may be replaced till the length of t. It will return s (that is starting address of array)
+strncpy(s,t,n) //copy at most n characters of t to s
+strlen(s) //return length of s
+strchr(s,c) //return Pointer to first c in S or NULL if not present
+strrchr(s,c) //return the Pointer to the last occurence of C and return NULL if not present
+```
+ 
+## Programs
+
+[File here!](/programs/string-functions.c)
+
+
+### strcpy()
+
+```C
+//str copy function self made
+char *strcpynew(char *d, const char *s)
+{
+   char *saved = d;
+   while (*s)
+   {
+       *d++ = *s++;
+   }
+   *d = 0;
+   return saved; //returning starting address of s1
+}
+
+//default function that is run by C everytime
+int main(){
+	
+	char s1[] = "rahul"; //initializing strings
+  char s2[] = "arora"; //initializing strings
+
+	strcpynew(s1, s2);
+
+	printf("%s\n", s1);	//updated string
+  printf("%s\n", s2); 
+
+}
+```
+
+### strcat()
+
+```C
+
+```
 
