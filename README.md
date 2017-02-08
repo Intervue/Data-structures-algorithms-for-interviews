@@ -1432,4 +1432,21 @@ int *strcmpnew(char *d, char *s){
 }
 ```
 
+### strlen
+
+```C
+int strlennew(char *s){
+
+  int total; //to increase range we can take unsigned long long int
+
+  while(*s != 0){
+    total++;
+  }
+  
+  return total;
+}
+```
+
+
+
 

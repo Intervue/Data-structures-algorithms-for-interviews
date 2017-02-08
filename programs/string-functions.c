@@ -25,7 +25,7 @@ char *strcatnew(char *d, char *s){
 
 }
 
-int *strcmpnew(char *d, char *s){
+int strcmpnew(char *d, char *s){
 
   while((*d == *s)){
     if(*s == '\0'){
@@ -39,10 +39,21 @@ int *strcmpnew(char *d, char *s){
 
 }
 
+int strlennew(char *s){
+
+  int total; //to increase range we can take unsigned long long int
+
+  while(*s != 0){
+    total++;
+  }
+  
+  return total;
+}
+
 //default function that is run by C everytime
 int main(){
 
-	// //FOR STRCPY 
+	//for STRCPY 
 	char s1[] = "rahul"; //initializing strings
   char s2[] = "arora"; //initializing strings
 	strcpynew(s1, s2);
@@ -52,10 +63,14 @@ int main(){
   char s3[] = "rahul"; //initializing strings
   char s4[] = "arora"; //initializing strings
   strcatnew(s3, s4);
-  printf("strcat: %s\n", s3); //updated string after strcpy
+  printf("strcat: %s\n", s3); //updated string after strcat
 
-  //for strCMP
+  //for STRCMP
   char s5[] = "a"; //initializing strings
   char s6[] = "a"; //initializing strings
-  printf("strcmp: %d\n", strcmpnew(s5, s6)); //updated string after strcpy
+  printf("strcmp: %d\n", strcmpnew(s5, s6)); //updated string after strmp
+
+  //for counting
+  char s7[] = "rahul";
+  printf("strlen: %d\n", strlennew(s7));
 }
