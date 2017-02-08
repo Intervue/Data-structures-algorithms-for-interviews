@@ -25,6 +25,20 @@ char *strcatnew(char *d, char *s){
 
 }
 
+int *strcmpnew(char *d, char *s){
+
+  while((*d == *s)){
+    if(*s == '\0'){
+      return 0;  
+    }
+    *d++;
+    *s++;
+  }
+
+  return *d - *s;
+
+}
+
 //default function that is run by C everytime
 int main(){
 
@@ -40,4 +54,8 @@ int main(){
   strcatnew(s3, s4);
   printf("strcat: %s\n", s3); //updated string after strcpy
 
+  //for strCMP
+  char s5[] = "a"; //initializing strings
+  char s6[] = "a"; //initializing strings
+  printf("strcmp: %d\n", strcmpnew(s5, s6)); //updated string after strcpy
 }

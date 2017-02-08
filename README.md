@@ -1389,7 +1389,7 @@ strrchr(s,c) //return the Pointer to the last occurence of C and return NULL if 
 //str copy function self made
 char *strcpynew(char *d, char *s){
   char *saved = d;
-  while ((*d++ = *s++) != '\0');
+  while ((*d++ = *s++) != '\0'); //s will be stored in d and this expression will return d which will be compared always with RHS
    
   return saved; //returning starting address of s1
 }
@@ -1413,6 +1413,23 @@ char *strcatnew(char *d, char *s){
 }
 ```
 
-### 
+### strcmp()
+
+```C
+//returns ascii value after subtracting or return 0. ASCII value of \0 is 0
+int *strcmpnew(char *d, char *s){
+
+  while((*d == *s)){
+    if(*s == '\0'){
+      return 0;  
+    }
+    *d++;
+    *s++;
+  }
+
+  return *d - *s;
+
+}
+```
 
 
