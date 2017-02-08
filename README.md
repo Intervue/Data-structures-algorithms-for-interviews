@@ -1360,7 +1360,7 @@ int isCommon(int a[], int b[], int n, int m){ //sizes are sent as we need the en
 ```
 
 
-#Topic 6: Strings
+#Topic7: Strings
 
 There are a lot of built in functions for C in string.h
 
@@ -1488,4 +1488,43 @@ int main(){
 	
 }
 ```
+
+#Topic8: Storage Classes
+
+- *register*: we are telling the compiler to store variable in a register eg: register int i. Registers do not have addresses
+- *extern*: 
+- *static*: will store the variable in the data section
+
+## Example:
+
+```C
+int main(){
+	register int i = 10; //this is a storage class
+
+	int *a = &i;
+
+	printf("%d", *a); //will give error or warning as register do not have addresses
+
+	return 0
+}
+
+```
+
+```C
+int main(){
+	int i = 10;
+	register int *a = &i; //store the variable a in register
+	printf("%d", *a); //this will print address of other variable because address in this case is a value from another variable
+}
+```
+
+```C
+int i = 10;
+register static int i = 10; //we cannot ask compiler to store a variable at two places. so it will give compiler error
+printf("%d",i);
+return 0;
+
+```
+
+
 
