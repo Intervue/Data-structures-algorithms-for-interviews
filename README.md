@@ -1493,7 +1493,7 @@ int main(){
 
 - *register*: we are telling the compiler to store variable in a register eg: register int i. Registers do not have addresses
 - *extern*: 
-- *static*: will store the variable in the data section
+- *static*: will store the variable in the data section and will be accessed from this data section everytime and not from the activation record in the stack
 
 ## Example:
 
@@ -1526,5 +1526,30 @@ return 0;
 
 ```
 
+### Example:
+
+Counting the number of times the function was called
+
+```C
+
+int countFunctionCall(void){
+		
+		static int count = 0;
+		return ++count; 
+
+} //the activation record is popped off each time the function is called, so in the print statement only 1 will be printed as only for that activation record it will return the value of count. 
+// To fix this we will declare count as static variable
+// this static variable will be stored in the data section
+int main(){
+	countFunctionCall();
+	countFunctionCall();
+	countFunctionCall();
+
+	printf("%d time function is called", countFunctionCall());
+
+	return 0;
+}
+
+```
 
 
