@@ -1492,8 +1492,13 @@ int main(){
 #Topic8: Storage Classes
 
 - *register*: we are telling the compiler to store variable in a register eg: register int i. Registers do not have addresses
-- *extern*: 
+- *external variable*: variable declared outside main() will be stored in the data section only 
 - *static*: will store the variable in the data section and will be accessed from this data section everytime and not from the activation record in the stack
+
+## Note
+
+`Data section contains global(external variables declared outside main()) variables and static variables`
+
 
 ## Example:
 
@@ -1551,5 +1556,12 @@ int main(){
 }
 
 ```
+
+## Note:
+
+`If a function does not find the variable in its own activation record(execution context) it will go to the outer environment to search for that variable (same as javascript). Therefore local and variable is same as javascript`
+
+
+
 
 
