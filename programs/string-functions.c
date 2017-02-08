@@ -4,15 +4,11 @@
 #include <stdio.h>
 
 //str copy function self made
-char *strcpynew(char *d, const char *s)
-{
-   char *saved = d;
-   while (*s)
-   {
-       *d++ = *s++;
-   }
-   *d = 0;
-   return saved; //returning starting address of s1
+char *strcpynew(char *d, char *s){
+  char *saved = d;
+  while ((*d++ = *s++) != '\0');
+   
+  return saved; //returning starting address of s1
 }
 
 char *strcatnew(char *d, char *s){
@@ -23,10 +19,8 @@ char *strcatnew(char *d, char *s){
     *d++; //finding end of d string;
   }
 
-  while(*s){
-    *d++ = *s++; 
-  }
-  *d = 0; 
+  while((*d++ = *s++) != '\0');
+  // *d = 0; 
   return saved;
 
 }
@@ -44,6 +38,6 @@ int main(){
   char s3[] = "rahul"; //initializing strings
   char s4[] = "arora"; //initializing strings
   strcatnew(s3, s4);
-  printf("strcat:" %s\n", s3); //updated string after strcpy
+  printf("strcat: %s\n", s3); //updated string after strcpy
 
 }

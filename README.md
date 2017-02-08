@@ -1387,28 +1387,11 @@ strrchr(s,c) //return the Pointer to the last occurence of C and return NULL if 
 
 ```C
 //str copy function self made
-char *strcpynew(char *d, const char *s)
-{
-   char *saved = d;
-   while (*s)
-   {
-       *d++ = *s++;
-   }
-   *d = 0;
-   return saved; //returning starting address of s1
-}
-
-//default function that is run by C everytime
-int main(){
-	
-	char s1[] = "rahul"; //initializing strings
-  char s2[] = "arora"; //initializing strings
-
-	strcpynew(s1, s2);
-
-	printf("%s\n", s1);	//updated string
-  printf("%s\n", s2); 
-
+char *strcpynew(char *d, char *s){
+  char *saved = d;
+  while ((*d++ = *s++) != '\0');
+   
+  return saved; //returning starting address of s1
 }
 ```
 
@@ -1423,12 +1406,13 @@ char *strcatnew(char *d, char *s){
     *d++; //finding end of d string;
   }
 
-  while(*s){
-    *d++ = *s++; 
-  }
-  *d = 0; 
+  while((*d++ = *s++) != '\0');
+  // *d = 0; 
   return saved;
 
 }
 ```
+
+### 
+
 
