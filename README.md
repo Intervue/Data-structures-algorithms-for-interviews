@@ -1775,6 +1775,40 @@ x = *p++->c;
 `Always see where ++ or -- is applied to. The entity that it is placed next to should be incremented or decremented. The entity can be a single variable or whole group (whole group needs to be in bracket to be considered as a single entity). I is always good to break the code into parts in such cases`
 
 
+## Self referencial structures
 
+reference means pointers. If a structure is pointing to structure of same type it is called self referencial.
+
+Eg:
+
+```C
+struct ex{
+	int i;
+	char *c;
+}
+
+struct ex abc; //structure will be created with name abc with two elements integer i and a pointer c to character
+// Initial value of pointer will be garbage value. If this pointer is used without assigning it to any value, it may lead to segmentation fault (trying to access memory element which is not present in your own address space)/
+
+//Now if we make this char *c a pointer which points to structure of type ex as:
+
+struct ex{
+	int i;
+	struct ex *link;
+}
+//this means that *link is a pointer to a structure of type ex which is nothing but same structure. This is called self referencial structure
+```
+
+### Why is it useful
+
+- creating linked list of objects: two structures can be there in linkedlist of same type and pointer in one can point to the other
+
+- In trees: In case we have a tree with left and right pointer, the pointers should point to another structure of same type of make it a tree
+
+There are many more examples like Graphs
+
+## Note
+
+`Segmentation error: When trying to access a memory element that is not present in our own address space`
 
 
