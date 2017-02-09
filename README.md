@@ -1684,4 +1684,97 @@ t.a.i = 10 //similar to javascript objects
 //Any levels of nesting can be defined
 ```
 
+## Examples on structures, arrays and pointers
+
+```C
+struct node{
+	int i;
+	int j;
+};
+struct node a, *p; //a is a structure and p is a pointer of type struct 
+p = &a;
+
+/* 
+In the above code, p holds the address of a. To access elements of a we can either do
+a.i OR
+(*p).i this is equivalent to p->i
+Just to make the job of accessing members using pointer easier, the above symbol of right arrow was introduced
+*/
+```
+
+## Note:
+
+`Using a pointer to access the members of a structure is very important in C. Most of the times strcutures will be created dynamically using malloc etc. which returns a pointer to the starting address of space allocated. So understanding how pointers can be used to access members of a structure is important`
+
+`Structures can be passed to a function as well as returned from a function`
+
+```C
+struct node fun(struct node n1, struct node n2)// just like javascript we can pass objects to functions
+// the above funtion fun take two arguments as structures of type node and returns a struct of type node
+// When this function is called with arguments, the entire structure is passed from actual arguments to formal arguments. If structure is heavy, this function call can be costly. Even when returning structure and assigning it to another structure, it will be copied, so take care of the size and the kind of operation done. Therefore dont send entire structure, send pointers to it (generally recommended)
+```
+
+## Main example explained
+
+```C
+struct node{
+	int i;
+	int *c;
+}; //blue print for the structure node having one member as integer and other as pointer to an integer
+
+struct node a[2], *p; //a is an array of two elements and both of them are of type struct node
+//p is a pointer to a structure of type node
+
+int b[2] = {30, 40}; //array of two integers
+
+p = &a[0]; //p now has address of a[0] assume it to be 100
+a[0].i = 10; a[1].i = 20; //initializing values of both the elements. Two operators are there. Both have same precendence but they are left to right associative so [] executes before .
+
+a[0].c = b; //The pointer c has address of b as b is an array
+
+//Explanation of operations if taken one by one (only if that was executed and other lines were not there)
+
+++p -> i;
+// the arrow has higher precedence in the table ++ is unary which comes second.
+// therefore ++ (p->i) //it will get i from structure and increment value of i
+
+x = (++p) -> i;
+//Now () and -> have same precedence but they are left to right associative. Moreover this is preincrement. So even if brackets were not there value needs to be incremented.
+//now p was earlier pointing to 100, now it points to 104 (scaled arithmetic)
+//now p will get value of i from 104 and x will be assigned that value
+
+x = (p++) -> i;
+//This is post increment so brackets cannot do anything.
+//so first p->i will be performed. X will get i's value and the value of p will be incremented from 100 to 104
+
+x = *p -> c; //can be written as x = (*(p->c))
+//there p->c will give address c is holding, then * will give value of what is in the address that c is holding, that is value of array b[0]
+//this value will be assigned to x
+
+x = *p->c++; //this is post increment case
+//there are 4 operators in this
+// highest precedence is given to ->, then *, then ++ as it is post increment
+//p -> c will get address that c is holding *p will get value which is b[0]
+// x will get get value 30 and then, c will be incremented that is now it points to b[1]
+
+x = (*p->c)++;
+// post increment case again
+//p->c will be evaluated, and * of it will get b[0]
+//this value will be assigned to x and then b[0] will be incremented as it is (*p->c)
+
+
+x = *p++->c;
+//this is also a post increment case
+//p-> c will be executed. applying * on it will get b[0] which will be assigned to x
+// after assignment p will be incremented, that is from 100 to 104
+
+```
+
+## Note
+
+`Always see where ++ or -- is applied to. The entity that it is placed next to should be incremented or decremented. The entity can be a single variable or whole group (whole group needs to be in bracket to be considered as a single entity). I is always good to break the code into parts in such cases`
+
+
+
+
 
