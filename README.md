@@ -2106,6 +2106,7 @@ putc() and getc() takes arguments as file pointers whereas getchar() will read f
 ```C
 int getc(FILE *fp);
 int putc(int c, FILE (fp)); //c is the string that holds the data
+//even though c will be a char it will be converted to integer and placed as argument
 ```
 
 In an operating system we have three strings available to us
@@ -2117,6 +2118,36 @@ stderr
 
 //hence we can also use 
 getc(stdin)
-putc(ch, stdout)
+putc(ch, stdout) //this will put character into the file
 
 ```
+
+## File reading and writing using putc() and getc()
+
+```C
+#include <stdio.h>
+
+void main{
+	FILE *fp;
+	char ch;
+	fp = fopen("text.txt",'w');//opening file in write mode
+
+	printf("enter the data");
+
+	while((ch = getchar()) != EOF){ //enter ctrl c to denote EOF
+		putc(ch, fp); //put character entered into the file
+	}
+
+	fclose(fp);
+
+	fp = fopen("one.txt", 'r');
+
+	while((ch = getc(fp)) ! = EOF){
+		printf("%s", ch); //print whatever you can read from the file
+	}
+
+	fclose(fp);
+}
+
+```
+
