@@ -1998,4 +1998,66 @@ rewind()
 ```
 
 
+## Example
 
+```C
+
+#include <stdio.h>
+
+void main(){
+	FILE *fp;
+	int len;
+
+	fp = fopen("file.txt", "r");
+
+	if(fp == NULL){ //this validation should always be done whenever dealing with files
+		printf("error opening file")
+	} //otherwise there may be errors
+
+	fseek(fb, 0, SEEK_END); //SEEK_END is an integer constant (assume its defined by #define as 3)
+	//now this means go to end of it and dont move. Explained in next code set
+
+	len = ftell(fp); //ftell will return current position, thereby giving length of the file in this case
+
+	fclose(fp);
+	//closing the file
+
+	printf("Total size of file text = %d bytes\n", len); //will print 4
+
+}
+
+```
+
+## IMPORTANT CONSTANTS
+
+```C
+/*
+purpose of constants
+
+1) SEEK_SET // Start from beginning of file (is set as 0)
+2) SEEK_CUR // we want to start from current position in the file (is set as 1)
+3) SEEK_END //start from end of the file (is set as 2)
+
+//to increase the readability of the program we use these constants
+
+//Example
+fseek(fp,2,SEEK_SET) //this will start from starting of the file and move two characters to the right
+
+fseek(fp,1,SEEK_CUR) //this will move one position to right from current position
+
+//this is useful as we may skip some characters everytime in our program
+
+fseek(fp,-1,2) //will move one character to the left from end of file (EOF character)
+
+//positive value: move to right
+//negative value: move to left
+
+//Syntax of fseek
+int fseek(FILE *Stream, long int offset, int whence);
+//pointer to file structure, bytes to which read write head is to be moved, where to start from
+// it will return a zero or non-zero. IF zero successful, if nonzero something wrong has occured and function failed
+*/
+
+long int ftell(FILE *stream) //takes pointer to FILE as input and returns long int
+//it will return current position in the file you are standing at. In case error is there it returns -1
+```
