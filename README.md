@@ -2100,4 +2100,23 @@ void main(){
 
 ## Relationship b/w putc(), getc(), putchar() and getchar()
 
+putc() and getc() takes arguments as file pointers whereas getchar() will read from keyboard by default
 
+
+```C
+int getc(FILE *fp);
+int putc(int c, FILE (fp)); //c is the string that holds the data
+```
+
+In an operating system we have three strings available to us
+
+```C
+stdin //related to keyboard
+stdout //related to output
+stderr
+
+//hence we can also use 
+getc(stdin)
+putc(ch, stdout)
+
+```
