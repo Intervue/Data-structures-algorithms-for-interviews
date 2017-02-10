@@ -1854,3 +1854,50 @@ struct node *p = (struct node *)malloc(sizeof(struct node));
 p->i//to access members and so on
 ```
 
+# Topic10: Input and Output
+
+## Formatted output - printf
+
+- we can pass any number of arguments to printf. It depends on the format string (contains format and conversion specifiers)
+
+```C
+int printf(char *format, arg1, arg2, ....); 
+this printf will return an int. Generally it returns number of characters it printed
+Therefore this value can be captured also.
+
+prinf("%d", printf(char *format, arg1, arg2, ....));
+//there the outside printf will print whatever inner printf will return
+````
+
+## Inside format string
+
+There can be any number of format or conversion specifiers in a format string
+
+```C
+"This is %d", a //In this case a can be converted to a number
+//This format specifier will specify how the input should be printed
+```
+
+## Formatted input - scanf
+
+```C
+int scanf(char *format, any number of arguments);
+//the above function will return an integer
+//whenever the user will enter the input how to interpret it and where to save it will be decided by the format string
+
+int day, month, year;
+
+scanf("%d %d %d", &day, &month, &year);
+//whenever user has entered the input take first part and interpret it as decimal and store it in the address specified by that variable. Therefore argument list should always be addresses or pointers
+
+//We pass addresses to scanf because, variables might be present only in a functions activation record. scanf //may be outside that. Therefore it has no access to variables but has got access to the addresses of those variables.
+
+
+//scanf returns the number of elements into which it has successfully stored the data
+
+int sscanf(char *string, char *format, arg1, arg2,....);
+              //10 20 30.    %d %d %d, 
+              //this will save 10 in decimal format in arg1 and so on. will return the number of arguments successfully stored
+
+```
+
