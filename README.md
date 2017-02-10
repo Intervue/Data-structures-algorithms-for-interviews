@@ -1812,3 +1812,45 @@ There are many more examples like Graphs
 `Segmentation error: When trying to access a memory element that is not present in our own address space`
 
 
+## Malloc
+
+Practical examples of creation of data structures in C dynamically
+
+```C
+//declaration
+
+void *malloc(int);
+//create size of 10 bytes and return the pointer to that space allocated
+
+//It is not advisable to call malloc with a number like this because int size may vary with platforms so better to use size of everytime.
+
+int *p = (int *)malloc(sizeof(int)); //correct way
+//to free this memory
+free(p);
+
+```
+
+## Note
+
+'Whenever malloc is called, it makes a system call to allocate some memory to you. If you as for x byes it will take more than x from the system call and cut out x from the memory it has received, so next time you ask for more memory it does not make an additional system call and try allocate memory that only it has available as system calls can be costly'
+
+
+`Therefore malloc might not always get contiguous blocks of memory from OS as sometimes user may call system call directly and sometimes malloc may be called. So memory management by malloc is a bit complex as it has to manage holes (additional spaces created cos of memory allocation and freeing up space) as well as non-contiguous memories that are received from the system.`
+
+`Therefore it will create a linked list. Each linkedlist will mention size it has and pointer to the next when. When you request space malloc will scan this linked list everytime and allocate space. This process is called first fit`
+
+`Most frequest usage of malloc is with structures`
+
+
+```C
+struct node{
+	int i;
+	struct node *l;
+}
+
+struct node *p = (struct node *)malloc(sizeof(struct node));
+//whatever is returned by malloc will by typecasted and allocated to a pointer of same type as structure
+
+p->i//to access members and so on
+```
+
