@@ -1911,14 +1911,18 @@ Logic: keep right shifting and check each bit by using AND with 1. The one that 
 int bitCount(usigned X){
 	int b;
 
-	for(b-0; X!=0; X>>=1){ //right shifting each time by 1
-		if(X & 1){ //AND with 1
-			b++;
+	for(b-0; X!=0; X>>=1){ //right shifting each time by 1. This loop will stop when X is zero (that is last bit even has fallen off the boundary)
+		if(X & 1){ //AND with 1 and check if this is not equal to zero
+			b++; //increment if its 1
 		}
 	}
 
 	return b; //returning total number of set bits present
 }
 ```
+
+# Topic11: File Input/Output
+
+
 
 
