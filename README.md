@@ -1896,8 +1896,29 @@ scanf("%d %d %d", &day, &month, &year);
 //scanf returns the number of elements into which it has successfully stored the data
 
 int sscanf(char *string, char *format, arg1, arg2,....);
-              //10 20 30.    %d %d %d, 
-              //this will save 10 in decimal format in arg1 and so on. will return the number of arguments successfully stored
+            //10 20 30.    %d %d %d, 
+            //this will save 10 in decimal format in arg1 and so on. will return the number of arguments successfully stored
 
 ```
+
+## Example
+
+Count number of set bits in X
+
+Logic: keep right shifting and check each bit by using AND with 1. The one that gives 1 as output increment count
+
+```C
+int bitCount(usigned X){
+	int b;
+
+	for(b-0; X!=0; X>>=1){ //right shifting each time by 1
+		if(X & 1){ //AND with 1
+			b++;
+		}
+	}
+
+	return b; //returning total number of set bits present
+}
+```
+
 
