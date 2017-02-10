@@ -2202,4 +2202,62 @@ int main(){
 }
 ```
 
+## Example
+
+C program to count input lines
+
+```C
+void main(){
+	int linecount,c ;
+
+	while((c=getchar())!=EOF){
+		if(c== '\n'){ //increment whenever newline character is there
+			++linecount;
+		}
+	}
+
+	printf("%d", linecount); //print answer
+}
+```	
+
+## Example
+
+C program using fscanf(), fprintf()
+
+```C
+#include <stdio.h> //file functions are in this
+
+struct emp{
+	char name[10];
+	int age;
+};
+
+void main(){
+
+	struct emp e;
+	FILE *p, *q;
+
+	p = fpen("test.txt", "a"); //append will make the cursor to be at the end of file
+	q = fpen("test.txt","r"); //when we open it in reading, it will assume that we will read from beginning
+
+	//this will work as these are two different pointers
+
+	printf("enter the name and age");
+
+	scanf("%s %d", &e.name, &e.age);
+
+	fprintf(p, "%s %d", e.name, e.age); //printed in the file whatever we read
+
+	fclose(p); //closing all the buffers related to p to finish relationship b/w p and file
+
+	do{ //we started with do while as we were sure that there is atleast one value in the file
+		fscanf(q, "%s %d", e.name, &e.age) //read from beginning and store it in respective variable mentioned
+		prinf("%s %d", e.name, e.age);
+	}while(!feof(q)); //do it till we reach EOF
+}
+```
+
+## feof(p)
+
+`this function will return non-zero value if there is end of file pointed by p. will return a zero value if end of file is not there`
 
