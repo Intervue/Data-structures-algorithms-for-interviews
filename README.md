@@ -2151,3 +2151,55 @@ void main{
 
 ```
 
+## Example
+
+C program to read a stream of characters
+
+Generally in a stream we dont know how many chars we are going to read. If the requirement was known we could have used an array of defined size to save the data and then print it, but here it is unknown so we will dynamically allocate space. 
+
+```C
+#include <stdio.h> //file functions are in this
+#include <stdlib.h>
+#define DEFAULT_SIZE 100; // constant whose value is 100
+
+int resize(char *p, int count);
+
+char *resize(char *p, int capacity){
+	return realloc(p, (capacity + DEFAULT_SIZE*sizeof(char)));
+}
+
+int main(){
+
+	int count = 0; //variable to count the number of characters read
+
+	int capacity = DEFAULT_SIZE;
+
+	char *input; //variable input as a pointer to a character
+
+	char ch;
+
+	input = (char*)malloc(DEFAULT_SIZE*sizeof(char)); //will create 100 bytes of memory
+
+	//validation required
+
+	//EOF is denoted by ctrl+d in linux
+	while((ch = getchar()) ! = EOF ){
+		if(count == capacity){ //in case our capacity is over we take additon 100 bytes from relloc
+
+			input = resize(input, capacity); //we resize if we run out of memory everytime by 100 bytes
+			//validation required
+			capacity = capacity + DEFAULT_SIZE; //updating capacity to new memory allocated
+
+		}
+
+		input[count++] = ch; //we store value of ch in space allocated to us
+	}
+	//check before putting if memory is availble to put NULL otherwise resize
+	input[count] = NULL;
+
+	puts(input); //print whatever is there is pointed by input
+	
+}
+```
+
+
