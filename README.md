@@ -1995,6 +1995,14 @@ ftell()
 
 rewind()
 //sets the position to the beginning point
+
+gets() and puts()
+//to read unformatted data. The above functions are used to read formatted data
+//scanf does not read the spaces, it will read only until it finds a space.
+//if you want scanf to read it then use gets()
+
+//gets() takes character pointer to a string. It will keep reading until it finds EOF or terminating new line
+
 ```
 
 
@@ -2061,3 +2069,35 @@ int fseek(FILE *Stream, long int offset, int whence);
 long int ftell(FILE *stream) //takes pointer to FILE as input and returns long int
 //it will return current position in the file you are standing at. In case error is there it returns -1
 ```
+
+## gets() and puts()
+
+```C
+
+char* gets(char *s) 
+//function reads a line from stdin (standard input) into the buffer(string in this case) pointer to by S (string) until either a terminating new line or EOF
+//it will return s itself. In case there is some error it returns NULL
+
+int puts(char *s) //it will wrtite the string S and a trailing newline to stdout (standard output)
+//it will write whatever is present in s as output and append \n to it. Will return positive number if successful else will return -1
+
+```
+
+```C
+#include <stdio.h>
+
+void main(){
+	char str[100];
+	printf("enter a string \n"); //entered rahul arora
+	// \n will make sure it stops reading when there is a newline
+
+	gets(str); //read whatever user entered
+	puts(str); //whatever was read will be printed
+}
+
+
+```
+
+## Relationship b/w putc(), getc(), putchar() and getchar()
+
+
