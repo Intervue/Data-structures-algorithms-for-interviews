@@ -1923,6 +1923,79 @@ int bitCount(usigned X){
 
 # Topic11: File Input/Output
 
+Real world input and output should always come and go from a file
+
+## File handling in C
+
+```C
+
+FILE *fp;
+//structure provide by C (FILE). This is present in <stdio.h>
+//declare the pointer to that structure (called fp here). fp is a pointer to FILE structure
+
+//open the file to use it now for any purpose(CRUD)
+FILE *fopen(char *name, char *mode);
+//fopen is a function. Takes the name(path) of the file to open and mode in which it is to be open
+//mode can be: reading, writing, appending
+//you cannot read from a file which does not exist. Therefore it will return NULL
+//If you open a file for writing, all info from file will be deleted and will have to start from scatch
+//use appending if you want to just append
+//if file is opened for writing which does not exist, new file will be created and pointer will point to it
+
+int fclose(FILE *fp);
+//close a file once done with operations.
+//closing a file is important to free the resources allocated to it to process it
+//eg buffers will be allocated in the heap section of the process to operate on file
+//fclose will give resources and they will be freed
+//this function will return positive if successfully file is closed, negative if not closed
+
+/*
+Reasons to close a file:
+
+1. If we dont close the file we will not be able to reuse the pointer as the relationship developed b/w file opened and the pointer will not go away
+
+2. you dont loose any data while using fclose
+
+3. When the program is terminated fclose is automatically called
+*/
+```
+
+```C
+//various functions provided by c to operate on files
+
+fopen()
+//open the file
+
+fclose()
+//
+
+getc()
+//reads a character from the file
+
+putc()
+//puts a character in the file
+
+fscanf()
+//reads a set of data from the file
+
+fprintf()
+//writes a set of data to a file
+
+getw()
+//reads an integer from a file
+
+putw()
+//writes an integer to a file
+
+fseek()
+//set the position to desired point. Moving the cursor across a file
+
+ftell()
+//gives current position in the file
+
+rewind()
+//sets the position to the beginning point
+```
 
 
 
