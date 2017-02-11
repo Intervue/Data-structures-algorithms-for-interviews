@@ -7,10 +7,10 @@ output: min and max of three
 
 int main(){
 
-	int a,b,c, max, min, temp;
+	int a,b,c, max, min;
 
 	printf("enter 3 integers:\n");
-	scanf("%d %d %d", &a,&b,&c);
+	scanf("%d %d %d", &a,&b,&c); 
 
 	max = (a > b && a > c)? a: (b > c)? b: c;	
 	min = (a < b && a < c)? a: (b < c)? b: c;		
