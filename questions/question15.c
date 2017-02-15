@@ -8,7 +8,6 @@ Given an array of integers, find the maximum and minimum element from this array
    output : value of max and min from "main()". 
 */
 
-//@TODO
 #include <stdio.h>
 
 void MaxMin(int arr[], int size, int *max_ptr, int*min_ptr){

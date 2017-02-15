@@ -15,7 +15,6 @@ You are given an array "A" of "n" integers. It is given that the elements of "A"
    Output : the value of "m" and the value of "A[m]", printed from inside "main()".          [3]
 */
 
-//@TODO
 #include <stdio.h>
 
 void is_palindrome(int a){
