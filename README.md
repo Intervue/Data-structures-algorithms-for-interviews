@@ -2240,6 +2240,15 @@ void main{
 
 ```
 
+## Note
+
+- `getc` and `getchar` both are same just that getc takes a file pointer and to get characters one by one from the file. getchar on the other hand takes characters from the keyboard. getc can be used to take characters from the keyboard by doing `getc(stdin)`
+
+- 'putc' and `putchar` both are same just that putc prints to the file and putchar prints to the screen. putc can be used to print to the screen by using `putc(stdout)
+
+- `putc` takes first argument as character to be printed to the file and second argument as the file pointer
+
+
 ## Example
 
 C program to read a stream of characters
