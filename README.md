@@ -2029,7 +2029,7 @@ void main(){
 		printf("error opening file")
 	} //otherwise there may be errors
 
-	fseek(fb, 0, SEEK_END); //SEEK_END is an integer constant (assume its defined by #define as 3)
+	fseek(fp, 0, SEEK_END); //SEEK_END is an integer constant (assume its defined by #define as 3)
 	//now this means go to end of it and dont move. Explained in next code set
 
 	len = ftell(fp); //ftell will return current position, thereby giving length of the file in this case
