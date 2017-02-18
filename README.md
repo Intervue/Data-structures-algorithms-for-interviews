@@ -2010,6 +2010,20 @@ gets() and puts()
 
 //gets() takes character pointer to a string. It will keep reading until it finds EOF or terminating new line
 
+getchar() and putchar()
+//used to get and print data respectively from the user onto the string. It will read only one character and output one character
+
+int main(){
+
+	int c;
+	printf("enter a string\n");
+		
+	c =getchar();
+	
+	putchar(c);	//outputs the first character even if you enter a string
+
+}
+
 ```
 
 ## Example
@@ -2077,6 +2091,7 @@ int main(){
 	printf("%s\n", str2);
 	
 }
+//Similarly fprintf works, it prints data onto a file (useful in case of making debug files)
 ```
 
 
