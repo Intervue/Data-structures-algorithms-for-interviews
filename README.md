@@ -2052,6 +2052,33 @@ int main(){
 }
 ```
 
+## Example
+
+fscanf
+
+```C
+#include <stdio.h> //file functions are in this
+
+int main(){
+
+	FILE *fp;
+	char str1[5]; int num;
+	
+	fp = fopen("file.txt","r");
+
+	if(fp == NULL){
+		printf("file could not be opened\n");
+	}	
+
+	fscanf(fp, "%s %d", str1, str2, &num);
+
+	printf("this is the num value %d\n", num);
+	printf("%s\n", str1);
+	printf("%s\n", str2);
+	
+}
+```
+
 
 ## Example
 
