@@ -4,3 +4,4 @@
 .swp
 *.o
 test.c
+*.txt

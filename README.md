@@ -2012,6 +2012,46 @@ gets() and puts()
 
 ```
 
+## Example
+
+getc and putc
+
+```C
+#include <stdio.h> //file functions are in this
+
+int main(){
+
+	FILE *fp1, *fp2;
+	char c;
+	fp1 = fopen("file.txt","w");
+
+	if(fp1 == NULL){
+		printf("file content does not exist\n");
+	}
+
+	int a[5] = {'n','a','h','u','i'};	
+	
+	for(int i = 0; i<5;i++){
+		putc(a[i], fp1);
+	}
+
+	fclose(fp1);	
+
+	fp2 = fopen("file.txt","r");
+
+	if(fp2 == NULL){
+		printf("file content does not exist\n");
+	}
+
+	while((c = getc(fp2)) != EOF){
+		printf("%c", c);
+	}
+
+	printf("\n");
+	
+}
+```
+
 
 ## Example
 
