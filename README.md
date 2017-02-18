@@ -2248,6 +2248,9 @@ void main{
 
 - `putc` takes first argument as character to be printed to the file and second argument as the file pointer
 
+- Always ASCII values are stored and get from the file and appropriate conversions are done to display it properly to the user
+
+
 
 ## Example
 
