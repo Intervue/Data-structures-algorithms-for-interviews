@@ -18,7 +18,7 @@ TODO: question14.c
 - [question11.c!](/questions/question11.c)
 - [question12.c!](/questions/question12.c)
 - [question13.c!](/questions/question13.c)
-- [question14.c!](/questions/question14.c)
+- [question14.c!](/questions/question14.c) (still to be done)
 - [question15.c!](/questions/question15.c)
 - [question16.c!](/questions/question16.c)
 - [question17.c!](/questions/question17.c)
