@@ -30,9 +30,54 @@
 #include <stdlib.h>
 #include <string.h>
 
+struct box
+{
+   float l;
+   float w;
+   float h;
+};
+
+float max(struct box one_box){
+   return (one_box.l>one_box.w && one_box.l>one_box.h)?one_box.l:(one_box.w>one_box.h)?one_box.w: one_box.h;
+}
+
+float find_maximum_height(struct box *box_array, int num_boxes){
+
+   float sum = 0.0;
+
+   for(int i=0; i<num_boxes;i++){
+      sum += max(box_array[i]);
+   }
+
+   return sum;
+}
+
 int main(){
-		
-	
+   
+   FILE *fp;
+   int number_of_cubes;
+   const size_t line_size = 100;
+   fp = fopen("dimensions.txt","r");
+   char *line = malloc(sizeof(char)*line_size);
+   
+   if(fgets(line, line_size, fp) != NULL){
+      number_of_cubes=atoi(line);
+   }
+   printf("%d\n", number_of_cubes);
+   
+   struct box *arr = malloc(sizeof(struct box)*number_of_cubes);
+
+   int i=0;
+   while(fgets(line, line_size, fp) != NULL){
+      sscanf(line, "%f %f %f", &arr[i].l, &arr[i].w, &arr[i].h);
+      i++;
+   }
+
+   for (int i = 0; i < number_of_cubes; ++i){
+      printf("length:%f,width:%f,height:%f\n",arr[i].l,arr[i].w,arr[i].h);
+   }
+
+   printf("the maximum height of the arrangement is:%f\n",find_maximum_height(arr,number_of_cubes));
 
 }
 
