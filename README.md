@@ -35,7 +35,8 @@ TODO: question14.c
 ### Arrays
 
 - [Insertion Sort](/arrays/question1.c)
-   
+- [Merge Procedure](/arrays/question2.c)
+
 
 # Topic1: Introduction
 
