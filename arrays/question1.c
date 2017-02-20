@@ -2,10 +2,10 @@
 INSERTION SORT
 Can be remembered as deck of cards taken one by one
 
-Best case:
+Worst case:
 Time complexity (comparisions and movements): O(n^2)
 
-Worst case:
+Best case:
 Time complexity: omega(n)
 
 For both cases:
