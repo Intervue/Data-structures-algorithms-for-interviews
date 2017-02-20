@@ -5,6 +5,11 @@ TODO: question14.c
 ## Note:
 **Questions statements are included in the file itself**
 
+### COMING SOON
+
+- merge sort using dynamic programming and hashmaps
+
+
 ### General Questions
 
 - [question1.c](/general/question1.c)
