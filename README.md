@@ -5,31 +5,36 @@ TODO: question14.c
 ## Note:
 **Questions statements are included in the file itself**
 
-- [question1.c](/questions/question1.c)
-- [question2.c](/questions/question2.c)
-- [question3.c](/questions/question3.c)
-- [question4.c](/questions/question4.c)
-- [question5.c](/questions/question5.c)
-- [question6.c](/questions/question6.c)
-- [question7.c](/questions/question7.c)
-- [question8.c](/questions/question8.c)
-- [question9.c](/questions/question9.c)
-- [question10.c](/questions/question10.c)
-- [question11.c](/questions/question11.c)
-- [question12.c](/questions/question12.c)
-- [question13.c](/questions/question13.c)
-- [question14.c](/questions/question14.c) (still to be done)
-- [question15.c](/questions/question15.c)
-- [question16.c](/questions/question16.c)
-- [question17.c](/questions/question17.c)
-- [question18.c](/questions/question18.c)
-- [question19.c](/questions/question19.c)
-- [question20.c](/questions/question20.c)
-- [question21.c](/questions/question21.c)
-- [question22.c](/questions/question22.c)
-- [question23.c](/questions/question23.c)
-- [question24.c](/questions/question24.c)
+### General Questions
 
+- [question1.c](/general/question1.c)
+- [question2.c](/general/question2.c)
+- [question3.c](/general/question3.c)
+- [question4.c](/general/question4.c)
+- [question5.c](/general/question5.c)
+- [question6.c](/general/question6.c)
+- [question7.c](/general/question7.c)
+- [question8.c](/general/question8.c)
+- [question9.c](/general/question9.c)
+- [question10.c](/general/question10.c)
+- [question11.c](/general/question11.c)
+- [question12.c](/general/question12.c)
+- [question13.c](/general/question13.c)
+- [question14.c](/general/question14.c) (still to be done)
+- [question15.c](/general/question15.c)
+- [question16.c](/general/question16.c)
+- [question17.c](/general/question17.c)
+- [question18.c](/general/question18.c)
+- [question19.c](/general/question19.c)
+- [question20.c](/general/question20.c)
+- [question21.c](/general/question21.c)
+- [question22.c](/general/question22.c)
+- [question23.c](/general/question23.c)
+- [question24.c](/general/question24.c)
+
+### Arrays
+
+- [Insertion Sort](/arrays/question1.c)
 
 # Topic1: Introduction
 
