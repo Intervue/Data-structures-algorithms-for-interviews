@@ -8,6 +8,8 @@ TODO: question14.c
 ### COMING SOON
 
 - merge sort using dynamic programming and hashmaps
+- duplicate elimination from an array
+- union, intersection and difference of two arrays
 
 
 ### General Questions
