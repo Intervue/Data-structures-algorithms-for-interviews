@@ -45,6 +45,8 @@ TODO: question14.c
 - [Merge Procedure](/arrays/question2.c)
 - [Merge Sort](/arrays/question3.c)
 - [Partition Procedure](/arrays/question4.c)
+- [Quick Sort](/arrays/question5.c)
+- [Bubble Sort](/arrays/question6.c)
 
 
 # Topic1: Introduction
