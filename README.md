@@ -49,6 +49,8 @@ TODO: question14.c
 - [Quick Sort](/arrays/question5.c)
 - [Bubble Sort](/arrays/question6.c)
 - [Counting Sort](/arrays/question7.c)
+- [find a pair in an array whose sum is X](/arrays/question8.c)
+- [Moore Voting algorithm to find majority element in an array](/arrays/question9.c)
 
 
 # Topic1: Introduction

@@ -69,4 +69,51 @@ int main(){
 	findPairs(a,length, sum);
 
 }
+/*
+METHOD3: using quick sort technique
+but finding if a pair exists or not
+*/
+#include <stdio.h>
+#include <stdlib.h>
 
+int cmpfunc(const void*a, const void*b){
+	return (*(int*)a-*(int*)b);
+}
+
+int findPairs(int arr[], int size, int sum){
+	int left, right;
+
+	qsort(arr,size,sizeof(int),cmpfunc);
+
+	left = 0;
+	right = size - 1;
+	while(left<right){
+		if(arr[left]+arr[right]==sum){
+			return 1;
+		}else if(arr[left]+arr[right]<sum){
+			left++;
+		}else{
+			right--;
+		}
+	}
+}
+
+int main(){
+	int size, index, sum, *arr;
+	printf("enter number of elements in the array\n");
+	scanf("%d",&size);
+	//allocate memory for array
+	arr = (int *)malloc(sizeof(int)*size);
+	printf("enter the elements of the array\n");
+	for(index=0; index<size; index++){
+		scanf("%d",&arr[index]);
+	}
+	printf("enter the sum value\n");
+	scanf("%d",&sum);
+	if(findPairs(arr,size,sum)){
+		printf("Pairs found\n");
+	}else{
+		printf("Pairs not found\n");
+	}
+
+}
