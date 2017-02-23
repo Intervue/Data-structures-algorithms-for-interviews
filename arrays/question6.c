@@ -6,8 +6,8 @@ In each iteration one greatest element moves to its correct position.
 It can be remembered as in each iteration the bubble(largest element) comes to the top (last in array)
 
 Time Complexity:
-Best case: O(n)
-Worst case: O(n^2)
+Best case: O(n) -- already sorted just checking by looping once or for value very less than n
+Worst case: O(n^2) -- nested loop
 
 Space Complexity:
 O(1)

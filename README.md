@@ -10,6 +10,7 @@ TODO: question14.c
 - merge sort using dynamic programming and hashmaps
 - duplicate elimination from an array
 - union, intersection and difference of two arrays
+- bucket sort
 
 
 ### General Questions
