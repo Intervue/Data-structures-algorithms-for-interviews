@@ -48,6 +48,7 @@ TODO: question14.c
 - [Partition Procedure](/arrays/question4.c)
 - [Quick Sort](/arrays/question5.c)
 - [Bubble Sort](/arrays/question6.c)
+- [Counting Sort](/arrays/question7.c)
 
 
 # Topic1: Introduction
