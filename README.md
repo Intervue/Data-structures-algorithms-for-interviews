@@ -11,9 +11,7 @@ TODO: question14.c
 - duplicate elimination from an array
 - union, intersection and difference of two arrays
 - bucket sort
-- radix sort
-- for m to m+k range too
-
+- radix sort for d digit numbers
 
 ### General Questions
 
