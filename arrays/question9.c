@@ -13,6 +13,9 @@ If it is greater than or equal to one, we loop the array again to find how many 
 Time complexity:
 O(n)
 
+Space complexity:
+O(1)
+
 */
 #include <stdio.h>
 #include <stdlib.h>
