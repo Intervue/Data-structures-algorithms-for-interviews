@@ -76,7 +76,7 @@ Finding the max number. And then find the min number in the prev numbers that li
 
 int maxDiff(int arr[], int size){
 
-	int min = arr[0], maxDiff = 0, a,b;
+	int min = arr[0], maxDiff = arr[1]-arr[0], a=arr[0],b=arr[1];
 
 	for(int i=1; i<size-1; i++){
 		if(min > arr[i]){
@@ -94,7 +94,7 @@ int maxDiff(int arr[], int size){
 }
 
 int main(){
-	int a[] = {4,3,10,2,9,1,6};
+	int a[] = {4,100,10,2,9,1,6};
 	int length = sizeof(a)/sizeof(a[0]);
 	int max = maxDiff(a,length);
 }
