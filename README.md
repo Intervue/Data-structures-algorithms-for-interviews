@@ -12,6 +12,7 @@ TODO: question14.c
 - union, intersection and difference of two arrays
 - bucket sort
 - radix sort for d digit numbers
+- find maximum sum subarray from an array
 
 ### General Questions
 
@@ -51,6 +52,7 @@ TODO: question14.c
 - [Counting Sort](/arrays/question7.c)
 - [find a pair in an array whose sum is X](/arrays/question8.c)
 - [Moore Voting algorithm to find majority element in an array](/arrays/question9.c)
+- [Find the max difference between any two elements in the array](/arrays/question10.c)
 
 
 # Topic1: Introduction
