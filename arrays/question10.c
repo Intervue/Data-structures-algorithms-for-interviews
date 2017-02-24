@@ -70,6 +70,10 @@ int main(){
 METHOD3
 
 Finding the max number. And then find the min number in the prev numbers that lie before max number
+keep updating the min number as and when new min is found and take the diff with the subsequent elements
+
+Time complexity: O(n)
+Space complexity: O(1)
 
 */
 #include <stdio.h>

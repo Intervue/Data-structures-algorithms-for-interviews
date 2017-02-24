@@ -53,6 +53,12 @@ TODO: question14.c
 - [find a pair in an array whose sum is X](/arrays/question8.c)
 - [Moore Voting algorithm to find majority element in an array](/arrays/question9.c)
 - [Find the max difference between any two elements in the array](/arrays/question10.c)
+- [Find the number occuring odd number of times in a given array](/arrays/question11.c)
+
+
+## Some important concepts to solve algos better
+
+- `XOR` means taking sum of the bits and dividing by two, remainder will be the answer
 
 
 # Topic1: Introduction
