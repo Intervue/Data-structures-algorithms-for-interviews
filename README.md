@@ -55,6 +55,8 @@ TODO: question14.c
 - [Find the max difference between any two elements in the array](/arrays/question10.c)
 - [Find the number occuring odd number of times in a given array](/arrays/question11.c)
 - [Separate 0's and 1's from a given array](/arrays/question12.c)
+- [Seperate even and odd numbers using partition method for separating 0's and 1's](/arrays/question13.c)
+- []() 
 
 
 ## Some important concepts to solve algos better
