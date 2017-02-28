@@ -1,3 +1,13 @@
+# Quick Notes:
+
+### For Arrays: (methods that can be applied)
+
+- sorting and then doing something, hashtable, two pointers in a loop are some of the operations that are popular to solve algos
+- to find all combinations use nested for loops (worst algos)
+- another way is to stop at an element and traverse all its previous elements
+- fixing one number and having two pointers one at start and one at end to make some operation
+- 
+
 #Topic0: Programming Questions
 
 TODO: question14.c
@@ -57,7 +67,7 @@ TODO: question14.c
 - [Separate 0's and 1's from a given array](/arrays/question12.c)
 - [Seperate even and odd numbers using partition method for separating 0's and 1's](/arrays/question13.c)
 - [Given an array A, find two elements whose sum is closest to zero](/arrays/question14.c) 
-- [](/arrays/question15.c)
+- [Find the triplet in given array that sum to given value 'x'](/arrays/question15.c)
 
 ## Some important concepts to solve algos better
 
