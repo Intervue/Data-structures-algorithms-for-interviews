@@ -116,7 +116,7 @@ int main(){
 
 int main(){
 	
-	int a[] = {1,3,1,3,2,8,8,4,4,2,2};
+	int a[] = {2,2,222,222,222,1,1};
 	int length = sizeof(a)/sizeof(a[0]);
 
 	int xor = 0;

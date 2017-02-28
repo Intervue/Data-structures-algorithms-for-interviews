@@ -54,6 +54,7 @@ TODO: question14.c
 - [Moore Voting algorithm to find majority element in an array](/arrays/question9.c)
 - [Find the max difference between any two elements in the array](/arrays/question10.c)
 - [Find the number occuring odd number of times in a given array](/arrays/question11.c)
+- [Separate 0's and 1's from a given array](/arrays/question12.c)
 
 
 ## Some important concepts to solve algos better
