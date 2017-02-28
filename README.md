@@ -23,6 +23,7 @@ TODO: question14.c
 - bucket sort
 - radix sort for d digit numbers
 - find maximum sum subarray from an array
+- find triplet that sums to given value using binary search technique
 
 ### General Questions
 

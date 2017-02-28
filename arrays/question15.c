@@ -9,7 +9,7 @@ Space complexity: O(1)
 METHOD2:
 Sorting and then fixing one number and using two pointers one at 1st position and 1 at last, and checking combinations.
 If nothing found fixing the next number and trying again
-Time complexity: 
+Time complexity: O(nlogn) + O(n^2) which is O(n^2)
 Best case:O(n^2) worst case
 Worst case: O(n)
 Space complexity: O(1)
@@ -45,10 +45,18 @@ int main(){
 
 //METHOD2
 #include <stdio.h>
+#include <stdlib.h>
+
+int compar(void const*a, void const *b){
+	return (*(int*)a-*(int*)b);
+}
 
 int main(){
 	int a[] = {4,3,6,8,2,1,0,9};
 	int length = sizeof(a)/sizeof(a[0]);
+
+	qsort(a,length,sizeof(int),compar);
+
 	int num1, num2, num3,j,k, sum = 10;
 
 	for(int i=0; i<length-2;i++){ //as last two will be covered in while loop always for second and third num
