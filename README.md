@@ -6,7 +6,7 @@
 - to find all combinations use nested for loops (worst algos)
 - another way is to stop at an element and traverse all its previous elements
 - fixing one number and having two pointers one at start and one at end to make some operation
-- 
+- Consider making new arrays if anything does not work or satisfies requirements
 
 #Topic0: Programming Questions
 
