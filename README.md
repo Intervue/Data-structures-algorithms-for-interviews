@@ -7,6 +7,7 @@
 - another way is to stop at an element and traverse all its previous elements
 - fixing one number and having two pointers one at start and one at end to make some operation
 - Consider making new arrays if anything does not work or satisfies requirements
+- Compare those arrays sometimes to find algos
 
 #Topic0: Programming Questions
 
@@ -70,6 +71,7 @@ TODO: question14.c
 - [Given an array A, find two elements whose sum is closest to zero](/arrays/question14.c) 
 - [Find the triplet in given array that sum to given value 'x'](/arrays/question15.c)
 - [Find the equilibrium index of an array](/arrays/question16.c)
+- [](/arrays/question17.c)
 
 ## Some important concepts to solve algos better
 
