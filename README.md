@@ -69,6 +69,7 @@ TODO: question14.c
 - [Seperate even and odd numbers using partition method for separating 0's and 1's](/arrays/question13.c)
 - [Given an array A, find two elements whose sum is closest to zero](/arrays/question14.c) 
 - [Find the triplet in given array that sum to given value 'x'](/arrays/question15.c)
+- [Find the equilibrium index of an array](/arrays/question16.c)
 
 ## Some important concepts to solve algos better
 
