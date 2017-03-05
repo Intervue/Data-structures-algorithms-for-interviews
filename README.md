@@ -2,7 +2,8 @@
 
 ### For Arrays: (methods that can be applied)
 
-- sorting and then doing something, hashtable, two pointers in a loop are some of the operations that are popular to solve algos
+- sorting and then doing something, hashtable, two pointers in a loop are some of the operations that are popular to solve algos.
+Hash table can also be made for storing sum etc.
 - to find all combinations use nested for loops (worst algos)
 - another way is to stop at an element and traverse all its previous elements
 - fixing one number and having two pointers one at start and one at end to make some operation
@@ -13,6 +14,9 @@ only if there is one number that repeats odd number of times
 - If element in an array is to be found, and length is known apply binary search. Will complete the search in O(logn) times. If binary search cant be applied look in sizes of k at a time to limit the search set.
 - We cannot find time complexity of something whose input size is unknown.
 
+# General hash functions
+- take mod with number of elements present
+
 #Topic0: Programming Questions
 
 TODO: 
@@ -20,6 +24,7 @@ TODO:
 - question17.c (arrays), to be done after trees and linkedlist is done
 - question18.c (arrays), to be done after linkedlist is done 
 - question19.c (arrays): to be done after trees is done
+- question20.c (arrays): to be done after hashing (approach 2 and 3)
 
 ## Note:
 **Questions statements are included in the file itself**
@@ -79,10 +84,11 @@ TODO:
 - [Given an array A, find two elements whose sum is closest to zero](/arrays/question14.c) 
 - [Find the triplet in given array that sum to given value 'x'](/arrays/question15.c)
 - [Find the equilibrium index of an array](/arrays/question16.c)
-- [In an array of unknown size having all 0s at one side and all 1s at other, find the index where 1st 1 exists.](/arrays/question17.c) - STILL TO BE DONE
+- [In an array of unknown size having all 0s at one side and all 1s at other, find the index where 1st 1 exists.](/arrays/question17.c)
 - [Given an array and an integer K, find max element for each and every contiguous subarray of size k](/arrays/question18.c)
 - [Count number of smaller elements on the right of each element in an array](/arrays/question19.c)
 - [Find the subarray with the given sum](/arrays/question20.c) 
+- [Consider and array which contains only 0's and 1's. Find largest sub array which contains only 0's and 1's](/arrays/question21.c) 
 
 ## Some important concepts to solve algos better
 

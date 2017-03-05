@@ -13,23 +13,23 @@ Time complexity: O(n^2)
 Time complexity: O(1)
 */
 
-// //METHOD1
-// #include <stdio.h>
-// int main(){
-// 	int a[] = {10,3,4,5,7,1,3,2};
-// 	int length = sizeof(a)/sizeof(a[0]);
-// 	int elm1, counter;
-// 	for(int i=0; i<length; i++){
-// 		elm1 = a[i];
-// 		counter = 0;
-// 		for(int j=i+1;j<length;j++){
-// 			if(elm1 > a[j]){
-// 				counter++;
-// 			}
-// 		}
-// 		printf("%d ", counter);
-// 	}
-// }
+//METHOD1
+#include <stdio.h>
+int main(){
+	int a[] = {10,3,4,5,7,1,3,2};
+	int length = sizeof(a)/sizeof(a[0]);
+	int elm1, counter;
+	for(int i=0; i<length; i++){
+		elm1 = a[i];
+		counter = 0;
+		for(int j=i+1;j<length;j++){
+			if(elm1 > a[j]){
+				counter++;
+			}
+		}
+		printf("%d ", counter);
+	}
+}
 
 //METHOD2
 #include <stdio.h>
