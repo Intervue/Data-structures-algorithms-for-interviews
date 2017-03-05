@@ -7,12 +7,13 @@ Hash table can also be made for storing sum etc.
 - to find all combinations use nested for loops (worst algos)
 - another way is to stop at an element and traverse all its previous elements
 - fixing one number and having two pointers one at start and one at end to make some operation
-- Consider making new arrays if anything does not work or satisfies requirements
+- Consider making new arrays if anything does not work or satisfies requirements.
 - Compare those arrays sometimes to find algos
 - XOR operation can be applied to see the number repeating odd number of times as XOR will return that num
 only if there is one number that repeats odd number of times
 - If element in an array is to be found, and length is known apply binary search. Will complete the search in O(logn) times. If binary search cant be applied look in sizes of k at a time to limit the search set.
 - We cannot find time complexity of something whose input size is unknown.
+- If some number is repeating like in 0s and 1s example, 0 can be changed to -1 for certain operations.
 
 # General hash functions
 - take mod with number of elements present
