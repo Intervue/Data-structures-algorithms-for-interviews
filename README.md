@@ -8,10 +8,18 @@
 - fixing one number and having two pointers one at start and one at end to make some operation
 - Consider making new arrays if anything does not work or satisfies requirements
 - Compare those arrays sometimes to find algos
+- XOR operation can be applied to see the number repeating odd number of times as XOR will return that num
+only if there is one number that repeats odd number of times
+- If element in an array is to be found, and length is known apply binary search. Will complete the search in O(logn) times. If binary search cant be applied look in sizes of k at a time to limit the search set.
+- We cannot find time complexity of something whose input size is unknown.
 
 #Topic0: Programming Questions
 
-TODO: question14.c
+TODO: 
+- question14.c (general), 
+- question17.c (arrays), to be done after trees and linkedlist is done
+- question18.c (arrays), to be done after linkedlist is done 
+- question19.c (arrays): to be done after trees is done
 
 ## Note:
 **Questions statements are included in the file itself**
@@ -71,7 +79,10 @@ TODO: question14.c
 - [Given an array A, find two elements whose sum is closest to zero](/arrays/question14.c) 
 - [Find the triplet in given array that sum to given value 'x'](/arrays/question15.c)
 - [Find the equilibrium index of an array](/arrays/question16.c)
-- [](/arrays/question17.c)
+- [In an array of unknown size having all 0s at one side and all 1s at other, find the index where 1st 1 exists.](/arrays/question17.c) - STILL TO BE DONE
+- [Given an array and an integer K, find max element for each and every contiguous subarray of size k](/arrays/question18.c)
+- [Count number of smaller elements on the right of each element in an array](/arrays/question19.c)
+- [Find the subarray with the given sum](/arrays/question20.c) 
 
 ## Some important concepts to solve algos better
 
