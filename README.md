@@ -9,6 +9,7 @@ Hash table can also be made for storing sum etc.
 - fixing one number and having two pointers one at start and one at end to make some operation
 - Consider making new arrays if anything does not work or satisfies requirements.
 - Compare those arrays sometimes to find algos
+- Cumulative sum or prod can work out to solve algos
 - XOR operation can be applied to see the number repeating odd number of times as XOR will return that num
 only if there is one number that repeats odd number of times
 - If element in an array is to be found, and length is known apply binary search. Will complete the search in O(logn) times. If binary search cant be applied look in sizes of k at a time to limit the search set.
@@ -90,6 +91,7 @@ TODO:
 - [Count number of smaller elements on the right of each element in an array](/arrays/question19.c)
 - [Find the subarray with the given sum](/arrays/question20.c) 
 - [Consider and array which contains only 0's and 1's. Find largest sub array which contains only 0's and 1's](/arrays/question21.c) 
+- [Given an array of n-integers, construct product array such that prod[i] is equal to product of all elements except arr[i] without using division operator](/arrays/question22.c)
 
 ## Some important concepts to solve algos better
 
