@@ -18,70 +18,70 @@ Space complexity: O(n)
 
 */
 
-//METHOD1
-// #include <stdio.h>
-// #include <stdlib.h>
+// METHOD1
+#include <stdio.h>
+#include <stdlib.h>
 
-// void printSubArray(int arr[],int start, int end){
-// 	for(int i=start; i<=end; i++){
-// 		printf("%d",arr[i]);
-// 	}
-// }
+void printSubArray(int arr[],int start, int end){
+	for(int i=start; i<=end; i++){
+		printf("%d",arr[i]);
+	}
+}
 
-// int main(){
+int main(){
 
-// 	int a[] = {1,1,1,1};
-// 	int length = sizeof(a)/sizeof(a[0]);
-// 	int start, end;
+	int a[] = {1,1,1,1};
+	int length = sizeof(a)/sizeof(a[0]);
+	int start, end;
 
-// 	int count_one[length], count_zero[length];
-// 	int ones = 0, zeroes = 0, max_zeroes = 0, max_ones = 0, curr_max_one = 0;
-// 	int leftIndex, rightIndex, noSubArray;
-// 	//for counting 1s in the end
-// 	for(int i=0; i<length;i++){
-// 		if(a[i] == 1){
-// 			ones++;
-// 		}
-// 		count_one[i] = ones;
-// 	}
-// 	//for counting zeroes in the end
-// 	for(int i=0; i<length;i++){
-// 		if(a[i] == 0){
-// 			zeroes++;
-// 		}
-// 		count_zero[i] = zeroes;
-// 	}
+	int count_one[length], count_zero[length];
+	int ones = 0, zeroes = 0, max_zeroes = 0, max_ones = 0, curr_max_one = 0;
+	int leftIndex, rightIndex, noSubArray;
+	//for counting 1s in the end
+	for(int i=0; i<length;i++){
+		if(a[i] == 1){
+			ones++;
+		}
+		count_one[i] = ones;
+	}
+	//for counting zeroes in the end
+	for(int i=0; i<length;i++){
+		if(a[i] == 0){
+			zeroes++;
+		}
+		count_zero[i] = zeroes;
+	}
 
-// 	for(int i=0; i<length;i++){
-// 		start = i;
-// 		for(int j=i+1; j<length;j++){
-// 			end = j;
-// 			if(start == 0){
-// 				max_ones = count_one[end];
-// 				max_zeroes = count_zero[end];	
-// 			}else{
-// 				max_ones = count_one[end] - count_one[i-1];
-// 				max_zeroes = count_zero[end] - count_zero[i-1];
-// 			}
-// 			if(max_ones == max_zeroes){
-// 				if(curr_max_one < max_ones){
-// 					curr_max_one = max_ones;
-// 					leftIndex = start;
-// 					rightIndex = end;
-// 					noSubArray = 0;
-// 				}else{
-// 					noSubArray = 1;
-// 				}
-// 			}
-// 		}
-// 	}
-// 	if(noSubArray){
-// 		printf("no sub array found\n");
-// 	}else{
-// 		printSubArray(a,leftIndex,rightIndex);
-// 	}
+	for(int i=0; i<length;i++){
+		start = i;
+		for(int j=i+1; j<length;j++){
+			end = j;
+			if(start == 0){
+				max_ones = count_one[end];
+				max_zeroes = count_zero[end];	
+			}else{
+				max_ones = count_one[end] - count_one[i-1];
+				max_zeroes = count_zero[end] - count_zero[i-1];
+			}
+			if(max_ones == max_zeroes){
+				if(curr_max_one < max_ones){
+					curr_max_one = max_ones;
+					leftIndex = start;
+					rightIndex = end;
+					noSubArray = 0;
+				}else{
+					noSubArray = 1;
+				}
+			}
+		}
+	}
+	if(noSubArray){
+		printf("no sub array found\n");
+	}else{
+		printSubArray(a,leftIndex,rightIndex);
+	}
 	
-// }
+}
 
 
 //METHOD2
