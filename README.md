@@ -92,6 +92,8 @@ TODO:
 - [Find the subarray with the given sum](/arrays/question20.c) 
 - [Consider and array which contains only 0's and 1's. Find largest sub array which contains only 0's and 1's](/arrays/question21.c) 
 - [Given an array of n-integers, construct product array such that prod[i] is equal to product of all elements except arr[i] without using division operator](/arrays/question22.c)
+- [Find the duplicate in O(n) time and O(1) extra space](/arrays/question23.c)
+
 
 ## Some important concepts to solve algos better
 
