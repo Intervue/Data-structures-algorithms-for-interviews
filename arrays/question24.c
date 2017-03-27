@@ -45,3 +45,49 @@ and check if they are already negative then that value is repeating)
 Time complexity: O(n)
 Space complexity: O(1)
 */
+
+//METHOD4
+#include <stdio.h>
+#include <stdlib.h>
+
+ 
+void findRepeatingNumbers(int arr[], int size){
+	int n = size - 2;
+	int x = 0, y= 0, set_bit, index, result = arr[0];
+
+	for(index = 1; index<size; index++){
+		result ^= arr[index];
+	}
+	for(index = 1; index<=n; index++){
+		result ^= index;
+	}
+
+	set_bit = result & ~(result-1);
+
+	for(index=0; index<size; index++){
+		if(arr[index] & set_bit){
+			x ^= arr[index];
+		}else{
+			y ^= arr[index];
+		}
+	}
+
+	for(index=1; index<=n; index++){
+		if(index & set_bit){
+			x ^= index;
+		}else{
+			y ^= index;
+		}
+	}
+
+	printf("the two repeating numbers are %d and %d\n", x, y);
+}
+
+int main(){
+	int arr[] = {4, 2, 4, 5, 2, 3, 1};
+	int size = sizeof(arr)/sizeof(arr[0]);
+	findRepeatingNumbers(arr, size);
+	return 0;
+}
+
+
