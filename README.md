@@ -17,6 +17,9 @@ only if there is one number that repeats odd number of times
 - If some number is repeating like in 0s and 1s example, 0 can be changed to -1 for certain operations.
 - To find duplicates for array containing elements between 1 to n, iterate, lets say value is 3, go to third index and change value to negative. If value is already negative that means 3 has repeated and so on check for all.
 - You can also use an external variable OR divide array elements into relevant groups by some computation to solve the algo
+- For questions with repeating sub problems, try thinking out using recursion
+- returning a function in recursion which is called will ultimately end of returning the base value 
+which has to be returned
 
 # General hash functions
 - take mod with number of elements present
