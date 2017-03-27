@@ -16,6 +16,7 @@ only if there is one number that repeats odd number of times
 - We cannot find time complexity of something whose input size is unknown.
 - If some number is repeating like in 0s and 1s example, 0 can be changed to -1 for certain operations.
 - To find duplicates for array containing elements between 1 to n, iterate, lets say value is 3, go to third index and change value to negative. If value is already negative that means 3 has repeated and so on check for all.
+- You can also use an external variable OR divide array elements into relevant groups by some computation to solve the algo
 
 # General hash functions
 - take mod with number of elements present
@@ -95,6 +96,7 @@ TODO:
 - [Given an array of n-integers, construct product array such that prod[i] is equal to product of all elements except arr[i] without using division operator](/arrays/question22.c)
 - [Find the duplicate in O(n) time and O(1) extra space](/arrays/question23.c)
 - [Find the two repeating numbers in an array in which all elements are in range 1 to n occuring atleast once](/arrays/question24.c)
+- [Rotate an array of n elements by d elements](/arrays/question25.c)
 
 ## Some important concepts to solve algos better
 
