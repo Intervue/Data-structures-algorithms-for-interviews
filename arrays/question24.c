@@ -38,4 +38,10 @@ Simillarly do the same for the numbers 1 2 3 4 and put them in respective groups
 Each group will not give the repeating number respectively.
 Time complexity: O(n)
 Space complexity: O(1)
+
+
+METHOD5: same as done in question23.c (where we make the respective indexes value negative based on value we get
+and check if they are already negative then that value is repeating)
+Time complexity: O(n)
+Space complexity: O(1)
 */
