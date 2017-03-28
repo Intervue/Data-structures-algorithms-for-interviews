@@ -24,3 +24,31 @@ X+1, X+2...X+N-1 are possible which will include N as well. (Given X is greater 
 The sum that wont be possible in this case will be a number which is positive and outside the range
 which is X+N
 */
+
+//METHOD2
+#include <stdio.h>
+#include <stdlib.h>
+
+int findMinNum(int arr[], int size){
+	int sum = 1; //assume
+	for(int i=0;i<size; i++){
+		if(arr[i] <= sum){
+			sum += arr[i];
+		}else{
+			return sum;
+		}
+	}
+	return sum;
+}
+
+int compar(const void*a, const void*b){
+	return *(int*)a-*(int*)b;
+}
+
+int main(){
+	int a[] = {4,13,2,3,1};
+	int size = sizeof(a)/sizeof(a[0]);
+	qsort(a,size,sizeof(int),compar);
+	printf("min number that cannot be formed %d\n", findMinNum(a,size));
+	return 0;
+}
