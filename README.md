@@ -7,7 +7,7 @@ Hash table can also be made for storing sum etc.
 - to find all combinations use nested for loops (worst algos)
 - another way is to stop at an element and traverse all its previous elements
 - fixing one number and having two pointers one at start and one at end to make some operation
-- Consider making new arrays if anything does not work or satisfies requirements.
+- Consider making new arrays if anything does not work or satisfies requirements. These arrays may contain cumulative sum from left to right or right to left or soul of the algo which can make computation easy.
 - Compare those arrays sometimes to find algos
 - Cumulative sum or prod can work out to solve algos
 - XOR operation can be applied to see the number repeating odd number of times as XOR will return that num
@@ -20,6 +20,7 @@ only if there is one number that repeats odd number of times
 - For questions with repeating sub problems, try thinking out using recursion
 - returning a function in recursion which is called will ultimately end of returning the base value 
 which has to be returned
+- Sometimes if the algo seems to be complicated move to a generalized format where the result is assumed to be N and you are solving it for some x by going from solution to problem, and then try to figure out the algo. (refer question 28.c for more clarification)
 
 # General hash functions
 - take mod with number of elements present
@@ -100,6 +101,9 @@ TODO:
 - [Find the duplicate in O(n) time and O(1) extra space](/arrays/question23.c)
 - [Find the two repeating numbers in an array in which all elements are in range 1 to n occuring atleast once](/arrays/question24.c)
 - [Rotate an array of n elements by d elements](/arrays/question25.c)
+- [Given n non negative integers representing an elevation map where width of each bar is 1. Find the amt. of water that is trapped in between these bars after raining](/arrays/question26.c)
+- [Given an unsorted array of +ve integers, find the number of triangles that can be formed with three different elements as three sides of the triangle](/arrays/question27.c)
+- [Given an array, find the smallest number that is not possible with the sum of numbers from the array](/arrays/question28.c)
 
 ## Some important concepts to solve algos better
 
