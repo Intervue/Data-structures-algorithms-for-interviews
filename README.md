@@ -25,7 +25,7 @@ which has to be returned
 # General hash functions
 - take mod with number of elements present
 
-#Topic0: Programming Questions
+# Topic0: Programming Questions
 
 TODO: 
 - question14.c (general), 
@@ -104,6 +104,8 @@ TODO:
 - [Given n non negative integers representing an elevation map where width of each bar is 1. Find the amt. of water that is trapped in between these bars after raining](/arrays/question26.c)
 - [Given an unsorted array of +ve integers, find the number of triangles that can be formed with three different elements as three sides of the triangle](/arrays/question27.c)
 - [Given an array, find the smallest number that is not possible with the sum of numbers from the array](/arrays/question28.c)
+
+### Linked List
 
 ## Some important concepts to solve algos better
 
