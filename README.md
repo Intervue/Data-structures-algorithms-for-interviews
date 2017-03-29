@@ -107,6 +107,10 @@ TODO:
 
 ### Linked List
 
+- [Program to create a singly linked list, insert and delete nodes and print all of them](/linked-lists/question1.c)
+- [Create a new node and insert it into linked-list](/linked-lists/question2.c)
+- [Delete a node from linked-list](/linked-lists/question3.c)
+
 ## Some important concepts to solve algos better
 
 - `XOR` means taking sum of the bits and dividing by two, remainder will be the answer
