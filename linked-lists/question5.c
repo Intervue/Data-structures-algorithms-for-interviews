@@ -2,10 +2,15 @@
 Recursive program to reverse a linked list
 */
 
+#include <stdio.h>
+#include <stdlib.h>
+
 struct node{
 	int data;
 	struct node *link;
 };
+
+struct node *head;
 
 void printList(struct node *t){
 	if(t){
@@ -15,9 +20,18 @@ void printList(struct node *t){
 	}
 }
 
+void reverse(struct node *prev, struct node *curr){
+	if(curr){
+		reverse(curr, curr->link);
+		curr->link = prev;
+	}else{
+		head = prev;
+	}
+}
+
 int main(){
 
-	struct node *head = (struct node *)malloc(sizeof(struct node));
+	head = (struct node *)malloc(sizeof(struct node));
 
 	struct node *t = head;
 
@@ -39,6 +53,7 @@ int main(){
 	printList(t);
 	t = head;
 
-	
-
+	reverse(NULL,head);
+	t = head;
+	printList(t);
 }
