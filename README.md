@@ -46,6 +46,8 @@ TODO:
 - radix sort for d digit numbers
 - find maximum sum subarray from an array
 - find triplet that sums to given value using binary search technique
+- make a circular linked list with a sentinel
+- double linked list insertion all points and deletion
 
 ### General Questions
 
@@ -110,6 +112,9 @@ TODO:
 - [Program to create a singly linked list, insert and delete nodes and print all of them](/linked-lists/question1.c)
 - [Move the last node to the begining of a linked list](/linked-lists/question2.c)
 - [Traverse a Single linked list using recursion](/linked-lists/question3.c)
+- [Iterative program to reverse a linked list](/linked-lists/question4.c)
+- [Recursive program to reverse a linked list](/linked-lists/question5.c)
+
 
 ## Some important concepts to solve algos better
 

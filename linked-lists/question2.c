@@ -44,16 +44,18 @@ int main(){
 	t = head;
 	printList(t,head);
 	struct node *p;
+
 	while(t->link){
 		p = t;
-		t = t->link;
+		t=t->link;
 	}
-	t->link = NULL;
-	// free(t);
-	p->next = head;
-	head = p;
 
-	t = head;
+	free(t);
+
+	t->link = head;
+	p->link = NULL;
+	head = t;
+
 	printList(t,head);
 
 }
