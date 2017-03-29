@@ -109,7 +109,7 @@ TODO:
 
 - [Program to create a singly linked list, insert and delete nodes and print all of them](/linked-lists/question1.c)
 - [Move the last node to the begining of a linked list](/linked-lists/question2.c)
-- [Delete a node from linked-list](/linked-lists/question3.c)
+- [Traverse a Single linked list using recursion](/linked-lists/question3.c)
 
 ## Some important concepts to solve algos better
 
