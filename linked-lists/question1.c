@@ -113,6 +113,4 @@ int main(){
 	t = head;
 	printList(t,head);
 	t = head;
-
-
 }
