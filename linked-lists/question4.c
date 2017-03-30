@@ -9,6 +9,22 @@ struct node{
 	struct node *link;
 };
 
+void reverse(struct node  **head){
+	//reversing the list
+	struct node *curr, *prev,*nextNode;
+	curr = *head;
+	
+	prev = NULL;
+	while(curr){
+		nextNode = curr->link;
+		curr->link = prev;
+		prev = curr;
+		curr = nextNode;
+		
+	}
+	*head = prev; //assigning the address the updated value
+}
+
 void printList(struct node *t){
 	if(t){
 		//interchanging these lines will print it in reverse order
@@ -41,20 +57,7 @@ int main(){
 	printList(t);
 	t = head;
 	
-	//reversing the list
-	struct node *curr, *prev,*nextNode;
-	curr = head;
-	
-	prev = NULL;
-	while(curr){
-		nextNode = curr->link;
-		curr->link = prev;
-		prev = curr;
-		curr = nextNode;
-		
-	}
-	head = prev;
-
+	reverse(&head); //passing the address of the pointer pointing to the first address of the linked list
 	printList(head);
 
 }	

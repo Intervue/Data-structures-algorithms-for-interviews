@@ -22,6 +22,11 @@ only if there is one number that repeats odd number of times
 which has to be returned
 - Sometimes if the algo seems to be complicated move to a generalized format where the result is assumed to be N and you are solving it for some x by going from solution to problem, and then try to figure out the algo. (refer question 28.c for more clarification)
 
+### For Linked Lists: (methods that can be applied)
+- Use multiple variables to not loose track of the linked list and keep moving them ahead in a manner such that various operations can be done on a linked list
+- If you dont want a function to return a value of something, just send that value to the address of the variable by passing the address of variable as argument and accessing it has **
+
+
 # General hash functions
 - take mod with number of elements present
 
