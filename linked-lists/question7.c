@@ -36,6 +36,27 @@ void printList(struct node *t){
 	printf("\n");
 }
 
+int findElement(struct node *head, int k){
+	struct node *normal, *ahead;
+	normal = ahead = head;
+	int counter = 1;
+	while(counter<k && ahead){
+		ahead = ahead->next;
+		counter++;
+		if(ahead == NULL){
+			return 0;
+		}
+	}
+
+	while(ahead && ahead->next){
+		ahead = ahead->next;
+		normal = normal->next;
+	}
+
+	return normal->data;
+	
+}
+
 int main(){
 
 	int k = 2;
@@ -56,18 +77,6 @@ int main(){
 	t = head;
 	printList(t);
 	t = head;
-	struct node *normal, *ahead;
-	normal = ahead = head;
-	counter = 1;
-	while(counter<=k-1){
-		ahead = ahead->next;
-		counter++;
-	}
-
-	while(ahead && ahead->next){
-		ahead = ahead->next;
-		normal = normal->next;
-	}
 	
-	printf("\nthe %dth element from the end is %d\n",k, normal->data);
+	printf("\nthe %dth element from the end is %d\n",k, findElement(head, 10));
 }
