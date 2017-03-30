@@ -123,6 +123,7 @@ TODO:
 - [Recursive program to reverse a linked list](/linked-lists/question5.c)
 - [Find the middle node of a linked list](/linked-lists/question6.c)
 - [Find the kth node from the end of the linked list](/linked-lists/question7.c)
+- [Given a single linked list. Check if it has a loop](/linked-lists/question8.c)
 
 
 ## Some important concepts to solve algos better
