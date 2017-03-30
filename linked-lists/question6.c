@@ -105,7 +105,7 @@ int main(){
 	int *hash = (int *)malloc(sizeof(int)*10);
 	counter = 1;
 	while(t){
-		hash[counter] = (int)t;
+		hash[counter] = t->data;
 		t = t->next;
 		counter++;
 	}
