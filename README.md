@@ -54,6 +54,7 @@ TODO:
 - find triplet that sums to given value using binary search technique
 - make a circular linked list with a sentinel
 - double linked list insertion all points and deletion
+- hash table implementation used in linked list after hashing is done
 
 ### General Questions
 
