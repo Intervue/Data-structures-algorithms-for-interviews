@@ -25,7 +25,8 @@ which has to be returned
 ### For Linked Lists: (methods that can be applied)
 - Use multiple variables to not loose track of the linked list and keep moving them ahead in a manner such that various operations can be done on a linked list
 - If you dont want a function to return a value of something, just send that value to the address of the variable by passing the address of variable as argument and accessing it has **
-
+- maintain hash table of addresses of the different nodes (first node has this address and so on) to access the value later without traversing
+- maintain multiple pointers. The pointers can be moved at different speeds as per requirements.
 
 # General hash functions
 - take mod with number of elements present
@@ -119,6 +120,7 @@ TODO:
 - [Traverse a Single linked list using recursion](/linked-lists/question3.c)
 - [Iterative program to reverse a linked list](/linked-lists/question4.c)
 - [Recursive program to reverse a linked list](/linked-lists/question5.c)
+- [Find the middle node of a linked list](/linked-lists/question6.c)
 
 
 ## Some important concepts to solve algos better
