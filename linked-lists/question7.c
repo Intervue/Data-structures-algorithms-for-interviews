@@ -13,6 +13,13 @@ This can be done in one traversal only.
 Time complexity: O(n)
 Space complexity: O(1)
 
+
+//METHOD3:
+making a hash table of key and addresses. Only useful if you are going to use it multiple times.
+Also it depends on the value of N as if value is large and hash table size if small it may give collisions
+which may not reduce the time complexity.
+Time complexity: O(n)
+Space complexity: O(n)
 */
 
 //METHOD1
