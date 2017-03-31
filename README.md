@@ -30,6 +30,8 @@ which has to be returned
 - sometimes linked list while designed can have flags to make an algo possible
 - If linked list has a loop, and two pointers are taken one moving at double the speed of other, they will meet at some point inside the loop. The distance from the start of the list to the first node where the loop starts is equal to the distance from where they meet to the first node.
 - Linked list is generally is used to store large numbers which cannot be stored in an int or is used to store polynomials. If numbers are stored in linked list, you will have to apply your own operations (add, subt and so on for that)
+- Use general Data structures like stacks and queues or arrays to sometimes solve the algo.
+- Try connecting the end of the linked list to the front or make a loop to solve an algo.
 
 # General hash functions
 - take mod with number of elements present
@@ -59,6 +61,8 @@ TODO:
 - double linked list insertion all points and deletion
 - hash table implementation used in linked list after hashing is done
 - program to add, mult, subtract two numbers stored in two different linked list and store the result in another linked list
+- storing addresses of a linked list in hash table
+- storing addresses of a linked list in stack and doing operations
 
 
 ### General Questions
@@ -130,6 +134,7 @@ TODO:
 - [Find the kth node from the end of the linked list](/linked-lists/question7.c)
 - [Given a single linked list. Check if it has a loop](/linked-lists/question8.c)
 - [Find the starting node of cycle if cycle exists in a given linked list](/linked-lists/question9.c)
+- [Suppose there are two single linked lists both of which merge at the same point and become a single linked list. Find the node at which they merge](/linked-lists/question10.c)
 
 
 ## Some important concepts to solve algos better
