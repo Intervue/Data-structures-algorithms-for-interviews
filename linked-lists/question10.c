@@ -35,6 +35,16 @@ Time complexity: O(m+n) //total number of nodes in the linked list
 Space complexity: O(1)
 */
 
+//METHOD2
+//still to be discovered how to store addresses in hash table
+
+//METHOD3
+//still to be discovered how to use stacks
+
+//METHOD5
+//aleady done in question9
+
+//METHOD1
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -49,48 +59,27 @@ void printHash(int arr[], int size){
 	}
 }
 
-void findMergeNode(struct node *l1, struct node *l2){
+int count(struct node *head){
+	int counter = 0;
+	for(counter=0;head;head=head->link,counter++);
+	return counter;
+}
 
-	//METHOD2
-	//still to be discovered how to store addresses in hash table
-
-	//METHOD3
-	//still to be discovered how to use stacks
+int findMergeNode(int diff,struct node *head1, struct node *head2){
 
 	//METHOD4
-	struct node *t = l1;
-	int length1 = 1;
-	while(t->link){
-		length1++;
-		t=t->link;
-	};
-	int length2 = 1;
-	t = l2;
-	while(t->link){
-		length2++;
-		t = t->link;
-	}
-	int diff = (length1>length2)?length1-length2:length2-length1;
-	
-	if(length1>length2){
-		t = l1;
-		int counter = 1;
-		while(counter<=diff){
-			t = t->link;
-			counter++;
-		}
-		struct node *t1 = l2;
-		for(;t,t1;t1=t1->link,t=t->link){
-			if(t1 == t){
-				printf("the joining node is%d\n", t->data);
-				break;
-			}
+	for(int count=0;count<diff;head1=head1->link, count++){
+		if(!head1){
+			return -1;
 		}
 	}
 
-	//METHOD5
-	//aleady done in question9
-	
+	for(;head1 && head2;head1=head1->link,head2=head2->link){
+		if(head1==head2){
+			return head1->data;
+		}
+	}
+	return -1;		
 }
 
 void mergeList(struct node *l1, struct node *l2){
@@ -132,8 +121,18 @@ int main(){
 	mergeList(head,head1);
 	printList(head);
 	printList(head1);
-	findMergeNode(head,head1);
-}
+
+	int l1 = count(head);
+	int l2 = count(head1);
+	int diff = abs(l1-l2);
+	printf("difference is %d\n", diff);
+	int value = (l1>l2)?findMergeNode(diff,head,head1):findMergeNode(diff,head1,head);	
+	if(value == -1){
+		printf("there is no node where it merges\n");
+	}else{
+		printf("the value at which it merges is %d\n", value);
+	}
+}	
 
 
 
