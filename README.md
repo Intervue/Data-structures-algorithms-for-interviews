@@ -29,6 +29,7 @@ which has to be returned
 - maintain multiple pointers. The pointers can be moved at different speeds as per requirements.
 - sometimes linked list while designed can have flags to make an algo possible
 - If linked list has a loop, and two pointers are taken one moving at double the speed of other, they will meet at some point inside the loop. The distance from the start of the list to the first node where the loop starts is equal to the distance from where they meet to the first node.
+- Linked list is generally is used to store large numbers which cannot be stored in an int or is used to store polynomials. If numbers are stored in linked list, you will have to apply your own operations (add, subt and so on for that)
 
 # General hash functions
 - take mod with number of elements present
@@ -57,6 +58,8 @@ TODO:
 - make a circular linked list with a sentinel
 - double linked list insertion all points and deletion
 - hash table implementation used in linked list after hashing is done
+- program to add, mult, subtract two numbers stored in two different linked list and store the result in another linked list
+
 
 ### General Questions
 
