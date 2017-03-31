@@ -27,6 +27,8 @@ which has to be returned
 - If you dont want a function to return a value of something, just send that value to the address of the variable by passing the address of variable as argument and accessing it has **
 - maintain hash table of addresses of the different nodes (first node has this address and so on) to access the value later without traversing
 - maintain multiple pointers. The pointers can be moved at different speeds as per requirements.
+- sometimes linked list while designed can have flags to make an algo possible
+- If linked list has a loop, and two pointers are taken one moving at double the speed of other, they will meet at some point inside the loop. The distance from the start of the list to the first node where the loop starts is equal to the distance from where they meet to the first node.
 
 # General hash functions
 - take mod with number of elements present
@@ -124,6 +126,7 @@ TODO:
 - [Find the middle node of a linked list](/linked-lists/question6.c)
 - [Find the kth node from the end of the linked list](/linked-lists/question7.c)
 - [Given a single linked list. Check if it has a loop](/linked-lists/question8.c)
+- [Find the starting node of cycle if cycle exists in a given linked list](/linked-lists/question9.c)
 
 
 ## Some important concepts to solve algos better
