@@ -48,93 +48,93 @@ Space complexity: O(1)
 */
 
 //METHOD1
-// #include <stdio.h>
-// #include <stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-// struct node{
-// 	int data;
-// 	struct node *arb;
-// 	struct node *link;
-// };
+struct node{
+	int data;
+	struct node *arb;
+	struct node *link;
+};
 
-// void makeList(struct node *t, int maxCounter, int mul){
-// 	int counter = 1;
-// 	struct node *temp = t;
-// 	while(counter <=maxCounter){
-// 		t->data = counter*mul;
-// 		if(counter == maxCounter){
-// 			t->link = NULL;	
-// 		}else{
-// 			t->link = (struct node *)malloc(sizeof(struct node));	
-// 		}
-// 		t = t->link;
-// 		counter++;
-// 	}
-// 	counter = 1;
-// 	t = temp;
-// 	while(counter <=maxCounter){
-// 		if(t && t->link && t->link->link){
-// 			t->arb = t->link->link;
-// 		}else if(t && t->link){
-// 			t->arb = t->link;
-// 		}
-// 		else if(temp->link){
-// 			t->arb = temp->link;
-// 		}	
-// 		t=t->link;
-// 		counter++;
-// 	}
-// }
+void makeList(struct node *t, int maxCounter, int mul){
+	int counter = 1;
+	struct node *temp = t;
+	while(counter <=maxCounter){
+		t->data = counter*mul;
+		if(counter == maxCounter){
+			t->link = NULL;	
+		}else{
+			t->link = (struct node *)malloc(sizeof(struct node));	
+		}
+		t = t->link;
+		counter++;
+	}
+	counter = 1;
+	t = temp;
+	while(counter <=maxCounter){
+		if(t && t->link && t->link->link){
+			t->arb = t->link->link;
+		}else if(t && t->link){
+			t->arb = t->link;
+		}
+		else if(temp->link){
+			t->arb = temp->link;
+		}	
+		t=t->link;
+		counter++;
+	}
+}
 
-// void cloneList(struct node *head, struct node *clone){
-// 	for(;head; head=head->link, clone=clone->link){
-// 		clone->data = head->data;
-// 		if(head->link == NULL){
-// 			clone->link = NULL;
-// 		}else{
-// 			clone->link = (struct node *)malloc(sizeof(struct node));	
-// 		}
-// 	}
-// }
+void cloneList(struct node *head, struct node *clone){
+	for(;head; head=head->link, clone=clone->link){
+		clone->data = head->data;
+		if(head->link == NULL){
+			clone->link = NULL;
+		}else{
+			clone->link = (struct node *)malloc(sizeof(struct node));	
+		}
+	}
+}
 
-// void printList(struct node *head){
-// 	if(head){
-// 		printf("(%d, %p) -->", head->data, head->arb);
-// 		printList(head->link);
-// 	}
-// 	printf("\n");
-// }
+void printList(struct node *head){
+	if(head){
+		printf("(%d, %p) -->", head->data, head->arb);
+		printList(head->link);
+	}
+	printf("\n");
+}
 
-// struct node *findPtrInClone(int val, struct node *clone){
-// 	for(;clone; clone=clone->link){
-// 		if(clone->data == val){
-// 			return clone;
-// 		}
-// 	}
-// 	return NULL;
-// }
+struct node *findPtrInClone(int val, struct node *clone){
+	for(;clone; clone=clone->link){
+		if(clone->data == val){
+			return clone;
+		}
+	}
+	return NULL;
+}
 
-// void assignArb(struct node *head, struct node *clone){
-// 	int val, cloneVal;
-// 	struct node *clonehead = clone;
-// 	for(;head;head=head->link,clone=clone->link){
-// 		val = head->arb->data;
-// 		struct node *temp = findPtrInClone(val, clonehead);
-// 		clone->arb = temp;
-// 	}
-// }
+void assignArb(struct node *head, struct node *clone){
+	int val, cloneVal;
+	struct node *clonehead = clone;
+	for(;head;head=head->link,clone=clone->link){
+		val = head->arb->data;
+		struct node *temp = findPtrInClone(val, clonehead);
+		clone->arb = temp;
+	}
+}
 
-// int main(){
+int main(){
 
-// 	struct node *head = (struct node *)malloc(sizeof(struct node));
-// 	struct node *t = head;
-// 	makeList(t,8,100);
-// 	printList(head);
-// 	struct node *clone = (struct node *)malloc(sizeof(struct node));
-// 	cloneList(head, clone);
-// 	assignArb(head,clone);
-// 	printList(clone);
-// }
+	struct node *head = (struct node *)malloc(sizeof(struct node));
+	struct node *t = head;
+	makeList(t,8,100);
+	printList(head);
+	struct node *clone = (struct node *)malloc(sizeof(struct node));
+	cloneList(head, clone);
+	assignArb(head,clone);
+	printList(clone);
+}
 
 //================================================================================================
 //METHOD2: hash table to be done later
@@ -222,9 +222,7 @@ int main(){
 	struct node *head = (struct node *)malloc(sizeof(struct node));
 	struct node *t = head;
 	makeList(t,8,100);
-	// printList(head);
 	cloneList(head);
-	// printList(head);
 	setRandomNode(head);
 	printList(head);
 
