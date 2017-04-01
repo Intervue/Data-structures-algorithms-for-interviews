@@ -66,6 +66,7 @@ TODO:
 - program to add, mult, subtract two numbers stored in two different linked list and store the result in another linked list
 - storing addresses of a linked list in hash table
 - storing addresses of a linked list in stack and doing operations
+- hash table implementation of question12 to be done
 
 
 ### General Questions
