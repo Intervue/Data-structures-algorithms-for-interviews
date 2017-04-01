@@ -32,6 +32,8 @@ which has to be returned
 - Linked list is generally is used to store large numbers which cannot be stored in an int or is used to store polynomials. If numbers are stored in linked list, you will have to apply your own operations (add, subt and so on for that)
 - Use general Data structures like stacks and queues or arrays to sometimes solve the algo.
 - Try connecting the end of the linked list to the front or make a loop to solve an algo.
+- To make games like snakes & ladders, we can use a linked list with a random pointer, next pointer and data.
+Whenever there is a ladder or snake, the random pointer will point there else it will be NULL.
 
 # General hash functions
 - take mod with number of elements present
@@ -136,6 +138,7 @@ TODO:
 - [Find the starting node of cycle if cycle exists in a given linked list](/linked-lists/question9.c)
 - [Suppose there are two single linked lists both of which merge at the same point and become a single linked list. Find the node at which they merge](/linked-lists/question10.c)
 - [Alternating split of a given linked list](/linked-lists/question11.c)
+- [A linked list has three elements- data, link to next node and one random pointer pointing to a random node. Clone the linked list.](/linked-lists/question12.c)
 
 
 ## Some important concepts to solve algos better
