@@ -135,6 +135,7 @@ TODO:
 - [Given a single linked list. Check if it has a loop](/linked-lists/question8.c)
 - [Find the starting node of cycle if cycle exists in a given linked list](/linked-lists/question9.c)
 - [Suppose there are two single linked lists both of which merge at the same point and become a single linked list. Find the node at which they merge](/linked-lists/question10.c)
+- [Alternating split of a given linked list](/linked-lists/question11.c)
 
 
 ## Some important concepts to solve algos better
