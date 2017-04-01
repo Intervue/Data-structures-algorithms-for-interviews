@@ -34,6 +34,7 @@ which has to be returned
 - Try connecting the end of the linked list to the front or make a loop to solve an algo.
 - To make games like snakes & ladders, we can use a linked list with a random pointer, next pointer and data.
 Whenever there is a ladder or snake, the random pointer will point there else it will be NULL.
+- Consider making additional connections (links to the new list or old list) for traversing or reference point of view when there are multiple things involved (random node eg:). New node sometimes can be added in the middle of the two nodes to maintain a connection and so on.
 
 # General hash functions
 - take mod with number of elements present
