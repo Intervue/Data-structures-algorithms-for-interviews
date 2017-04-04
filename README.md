@@ -67,6 +67,7 @@ TODO:
 - storing addresses of a linked list in hash table
 - storing addresses of a linked list in stack and doing operations
 - hash table implementation of question12 to be done
+- use a stack for question13
 
 
 ### General Questions
@@ -141,6 +142,7 @@ TODO:
 - [Suppose there are two single linked lists both of which merge at the same point and become a single linked list. Find the node at which they merge](/linked-lists/question10.c)
 - [Alternating split of a given linked list](/linked-lists/question11.c)
 - [A linked list has three elements- data, link to next node and one random pointer pointing to a random node. Clone the linked list.](/linked-lists/question12.c)
+- [Check whether a given list is a palindrome or not](/linked-lists/question13.c)
 
 
 ## Some important concepts to solve algos better
