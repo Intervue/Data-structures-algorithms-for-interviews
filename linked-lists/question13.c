@@ -20,101 +20,103 @@ Time complexity: O(n)
 Space complexity: O(1)
 */
 
-//METHOD1
-#include <stdio.h>
-#include <stdlib.h>
+// //METHOD1
+// #include <stdio.h>
+// #include <stdlib.h>
 
-struct node{
-	char data;
-	struct node *link;
-};
+// struct node{
+// 	char data;
+// 	struct node *link;
+// };
 
-void printList(struct node *head){
-	for(;head;head=head->link){
-		printf("%c-->", head->data);
-	}
-}
+// void printList(struct node *head){
+// 	for(;head;head=head->link){
+// 		printf("%c-->", head->data);
+// 	}
+// }
 
-void makeList(struct node *head){
-	int count = 0;
-	head->data = 'a';
-	head->link = (struct node *)malloc(sizeof(struct node));
-	head = head->link;
-	head->data = 'r';
-	head->link = (struct node *)malloc(sizeof(struct node));
-	head = head->link;
-	head->data = 'o';
-	head->link = (struct node *)malloc(sizeof(struct node));
-	head = head->link;
-	head->data = 'r';
-	head->link = (struct node *)malloc(sizeof(struct node));
-	head = head->link;
-	head->data = 'a';
-	head->link = NULL;
-}
+// void makeList(struct node *head){
+// 	int count = 0;
+// 	head->data = 'a';
+// 	head->link = (struct node *)malloc(sizeof(struct node));
+// 	head = head->link;
+// 	head->data = 'r';
+// 	head->link = (struct node *)malloc(sizeof(struct node));
+// 	head = head->link;
+// 	head->data = 'o';
+// 	head->link = (struct node *)malloc(sizeof(struct node));
+// 	head = head->link;
+// 	head->data = 'r';
+// 	head->link = (struct node *)malloc(sizeof(struct node));
+// 	head = head->link;
+// 	head->data = 'a';
+// 	head->link = NULL;
+// }
 
-struct node *cloneList(struct node *head){
+// struct node *cloneList(struct node *head){
 	
-	struct node *clone = (struct node *)malloc(sizeof(struct node));
-	struct node *t = clone;
-	while(head){
-		clone->data = head->data;
-		if(head->link){
-			clone->link = (struct node *)malloc(sizeof(struct node));
-		}else{
-			clone->link = NULL;
-		}
-		head = head->link;
-		clone = clone->link;
-	}
+// 	struct node *clone = (struct node *)malloc(sizeof(struct node));
+// 	struct node *t = clone;
+// 	while(head){
+// 		clone->data = head->data;
+// 		if(head->link){
+// 			clone->link = (struct node *)malloc(sizeof(struct node));
+// 		}else{
+// 			clone->link = NULL;
+// 		}
+// 		head = head->link;
+// 		clone = clone->link;
+// 	}
 
-	return t;
+// 	return t;
 
-}	
+// }	
 
-struct node *reverseList(struct node *head){
-	struct node *prev,*next,*curr;
-	curr = head;
-	prev = NULL;
+// struct node *reverseList(struct node *head){
+// 	struct node *prev,*next,*curr;
+// 	curr = head;
+// 	prev = NULL;
 
-	while(curr){
-		next = curr->link;
-		curr->link = prev;
-		prev = curr;
-		curr = next;
-	}
+// 	while(curr){
+// 		next = curr->link;
+// 		curr->link = prev;
+// 		prev = curr;
+// 		curr = next;
+// 	}
 
-	head = prev;
-	return head;
-}
+// 	head = prev;
+// 	return head;
+// }
 
-int palindrome(struct node *head){
+// int palindrome(struct node *head){
+// 	if(head == NULL || head->link == NULL){
+// 		return 1;
+// 	}
+// 	struct node *clone = cloneList(head);
+// 	// printList(clone);
+// 	clone = reverseList(clone);
+// 	// printList(clone);
 
-	struct node *clone = cloneList(head);
-	// printList(clone);
-	clone = reverseList(clone);
-	// printList(clone);
+// 	for(;head && clone;head=head->link, clone=clone->link){
+// 		if(head->data != clone->data){
+// 			return 0;
+// 		}
+// 	}
 
-	for(;head && clone;head=head->link, clone=clone->link){
-		if(head->data != clone->data){
-			return 0;
-		}
-	}
+// 	return 1;
+// }
 
-	return 1;
-}
-
-int main(){
-	struct node *head = (struct node *)malloc(sizeof(struct node));
-	makeList(head);
-	// printList(head);
-	if(palindrome(head)){
-		printf("linked list is a palindrome\n");
-	}else{
-		printf("linked list is NOT a palindrome\n");
-	}
-	return 0;
-}
+// int main(){
+// 	struct node *head = (struct node *)malloc(sizeof(struct node));
+// 	makeList(head);
+// 	// printList(head);
+// 	if(palindrome(head)){
+// 		printf("linked list is a palindrome\n");
+// 	}else{
+// 		printf("linked list is NOT a palindrome\n");
+// 	}
+// 	return 0;
+// }
 
 //===============================================================================================
 //METHOD2: stack to be done later
@@ -181,6 +183,9 @@ struct node *reverseSecondHalf(struct node *head, int mid){
 }
 
 int palindrome(struct node *head){
+	if(head == NULL || head->link == NULL){
+		return 1;
+	}
 	struct node *t = head;
 	int count = 1;
 	while(t){
