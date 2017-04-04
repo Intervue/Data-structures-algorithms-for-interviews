@@ -15,6 +15,12 @@ end of list having min.
 Time complexity: O(m+n)
 Space complexity: O(1)
 
+METHOD3:
+If a new linked list was to be formed then each time comparison could be one and smaller element could be
+moved to the new list by having two pointers
+Time complexity: O(m+n)
+Space complexity: O(m+n)
+
 */
 //METHOD2
 
