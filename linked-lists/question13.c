@@ -178,6 +178,7 @@ struct node *reverseSecondHalf(struct node *head, int mid){
 		head = head->link;
 		count++;
 	}
+	printf("%c\n", head->data);
 	head = reverseList(head);
 	return head;
 }
