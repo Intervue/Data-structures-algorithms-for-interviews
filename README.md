@@ -35,6 +35,7 @@ which has to be returned
 - To make games like snakes & ladders, we can use a linked list with a random pointer, next pointer and data.
 Whenever there is a ladder or snake, the random pointer will point there else it will be NULL.
 - Consider making additional connections (links to the new list or old list) for traversing or reference point of view when there are multiple things involved (random node eg:). New node sometimes can be added in the middle of the two nodes to maintain a connection and so on.
+- Linked list questions mostly can be solved by making connections using ptrs, reversing, having multiple ptrs, using different data structures etc.
 
 # General hash functions
 - take mod with number of elements present
@@ -68,7 +69,9 @@ TODO:
 - storing addresses of a linked list in stack and doing operations
 - hash table implementation of question12 to be done
 - use a stack for question13
-
+- heap to solve question15 (merge k sorted linked lists into one)
+-  question 15
+- merge sort on linked list
 
 ### General Questions
 
@@ -144,6 +147,9 @@ TODO:
 - [A linked list has three elements- data, link to next node and one random pointer pointing to a random node. Clone the linked list.](/linked-lists/question12.c)
 - [Check whether a given list is a palindrome or not](/linked-lists/question13.c)
 - [Merge two sorted linked-lists into one sorted linked-list](/linked-lists/question14.c)
+- [Merge K sorted linked lists of size N into one sorted linked list](/linked-lists/question15.c)
+- [Apply merge sort on linked list](/linked-lists/question16.c)
+- [Consider a single linked list with each node having an arbitrary pointer with initial value NULL.Give an algorithm to make the arbitrary pointer point to the greatest value node on its right side.](/linked-lists/question17.c)
 
 
 ## Some important concepts to solve algos better
