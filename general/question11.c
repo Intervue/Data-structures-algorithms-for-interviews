@@ -5,6 +5,8 @@
    POWERS OF TWO.
    Input: A positive integer.
    Output : "yes" if the number is power of two, else "no".    [2]
+
+   http://stackoverflow.com/questions/1053582/how-does-this-bitwise-operation-check-for-a-power-of-2
 */
 #include <stdio.h>
 

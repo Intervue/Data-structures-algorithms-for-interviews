@@ -71,8 +71,9 @@ TODO:
 - hash table implementation of question12 to be done
 - use a stack for question13
 - heap to solve question15 (merge k sorted linked lists into one)
--  question 15
+-  question 15 linked list
 - merge sort on linked list
+- XOR operation double linked list
 
 ### General Questions
 
