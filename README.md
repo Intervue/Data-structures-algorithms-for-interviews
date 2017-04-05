@@ -36,6 +36,7 @@ which has to be returned
 Whenever there is a ladder or snake, the random pointer will point there else it will be NULL.
 - Consider making additional connections (links to the new list or old list) for traversing or reference point of view when there are multiple things involved (random node eg:). New node sometimes can be added in the middle of the two nodes to maintain a connection and so on.
 - Linked list questions mostly can be solved by making connections using ptrs, reversing, having multiple ptrs, using different data structures etc.
+- You can traverse a double linked list both ways having a single pointer using XOR operation (question18)
 
 # General hash functions
 - take mod with number of elements present
@@ -150,6 +151,7 @@ TODO:
 - [Merge K sorted linked lists of size N into one sorted linked list](/linked-lists/question15.c)
 - [Apply merge sort on linked list](/linked-lists/question16.c)
 - [Consider a single linked list with each node having an arbitrary pointer with initial value NULL.Give an algorithm to make the arbitrary pointer point to the greatest value node on its right side.](/linked-lists/question17.c)
+-[Insertion and deletion in memory efficient double linked lists](/linked-lists/question18.c)
 
 
 ## Some important concepts to solve algos better
