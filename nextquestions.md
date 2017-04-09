@@ -1,0 +1,24 @@
+### COMING SOON
+
+- merge sort using dynamic programming and hashmaps
+- duplicate elimination from an array
+- union, intersection and difference of two arrays
+- bucket sort
+- radix sort for d digit numbers
+- find maximum sum subarray from an array
+- find triplet that sums to given value using binary search technique
+- make a circular linked list with a sentinel
+- double linked list insertion all points and deletion
+- hash table implementation used in linked list after hashing is done
+- program to add, mult, subtract two numbers stored in two different linked list and store the result in another linked list
+- storing addresses of a linked list in hash table
+- storing addresses of a linked list in stack and doing operations
+- hash table implementation of question12 to be done
+- use a stack for question13
+- heap to solve question15 (merge k sorted linked lists into one)
+-  question 15 linked list
+- merge sort on linked list
+- XOR operation double linked list
+- question1 on hashing
+- binary search method to be done on hashing for question2
+- BBST for question2 hashing
