@@ -42,6 +42,7 @@ greater than size of elements to be stored.
 - Solve using chaining or linear probing
 - Heap, BBST-AVL are some popular data structures that can be also used for questions involving hash table.
 - Binary search is very widely used. Can only be applied if the length of array is known and if array is sorted.
+- Sometimes, scanning once and searching and keeping additional variables for check can do the job.
 
 # General hash functions
 - take mod with number of elements present
@@ -145,6 +146,7 @@ TODO:
 - [Check whether given array contains duplicates in k-distance or not](/hashing/question1.c)
 - [Check whether two sets given are disjoint or not](/hashing/question2.c)
 - [Group all the occurences of the elements order by their first occurence](/hashing/question3.c)
+- [Given an array A, Count the distinct elements in all windows of size K](/hashing/question4.c)
 
 
 ## Some important concepts to solve algos better
