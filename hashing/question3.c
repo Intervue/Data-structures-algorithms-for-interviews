@@ -36,9 +36,9 @@ struct hash{
 };
 
 struct node{
-	int key;
+	int key,count;
 	struct node *next;
-}
+};
 
 struct hash *hashTable = NULL;
 
@@ -46,19 +46,43 @@ struct node *createNode(int key){
 	struct node *newnode = (struct node *)malloc(sizeof(struct node));
 	newnode->next = NULL;
 	newnode->key = key;
+	newnode->count = 1;
 	return newnode;	
+}
+
+struct node *searchInHash(int key, struct hash *hashTable, int size){
+	int hashIndex = key%size;
+	struct node *t;
+	if(hashTable[hashIndex].head){
+		t=hashTable[hashIndex].head;
+		while(t){
+			if(t->key==key){
+				return t;
+			}
+			t=t->next;
+		}
+	}
+	return NULL;	
 }
 
 void insertInHash(int key, int size){
 	int hashIndex = key%size;
-	struct node *newnode = createNode(key);
-	if(!hashTable[hashIndex].head){
+	//search if key exists already, if yes then increment its count else create a new node
+	struct node *exist = searchInHash(key, hashTable,size);
+	if(exist){
+		exist->count++;
+	}else{
+		struct node *newnode = createNode(key);
+		if(!hashTable[hashIndex].head){
+			hashTable[hashIndex].head = newnode;
+			hashTable[hashIndex].count++;
+			return;
+		}
+		newnode->next = hashTable[hashIndex].head;
 		hashTable[hashIndex].head = newnode;
-		return;
+		hashTable[hashIndex].count++;
+		return;	
 	}
-	newnode->next = hashTable[hashIndex].head;
-	hashTable[hashIndex].head = newnode;
-	return;
 }
 
 void groupByElements(int arr[], int size){
@@ -68,8 +92,17 @@ void groupByElements(int arr[], int size){
 		insertInHash(arr[i], hashSize);
 	}
 
-	//create a new empty array and search in hash and make elements as per that TODO
-
+	int new_arr[size];
+	struct node *exist = NULL; int max = 1;
+	for(int j=0;j<size;j++){
+		exist = searchInHash(arr[j],hashTable,hashSize);
+		if(exist){
+			for(int k=j; k<exist->count+j;k++){
+				printf("%d\n", exist->key);
+			}
+			exist->count = 0;
+		}
+	}
 }
 
 int main(){
