@@ -22,3 +22,5 @@
 - question1 on hashing
 - binary search method to be done on hashing for question2
 - BBST for question2 hashing
+- BBST for question3 hashing and first method to be done
+- how to accurately find the size of the hashTable

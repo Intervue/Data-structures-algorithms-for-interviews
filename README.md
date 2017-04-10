@@ -22,6 +22,27 @@ only if there is one number that repeats odd number of times
 which has to be returned
 - Sometimes if the algo seems to be complicated move to a generalized format where the result is assumed to be N and you are solving it for some x by going from solution to problem, and then try to figure out the algo. (refer question 28.c for more clarification)
 
+### For Linked Lists: (methods that can be applied)
+- Use multiple variables to not loose track of the linked list and keep moving them ahead in a manner such that various operations can be done on a linked list
+- If you dont want a function to return a value of something, just send that value to the address of the variable by passing the address of variable as argument and accessing it has **
+- maintain hash table of addresses of the different nodes (first node has this address and so on) to access the value later without traversing
+- maintain multiple pointers. The pointers can be moved at different speeds as per requirements.
+- sometimes linked list while designed can have flags to make an algo possible
+- If linked list has a loop, and two pointers are taken one moving at double the speed of other, they will meet at some point inside the loop. The distance from the start of the list to the first node where the loop starts is equal to the distance from where they meet to the first node.
+- Linked list is generally is used to store large numbers which cannot be stored in an int or is used to store polynomials. If numbers are stored in linked list, you will have to apply your own operations (add, subt and so on for that)
+- Use general Data structures like stacks and queues or arrays to sometimes solve the algo.
+- Try connecting the end of the linked list to the front or make a loop to solve an algo.
+- To make games like snakes & ladders, we can use a linked list with a random pointer, next pointer and data.
+Whenever there is a ladder or snake, the random pointer will point there else it will be NULL.
+- Consider making additional connections (links to the new list or old list) for traversing or reference point of view when there are multiple things involved (random node eg:). New node sometimes can be added in the middle of the two nodes to maintain a connection and so on.
+
+### For Hashing: (methods that can be applied)
+-  When solving questions divide value with the size of the hashTable. Keep the size of the hash table one
+greater than size of elements to be stored.
+- Solve using chaining or linear probing
+- Heap, BBST-AVL are some popular data structures that can be also used for questions involving hash table.
+- Binary search is very widely used. Can only be applied if the length of array is known and if array is sorted.
+
 # General hash functions
 - take mod with number of elements present
 
@@ -123,6 +144,7 @@ TODO:
 - [General question to understand chaining](/hashing/general-question2.c)
 - [Check whether given array contains duplicates in k-distance or not](/hashing/question1.c)
 - [Check whether two sets given are disjoint or not](/hashing/question2.c)
+- [Group all the occurences of the elements order by their first occurence](/hashing/question3.c)
 
 
 ## Some important concepts to solve algos better
