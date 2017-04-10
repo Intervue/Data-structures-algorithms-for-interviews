@@ -147,6 +147,7 @@ TODO:
 - [Check whether two sets given are disjoint or not](/hashing/question2.c)
 - [Group all the occurences of the elements order by their first occurence](/hashing/question3.c)
 - [Given an array A, Count the distinct elements in all windows of size K](/hashing/question4.c)
+- [Given an array and a range, find the elements that are in the range but not in the array](/hashing/question5.c)
 
 
 ## Some important concepts to solve algos better

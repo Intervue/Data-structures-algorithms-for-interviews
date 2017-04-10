@@ -28,40 +28,92 @@ Time complexity: O(n)
 Space complexity: O(1)
 */
 
-//METHOD1
+// //METHOD1
+// #include <stdio.h>
+// #include <stdlib.h>
+
+// void findUniqueWindowWise(int arr[],int limit, int size){
+// 	int sum = 0, flag = 0;
+// 	int i,j,k;
+	
+// 	for(i=0; i<size-limit+1;i++){
+// 		for(j=i; j<limit+i;j++){	
+// 			int temp = arr[j];
+// 			for(k=i;k<limit+i;k++){
+// 				if(k==j){
+// 					continue;
+// 				}else{
+// 					if(temp == arr[k]){
+// 						flag = 1;
+// 					}
+// 				}
+// 			}
+// 			if(!flag){
+// 				sum++;
+// 			}
+// 			flag = 0;
+// 		}
+// 		printf("%d\n", sum);
+// 		sum = 0;
+// 	}
+// }
+
+// int main(){
+// 	int arr[] = {10,10,20,30,30,40,10};
+// 	int size = sizeof(arr)/sizeof(arr[0]);
+// 	int k = 3;
+// 	findUniqueWindowWise(arr,k, size);
+// 	return 0;
+// }
+
+// //================================================================================================
+// //METHOD2
+// #include <stdio.h>
+// #include <stdlib.h>
+
+// void findUniqueWindowWise(int arr[],int limit, int size){
+// 	int i,j,k, sum=0;
+// 	for(i=0;i<size-limit+1;i++){
+// 		for(j=i+1;j<limit+i;j++){
+// 			//ASSUMING THAT IT IS SORTED
+// 			int temp = arr[j];
+// 			if(temp != arr[j-1]){
+// 				sum++;
+// 				if(sum == limit-1){
+// 					sum++;
+// 				}
+// 			}
+// 		}
+// 		printf("%d\n", sum);
+// 		sum = 0;
+// 	}
+// }
+
+// int main(){
+// 	int arr[] = {10,10,20,30,30,40,50};
+// 	int size = sizeof(arr)/sizeof(arr[0]);
+// 	int k = 3;
+// 	findUniqueWindowWise(arr,k, size);
+// 	return 0;
+// }
+//================================================================================================
+//METHOD3
 #include <stdio.h>
 #include <stdlib.h>
 
+struct node{
+
+};
+
 void findUniqueWindowWise(int arr[],int limit, int size){
-	int sum = 0, flag = 0;
-	int i,j,k;
 	
-	for(i=0; i<size-limit+1;i++){
-		for(j=i; j<limit+i;j++){	
-			int temp = arr[j];
-			for(k=i;k<limit+i;k++){
-				if(k==j){
-					continue;
-				}else{
-					if(temp == arr[k]){
-						flag = 1;
-					}
-				}
-			}
-			if(!flag){
-				sum++;
-			}
-			flag = 0;
-		}
-		printf("%d\n", sum);
-		sum = 0;
-	}
 }
 
 int main(){
-	int arr[] = {10,10,20,30,30,40,10};
+	int arr[] = {10,10,20,30,30,40,50};
 	int size = sizeof(arr)/sizeof(arr[0]);
 	int k = 3;
 	findUniqueWindowWise(arr,k, size);
 	return 0;
 }
+
