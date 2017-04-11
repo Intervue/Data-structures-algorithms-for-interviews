@@ -43,6 +43,7 @@ greater than size of elements to be stored.
 - Heap, BBST-AVL are some popular data structures that can be also used for questions involving hash table.
 - Binary search is very widely used. Can only be applied if the length of array is known and if array is sorted.
 - Sometimes, scanning once and searching and keeping additional variables for check can do the job.
+- In hashing the structure can vary as per requirements. It can store anything from sum to frequency to pointers. So decide the structure as per always.
 
 # General hash functions
 - take mod with number of elements present
@@ -148,7 +149,8 @@ TODO:
 - [Group all the occurences of the elements order by their first occurence](/hashing/question3.c)
 - [Given an array A, Count the distinct elements in all windows of size K](/hashing/question4.c)
 - [Given an array and a range, find the elements that are in the range but not in the array](/hashing/question5.c)
-
+- [Given an array, print all subarrays in the array which has sum 0](/hashing/question6.c)
+- [Find four elements i,j,k and l in an array such that i+j=k+l](/hashing/question7.c)
 
 ## Some important concepts to solve algos better
 
@@ -158,6 +160,7 @@ TODO:
 - 'XOR' of zero with a number is the number itself
 - '1s compliment is number obtained by reversing all the bits in the binary representation of a number. o to 1 and 1 to 0'
 - Linear hashing is (h(k) + i)modm (where m is the size of the hash table, h(k) is the hash function that takes the key k and returns a value i is the parameter that is incremented to get different values)
+- Subarrays of an array are always contiguous whereas subsequence may not be contiguous
 
 # Topic1: Introduction
 
