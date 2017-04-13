@@ -108,7 +108,6 @@ void findAllPairs(int arr[], int size){
 	// display(hashSize);
 	for(int j=0;j<hashSize;j++){
 		if(hashTable[j].count > 1){
-			// printf("HERE\n");
 			printCombinations(hashSize, j);
 		}
 	}

@@ -152,6 +152,12 @@ TODO:
 - [Given an array, print all subarrays in the array which has sum 0](/hashing/question6.c)
 - [Find four elements i,j,k and l in an array such that i+j=k+l](/hashing/question7.c)
 
+
+### Stacks & Queues
+
+- [Implement a stack using arrays & linked-list](/stacks/question1.c)
+
+
 ## Some important concepts to solve algos better
 
 - `XOR` means taking sum of the bits and dividing by two, remainder will be the answer
@@ -161,6 +167,7 @@ TODO:
 - '1s compliment is number obtained by reversing all the bits in the binary representation of a number. o to 1 and 1 to 0'
 - Linear hashing is (h(k) + i)modm (where m is the size of the hash table, h(k) is the hash function that takes the key k and returns a value i is the parameter that is incremented to get different values)
 - Subarrays of an array are always contiguous whereas subsequence may not be contiguous
+- There are only two ways to make any data structure one is to use an array (where size is fixed and memory is contiguous) OR you can use the heap memory (structures and linked list). So Array and linked list or combo of these two are used to implement any data structure. In most cases linked list takes more time to do operations if data structure is implemented using it. But advantage is dynamic memory allocation
 
 # Topic1: Introduction
 
