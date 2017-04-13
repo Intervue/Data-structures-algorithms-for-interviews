@@ -22,5 +22,102 @@ Store the above in a hashtable instead of BST. The hashtable will have sum as in
 contain pointer to a list.
 Time complexity: O(n^2) //as insertion and search will now be in O(1)
 Space complexity: O(n^2) //size of hash table
-
 */
+
+//METHOD1: regular method implement yourself
+//===========================================================================================
+//METHOD2: binary search tree. to be done later
+//===========================================================================================
+//METHOD3: (open addressing used with a twist along with linked list)
+#include <stdio.h>
+#include <stdlib.h>
+
+struct hash *hashTable = NULL;
+
+struct hash{
+	int sum, count;
+	struct node *head;
+};
+
+struct node{
+	int num1,num2;
+	struct node *next;
+};
+
+void insertInHash(int num1, int num2, int size){
+	int sum = num1+num2;
+	int index = sum%size;
+	int position = index;
+
+	for(int count = 0; count < size; count++){
+		if(!hashTable[position].sum){
+			hashTable[position].sum = sum;
+			struct node *newnode = (struct node *)malloc(sizeof(struct node));
+			newnode->next = NULL;
+			newnode->num1 = num1;
+			newnode->num2 = num2;
+			hashTable[position].head = newnode;
+			hashTable[position].count++;
+			break;
+		}else{
+			if(hashTable[position].sum == sum){
+				struct node *newnode = (struct node *)malloc(sizeof(struct node));
+				newnode->num1 = num1;
+				newnode->num2 = num2;
+				newnode->next = hashTable[position].head;
+				hashTable[position].head = newnode;
+				hashTable[position].count++;
+				break;
+			}else{
+				position = (count + position)%size;
+			}
+		}
+	}
+}
+
+void printCombinations(int size, int index){
+	struct node *t = hashTable[index].head;
+	printf("sum is %d\n", hashTable[index].sum);
+	printf("for combinations\n");
+	while(t){
+		printf("%d\t,%d\n",t->num1,t->num2);
+		t = t->next;
+		printf("-----------------------------\n");
+	}
+	printf("==============================\n");
+}
+
+void display(int size){
+
+	for(int i=0;i<size;i++){
+		printf("sum is %d\n", hashTable[i].sum);
+		printf("count is %d\n", hashTable[i].count);
+		printf("===================\n");
+	}
+
+}
+
+void findAllPairs(int arr[], int size){
+	int hashSize = size+1;
+	hashTable = (struct hash *)calloc(hashSize,sizeof(struct hash));
+	for(int i=0; i<size-1; i++){
+		for(int j=i+1; j<size;j++){
+			insertInHash(arr[i],arr[j],hashSize);
+		}
+	}
+	// display(hashSize);
+	for(int j=0;j<hashSize;j++){
+		if(hashTable[j].count > 1){
+			// printf("HERE\n");
+			printCombinations(hashSize, j);
+		}
+	}
+}
+
+int main(){
+	int arr[] = {6,2,3,4,5,10,1};
+	int size = sizeof(arr)/sizeof(arr[0]);
+	findAllPairs(arr,size);
+
+	return 0;
+}

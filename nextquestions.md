@@ -25,4 +25,4 @@
 - BBST for question3 hashing and first method to be done
 - how to accurately find the size of the hashTable
 - BST question5 hashing to be done
-- 
+- hashing question7 method3 to be done using BST
