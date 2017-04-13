@@ -158,6 +158,7 @@ TODO:
 
 - [Implement a stack using arrays & linked-list](/stacks-and-queues/question1.c)
 - [Implement a queue using circular array](/stacks-and-queues/question2.c)
+- [Implement a queue using two stacks](/stacks-and-queues/question3.c)
 
 
 ## Some important concepts to solve algos better
