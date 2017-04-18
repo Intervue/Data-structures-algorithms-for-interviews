@@ -159,6 +159,7 @@ TODO:
 - [Implement a stack using arrays & linked-list](/stacks-and-queues/question1.c)
 - [Implement a queue using circular array](/stacks-and-queues/question2.c)
 - [Implement a queue using two stacks](/stacks-and-queues/question3.c)
+- [](/stacks-and-queues/question4.c)
 
 
 ## Some important concepts to solve algos better
@@ -171,6 +172,8 @@ TODO:
 - Linear hashing is (h(k) + i)modm (where m is the size of the hash table, h(k) is the hash function that takes the key k and returns a value i is the parameter that is incremented to get different values)
 - Subarrays of an array are always contiguous whereas subsequence may not be contiguous
 - There are only two ways to make any data structure one is to use an array (where size is fixed and memory is contiguous) OR you can use the heap memory (structures and linked list). So Array and linked list or combo of these two are used to implement any data structure. In most cases linked list takes more time to do operations if data structure is implemented using it. But advantage is dynamic memory allocation
+- For INFIX to POSTFIX conversion, data structure used is stack. In stack all the operators are stored. For evaluation of POSTFIX stack is used to store operands
+- Evaluating and expression = convert from INFIX to postfix --> Evaluate POSTFIX. Time complexity: O(n)
 
 # Topic1: Introduction
 

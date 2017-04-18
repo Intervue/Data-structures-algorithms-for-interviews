@@ -27,3 +27,5 @@
 - BST question5 hashing to be done
 - hashing question7 method3 to be done using BST
 - question4 hashing to be done
+- stacks and queues better implementation to be done
+- stacks and queues INFIX to POSTFIX & evaluating POSTFIX
