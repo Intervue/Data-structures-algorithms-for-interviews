@@ -1,6 +1,8 @@
 /*
 Implement a queue using two stacks
 
+It means ENQUEUE and DEQUEUE should use push and pop operations inside it.
+
 If n elements are to be inserted on to a queue implemented using two stacks and m have to be deleted
           Push Pop
 Best case m+n  2m
@@ -11,39 +13,39 @@ Work Case 2n   n+m
 #include <stdlib.h>
 #define MAX 50
 
-void push(int arr[],int data,int *top){
-	if(*top == MAX-1){
+void push(int arr[],int data, int *ptr){
+	if(*ptr == MAX-1){
 		printf("overflow\n");
 		return;
+	}	
+	arr[++(*ptr)] = data;
+}
+
+int pop(int arr[],int *ptr){
+	if(*ptr == -1){
+		printf("underflow\n");
+		return -1;
 	}
-	arr[++*top]=data;
-}
-
-void insert(int arr[],int data, int *top){
-	push(arr,data,top);
-}
-
-int pop(int arr[], int *top){
-	int data = arr[*top];
-	*top--;
+	int data = arr[(*ptr)--];
 	return data;
 }
 
-int delete(int arr2[], int arr1[],int *top2, int *top1){
-	int elm;
-	if(*top2==-1){
-		if(*top1==-1){
-			return -1; //this can be an error code
-		}
+void enqueue(int arr[],int data, int *top1){
+	push(arr,data,top1);
+}
+
+int dequeue(int arr1[], int arr2[],int *top1, int *top2){
+	int data, result;
+	if(*top2 == -1 && *top1 == -1){
+		return -1;
 	}else{
-		while(*top2 >= 0){
-			int data = pop(arr2, *top2);
-			*top2--;
-			push(arr1,data,*top1);
+		while(*top1 != -1){
+			data = pop(arr1,top1);
+			push(arr2,data,top2);
 		}
-		elm = pop(arr1,top1);
-		return elm;
+		result = pop(arr2,top2);
 	}
+	return result;
 }
 
 int main(){
@@ -60,15 +62,14 @@ int main(){
 		switch(step){
 			case 1: printf("enter element to be pushed\n");
 				scanf("%d",&elm);
-				insert(stack2,elm, &top2);
+				enqueue(stack1,elm, &top1);
 				break;
-			case 2: result = delete(stack2,stack1,&top2,&top1);
-				if(result == -1){
+			case 2: result = dequeue(stack1, stack2,&top1, &top2);
+				if(result < 0){
 					printf("already empty\n");
 				}else{
-					printf("%d was popped\n", result);
-				}
-
+					printf("%d was deleted\n", result);
+				}	
 				break;
 			case 3: exit(1);
 				break;
