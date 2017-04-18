@@ -46,6 +46,16 @@ greater than size of elements to be stored.
 - Sometimes, scanning once and searching and keeping additional variables for check can do the job.
 - In hashing the structure can vary as per requirements. It can store anything from sum to frequency to pointers. So decide the structure as per always.
 
+### For Stacks & Queues: (methods that can be applied)
+- For a stack and queue for each implementation or algo its core functionalities should hold true everytime.
+Eg popping and pushing on a stack takes O(1) time.
+- For making a stack using two queues or vice-versa either burden can be on push operation or pop operation. The one having burden will hold the task of enqueuing and dequeuing to move it to the other stack or queue.
+Refer to stacks and queues question4 for more info
+- For questions in stacks and queues use additional stacks/queues as datastructures to implement some algorithms
+- You can store the minimum or max in other stack/queue or data structure for every push and pop and so on.
+For eg storing the minimum so far in another stack so that each time when a number if popped off, if we pop off the minimum from the other stack, we will have min from the remaining elements sitting on top of the other stack. Like this many operations can be applied.
+- You can also modify the numbers being pushed onto a stack and maintain an external reference by doing some computations to make an algorithm work. (Eg question5).
+
 # General hash functions
 - take mod with number of elements present
 
@@ -160,6 +170,7 @@ TODO:
 - [Implement a queue using circular array](/stacks-and-queues/question2.c)
 - [Implement a queue using two stacks](/stacks-and-queues/question3.c)
 - [Implement a stack using queues](/stacks-and-queues/question4.c)
+- [Design a stack such that get Minimum should be O(1)](/stacks-and-queues/question5.c)
 
 
 ## Some important concepts to solve algos better
