@@ -55,6 +55,7 @@ Refer to stacks and queues question4 for more info
 - You can store the minimum or max in other stack/queue or data structure for every push and pop and so on.
 For eg storing the minimum so far in another stack so that each time when a number if popped off, if we pop off the minimum from the other stack, we will have min from the remaining elements sitting on top of the other stack. Like this many operations can be applied.
 - You can also modify the numbers being pushed onto a stack and maintain an external reference by doing some computations to make an algorithm work. (Eg question5).
+- Stack is useful where something is to be computed for every element but it is going to come late after iterating over various other elements. Since it has to follow a sequence, the no. for which computation cannot be done as of now can be pushed in the stack. The number for which computation is done can be popped off from the stack (eg. question6)
 
 # General hash functions
 - take mod with number of elements present
@@ -171,6 +172,7 @@ TODO:
 - [Implement a queue using two stacks](/stacks-and-queues/question3.c)
 - [Implement a stack using queues](/stacks-and-queues/question4.c)
 - [Design a stack such that get Minimum should be O(1)](/stacks-and-queues/question5.c)
+- [Given an array, find the closest greater element which is present on the right side of the element](/stacks-and-queues/question6.c)
 
 
 ## Some important concepts to solve algos better
