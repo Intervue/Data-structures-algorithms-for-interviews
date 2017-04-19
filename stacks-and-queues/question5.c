@@ -26,3 +26,119 @@ new min so far value should be 2-(-7) which is 9. This way the whole algo will w
 Time complexity: O(1)
 Space complexity: O(1)
 */
+//METHOD2
+#include <stdio.h>
+#include <stdlib.h>
+#define MAX 20
+
+void push(int arr[],int data, int *top,int *min){
+	if(*top == MAX-1){
+		printf("overflow\n");
+		return;
+	}
+	int temp;
+	if(*top == -1){
+		*min = data;	
+	}else{
+		temp = *min;
+		if(*min > data){
+			*min = data;
+			data = data-temp;
+		}
+	}
+	printf("INSERTING... %d\n", data);
+	printf("new min value... %d\n", *min);
+	arr[++(*top)]=data;
+}
+
+int pop(int arr[],int *top, int *min){
+	int result;
+	if(*top == -1){
+		*min = 0;
+		return -1;
+	}
+	if(arr[*top]<*min){
+		result = *min;
+		*min = *min - arr[*top];
+	}else{
+		result = arr[*top];
+	}	
+	*top = *top - 1;
+	printf("new top value %d\n", *top);
+	printf("POPPING... %d\n", result);
+	printf("updated min value... %d\n", *min);
+	return result;	
+}
+
+int main(){
+	int arr[MAX];
+	int step,elm,result,top=-1,min;
+	while(1){
+		printf("1. PUSH element\n");
+		printf("2. POP element\n");
+		printf("3. Get Minimum\n");
+		printf("4. EXIT \n");
+		scanf("%d",&step);
+
+		switch(step){
+			case 1: printf("enter element to be pushed\n");
+				scanf("%d",&elm);
+				push(arr,elm,&top,&min);
+				break;
+			case 2: result = pop(arr, &top, &min);
+				if(result < 0){
+					printf("already empty\n");
+				}else{
+					printf("%d was deleted\n", result);
+				}	
+				break;
+			case 3: printf("%d is the current min\n", min);
+				break;
+			case 4: exit(1);
+				break;
+		}
+	}
+	return 0;
+}
+//===================================================================================================
+//METHOD1
+// #include <stdio.h>
+// #include <stdlib.h>
+// #define MAX 20
+
+// void push(){
+
+// }
+
+// int pop(){
+	
+// }
+
+// int main(){
+// 	int arr[MAX];
+// 	int step,elm,result;
+// 	while(1){
+// 		printf("1. PUSH element\n");
+// 		printf("2. POP element\n");
+// 		printf("3. Get Minimum\n");
+// 		printf("4. EXIT \n");
+// 		scanf("%d",&step);
+
+// 		switch(step){
+// 			case 1: printf("enter element to be pushed\n");
+// 				scanf("%d",&elm);
+// 				push();
+// 				break;
+// 			case 2: result = pop();
+// 				if(result < 0){
+// 					printf("already empty\n");
+// 				}else{
+// 					printf("%d was deleted\n", result);
+// 				}	
+// 				break;
+// 			case 3: exit(1);
+// 				break;
+// 		}
+// 	}
+// 	return 0;
+// }
