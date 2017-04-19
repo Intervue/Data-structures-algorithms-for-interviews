@@ -56,6 +56,8 @@ Refer to stacks and queues question4 for more info
 For eg storing the minimum so far in another stack so that each time when a number if popped off, if we pop off the minimum from the other stack, we will have min from the remaining elements sitting on top of the other stack. Like this many operations can be applied.
 - You can also modify the numbers being pushed onto a stack and maintain an external reference by doing some computations to make an algorithm work. (Eg question5).
 - Stack is useful where something is to be computed for every element but it is going to come late after iterating over various other elements. Since it has to follow a sequence, the no. for which computation cannot be done as of now can be pushed in the stack. The number for which computation is done can be popped off from the stack (eg. question6)
+- Some algos may require implementing a stack using a different data structure. For eg using Double linked list over single linked list or using single linked list over arrays and so on. (question 7)
+
 
 # General hash functions
 - take mod with number of elements present
@@ -173,10 +175,14 @@ TODO:
 - [Implement a stack using queues](/stacks-and-queues/question4.c)
 - [Design a stack such that get Minimum should be O(1)](/stacks-and-queues/question5.c)
 - [Given an array, find the closest greater element which is present on the right side of the element](/stacks-and-queues/question6.c)
+- [Implement stack with push ,pop, find middle element, delete middle element in 0(1)](/stacks-and-queues/question7.c)
+- [Consider a set of intervals, merge all overlapping intervals](/stacks-and-queues/question8.c)
+- [Check whether parenthesis are balanced or not](/stacks-and-queues/question9.c)
 
 
 ## Some important concepts to solve algos better
 
+- For extreme values refer to limits.h constants given by C
 - `XOR` means taking sum of the bits and dividing by two, remainder will be the answer
 = 'XOR' is commutative
 - 'XOR' of a number with itself is 0

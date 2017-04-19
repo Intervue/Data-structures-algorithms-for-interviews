@@ -20,9 +20,9 @@ Space complexity: O(n) //for stack
 //METHOD2
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
+#include <limits.h>
 #define MAX 20
-#define large -999
+#define large INT_MIN
 
 struct stack *stack = NULL;
 

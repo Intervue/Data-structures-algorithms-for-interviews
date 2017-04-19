@@ -29,3 +29,5 @@
 - question4 hashing to be done
 - implement stack using two queues try both methods
 - stacks and queues INFIX to POSTFIX & evaluating POSTFIX
+- double linked list implementation for question7 stacks and queues to be done
+- question 8, 9 implementation for stacks and queues to be done
