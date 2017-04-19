@@ -27,96 +27,52 @@ Time complexity: O(1)
 Space complexity: O(1)
 */
 //METHOD2
-#include <stdio.h>
-#include <stdlib.h>
-#define MAX 20
-
-void push(int arr[],int data, int *top,int *min){
-	if(*top == MAX-1){
-		printf("overflow\n");
-		return;
-	}
-	int temp;
-	if(*top == -1){
-		*min = data;	
-	}else{
-		temp = *min;
-		if(*min > data){
-			*min = data;
-			data = data-temp;
-		}
-	}
-	printf("INSERTING... %d\n", data);
-	printf("new min value... %d\n", *min);
-	arr[++(*top)]=data;
-}
-
-int pop(int arr[],int *top, int *min){
-	int result;
-	if(*top == -1){
-		*min = 0;
-		return -1;
-	}
-	if(arr[*top]<*min){
-		result = *min;
-		*min = *min - arr[*top];
-	}else{
-		result = arr[*top];
-	}	
-	*top = *top - 1;
-	printf("new top value %d\n", *top);
-	printf("POPPING... %d\n", result);
-	printf("updated min value... %d\n", *min);
-	return result;	
-}
-
-int main(){
-	int arr[MAX];
-	int step,elm,result,top=-1,min;
-	while(1){
-		printf("1. PUSH element\n");
-		printf("2. POP element\n");
-		printf("3. Get Minimum\n");
-		printf("4. EXIT \n");
-		scanf("%d",&step);
-
-		switch(step){
-			case 1: printf("enter element to be pushed\n");
-				scanf("%d",&elm);
-				push(arr,elm,&top,&min);
-				break;
-			case 2: result = pop(arr, &top, &min);
-				if(result < 0){
-					printf("already empty\n");
-				}else{
-					printf("%d was deleted\n", result);
-				}	
-				break;
-			case 3: printf("%d is the current min\n", min);
-				break;
-			case 4: exit(1);
-				break;
-		}
-	}
-	return 0;
-}
-//===================================================================================================
-//METHOD1
 // #include <stdio.h>
 // #include <stdlib.h>
 // #define MAX 20
 
-// void push(){
-
+// void push(int arr[],int data, int *top,int *min){
+// 	if(*top == MAX-1){
+// 		printf("overflow\n");
+// 		return;
+// 	}
+// 	int temp;
+// 	if(*top == -1){
+// 		*min = data;	
+// 	}else{
+// 		temp = *min;
+// 		if(*min > data){
+// 			*min = data;
+// 			data = data-temp;
+// 		}
+// 	}
+// 	printf("INSERTING... %d\n", data);
+// 	printf("new min value... %d\n", *min);
+// 	arr[++(*top)]=data;
 // }
 
-// int pop(){
-	
+// int pop(int arr[],int *top, int *min){
+// 	int result;
+// 	if(*top == -1){
+// 		*min = 0;
+// 		return -1;
+// 	}
+// 	if(arr[*top]<*min){
+// 		result = *min;
+// 		*min = *min - arr[*top];
+// 	}else{
+// 		result = arr[*top];
+// 	}	
+// 	*top = *top - 1;
+// 	printf("new top value %d\n", *top);
+// 	printf("POPPING... %d\n", result);
+// 	printf("updated min value... %d\n", *min);
+// 	return result;	
 // }
 
 // int main(){
 // 	int arr[MAX];
-// 	int step,elm,result;
+// 	int step,elm,result,top=-1,min;
 // 	while(1){
 // 		printf("1. PUSH element\n");
 // 		printf("2. POP element\n");
@@ -127,18 +83,98 @@ int main(){
 // 		switch(step){
 // 			case 1: printf("enter element to be pushed\n");
 // 				scanf("%d",&elm);
-// 				push();
+// 				push(arr,elm,&top,&min);
 // 				break;
-// 			case 2: result = pop();
+// 			case 2: result = pop(arr, &top, &min);
 // 				if(result < 0){
 // 					printf("already empty\n");
 // 				}else{
 // 					printf("%d was deleted\n", result);
 // 				}	
 // 				break;
-// 			case 3: exit(1);
+// 			case 3: printf("%d is the current min\n", min);
+// 				break;
+// 			case 4: exit(1);
 // 				break;
 // 		}
 // 	}
 // 	return 0;
 // }
+//===================================================================================================
+//METHOD1
+#include <stdio.h>
+#include <stdlib.h>
+#define MAX 20
+
+void push(int arr[],int min[],int data, int *top, int *min_top){
+	if(*top == MAX-1){
+		printf("overflow\n");
+		return;
+	}
+	arr[++(*top)]=data;
+	if(*min_top != -1){
+		if(min[*min_top]>=data){ //equal to be considered as well
+			min[++(*min_top)]=data;
+		}
+	}else{
+		min[++(*min_top)]=data;
+	}
+}
+
+int pop(int arr[],int min[],int *top, int *min_top){
+	if(*top == -1){
+		printf("underflow\n");
+		return -1;
+	}
+	int result = arr[*top];
+	*top = *top-1;
+	if(min[*min_top]==result){
+		*min_top = *min_top-1;
+	}
+	return result;	
+}
+
+int getmin(int min[],int *min_top){
+	if(*min_top == -1){
+		return -1;
+	}
+	int result = min[*min_top];
+	return result;
+}
+
+int main(){
+	int arr[MAX],top=-1;
+	int min[MAX],min_top=-1;
+	int step,elm,result;
+	while(1){
+		printf("1. PUSH element\n");
+		printf("2. POP element\n");
+		printf("3. Get Minimum\n");
+		printf("4. EXIT \n");
+		scanf("%d",&step);
+
+		switch(step){
+			case 1: printf("enter element to be pushed\n");
+				scanf("%d",&elm);
+				push(arr,min,elm,&top,&min_top);
+				break;
+			case 2: result = pop(arr,min,&top,&min_top);
+				if(result < 0){
+					printf("already empty\n");
+				}else{
+					printf("%d was deleted\n", result);
+				}	
+				break;
+			case 3:	result = getmin(min,&min_top);
+				if(result >= 0){
+					printf("%d is the current minimum\n", result);
+				}else{
+					printf("stack is empty now\n");
+				}
+				break;
+			case 4: exit(1);
+				break;
+		}
+	}
+	return 0;
+}
