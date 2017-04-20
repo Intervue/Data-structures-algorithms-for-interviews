@@ -199,9 +199,9 @@ For eg storing the minimum so far in another stack so that each time when a numb
 - From an array if a heap is to be constructed, follow:
 
   ```C
-  leftchild(i)=2*i;
-  rightchild(i)=2*i+1;
-  parent(i)=floor(i/2);
+  	LEFT(i) = 2i + 1;
+	RIGHT(i) = 2i + 2;
+	PARENT(i) = (i-1) / 2; (valid for array with index 0)
   //Go level by level from left to right and write elements from the array or to the array basically.
   //Note dividing by two means right shift in binary and multiplying means left shift in binary
   //There can be more than 1 max or min heap of a given array
