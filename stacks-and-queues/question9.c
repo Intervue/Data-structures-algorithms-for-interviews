@@ -10,9 +10,24 @@ Space complexity: O(n)
 */
 
 #include <stdio.h>
-#include <stdlib.h>
+#include <string.h>
 
 int main(){
-	
+	char input[100];
+	int step;
+	while(1){
+		printf("1. Enter set of characteristics\n");
+		printf("1. Exit\n");
+		
+		switch(step){
+			case 1: gets(input);
+
+				break;
+			case 2: exit(1); 
+				break;
+		}
+
+	}		
+
 	return 0;
 }

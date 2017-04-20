@@ -178,6 +178,7 @@ TODO:
 - [Implement stack with push ,pop, find middle element, delete middle element in 0(1)](/stacks-and-queues/question7.c)
 - [Consider a set of intervals, merge all overlapping intervals](/stacks-and-queues/question8.c)
 - [Check whether parenthesis are balanced or not](/stacks-and-queues/question9.c)
+- [The stock span problem](/stacks-and-queues/question10.c)
 
 
 ## Some important concepts to solve algos better
