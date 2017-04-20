@@ -59,17 +59,13 @@ void evaluateSpan(int arr[],int size){
 
 	for(int i=1;i<size;i++){
 		if(arr[i]>=arr[stack[top]]){
-			while(arr[i]>=arr[stack[top]]){
+			while(arr[i]>arr[stack[top]]){
 				pop(stack,&top);
 			}
-			index = top;
-			push(stack,&top,size,i);
-			output[i]=i-stack[index]-1;
-		}else{
-			index = top;
-			push(stack,&top,size,i);
-			output[i]=i-stack[index]-1;
 		}
+		index = top;
+		push(stack,&top,size,i);
+		output[i]=i-stack[index]-1;
 	}
 
 	printf("output array is");
