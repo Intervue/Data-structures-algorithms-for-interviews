@@ -1,3 +1,11 @@
+TODO: 
+- question14.c (general), 
+- question17.c (arrays), to be done after trees and linkedlist is done
+- question18.c (arrays), to be done after linkedlist is done 
+- question19.c (arrays): to be done after trees is done
+- question20.c (arrays): to be done after hashing (approach 2 and 3)
+
+
 ### COMING SOON
 
 - merge sort using dynamic programming and hashmaps

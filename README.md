@@ -45,6 +45,7 @@ greater than size of elements to be stored.
 - Binary search is very widely used. Can only be applied if the length of array is known and if array is sorted.
 - Sometimes, scanning once and searching and keeping additional variables for check can do the job.
 - In hashing the structure can vary as per requirements. It can store anything from sum to frequency to pointers. So decide the structure as per always.
+- For hash table take mod with the number of elements present.
 
 ### For Stacks & Queues: (methods that can be applied)
 - For a stack and queue for each implementation or algo its core functionalities should hold true everytime.
@@ -58,18 +59,10 @@ For eg storing the minimum so far in another stack so that each time when a numb
 - Stack is useful where something is to be computed for every element but it is going to come late after iterating over various other elements. Since it has to follow a sequence, the no. for which computation cannot be done as of now can be pushed in the stack. The number for which computation is done can be popped off from the stack (eg. question6)
 - Some algos may require implementing a stack using a different data structure. For eg using Double linked list over single linked list or using single linked list over arrays and so on. (question 7)
 
-
-# General hash functions
-- take mod with number of elements present
+### Heaps (methods that can be applied):
+- 
 
 # Topic0: Programming Questions
-
-TODO: 
-- question14.c (general), 
-- question17.c (arrays), to be done after trees and linkedlist is done
-- question18.c (arrays), to be done after linkedlist is done 
-- question19.c (arrays): to be done after trees is done
-- question20.c (arrays): to be done after hashing (approach 2 and 3)
 
 ## Note:
 **Questions statements are included in the file itself**
@@ -181,6 +174,10 @@ TODO:
 - [The stock span problem](/stacks-and-queues/question10.c)
 
 
+### Heaps
+
+- [Given an array, create a max heap](/heaps/question1.c)
+
 ## Some important concepts to solve algos better
 
 - For extreme values refer to limits.h constants given by C
@@ -194,6 +191,26 @@ TODO:
 - There are only two ways to make any data structure one is to use an array (where size is fixed and memory is contiguous) OR you can use the heap memory (structures and linked list). So Array and linked list or combo of these two are used to implement any data structure. In most cases linked list takes more time to do operations if data structure is implemented using it. But advantage is dynamic memory allocation
 - For INFIX to POSTFIX conversion, data structure used is stack. In stack all the operators are stored. For evaluation of POSTFIX stack is used to store operands
 - Evaluating and expression = convert from INFIX to postfix --> Evaluate POSTFIX. Time complexity: O(n)
+- Heap can be implemented as a binary tree or ternary tree or n-ary tree. Heap is an almost complete binary tree. Leaves should always be filled from left to right in a heap
+- Heap should be used when along with insertion, find min and delete min or max it to be done in less time
+- In a min/max heap the root contains the min/max element compared to its children. Applicable for all levels.
+- To make a heap rather than making a linked list (as it involves a lot of storage), we make an array.
+- Every tree which is having one node or leaf (node with zero children) is already a min or max heap.
+- From an array if a heap is to be constructed, follow:
+
+  ```C
+  leftchild(i)=2*i;
+  rightchild(i)=2*i+1;
+  parent(i)=floor(i/2);
+  //Go level by level from left to right and write elements from the array or to the array basically.
+  //Note dividing by two means right shift in binary and multiplying means left shift in binary
+  //There can be more than 1 max or min heap of a given array
+  //In a complete or almost complete binary tree, leaves start from floor(n/2+1) to n
+  ```
+
+- An array in descending order is MAX HEAP and array in ascending order is MIN HEAP.
+- There is an O(n) time algo to convert an element into a heap. So no need to sort as sorting take O(nlogn)
+- Recursion adds to the space complexity as well as time complexity
 
 # Topic1: Introduction
 
