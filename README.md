@@ -177,6 +177,7 @@ For eg storing the minimum so far in another stack so that each time when a numb
 ### Heaps
 
 - [Given an array, create a max heap](/heaps/question1.c)
+- [Given a max heap, apply different heap operations (find max, delete max,increase key, insert key, decrease key.)](/heaps/question1.c)
 
 ## Some important concepts to solve algos better
 
@@ -210,7 +211,8 @@ For eg storing the minimum so far in another stack so that each time when a numb
 
 - An array in descending order is MAX HEAP and array in ascending order is MIN HEAP.
 - There is an O(n) time algo to convert an element into a heap. So no need to sort as sorting take O(nlogn)
-- Recursion adds to the space complexity as well as time complexity
+- Recursion adds to the space complexity as well as time complexity.
+- In a max heap, finding min, deleting random element or searching an element will take O(n) time because here max heap is as good as an array.
 
 # Topic1: Introduction
 
