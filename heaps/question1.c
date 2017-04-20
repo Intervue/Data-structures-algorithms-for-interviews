@@ -8,6 +8,11 @@ Space complexity: O(1)
 
 METHOD2:
 Using max heapify algorithm
+Time complexity: O(n) because the other component logn is merely constant because at each level the height
+increases which is in the denominator and also the number of nodes decreases, therefore it is better than
+sorting.
+Space complexity: O(logn) //because of recursion this is the max stack size for execution required which
+is equal to the height of the tree.
 */
 
 #include <stdio.h>
