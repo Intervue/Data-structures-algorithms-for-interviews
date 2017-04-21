@@ -60,7 +60,9 @@ For eg storing the minimum so far in another stack so that each time when a numb
 - Some algos may require implementing a stack using a different data structure. For eg using Double linked list over single linked list or using single linked list over arrays and so on. (question 7)
 
 ### Heaps (methods that can be applied):
-- 
+- A large heap can be delcared and only a small portion of it can always be included in the heap operations.
+- Whenever a heap is built, swapping etc. will be there if elements do not follow the heap property (max or min)
+
 
 # Topic0: Programming Questions
 
@@ -179,6 +181,7 @@ For eg storing the minimum so far in another stack so that each time when a numb
 - [Given an array, create a max heap](/heaps/question1.c)
 - [Given a max heap, apply different heap operations (find max, delete max,increase key, insert key, decrease key.)](/heaps/question2.c)
 - [Write a program for heap sort](/heaps/question3.c)
+- [Find a max element in a min-heap](/heaps/question4.c)
 
 ## Some important concepts to solve algos better
 
@@ -201,7 +204,7 @@ For eg storing the minimum so far in another stack so that each time when a numb
 - From an array if a heap is to be constructed, follow:
 
   ```C
-  	LEFT(i) = 2i + 1;
+	LEFT(i) = 2i + 1;
 	RIGHT(i) = 2i + 2;
 	PARENT(i) = (i-1) / 2; (valid for array with index 0)
   //Go level by level from left to right and write elements from the array or to the array basically.
