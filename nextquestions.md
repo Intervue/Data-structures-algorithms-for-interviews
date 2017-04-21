@@ -42,3 +42,6 @@ TODO:
 - Program to find then the stock should be sold in order to gain max profit
 - insert key in heap question2 to be done
 - building min/max heap for duplicate elements
+- Do BST method in question 6 for heaps
+
+

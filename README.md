@@ -62,7 +62,9 @@ For eg storing the minimum so far in another stack so that each time when a numb
 ### Heaps (methods that can be applied):
 - A large heap can be delcared and only a small portion of it can always be included in the heap operations.
 - Whenever a heap is built, swapping etc. will be there if elements do not follow the heap property (max or min)
-
+- Sometimes to find largest element in an array, min heap can be made, for few first elements, and each
+time comparisons can be done with remaining element to eliminate the minimum elements.
+- Methods where min and max heap can be applied BST can also be used (depends on question) 
 
 # Topic0: Programming Questions
 
@@ -183,6 +185,7 @@ For eg storing the minimum so far in another stack so that each time when a numb
 - [Write a program for heap sort](/heaps/question3.c)
 - [Find a max element in a min-heap](/heaps/question4.c)
 - [Build a min-heap and write algo to delete an arbitrary element](/heaps/question5.c)
+- [Find k largest elements from an array](/heaps/question6.c)
 
 ## Some important concepts to solve algos better
 
@@ -218,6 +221,8 @@ For eg storing the minimum so far in another stack so that each time when a numb
 - There is an O(n) time algo to convert an element into a heap. So no need to sort as sorting take O(nlogn)
 - Recursion adds to the space complexity as well as time complexity.
 - In a max heap, finding min, deleting random element or searching an element will take O(n) time because here max heap is as good as an array.
+- For Binary Search tree implementation using an array, space complexity is O(2^n), but using linked list, it
+is O(n)
 
 # Topic1: Introduction
 
