@@ -40,3 +40,4 @@ TODO:
 - double linked list implementation for question7 stacks and queues to be done
 - question 8, 9 implementation for stacks and queues to be done
 - Program to find then the stock should be sold in order to gain max profit
+- insert key in heap question2 to be done
