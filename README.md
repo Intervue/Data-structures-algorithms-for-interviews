@@ -182,6 +182,7 @@ For eg storing the minimum so far in another stack so that each time when a numb
 - [Given a max heap, apply different heap operations (find max, delete max,increase key, insert key, decrease key.)](/heaps/question2.c)
 - [Write a program for heap sort](/heaps/question3.c)
 - [Find a max element in a min-heap](/heaps/question4.c)
+- [Build a min-heap and write algo to delete an arbitrary element](/heaps/question5.c)
 
 ## Some important concepts to solve algos better
 
