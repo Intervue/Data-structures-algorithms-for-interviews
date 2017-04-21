@@ -177,7 +177,8 @@ For eg storing the minimum so far in another stack so that each time when a numb
 ### Heaps
 
 - [Given an array, create a max heap](/heaps/question1.c)
-- [Given a max heap, apply different heap operations (find max, delete max,increase key, insert key, decrease key.)](/heaps/question1.c)
+- [Given a max heap, apply different heap operations (find max, delete max,increase key, insert key, decrease key.)](/heaps/question2.c)
+- [Write a program for heap sort](/heaps/question3.c)
 
 ## Some important concepts to solve algos better
 
