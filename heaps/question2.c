@@ -40,7 +40,7 @@ void maxHeapify(int arr[],int i, int size){
 }
 
 int deleteMax(int arr[], int *size){
-	if(*size == 0){
+	if(*size < 1){
 		return -1;
 	}
 	int result = arr[0];
@@ -51,7 +51,7 @@ int deleteMax(int arr[], int *size){
 }
 
 int increaseKey(int arr[], int index, int value, int size){
-	if(size == 0){
+	if(size < 1){
 		return -1;
 	}
 	if(value < arr[index]){
@@ -59,9 +59,10 @@ int increaseKey(int arr[], int index, int value, int size){
 	}
 	int i=index, temp;
 	arr[i] = value;
+
 	while(i>=1 && arr[(i-1)/2]<arr[i]){
 		temp = arr[i/2];
-		arr[i/2] = arr[i];
+		arr[(i-1)/2] = arr[i];
 		arr[i]=temp;
 		i = (i-1)/2;
 	}
@@ -69,7 +70,7 @@ int increaseKey(int arr[], int index, int value, int size){
 }
 
 int decreaseKey(int arr[], int index, int value, int size){
-	if(size == 0){
+	if(size < 1){
 		return -1;
 	}
 	if(value > arr[index]){
@@ -90,8 +91,8 @@ int findMax(int arr[],int size){
 }
 
 int main(){
-	int heap[]={9,8,5,3,6,2,1,0}; //max heap
-	int size = sizeof(heap)/sizeof(heap[0]);
+	int heap[MAX_VALUE]={9,8,5,3,6,2,1,0}; //max heap
+	int size = 8;
 
 	int step, value, max, result, index;
 
@@ -148,8 +149,7 @@ int main(){
 				}		
 				display(heap,size);	
 				break;
-			case 5: //@TODO
-				printf("enter the value to be inserted\n");
+			case 5: printf("enter the value to be inserted\n");
 				scanf("%d",&value);
 				size = size+1;
 				if(size == MAX_VALUE){
@@ -157,13 +157,11 @@ int main(){
 					return 0;
 				}
 				heap[size-1] = INT_MIN;
-				printf("new heap size is...%d\n", size);
-				printf("value...%d\n", size);
-				result = decreaseKey(heap,size-1,value,size);
+				result = increaseKey(heap,size-1,value,size);
 				if(output == -1){
 					printf("heap is already empty\n");
 				}else if(output == -2){
-					printf("value is greater than current value at that index\n");
+					printf("value is lesser than current value at that index\n");
 				}else{
 					printf("updated value is ..%d\n", output);
 				}		
