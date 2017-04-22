@@ -79,8 +79,38 @@ void makeMaxHeap(int *arr, int size){
 	display(arr,size);
 }
 
+int deleteMax(int *arr, int *size){
+	if(*size < 1){
+		return -1;
+	}
+	int temp = arr[0];
+	arr[0]=arr[*size-1];
+	arr[*size-1]=temp;
+	*size = *size-1;
+	maxHeapify(arr,0,*size);
+	return temp;
+}
+
+void getKLargest(int *arr, int k, int size){
+	if(k > size){
+		printf("the value of k is incorrect\n");
+		return;
+	}
+	int result;
+	printf("first %d largest elements are: \n", k);
+	for(int i=1; i<=k;i++){
+		result = deleteMax(arr,&size);
+		if(result > 0){
+			printf("%d\n", result);
+		}else{
+			printf("heap is now empty\n");
+			break;
+		}
+	}
+}
+
 int main(){
-	int arr[MAX], size;
+	int arr[MAX], size,k;
 	printf("Enter the array size\n");
 	scanf("%d",&size);
 	for(int i=0; i<size;i++){
@@ -89,6 +119,11 @@ int main(){
 	}
 
 	makeMaxHeap(arr,size);	
+	printf("enter the number of largest elements needed\n");
+	scanf("%d",&k);
+
+	getKLargest(arr,k, size);
+
 	return 0;
 }
 
