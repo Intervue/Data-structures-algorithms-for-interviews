@@ -231,7 +231,7 @@ is O(n)
 - Stream of numbers mean the numbers are coming one after the other and for each input change you have to 
 find what is stated in the question.
 
-# Topic1: Introduction
+# C Programming - Topic1: Introduction
 
 ## Simple program to print '```hello world```' in C
 
