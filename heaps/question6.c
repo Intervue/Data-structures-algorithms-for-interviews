@@ -126,5 +126,84 @@ int main(){
 
 	return 0;
 }
+//=============================================================================================
+//METHOD4
+#include <stdio.h>
+#include <stdlib.h>
+#define MAX 100
 
+void swap(int *a, int *b){
+	int temp = *a;
+	*a = *b;
+	*b = temp;
+}
+
+void minHeapify(int *arr,int i, int size){
+	int left = 2*i+1,right=2*i+2,smallest, heapSize = size;
+	if(left <= heapSize-1 && arr[i] < arr[left]){
+		smallest = i;
+	}else{
+		smallest = left;
+	}
+	if(right <= heapSize-1 && arr[right] < arr[smallest]){
+		smallest = right;
+	}
+	if(smallest <= heapSize - 1 && smallest !=i){
+		swap(&arr[smallest],&arr[i]);
+		minHeapify(arr,smallest,size);
+	}
+}
+
+void makeMinHeapForK(int *arr, int k, int size){
+	int index;
+	if(k%2==0){
+		index = k/2-1;
+	}else{
+		index = k/2;
+	}
+	for(int i=index; i>=0;i--){
+		minHeapify(arr,i,k);
+	}
+}
+
+void display(int arr[], int size){
+	printf("first %d largest elements are ...\n", size);
+	for(int i=0; i<size;i++){
+		printf("%d\t", arr[i]);
+	}
+	printf("\n");
+}
+
+void getKLargest(int *arr, int k, int size){
+	int temp;
+	for(int i=k; i<size;i++){
+		if(arr[i]>arr[0]){
+			temp = arr[i];
+			arr[i] = arr[0];
+			arr[0] = temp;
+			minHeapify(arr,0,k);
+		}
+	}
+
+	display(arr,k);
+}
+
+int main(){
+	int arr[MAX], size,k,temp;
+	printf("Enter the array size\n");
+	scanf("%d",&size);
+	for(int i=0; i<size;i++){
+		printf("enter the %d th element\n", i);
+		scanf("%d",&arr[i]);
+	}
+
+	printf("Enter the value of k\n");
+	scanf("%d",&k);
+
+	makeMinHeapForK(arr,k,size);
+
+	getKLargest(arr,k,size);
+	
+	return 0;
+}
 

@@ -65,6 +65,10 @@ For eg storing the minimum so far in another stack so that each time when a numb
 - Sometimes to find largest element in an array, min heap can be made, for few first elements, and each
 time comparisons can be done with remaining element to eliminate the minimum elements.
 - Methods where min and max heap can be applied BST can also be used (depends on question) 
+- Sometimes a combination of min heap and max heap can be used to solve questions. Min heap can contain
+maximum elements from array and max heap can contain minimum elements from array (this can be known at runtime without sorting the array). (refer question 7)
+- Since each data structure has its own significance, sometimes it is good to use multiple data structures
+like min heap + max heap + linked list as BST and so on for some algos to perform series of operations
 
 # Topic0: Programming Questions
 
@@ -186,6 +190,7 @@ time comparisons can be done with remaining element to eliminate the minimum ele
 - [Find a max element in a min-heap](/heaps/question4.c)
 - [Build a min-heap and write algo to delete an arbitrary element](/heaps/question5.c)
 - [Find k largest elements from an array](/heaps/question6.c)
+- [Find median in a stream of numbers](/heaps/question7.c)
 
 ## Some important concepts to solve algos better
 
@@ -223,6 +228,8 @@ time comparisons can be done with remaining element to eliminate the minimum ele
 - In a max heap, finding min, deleting random element or searching an element will take O(n) time because here max heap is as good as an array.
 - For Binary Search tree implementation using an array, space complexity is O(2^n), but using linked list, it
 is O(n)
+- Stream of numbers mean the numbers are coming one after the other and for each input change you have to 
+find what is stated in the question.
 
 # Topic1: Introduction
 
