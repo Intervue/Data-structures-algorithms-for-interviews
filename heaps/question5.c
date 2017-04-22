@@ -20,15 +20,15 @@ void swap(int *a, int *b){
 
 void minHeapify(int *arr,int i, int size){
 	int left = 2*i+1,right=2*i+2,smallest, heapSize = size;
-	if(left < heapSize-1 && arr[i] < arr[left]){
+	if(left <= heapSize-1 && arr[i] < arr[left]){
 		smallest = i;
 	}else{
 		smallest = left;
 	}
-	if(right < heapSize-1 && arr[right] < arr[smallest]){
+	if(right <= heapSize-1 && arr[right] < arr[smallest]){
 		smallest = right;
 	}
-	if(smallest < heapSize - 1 && smallest !=i){
+	if(smallest <= heapSize - 1 && smallest !=i){
 		swap(&arr[smallest],&arr[i]);
 		minHeapify(arr,smallest,size);
 	}

@@ -53,8 +53,6 @@ void makeHeap(int arr[],int size){
 	for(int i=start;i>=0;i--){
 		maxHeapify(arr,i,size);
 	}
-
-	display(arr,size);
 }
 
 int main(){
@@ -62,6 +60,6 @@ int main(){
 	int size = sizeof(arr)/sizeof(arr[0]);
 
 	makeHeap(arr,size);
-
+	display(arr,size);
 	return 0;
 }

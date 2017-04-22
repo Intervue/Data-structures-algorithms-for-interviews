@@ -36,3 +36,60 @@ that many time minheapify will be called
 Space complexity: O(1) //min heap and max heap do not require additional data structure. Same array can
 be manipulated unless mentioned in the question
 */
+//METHOD1 - naive so not doing
+//METHOD2 - sorting and simple method done in arrays
+//METHOD3
+#include <stdio.h>
+#include <stdlib.h>
+#define MAX 100
+
+void maxHeapify(int *arr,int i, int size){
+	int left = 2*i+1;
+	int right = 2*i+2;
+	int temp, largest;
+
+	if(left < size && arr[left]>arr[i]){
+		largest = left;
+	}else{
+		largest = i;
+	}
+	if(right < size && arr[right]>arr[largest]){
+		largest = right;
+	}
+	if(largest < size && largest != i){
+		temp  = arr[largest];
+		arr[largest] = arr[i];
+		arr[i] = temp;
+		maxHeapify(arr, largest, size);
+	}
+}
+
+void display(int arr[],int size){
+	for(int i=0; i<size;i++){
+		printf("%d\t", arr[i]);
+	}
+	printf("\n");
+}
+
+void makeMaxHeap(int *arr, int size){
+	int index = size/2 -1;
+	for(int i=index;i>=0;i--){
+		maxHeapify(arr,i,size);
+	}
+	display(arr,size);
+}
+
+int main(){
+	int arr[MAX], size;
+	printf("Enter the array size\n");
+	scanf("%d",&size);
+	for(int i=0; i<size;i++){
+		printf("enter the %d th element\n", i);
+		scanf("%d",&arr[i]);
+	}
+
+	makeMaxHeap(arr,size);	
+	return 0;
+}
+
+

@@ -31,7 +31,7 @@ void maxHeapify(int arr[],int i, int size){
 			largest = right;	
 		}
 	}
-	if(largest <= heapSize && largest != i){
+	if(largest <= heapSize-1 && largest != i){
 		temp = arr[largest];
 		arr[largest] = arr[i];
 		arr[i] = temp;
@@ -61,7 +61,7 @@ int increaseKey(int arr[], int index, int value, int size){
 	arr[i] = value;
 
 	while(i>=1 && arr[(i-1)/2]<arr[i]){
-		temp = arr[i/2];
+		temp = arr[(i-1)/2];
 		arr[(i-1)/2] = arr[i];
 		arr[i]=temp;
 		i = (i-1)/2;
@@ -158,12 +158,12 @@ int main(){
 				}
 				heap[size-1] = INT_MIN;
 				result = increaseKey(heap,size-1,value,size);
-				if(output == -1){
+				if(result == -1){
 					printf("heap is already empty\n");
-				}else if(output == -2){
+				}else if(result == -2){
 					printf("value is lesser than current value at that index\n");
 				}else{
-					printf("updated value is ..%d\n", output);
+					printf("updated value is ..%d\n", result);
 				}		
 				display(heap,size);	
 				break;
