@@ -38,6 +38,33 @@ Time complexity: O(logn) + O(logn) + O(logn) //inserting in max heap + removing 
 At any point in worst case O (logn) will be the complexity. For n elements it will be nlogn
 Space complexity: O(n) //since elements are coming in stream we cannot do both min and max heap in the same
 data structure, so we will have to make separate data structures.
-
-
 */
+
+//METHOD3
+#include <stdio.h>
+#include <stdlib.h>
+#define MAX 1000
+
+int findMedian(int elm){
+	int max_heap[MAX], min_heap[MAX];
+	
+	return 0;
+}
+
+int main(){
+	int *arr, elm, result, size;
+	arr = (int *)malloc(sizeof(int)*MAX);
+	int counter = 0;
+	while(1){
+		printf("enter the element to be inserted\n");
+		scanf("%d",&elm);
+		
+		result = findMedian(elm);
+
+	}
+	return 0;
+}
+
+
+
+

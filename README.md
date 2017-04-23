@@ -69,6 +69,10 @@ time comparisons can be done with remaining element to eliminate the minimum ele
 maximum elements from array and max heap can contain minimum elements from array (this can be known at runtime without sorting the array). (refer question 7)
 - Since each data structure has its own significance, sometimes it is good to use multiple data structures
 like min heap + max heap + linked list as BST and so on for some algos to perform series of operations
+- Given max heap to be converted to min heap, if you delete max each time and insert it in min heap it will
+take logn time for each element therefore, total n elements. It will take nlogn time. Therefore, if you
+just take the array as a random array rather than taking it as a max heap you can build the min heap in O(n)
+time which is a better method.
 
 # Topic0: Programming Questions
 
@@ -191,6 +195,7 @@ like min heap + max heap + linked list as BST and so on for some algos to perfor
 - [Build a min-heap and write algo to delete an arbitrary element](/heaps/question5.c)
 - [Find k largest elements from an array](/heaps/question6.c)
 - [Find median in a stream of numbers](/heaps/question7.c)
+- [Given k-sorted lists, Find the minimum range to which at last one number belongs from every list](/heaps/question8.c)
 
 ## Some important concepts to solve algos better
 
@@ -230,6 +235,7 @@ like min heap + max heap + linked list as BST and so on for some algos to perfor
 is O(n)
 - Stream of numbers mean the numbers are coming one after the other and for each input change you have to 
 find what is stated in the question.
+
 
 # C Programming - Topic1: Introduction
 
