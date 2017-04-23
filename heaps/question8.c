@@ -23,24 +23,26 @@ Space complexity: O(k) //storing the k elements
 #include <stdio.h>
 #include <stdlib.h>
 
-void findInterval(int k, int l1[], int l2[], int l3[], int l4[],int size){
+void findInterval(int arr[], int k, int size){
+
+	
 	
 }
 
 int main(){
-	int k, size;
+	int k, size, arr[], elm;
 	printf("enter the value if k\n");
 	printf("enter the size of each array\n");
 	scanf("%d",size);
 	scanf("%d",&k);
 	for(int i=0;i<k;i++){
 		for(int i=0;i<size;i++){
-			
+			printf("enter the %d th element\n");
+			scanf("%d",&elm)
+			arr[i+k*size] = elm;
 		}
 	}
-	
 
-	findInterval(k,l1,l2,l3,l4, size);
-
+	findInterval(arr,k,size);
 	return 0;
 }

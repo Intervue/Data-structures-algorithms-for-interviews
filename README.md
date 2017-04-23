@@ -196,6 +196,8 @@ time which is a better method.
 - [Find k largest elements from an array](/heaps/question6.c)
 - [Find median in a stream of numbers](/heaps/question7.c)
 - [Given k-sorted lists, Find the minimum range to which at last one number belongs from every list](/heaps/question8.c)
+- [Print out all integers in the form of a^3+b^3 where a and b are integers between 0 and N in sorted order](/heaps/question9.c)
+- [Convert BST to max heap](/heaps/question10.c)
 
 ## Some important concepts to solve algos better
 

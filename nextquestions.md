@@ -44,5 +44,7 @@ TODO:
 - building min/max heap for duplicate elements
 - Do BST method in question 6 for heaps
 - Do BST method for question 7 in heaps (question7 complete to be done)
+- question8 in heaps to be done still
+- question9 and question 10 to be done still
 
 
