@@ -43,11 +43,44 @@ data structure, so we will have to make separate data structures.
 //METHOD3
 #include <stdio.h>
 #include <stdlib.h>
+#include <limits.h>
+#define large INT_MIN
 #define MAX 1000
 
+void increaseKey(int arr[],int i, int data, int size){
+	if(size < 1){
+		return -1;
+	}
+	int i=index, temp;
+	arr[i] = value;
+
+	while(i>=1 && arr[(i-1)/2]<arr[i]){
+		temp = arr[(i-1)/2];
+		arr[(i-1)/2] = arr[i];
+		arr[i]=temp;
+		i = (i-1)/2;
+	}
+	return value;
+}
+
 int findMedian(int elm){
-	int max_heap[MAX], min_heap[MAX];
+	int max_heap[], min_heap[], index, result;
 	
+	int size_max=0, size_min=0;
+
+	max_heap[size_max] = large;
+	index = size_max;
+	size_max = size_max + 1;
+	increaseKey(max_heap,index,elm,size_max);
+		
+	if(size_max - size_min > 1 || size_max - size_min < -1){
+		result = deleteMax();
+		//insert into min
+		decreaseKey()
+	}
+
+	size_max = size_max+1;
+
 	return 0;
 }
 

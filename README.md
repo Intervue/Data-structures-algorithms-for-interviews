@@ -74,6 +74,10 @@ take logn time for each element therefore, total n elements. It will take nlogn 
 just take the array as a random array rather than taking it as a max heap you can build the min heap in O(n)
 time which is a better method.
 
+### Trees (methods that can be applied)
+
+
+
 # Topic0: Programming Questions
 
 ## Note:
@@ -199,6 +203,10 @@ time which is a better method.
 - [Print out all integers in the form of a^3+b^3 where a and b are integers between 0 and N in sorted order](/heaps/question9.c)
 - [Convert BST to max heap](/heaps/question10.c)
 
+### Trees
+
+- [Build a binary search tree and apply various operations on it](/trees/question1.c)
+
 ## Some important concepts to solve algos better
 
 - For extreme values refer to limits.h constants given by C
@@ -237,6 +245,22 @@ time which is a better method.
 is O(n)
 - Stream of numbers mean the numbers are coming one after the other and for each input change you have to 
 find what is stated in the question.
+- There are three ways to traverse any binary tree (can be applied to 3-ary or n-ary trees as well with some modifications)
+
+```C
+//all nodes should have children, even leafs
+INORDER //left root right - second visit
+PREORDER//root left right - first visit
+POSTORDER //left right root - third visit
+```
+- Binary tree is a normal thing placing the element in order as given in the array in parent child relationship from left to right BUT Binary search tree follows a particular order.
+- Binary search tree is usually used to store keys. Keys generally point to a particular record. Therefore keys have to be unique.
+- INORDER traversal of BST gives us all elements in ascending order. (least element left most, max right most)
+- *To understand recursion better or to do a dry run or make a recursive program follow the method of 123. i.e executing all lines turn by turn at a single place as explained in trees double order traversal or indirect recursion*
+- Indirect recursion is when some function A calls B and B again calls A and so on.
+- Number of structures possible with N non-labelled nodes is 2ncn/n+1
+- Number of trees possible per structure if labelled n nodes is n! (total trees will be 2ncn/n+1 * n!)
+- Given PRE ORDER POST AND IN ORDER only 1 tree will satisfy all conditions (number of trees with n nodes given pre post and in only 1 tree is possible. Even combination of any with INRODER will generate a binary tree uniquely)
 
 
 # C Programming - Topic1: Introduction
