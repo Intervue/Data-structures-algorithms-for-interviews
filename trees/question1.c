@@ -25,7 +25,13 @@ Space complexity: O(n) //worst case tree may be skewed and hence stack will cont
 
 Recursive program to the height of the tree
 ===============================================
+Time complexity :O(n) //since we are visiting each node maximum 3 times and doing constant time operations
+Space complexity: O(n) //worst case tree may be skewed and hence stack will contain all the functions
 
+Find min and max (iterative version)
+=======================================
+Time complexity :O(n) //worst case tree can be skewed left or right ways
+Space complexity: O(1) //iterative version
 
 
 */
@@ -118,6 +124,29 @@ void postorder(struct node *t){
 	}	
 }
 
+int findMax(struct node *t){
+	if(root==NULL){
+		printf("tree is empty\n");
+		return 0; 
+	}
+	while(t->right){
+		t=t->right;
+	}
+	return t->data;
+}
+
+int findMin(struct node *t){
+	if(root==NULL){
+		printf("tree is empty\n");
+		return 0; 
+	}
+	
+	while(t->left){
+		t=t->left;
+	}
+	return t->data;
+}
+
 int height(struct node *t){
 	if(t == NULL){
 		return 0;
@@ -188,7 +217,7 @@ int main(){
 		printf("11. Give number of non-leaves\n");
 		printf("12. Give number of full-nodes\n");
 		printf("13. Height of the tree\n");
-		printf("14. exit\n");
+		printf("16. exit\n");
 		scanf("%d",&step);
 
 		switch(step){
@@ -197,9 +226,11 @@ int main(){
 			case 2: 
 				// delete();
 				break;
-			// case 3: findMax();
+			case 3: num = findMax(root);
+				printf("max is... %d\n", num);
 				break;
-			// case 4: findMin();
+			case 4: num = findMin(root);
+				printf("min is... %d\n", num);
 				break;
 			case 5: 
 				break;
