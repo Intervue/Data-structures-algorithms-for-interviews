@@ -122,6 +122,12 @@ int height(struct node *t){
 	if(t == NULL){
 		return 0;
 	}
+	if(!t->left && !t->right){
+		return 0;
+	}
+	int l = height(t->left);
+	int r = height(t->right);
+	return 1+((l>r)?l:r);
 }
 
 int countFullNodes(struct node *t){
@@ -222,9 +228,9 @@ int main(){
 				printf("number of full nodes are: %d\n", num);
 				break;
 			case 13: h = height(root);
-				printf("the height of the tree is: %d\n", num);
+				printf("the height of the tree is: %d\n", h);
 				break;
-			case 13: exit(1);
+			case 14: exit(1);
 				break;
 		}
 
