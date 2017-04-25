@@ -33,11 +33,13 @@ Find min and max (iterative version)
 Time complexity :O(n) //worst case tree can be skewed left or right ways
 Space complexity: O(1) //iterative version
 
+Check tree completeness
+==============================
+
+Time complexity :O(n) //worst case tree can be skewed left or right ways
+Space complexity: O(1) //iterative version
 
 */
-
-
-
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -192,6 +194,19 @@ int countLeaves(struct node *t){
 
 }
 
+int isComplete(struct node *t){
+	if(t==NULL){
+		return 1;
+	}
+	if(!t->left && !t->right){
+		return 1;
+	}else if(t->left && t->right){
+		return (isComplete(t->left)&&isComplete(t->right));
+	}else{
+		return 0;
+	}
+}
+
 int countNodes(struct node *t){
 	if(t == NULL){
 		return 0;
@@ -217,7 +232,8 @@ int main(){
 		printf("11. Give number of non-leaves\n");
 		printf("12. Give number of full-nodes\n");
 		printf("13. Height of the tree\n");
-		printf("16. exit\n");
+		printf("14. Check tree completeness\n");
+		printf("15. exit\n");
 		scanf("%d",&step);
 
 		switch(step){
@@ -261,11 +277,16 @@ int main(){
 			case 13: h = height(root);
 				printf("the height of the tree is: %d\n", h);
 				break;
-			case 14: exit(1);
+			case 14: num = isComplete(root);
+				if(num > 0){
+					printf("the tree is complete\n");
+				}else{
+					printf("the tree is not complete\n");
+				}
+				break;
+			case 15: exit(1);
 				break;
 		}
-
-
 	}		
 	return 0;
 }

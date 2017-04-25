@@ -261,6 +261,12 @@ POSTORDER //left right root - third visit
 - Number of structures possible with N non-labelled nodes is 2ncn/n+1
 - Number of trees possible per structure if labelled n nodes is n! (total trees will be 2ncn/n+1 * n!)
 - Given PRE ORDER POST AND IN ORDER only 1 tree will satisfy all conditions (number of trees with n nodes given pre post and in only 1 tree is possible. Even combination of any with INRODER will generate a binary tree uniquely)
+- Expression tree is a tree in which operator occupied the root along with the nodes on the left or right side. (correct side can be checked by inorder traversal). Also operators have to be arranged on the tree as per their precendence.
+- preorder, postorder and inorder traversal of an expression tree gives the respective forms.
+- LCRS (left child right sibling), in this left pointer points to the left child and right pointer points
+to the siblings which are children of the parent node along with this node. Representation is used to present
+trees having random number of children not necessary equal
+- Array representation of trees is used in case of heaps where going up and down is required. The disadvantage of using array is that if a tree is skewed, arrays have to be as large as 2^n for storing n values given indexes of parent and child which is not the case in case of heaps.
 
 
 # C Programming - Topic1: Introduction
