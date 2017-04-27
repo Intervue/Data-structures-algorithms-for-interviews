@@ -206,6 +206,7 @@ time which is a better method.
 ### Trees
 
 - [Build a binary search tree and apply various operations on it](/trees/question1.c)
+- [Check whether two trees are identical or not](/trees/question2.c)
 
 ## Some important concepts to solve algos better
 
@@ -267,6 +268,7 @@ POSTORDER //left right root - third visit
 to the siblings which are children of the parent node along with this node. Representation is used to present
 trees having random number of children not necessary equal
 - Array representation of trees is used in case of heaps where going up and down is required. The disadvantage of using array is that if a tree is skewed, arrays have to be as large as 2^n for storing n values given indexes of parent and child which is not the case in case of heaps.
+- *Recursion will keep populating the stack until dealing with statements to be executed, once a definite value truthy or falsy is returned, it will then pop off the execution context that returned that value. It is important to even return a function because then stack will know that this function is going to return something which may be a another function being returned or a value. This is how it keeps going*
 
 
 # C Programming - Topic1: Introduction
