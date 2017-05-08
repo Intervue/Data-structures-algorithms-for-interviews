@@ -47,5 +47,5 @@ TODO:
 - question8 in heaps to be done still
 - question9 and question 10 to be done still
 - delete part of trees question1 to be done
-
+- level order traversal to be done using queue as linked list in trees
 

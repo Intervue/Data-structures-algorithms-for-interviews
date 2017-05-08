@@ -1,7 +1,8 @@
 /*
 Check whether two trees are identical or not
 
-
+Time complexity: O(n)
+Space complexity: O(n)
 */
 
 #include <stdio.h>

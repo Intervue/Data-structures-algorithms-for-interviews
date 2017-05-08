@@ -208,6 +208,7 @@ time which is a better method.
 
 - [Build a binary search tree and apply various operations on it](/trees/question1.c)
 - [Check whether two trees are identical or not](/trees/question2.c)
+- [Find lowest common ancestor of given two nodes in a binary search tree](/trees/question5.c)
 
 ## Some important concepts to solve algos better
 
