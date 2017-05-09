@@ -75,7 +75,7 @@ just take the array as a random array rather than taking it as a max heap you ca
 time which is a better method.
 
 ### Trees (methods that can be applied)
-
+- Recursion is used more often than not in case of trees to implement anything.
 
 
 # Topic0: Programming Questions
@@ -207,6 +207,8 @@ time which is a better method.
 
 - [Build a binary search tree and apply various operations on it](/trees/question1.c)
 - [Check whether two trees are identical or not](/trees/question2.c)
+- [Mirror tree](/trees/question3.c)
+- [Implementation of Level order traversal in case of trees](/trees/question4.c)
 
 ## Some important concepts to solve algos better
 
@@ -269,6 +271,8 @@ to the siblings which are children of the parent node along with this node. Repr
 trees having random number of children not necessary equal
 - Array representation of trees is used in case of heaps where going up and down is required. The disadvantage of using array is that if a tree is skewed, arrays have to be as large as 2^n for storing n values given indexes of parent and child which is not the case in case of heaps.
 - *Recursion will keep populating the stack until dealing with statements to be executed, once a definite value truthy or falsy is returned, it will then pop off the execution context that returned that value. It is important to even return a function because then stack will know that this function is going to return something which may be a another function being returned or a value. This is how it keeps going*
+- Level order traversal uses a queue in which parent is pushed onto the queue and then its popped (dequeued) and its children are pushed in order from left to right and same process is repeated. Therefore we keep scanning the nodes level by level.
+- Level order traversal is similar to BFS (breadth first search in graphs) and other traversals like inorder, preorder and postorder are similar to DFS (depth first search in graphs)
 
 
 # C Programming - Topic1: Introduction

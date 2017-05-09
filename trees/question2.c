@@ -1,6 +1,8 @@
 /*
 Check whether two trees are identical or not
 
+Time complexity: O(n) //visit each node
+Space complexity: O(n) worst case skewed tree
 
 */
 
@@ -27,9 +29,8 @@ int checkIdentical(struct node *t1, struct node *t2){
 	}
 	if(t1->data == t2->data){
 		return checkIdentical(t1->left, t2->left) && checkIdentical(t1->right, t2->right);
-	}else{
-		return 0;
 	}
+	return 0;
 }
 
 int main(){
