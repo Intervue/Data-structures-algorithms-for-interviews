@@ -75,6 +75,7 @@ just take the array as a random array rather than taking it as a max heap you ca
 time which is a better method.
 
 ### Trees (methods that can be applied)
+
 - Recursion is used more often than not in case of trees to implement anything.
 
 
@@ -209,6 +210,7 @@ time which is a better method.
 - [Check whether two trees are identical or not](/trees/question2.c)
 - [Mirror tree](/trees/question3.c)
 - [Implementation of Level order traversal in case of trees](/trees/question4.c)
+- [Find lowest common ancestor of given two nodes in a binary search tree](/trees/question5.c)
 
 ## Some important concepts to solve algos better
 
