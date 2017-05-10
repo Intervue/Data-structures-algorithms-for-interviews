@@ -49,4 +49,5 @@ TODO:
 - delete part of trees question1 to be done
 - trees mirror tree implementation to be done
 - level order traversal to be done using queue as linked list in trees
+- difference between scanf fgets and one more to be done
 
