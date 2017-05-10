@@ -128,13 +128,12 @@ void multipleSearch(struct node *root, int num1, int num2){
 		return;
 	}
 	if(num1 < root->data && num2 < root->data){
-		multipleSearch(root->left, num1,num2);
-	}else if((num1 <= root->data && num2 >= root->data) || (num2 <= root->data && num1 >= root->data)){
-		printf("ancestor is %d\n", root->data);
-		return;
-	}else{
-		multipleSearch(root->right, num1, num2);
+		return multipleSearch(root->left, num1,num2);
 	}
+	if(num1 > root->data && num2 > root->data){
+		return multipleSearch(root->right, num1, num2);
+	}
+	printf("ancestor is %d\n", root->data);
 }
 
 void lowestAncestorDiversion(){
@@ -146,13 +145,39 @@ void lowestAncestorDiversion(){
 	multipleSearch(root,num1, num2);
 }
 
+void iterativeSearch(struct node *root, int num1, int num2){
+	if(!root){
+		return;
+	}
+	while(root){
+		if(num1 < root->data && num2 < root->data){
+			root = root->left;
+		}else if(num2 > root->data && num1 > root->data){
+			root = root->right;
+		}else{
+			break;
+		}
+	}
+	printf("ancestor is %d\n", root->data);
+}
+
+void LCA(){
+	int num1, num2;
+	printf("enter two numbers from the BST\n");
+	scanf("%d",&num1);
+	scanf("%d",&num2);
+
+	iterativeSearch(root, num1, num2);
+}
+
 int main(){
 	int step, data;
 	while(1){
 		printf("1. Insert element\n");
 		printf("2. Print tree\n");
 		printf("3. lowest common ancestor using arrays\n");
-		printf("4. lowest common ancestor using diversion\n");
+		printf("4. lowest common ancestor using diversion recursive\n");
+		printf("5. lowest common ancestor using diversion iterative\n");
 		scanf("%d",&step);
 		switch(step){
 			case 1: printf("enter element to be inserted\n");
@@ -165,6 +190,8 @@ int main(){
 			case 3: lowestAncestor(); 
 				break;
 			case 4: lowestAncestorDiversion();
+				break;
+			case 5: LCA();
 				break;
 		}
 	}
