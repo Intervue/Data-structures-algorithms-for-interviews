@@ -50,4 +50,7 @@ TODO:
 - trees mirror tree implementation to be done
 - level order traversal to be done using queue as linked list in trees
 - difference between scanf fgets and one more to be done
+- method 1 of trees question6 to be done
+- question7 of trees to be done
+
 

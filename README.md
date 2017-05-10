@@ -77,6 +77,11 @@ time which is a better method.
 ### Trees (methods that can be applied)
 
 - Recursion is used more often than not in case of trees to implement anything.
+- Preorder traversal can give the path from top to any node.
+- Sometimes it is good to store the path in an array to solve some algos
+- For level order traversal queue is used. Each time parent is pushed, then when popping the parent its children are pushed on the queue
+- Most questions in trees involve doing the core algo on the LST and then on the RST and in the end using recursion getting the desired result.
+- In  a tree sometimes, if two pointers are to be returned for a DLL, we return only one and make the other point to the one that is also required so that we can get it using the one that is returned. Refer to question7 method2
 
 
 # Topic0: Programming Questions
@@ -211,6 +216,9 @@ time which is a better method.
 - [Mirror tree](/trees/question3.c)
 - [Implementation of Level order traversal in case of trees](/trees/question4.c)
 - [Find lowest common ancestor of given two nodes in a binary search tree](/trees/question5.c)
+- [Solve the problem above for the binary tree](/trees/question6.c)
+- [Convert a binary tree into a double linked list in such a way that the order of nodes represents the inorder traversal of binary tree. Note this has to be done in place](/trees/question7.c)
+- [Find the diameter of the given binary tree](/trees/question8.c)
 
 ## Some important concepts to solve algos better
 
