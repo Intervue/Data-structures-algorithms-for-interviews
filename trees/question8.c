@@ -33,21 +33,22 @@ int max(int left, int right){
 	return (left < right)?right: left;
 }
 
-int findDiameter(struct node *root){
+int findDiameter(struct node *root, int *max_dia){
 	if(!root){
 		return 0;
 	}
-	int left = findDiameter(root->left);
-	int right = findDiameter(root->right);
+	int left = findDiameter(root->left, max_dia);
+	int right = findDiameter(root->right, max_dia);
 	int dia = left+right;
-	if(max_dia < dia){
-		max_dia = dia;
+	if(*max_dia < dia){
+		*max_dia = dia;
 	}
 	return 1 + max(left,right);
 }
 
 int main(){
 	struct node *root = NULL;
+	int max_dia = 0;
 	root = newNode(2);
 	root->left = newNode(3);
 	root->right = newNode(4);
@@ -58,7 +59,7 @@ int main(){
 	root->left->left->right = newNode(10);
 	root->left->left->left = newNode(9);
 
-	findDiameter(root);
+	findDiameter(root, &max_dia);
 	printf("max dia is...%d\n", max_dia);
 	return 0;
 }
