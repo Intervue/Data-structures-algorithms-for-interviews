@@ -20,8 +20,6 @@ struct node{
 	struct node *right;
 };
 
-int max_dia = 0;
-
 struct node *newNode(int data){
 	struct node *temp = (struct node *)malloc(sizeof(struct node));
 	temp->data = data;

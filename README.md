@@ -82,7 +82,8 @@ time which is a better method.
 - For level order traversal queue is used. Each time parent is pushed, then when popping the parent its children are pushed on the queue
 - Most questions in trees involve doing the core algo on the LST and then on the RST and in the end using recursion getting the desired result.
 - In  a tree sometimes, if two pointers are to be returned for a DLL, we return only one and make the other point to the one that is also required so that we can get it using the one that is returned. Refer to question7 method2
-
+- while applying recursion whatever is returned is returned for that particular function stack and will be assigned to the variable or thing that called that execution stack. In case local variables in recursion are to be used pass them as address and argument should be of type pointer while assignment.
+- There are two ways of incrementing levels while traversal, one is to increment once when visiting LST and RST and decrement once when returning from LST or RST OR pass level as argument as level+1, when visiting LST and so on.
 
 # Topic0: Programming Questions
 
@@ -219,6 +220,7 @@ time which is a better method.
 - [Solve the problem above for the binary tree](/trees/question6.c)
 - [Convert a binary tree into a double linked list in such a way that the order of nodes represents the inorder traversal of binary tree. Note this has to be done in place](/trees/question7.c)
 - [Find the diameter of the given binary tree](/trees/question8.c)
+- [Get the level of a given key in a binary tree](/trees/question9.c)
 
 ## Some important concepts to solve algos better
 
