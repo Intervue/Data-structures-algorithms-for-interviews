@@ -221,6 +221,7 @@ time which is a better method.
 - [Convert a binary tree into a double linked list in such a way that the order of nodes represents the inorder traversal of binary tree. Note this has to be done in place](/trees/question7.c)
 - [Find the diameter of the given binary tree](/trees/question8.c)
 - [Get the level of a given key in a binary tree](/trees/question9.c)
+- [Print nodes k-distance from the root](/trees/question10.c)
 
 ## Some important concepts to solve algos better
 
