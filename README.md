@@ -84,6 +84,7 @@ time which is a better method.
 - In  a tree sometimes, if two pointers are to be returned for a DLL, we return only one and make the other point to the one that is also required so that we can get it using the one that is returned. Refer to question7 method2
 - while applying recursion whatever is returned is returned for that particular function stack and will be assigned to the variable or thing that called that execution stack. In case local variables in recursion are to be used pass them as address and argument should be of type pointer while assignment.
 - There are two ways of incrementing levels while traversal, one is to increment once when visiting LST and RST and decrement once when returning from LST or RST OR pass level as argument as level+1, when visiting LST and so on.
+- Preorder traversal is best when you have to print nodes using some logic or visit any node given distance from another node or root.
 
 # Topic0: Programming Questions
 
@@ -222,6 +223,8 @@ time which is a better method.
 - [Find the diameter of the given binary tree](/trees/question8.c)
 - [Get the level of a given key in a binary tree](/trees/question9.c)
 - [Print nodes k-distance from the root](/trees/question10.c)
+- [Print nodes which are at a k distance from the given key in a binary tree](/trees/question11.c)
+- [Program to implement vertical tree order traversal](/trees/question12.c)
 
 ## Some important concepts to solve algos better
 
@@ -286,6 +289,7 @@ trees having random number of children not necessary equal
 - *Recursion will keep populating the stack until dealing with statements to be executed, once a definite value truthy or falsy is returned, it will then pop off the execution context that returned that value. It is important to even return a function because then stack will know that this function is going to return something which may be a another function being returned or a value. This is how it keeps going.Note if return statement is not written then if else statement should be used so to avoid control of the program going downwards in the non satisfying condition. So return statement is just a replacement of if else in recursion*
 - Level order traversal uses a queue in which parent is pushed onto the queue and then its popped (dequeued) and its children are pushed in order from left to right and same process is repeated. Therefore we keep scanning the nodes level by level.
 - Level order traversal is similar to BFS (breadth first search in graphs) and other traversals like inorder, preorder and postorder are similar to DFS (depth first search in graphs)
+- Vertical tree order traversal: Root is at a distance 0 from itself. When we move to the left child it is at a distance -1 from the root, the right child is at a distance 1 from the root. If we keep doing -1 for every left child and +1 for every right child, we will have multiple nodes at the same distance value. The nodes having same distance value fall on a vertical line. If we traverse that line, it is called vertical tree order traversal
 
 
 # C Programming - Topic1: Introduction
