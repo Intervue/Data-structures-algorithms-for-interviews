@@ -229,6 +229,9 @@ time which is a better method.
 - [Program to implement vertical tree order traversal](/trees/question12.c)
 - [Vertical sum of the given binary tree](/trees/question13.c)
 - [Check whether the given binary tree is sum tree or not](/trees/question14.c)
+- [Print top view of a binary tree](/trees/question15.c)
+- [Print bottom view of a binary tree](/trees/question16.c)
+- [Print left view of a binary tree](/trees/question17.c)
 
 ## Some important concepts to solve algos better
 
@@ -295,7 +298,7 @@ trees having random number of children not necessary equal
 - Level order traversal is similar to BFS (breadth first search in graphs) and other traversals like inorder, preorder and postorder are similar to DFS (depth first search in graphs)
 - Vertical tree order traversal: Root is at a distance 0 from itself. When we move to the left child it is at a distance -1 from the root, the right child is at a distance 1 from the root. If we keep doing -1 for every left child and +1 for every right child, we will have multiple nodes at the same distance value. The nodes having same distance value fall on a vertical line. If we traverse that line, it is called vertical tree order traversal
 - Sum tree is the one where sum of values in the LST and sum of values in the RST is equal to the root. This is valid for all the nodes except the tree
-
+- Recursion execution stack only remembers the next line if there is no return statement, else it will return the execution stack
 
 # C Programming - Topic1: Introduction
 

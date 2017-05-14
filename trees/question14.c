@@ -54,7 +54,7 @@ int main(){
 	struct node *root = newNode(50);
 	root->left = newNode(15);
 	root->left->left = newNode(10);
-	root->left->right = newNode(5);
+	root->left->right = newNode(15);
 	root->right = newNode(10);
 	root->right->left = newNode(7);
 	root->right->right = newNode(3);

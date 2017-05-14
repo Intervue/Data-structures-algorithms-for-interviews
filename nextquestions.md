@@ -53,5 +53,5 @@ TODO:
 - method 1 of trees question6 to be done
 - question7 of trees to be done
 - question11 on trees to be done (very imp.)
-- question12 method3 to be done (very imp.)
+- question12 method3, question15 method1 to be done (very imp.) -> in case of doubt refer to PDF for top view method question 15 and question 16
 
