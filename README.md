@@ -84,7 +84,9 @@ time which is a better method.
 - In  a tree sometimes, if two pointers are to be returned for a DLL, we return only one and make the other point to the one that is also required so that we can get it using the one that is returned. Refer to question7 method2
 - while applying recursion whatever is returned is returned for that particular function stack and will be assigned to the variable or thing that called that execution stack. In case local variables in recursion are to be used pass them as address and argument should be of type pointer while assignment.
 - There are two ways of incrementing levels while traversal, one is to increment once when visiting LST and RST and decrement once when returning from LST or RST OR pass level as argument as level+1, when visiting LST and so on.
-- Preorder traversal is best when you have to print nodes using some logic or visit any node given distance from another node or root.
+- Preorder traversal is best when you have to print nodes using some logic or visit any node given distance from another node or root. (even true for vertical tree order traversal)
+- Somtimes hashtable can be used to store elements while traversal. Hashing comes in handy while searching for elements using a particular logic. So can be implemented along with trees.
+- Sometimes if there is a problem determining the size of the hash table, linked list can be used instead which will further have linked lists attach to each nodes. So each node of the main linked list will behave as a cell of the hash Table.
 
 # Topic0: Programming Questions
 
@@ -225,6 +227,7 @@ time which is a better method.
 - [Print nodes k-distance from the root](/trees/question10.c)
 - [Print nodes which are at a k distance from the given key in a binary tree](/trees/question11.c)
 - [Program to implement vertical tree order traversal](/trees/question12.c)
+- [Vertical sum of the given binary tree](/trees/question13.c)
 
 ## Some important concepts to solve algos better
 
