@@ -87,6 +87,7 @@ time which is a better method.
 - Preorder traversal is best when you have to print nodes using some logic or visit any node given distance from another node or root. (even true for vertical tree order traversal)
 - Somtimes hashtable can be used to store elements while traversal. Hashing comes in handy while searching for elements using a particular logic. So can be implemented along with trees.
 - Sometimes if there is a problem determining the size of the hash table, linked list can be used instead which will further have linked lists attach to each nodes. So each node of the main linked list will behave as a cell of the hash Table.
+- Deleting paths in recursion means, just free the root.
 
 # Topic0: Programming Questions
 
@@ -232,6 +233,7 @@ time which is a better method.
 - [Print top view of a binary tree](/trees/question15.c)
 - [Print bottom view of a binary tree](/trees/question16.c)
 - [Print left view of a binary tree](/trees/question17.c)
+- [Remove all paths of length k from root in a binary tree](/trees/question18.c)
 
 ## Some important concepts to solve algos better
 
