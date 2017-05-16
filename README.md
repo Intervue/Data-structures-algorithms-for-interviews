@@ -88,6 +88,10 @@ time which is a better method.
 - Somtimes hashtable can be used to store elements while traversal. Hashing comes in handy while searching for elements using a particular logic. So can be implemented along with trees.
 - Sometimes if there is a problem determining the size of the hash table, linked list can be used instead which will further have linked lists attach to each nodes. So each node of the main linked list will behave as a cell of the hash Table.
 - Deleting paths in recursion means, just free the root.
+- Sometimes other functions can also be used inside recursion.
+- The nodes of a subtree will always occur together in case of any traversal. The order may be different but there will be no interleaving.
+- Sometimes to compare two subtrees, we can apply inorder and preorder OR inorder or postorder traversal and compare the o/p strings in the end. As studies earlier, preorder and inorder or postorder and inorder will 
+always generate a unique tree.
 
 # Topic0: Programming Questions
 
@@ -234,6 +238,7 @@ time which is a better method.
 - [Print bottom view of a binary tree](/trees/question16.c)
 - [Print left view of a binary tree](/trees/question17.c)
 - [Remove all paths of length k from root in a binary tree](/trees/question18.c)
+- [Check whether a given binary tree if a subtree of another binary tree](/trees/question19.c)
 
 ## Some important concepts to solve algos better
 

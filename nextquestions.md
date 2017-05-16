@@ -54,4 +54,5 @@ TODO:
 - question7 of trees to be done
 - question11 on trees to be done (very imp.)
 - question12 method3, question15 method1 to be done (very imp.) -> in case of doubt refer to PDF for top view method question 15 and question 16
+- question19 method2 to be done later after strings (revisit the code for it given as pdf)
 
