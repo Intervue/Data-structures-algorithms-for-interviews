@@ -48,16 +48,8 @@ struct node *makeBBST(int *arr,struct node *root, int start,int end){
 	if(start > end){
 		return NULL;
 	}
-	int middle;
-	if(start == end){
-		middle = start;
-	}else{
-		middle = start+floor((end-start)/2);	
-	}
-	printf("middle value is %d\n", arr[middle]);
+	int middle = start+floor((end-start)/2);	
 	root = newNode(arr[middle]);
-	printf("assigned value to root is: %d\n", root->data);
-	printf("==========================\n");
 	root->left = makeBBST(arr,root,start,middle-1);
 	root->right = makeBBST(arr,root,middle+1,end);
 	return root;

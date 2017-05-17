@@ -46,6 +46,8 @@ greater than size of elements to be stored.
 - Sometimes, scanning once and searching and keeping additional variables for check can do the job.
 - In hashing the structure can vary as per requirements. It can store anything from sum to frequency to pointers. So decide the structure as per always.
 - For hash table take mod with the number of elements present.
+- In case of question involving single array using recursion where tree is made, make sure that proper
+start and end of array is chosen(specifically where array is split again and again)
 
 ### For Stacks & Queues: (methods that can be applied)
 - For a stack and queue for each implementation or algo its core functionalities should hold true everytime.
@@ -92,6 +94,8 @@ time which is a better method.
 - The nodes of a subtree will always occur together in case of any traversal. The order may be different but there will be no interleaving.
 - Sometimes to compare two subtrees, we can apply inorder and preorder OR inorder or postorder traversal and compare the o/p strings in the end. As studies earlier, preorder and inorder or postorder and inorder will 
 always generate a unique tree.
+- In case of question involving single array using recursion where tree is made, make sure that proper
+start and end of array is chosen(specifically where array is split again and again)
 
 # Topic0: Programming Questions
 
@@ -241,6 +245,7 @@ always generate a unique tree.
 - [Check whether a given binary tree if a subtree of another binary tree](/trees/question19.c)
 - [Check whether given two nodes are cousins in a binary tree](/trees/question20.c)
 - [Form a balanced binary search tree from a given sorted array](/trees/question21.c)
+- [Convert a given binary search tree into balanced binary tree](/trees/question22.c)
 
 ## Some important concepts to solve algos better
 
