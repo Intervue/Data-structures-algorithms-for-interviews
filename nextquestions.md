@@ -55,4 +55,5 @@ TODO:
 - question11 on trees to be done (very imp.)
 - question12 method3, question15 method1 to be done (very imp.) -> in case of doubt refer to PDF for top view method question 15 and question 16
 - question19 method2 to be done later after strings (revisit the code for it given as pdf)
-
+- method1 of question21 and question22 complete
+- do binary search method for strings question1

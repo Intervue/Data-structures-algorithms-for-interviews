@@ -97,6 +97,13 @@ always generate a unique tree.
 - In case of question involving single array using recursion where tree is made, make sure that proper
 start and end of array is chosen(specifically where array is split again and again)
 
+### For Strings (methods that can be applied)
+- All concepts of arrays are applicable to strings, since they are characters arrays (the ones that are general and not just applicable to numbers)
+- For searching both BST and hash table can be applied.
+- Hash table can be made for a character array (string). Length of hashtable should be 256, because ASCII values maximum is upto 255 starting from zero, therefore only that much space will be taken at max.
+
+
+
 # Topic0: Programming Questions
 
 ## Note:
@@ -247,6 +254,10 @@ start and end of array is chosen(specifically where array is split again and aga
 - [Form a balanced binary search tree from a given sorted array](/trees/question21.c)
 - [Convert a given binary search tree into balanced binary tree](/trees/question22.c)
 
+### Strings
+- [Find a maximum occuring character in a given string](/strings/question1.c)
+
+
 ## Some important concepts to solve algos better
 
 - For extreme values refer to limits.h constants given by C
@@ -315,6 +326,7 @@ trees having random number of children not necessary equal
 - Recursion execution stack only remembers the next line if there is no return statement, else it will return the execution stack
 - Two nodes in a tree are siblings if they are at the same level and have same parent, are cousins if they
 are at same level but do not have same parent
+- O(1) means time complexity or space complexity is not dependent on the input size
 
 # C Programming - Topic1: Introduction
 
@@ -2673,3 +2685,6 @@ void main(){
 
 `this function will return non-zero value if there is end of file pointed by p. will return a zero value if end of file is not there`
 
+## size_t
+
+- is a standard in C which is used to denote unsigned lengths. Because length min is anyway zero which can never be signed. Therefore mostly when dealing with sizes or length, they are typecasted or referred as size_t datatype. Eg: size_t i instead of int i etc.
