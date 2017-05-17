@@ -37,11 +37,10 @@ struct node *newNode(int data){
 
 void printTree(struct node *root){
 	if(root){
-		
-		printTree(root->left);
 		printf("%d\n", root->data);		
+		printTree(root->left);
+		
 		printTree(root->right);
-
 	}
 }
 
@@ -53,10 +52,13 @@ struct node *makeBBST(int *arr,struct node *root, int start,int end){
 	if(start == end){
 		middle = start;
 	}else{
-		middle = floor(end-start/2);	
+		middle = start+floor((end-start)/2);	
 	}
+	printf("middle value is %d\n", arr[middle]);
 	root = newNode(arr[middle]);
-	root->left = makeBBST(arr,root,0,middle-1);
+	printf("assigned value to root is: %d\n", root->data);
+	printf("==========================\n");
+	root->left = makeBBST(arr,root,start,middle-1);
 	root->right = makeBBST(arr,root,middle+1,end);
 	return root;
 }
@@ -66,6 +68,6 @@ int main(){
 	int arr[] = {10,20,30,40,50,60,70};
 	int size = sizeof(arr)/sizeof(arr[0]);
 	root = makeBBST(arr, root,0,size-1);
-	printf("RAHUL ARORA %d\n", root->left->data);
+	
 	printTree(root);
 }
