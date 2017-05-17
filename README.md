@@ -239,6 +239,8 @@ always generate a unique tree.
 - [Print left view of a binary tree](/trees/question17.c)
 - [Remove all paths of length k from root in a binary tree](/trees/question18.c)
 - [Check whether a given binary tree if a subtree of another binary tree](/trees/question19.c)
+- [Check whether given two nodes are cousins in a binary tree](/trees/question20.c)
+- [Form a balanced binary search tree from a given sorted array](/trees/question21.c)
 
 ## Some important concepts to solve algos better
 
@@ -306,6 +308,8 @@ trees having random number of children not necessary equal
 - Vertical tree order traversal: Root is at a distance 0 from itself. When we move to the left child it is at a distance -1 from the root, the right child is at a distance 1 from the root. If we keep doing -1 for every left child and +1 for every right child, we will have multiple nodes at the same distance value. The nodes having same distance value fall on a vertical line. If we traverse that line, it is called vertical tree order traversal
 - Sum tree is the one where sum of values in the LST and sum of values in the RST is equal to the root. This is valid for all the nodes except the tree
 - Recursion execution stack only remembers the next line if there is no return statement, else it will return the execution stack
+- Two nodes in a tree are siblings if they are at the same level and have same parent, are cousins if they
+are at same level but do not have same parent
 
 # C Programming - Topic1: Introduction
 
