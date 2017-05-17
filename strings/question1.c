@@ -120,15 +120,8 @@ void findMaxValues(char *hash,char *arr, int size, char *max_char, int *max_coun
 	}
 }
 
-void initializeHash(char *hash){
-	for(int i=0; i<MAX;i++){
-		hash[i] = 0;
-	}
-}
-
 int main(){
-	char hash[256];		
-	initializeHash(hash);			
+	char hash[MAX] = {0};					
 	char arr[] = "acbccaaccaaaaaaa";
 	int size = sizeof(arr)/sizeof(arr[0]);
 	

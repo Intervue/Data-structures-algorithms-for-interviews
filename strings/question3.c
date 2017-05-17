@@ -1,0 +1,5 @@
+/*
+Check whether given two strings are rotations of each other or not
+
+
+*/

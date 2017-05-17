@@ -101,7 +101,8 @@ start and end of array is chosen(specifically where array is split again and aga
 - All concepts of arrays are applicable to strings, since they are characters arrays (the ones that are general and not just applicable to numbers)
 - For searching both BST and hash table can be applied.
 - Hash table can be made for a character array (string). Length of hashtable should be 256, because ASCII values maximum is upto 255 starting from zero, therefore only that much space will be taken at max.
-
+- Two pointers in a loop both on same side one tracking duplicates one tracking unique can be used to remove duplicates from a string.
+- In case of string arr size should be measured using strlen and not using sizeof as sizeof also includes \0
 
 
 # Topic0: Programming Questions
@@ -256,6 +257,8 @@ start and end of array is chosen(specifically where array is split again and aga
 
 ### Strings
 - [Find a maximum occuring character in a given string](/strings/question1.c)
+- [Remove duplicates from a given string](/strings/question2.c)
+- [Check whether given two strings are rotations of each other or not](/strings/question3.c)
 
 
 ## Some important concepts to solve algos better
