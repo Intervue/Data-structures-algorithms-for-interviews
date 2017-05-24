@@ -105,6 +105,8 @@ start and end of array is chosen(specifically where array is split again and aga
 - In case of string arr size should be measured using strlen and not using sizeof as sizeof also includes \0
 - Sometimes a string can be merged with itself or the other to solve some algos. For eg: if one string is rotation of the other, concatenating one with itself can give a string where second string will be a substring in this string.
 - Store as many things as required to solve the algo in hash table as it is a structure 
+- It is always good to free memory assigned to hashTable after the end of the program
+- Sometimes hashtable value can be decremented and not incremented to solve an algo for eg. finding anagram
 
 # Topic0: Programming Questions
 
@@ -264,7 +266,8 @@ start and end of array is chosen(specifically where array is split again and aga
 - [Reverse a given string](/strings/question5.c)
 - [Check whether given string is palindrome or not](/strings/question6.c)
 - [Find the first non-repeating character in a given string](/strings/question7.c)
-- [](/strings/question8.c)
+- [Run length encoding](/strings/question8.c)
+- [Check whether given two strings are anagrams of each other](/strings/question9.c)
 
 
 ## Some important concepts to solve algos better
@@ -337,6 +340,11 @@ trees having random number of children not necessary equal
 are at same level but do not have same parent
 - O(1) means time complexity or space complexity is not dependent on the input size
 - One string is rotation of the other, if one of the rotations of one string matches the other one.
+- Run length encoding means, traversing through the given character array and displaying which character
+is repeating how many times along with the character as output. 
+Eg: SSMMMAAARRT => S2M3A3R2T1
+- Two strings are anagrams if they have same no of characters and they are composed of the same letters.
+Even if there are repetitions, they are going to be same. 
 
 # C Programming - Topic1: Introduction
 
