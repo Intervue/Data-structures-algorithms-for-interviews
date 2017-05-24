@@ -104,6 +104,7 @@ start and end of array is chosen(specifically where array is split again and aga
 - Two pointers in a loop both on same side one tracking duplicates one tracking unique can be used to remove duplicates from a string.
 - In case of string arr size should be measured using strlen and not using sizeof as sizeof also includes \0
 - Sometimes a string can be merged with itself or the other to solve some algos. For eg: if one string is rotation of the other, concatenating one with itself can give a string where second string will be a substring in this string.
+- Store as many things as required to solve the algo in hash table as it is a structure 
 
 # Topic0: Programming Questions
 
@@ -262,7 +263,8 @@ start and end of array is chosen(specifically where array is split again and aga
 - [Reverse the words in a given sentence](/strings/question4.c)
 - [Reverse a given string](/strings/question5.c)
 - [Check whether given string is palindrome or not](/strings/question6.c)
-- [Find the first non-repeating character in a given](/strings/question7.c)
+- [Find the first non-repeating character in a given string](/strings/question7.c)
+- [](/strings/question8.c)
 
 
 ## Some important concepts to solve algos better
