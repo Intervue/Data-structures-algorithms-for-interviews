@@ -59,3 +59,5 @@ TODO:
 - do binary search method for strings question1
 - question 8 strings to be done (see from the sol pdf)
 - strings question10 to be done
+- strings question11 to be done
+- strings question12 to be done

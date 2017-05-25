@@ -23,4 +23,59 @@ shrink on it. This way we can compare each window and see which one is the small
 Time complexity: O(n) //since each character in main window in worst case will be visited twice
 Space complexity: O(1) //hashtable size is not dependent on input
 */
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
+int checkHash(int *arr, int length){
+	int i;
+	for(i=0; i<length;i++){
+		if(arr[i] != 0){
+			return 0;
+		}
+	}
+	return 1;
+}
+
+void findSmallestSubString(char *arr, char *small){
+	int small_length = strlen(small);
+	int i,j,k,l;
+	int length = strlen(arr);
+	int min = length;
+	int startIndex, endIndex;
+	int hashLength = 256;
+	int hash[hashLength];
+	for(k=0;k<small_length;k++){
+		hash[arr[k]]++;
+	}
+	for(i=0;i<length;i++){
+		for(j=i+1;j<length-i;j++){
+			for(l=i;l<j;l++){
+				if(hash[arr[l]] > 0){
+					hash[arr[l]]--;	
+				}
+				printf("value of j is %d\n", j);
+					printf("value of i is %d\n", i);
+					printf("value of min is %d\n",min);
+				if(checkHash(hash,hashLength)){
+					if(min > j-i){
+						min = j-i;
+						startIndex = i;
+						endIndex = j;
+					}
+				}
+			}
+		}
+	}
+	printf("start index is now %d\n", startIndex);
+	printf("end index is now %d\n", endIndex);
+	printf("length is %d\n", min);
+}
+
+int main(){
+	char str[] = "I am a string";
+	char small[] = "ami";
+
+	findSmallestSubString(str,small);
+	return 0;
+}
