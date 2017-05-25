@@ -115,6 +115,13 @@ remainder.
 Then we take the remainder and quotient from bottom to top and assign them alphabets corresponding to their
 values.
 
+### For Greedy
+- Used in case of optimization problems (maximize of minimize something)
+- When to use heaps vs when to use sorting: When the problem requires just finding the min or max, we can use sorting, but if after finding something is to be inserted again for which in case of sorting it will take O(n) time as it requires finding the place, heaps are better as they take only O(logn) time to do the same thing.
+- In order to represent nodes using bits etc, (eg: huffman coding), we use trees.
+- Huffman codes or optimal merge patterns where something is to be minimized, always choose the maximum
+value to be at the top of the tree with min edge length (or path to be traversed) and min at bottom with
+max edge or path to be traversed to minimize work.
 
 # Topic0: Programming Questions
 
@@ -279,6 +286,13 @@ values.
 - [Find the smallest window in the string containing all characters of another string](/strings/question11.c)
 - [Find first non-repeating characters from a stream of characters](/strings/question12.c)
 
+### Greedy
+
+- [Make a program for greedy knapsack problem](/greedy/question1.c)
+- [Make a program to implement huffman encoding](/greedy/question2.c)
+- [Make a program to sequence given jobs with deadlines to maximize profits](/greedy/question3.c)
+- [Optimal merge patterns](/greedy/question4.c)
+
 ## Some important concepts to solve algos better
 
 - For extreme values refer to limits.h constants given by C
@@ -355,6 +369,12 @@ Eg: SSMMMAAARRT => S2M3A3R2T1
 - Two strings are anagrams if they have same no of characters and they are composed of the same letters.
 Even if there are repetitions, they are going to be same. 
 - Ideal approach of writing a program is return from a functiona and keep strings at a single place and not scattered
+- Greedy method and DP are two programing paradigms which can be used to solve optimization problems
+- Greedy method fractions are allowed
+- For huffman coding to work letters must not be uniformly distributed
+- Spanning tree is min number of edges present in the graph such that all nodes are connected. Span tree is always subgraph of the main graph and cannot contain edges which are not present in the main graph
+- Number of edges incident on the node is degree of node in undirected graphs. In case of directed, there is no degree but in degree and out degree
+- Kirchoff theorem is used to find spanning tree of non-weighted undirected simple graph
 
 # C Programming - Topic1: Introduction
 
