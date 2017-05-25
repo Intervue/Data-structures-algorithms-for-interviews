@@ -107,6 +107,14 @@ start and end of array is chosen(specifically where array is split again and aga
 - Store as many things as required to solve the algo in hash table as it is a structure 
 - It is always good to free memory assigned to hashTable after the end of the program
 - Sometimes hashtable value can be decremented and not incremented to solve an algo for eg. finding anagram
+- Excel column number and name relation has to do with the number system. In case of excel the number system
+base is 26. Therefore numbers are from 1-26. Just that numbers in this case start from 1 and not from zero
+as compared to other bases for eg 2 which has 0 and 1 and so on.
+Therefore given a number we can keep dividing it by 26 until we receive a number which is less than 26 as
+remainder.
+Then we take the remainder and quotient from bottom to top and assign them alphabets corresponding to their
+values.
+
 
 # Topic0: Programming Questions
 
@@ -192,7 +200,6 @@ start and end of array is chosen(specifically where array is split again and aga
 - [Consider a single linked list with each node having an arbitrary pointer with initial value NULL.Give an algorithm to make the arbitrary pointer point to the greatest value node on its right side.](/linked-lists/question17.c)
 -[Insertion and deletion in memory efficient double linked lists](/linked-lists/question18.c)
 
-
 ### Hashing
 
 - [General question to understand linear probing](/hashing/general-question1.c)
@@ -268,7 +275,9 @@ start and end of array is chosen(specifically where array is split again and aga
 - [Find the first non-repeating character in a given string](/strings/question7.c)
 - [Run length encoding](/strings/question8.c)
 - [Check whether given two strings are anagrams of each other](/strings/question9.c)
-
+- [Find excel column name for given excel column number](/strings/question10.c)
+- [Find the smallest window in the string containing all characters of another string](/strings/question11.c)
+- [Find first non-repeating characters from a stream of characters](/strings/question12.c)
 
 ## Some important concepts to solve algos better
 
@@ -345,6 +354,7 @@ is repeating how many times along with the character as output.
 Eg: SSMMMAAARRT => S2M3A3R2T1
 - Two strings are anagrams if they have same no of characters and they are composed of the same letters.
 Even if there are repetitions, they are going to be same. 
+- Ideal approach of writing a program is return from a functiona and keep strings at a single place and not scattered
 
 # C Programming - Topic1: Introduction
 
