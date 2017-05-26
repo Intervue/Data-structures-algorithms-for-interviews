@@ -61,3 +61,6 @@ TODO:
 - strings question10 to be done
 - strings question11 to be done
 - strings question12 to be done
+- min heap implementation of PRIMS in greedy
+- solve KRUSKAL from greedy
+- solve DIJKSTRA alog from greedy
