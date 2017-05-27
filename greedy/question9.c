@@ -62,9 +62,15 @@ int extractMin(int *arr, int *size){
 }
 
 void decreaseKey(int *arr, int *size, int key, int data){
-	int i=key, temp;
-	arr[i] = data;
-	minHeapify(arr,i,*size);
+	if(data > arr[key]){
+		return;
+	}	
+	arr[key] = data;
+	while(key > 0 && arr[(key-1)/2] > arr[key]){
+		swap(&arr[(key-1)/2],&arr[key]);
+		key = (key-1)/2;
+	}
+
 }
 
 void printHeap(int *arr, int size){
@@ -76,7 +82,6 @@ void printHeap(int *arr, int size){
 
 int findMinCost(int *arr, int size){
 	buildMinHeap(arr,size);
-	printHeap(arr,size);
 	int cost = 0;
 	while(size > 1){
 		int value = extractMin(arr,&size)+extractMin(arr,&size);
@@ -84,6 +89,7 @@ int findMinCost(int *arr, int size){
 		arr[size] = INT_MAX;
 		size++;
 		decreaseKey(arr,&size,size-1, value);
+		printHeap(arr,size);
 	}
 	return cost;
 }	
