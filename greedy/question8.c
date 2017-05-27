@@ -1,8 +1,11 @@
 /*
 Program to implement a simple graph
 
+METHOD1: linked list
+METHOD2: arrays
 
 */
+//METHOD1
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -65,5 +68,37 @@ int main(){
     addEdge(myGraph, 2, 3);
 
     printGraph(myGraph);
+    return 0;
+}
+//====================================================================================================
+//METHOD2
+#include <stdio.h>
+#include <stdlib.h>
+
+void addEdge(int arr[][4],int src, int dest){
+	arr[src][dest] = arr[dest][src] = 1;
+}
+
+void printGraph(int arr[][4]){
+	for(int i=0;i<4;i++){
+		printf("%d --> ", i);
+		for(int j=0;j<4;j++){
+			if(arr[i][j]){
+				printf("%d --> ", j);	
+			}
+		}	
+		printf("\n");
+	}		
+}
+
+int main(){
+	int size = 4;
+	int graph[4][4] = {0};
+	addEdge(graph, 0, 1);
+    addEdge(graph, 1, 2);
+    addEdge(graph, 1, 3);
+    addEdge(graph, 2, 3);
+
+    printGraph(graph);
     return 0;
 }
