@@ -296,6 +296,7 @@ max edge or path to be traversed to minimize work.
 - [Program for PRIMS algorithm](/greedy/question5.c)
 - [Program for KRUSKALS algorithm](/greedy/question6.c)
 - [Program for DIJKSTRA algorithm](/greedy/question7.c)
+- [Program to implement a simple graph](/greedy/question8.c)
 
 ## Some important concepts to solve algos better
 
@@ -382,6 +383,7 @@ Even if there are repetitions, they are going to be same.
 - Given a weighted graph, finding the minimum cost spanning tree can be done using two algos PRIMS and KRUSKALS. Both are greedy methods
 - In PRIMS, whenever weights of edges are duplicates, there is a chance that we might get more than 1 spanning tree. But final cost will remaing the same for all in that case
 - Dijsktra algo cannot be applied to graphs having -ve weight edges because the algo does not have capability to find if that edge is -ve or its getting converted to a -ve weight cycle. If there is a -ve weight cycle in the graph shortest path will not exist as with each cycle path will keep on decreasing.
+- Tree is an acyclic graph
 
 # C Programming - Topic1: Introduction
 
