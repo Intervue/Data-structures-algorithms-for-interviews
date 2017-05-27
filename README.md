@@ -297,6 +297,7 @@ max edge or path to be traversed to minimize work.
 - [Program for KRUSKALS algorithm](/greedy/question6.c)
 - [Program for DIJKSTRA algorithm](/greedy/question7.c)
 - [Program to implement a simple graph](/greedy/question8.c)
+- [Consider n-ropes with different length. Find algo to tie up all the rope into a single rope with min cost](/greedy/question9.c)
 
 ## Some important concepts to solve algos better
 
