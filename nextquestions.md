@@ -66,3 +66,6 @@ TODO:
 - solve DIJKSTRA alog from greedy
 - greedy question2 to be seen from geeks for geeks
 - greedy question12 implementation
+- divide and conquer question1, method3 to be done
+- divide and conquer quick sort way for question2 not able to understand
+- better way to implement a pow function

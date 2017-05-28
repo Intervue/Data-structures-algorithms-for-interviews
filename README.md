@@ -36,6 +36,7 @@ which has to be returned
 - To make games like snakes & ladders, we can use a linked list with a random pointer, next pointer and data.
 Whenever there is a ladder or snake, the random pointer will point there else it will be NULL.
 - Consider making additional connections (links to the new list or old list) for traversing or reference point of view when there are multiple things involved (random node eg:). New node sometimes can be added in the middle of the two nodes to maintain a connection and so on.
+- In program involving partition or merging always take mid as start+end/2 and not subtraction because this will always give the correct value. Subtraction may not give the correct value as you keep breaking the array into smaller parts
 
 ### For Hashing: (methods that can be applied)
 -  When solving questions divide value with the size of the hashTable. Keep the size of the hash table one
@@ -131,7 +132,7 @@ max edge or path to be traversed to minimize work.
 - In repeating elements with fixed size and ordered array we can use binary search. Also linear search can be
 used where if an element should be repeating a given number of times, you can check its value at i and then
 i+given number of times to see if thats true or not.
-
+- In divide and conquer even number of multiplications can be reduced from n to logn to get the same result. Example is the pow function where the base value is square everytime and power is halved everytime to get the same answer in logn multiplications. In case the power value is odd, the result is given the base value such that power value is converted to even and then same operations are applied.
 
 # Topic0: Programming Questions
 
@@ -315,6 +316,9 @@ i+given number of times to see if thats true or not.
 ### Divide and conquer
 
 - [Find a majority element using linear search that occurs more than n/2 times](/divide-and-conquer/question1.c)
+- [Nuts and bolts problem](/divide-and-conquer/question2.c)
+- [Write a custom C function to implement a pow function](/divide-and-conquer/question3.c)
+
 
 ## Some important concepts to solve algos better
 
