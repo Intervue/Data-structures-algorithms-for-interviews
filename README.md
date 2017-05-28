@@ -133,6 +133,7 @@ max edge or path to be traversed to minimize work.
 used where if an element should be repeating a given number of times, you can check its value at i and then
 i+given number of times to see if thats true or not.
 - In divide and conquer even number of multiplications can be reduced from n to logn to get the same result. Example is the pow function where the base value is square everytime and power is halved everytime to get the same answer in logn multiplications. In case the power value is odd, the result is given the base value such that power value is converted to even and then same operations are applied.
+- In binary search whatever the algo be, always start from the middle and compare values to the left or right. You may even compare the extreme left and the right values to see lower and upper bound or some pattern to solve the algo. But in binary search always start from the middle.
 
 # Topic0: Programming Questions
 
@@ -318,6 +319,7 @@ i+given number of times to see if thats true or not.
 - [Find a majority element using linear search that occurs more than n/2 times](/divide-and-conquer/question1.c)
 - [Nuts and bolts problem](/divide-and-conquer/question2.c)
 - [Write a custom C function to implement a pow function](/divide-and-conquer/question3.c)
+- [Select an element in sorted rotated array](/divide-and-conquer/question4.c)
 
 
 ## Some important concepts to solve algos better
