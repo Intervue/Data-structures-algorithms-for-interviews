@@ -124,6 +124,14 @@ value to be at the top of the tree with min edge length (or path to be traversed
 max edge or path to be traversed to minimize work.
 - Min cost spanning tree and shortest path problems are two different things. In shortest path a source will be given and we will have to reach the target in the shortest path possible given weight of each edge. In case of min cost spanning tree we have to construct a graph with min weight possible connecting ALL the nodes. Therefore priority of the algo varies
 - In greedy method, to min or max something (different methods), we can be greedy about something to solve the algo, and bring in cases which can defy out method. One of them will work.
+- Hash tables and mix and match of data structures like min and max heaps can also be used in solving greedy algos
+
+### For divide and conquer
+
+- In repeating elements with fixed size and ordered array we can use binary search. Also linear search can be
+used where if an element should be repeating a given number of times, you can check its value at i and then
+i+given number of times to see if thats true or not.
+
 
 # Topic0: Programming Questions
 
@@ -187,6 +195,7 @@ max edge or path to be traversed to minimize work.
 - [Given n non negative integers representing an elevation map where width of each bar is 1. Find the amt. of water that is trapped in between these bars after raining](/arrays/question26.c)
 - [Given an unsorted array of +ve integers, find the number of triangles that can be formed with three different elements as three sides of the triangle](/arrays/question27.c)
 - [Given an array, find the smallest number that is not possible with the sum of numbers from the array](/arrays/question28.c)
+- [Write a program to do binary search in an array](/arrays/question29.c)
 
 ### Linked List
 
@@ -301,6 +310,11 @@ max edge or path to be traversed to minimize work.
 - [Consider n-ropes with different length. Find algo to tie up all the rope into a single rope with min cost](/greedy/question9.c)
 - [Find max intervals from given intervals such that none of them are overlapping](/greedy/question10.c)
 - [Number of railway platforms](/greedy/question11.c)
+- [Rearrange the string such that same characters are d distance away](/greedy/question12.c)
+
+### Divide and conquer
+
+- [Find a majority element using linear search that occurs more than n/2 times](/divide-and-conquer/question1.c)
 
 ## Some important concepts to solve algos better
 
