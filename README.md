@@ -123,6 +123,7 @@ values.
 value to be at the top of the tree with min edge length (or path to be traversed) and min at bottom with
 max edge or path to be traversed to minimize work.
 - Min cost spanning tree and shortest path problems are two different things. In shortest path a source will be given and we will have to reach the target in the shortest path possible given weight of each edge. In case of min cost spanning tree we have to construct a graph with min weight possible connecting ALL the nodes. Therefore priority of the algo varies
+- In greedy method, to min or max something (different methods), we can be greedy about something to solve the algo, and bring in cases which can defy out method. One of them will work.
 
 # Topic0: Programming Questions
 
@@ -298,6 +299,8 @@ max edge or path to be traversed to minimize work.
 - [Program for DIJKSTRA algorithm](/greedy/question7.c)
 - [Program to implement a simple graph](/greedy/question8.c)
 - [Consider n-ropes with different length. Find algo to tie up all the rope into a single rope with min cost](/greedy/question9.c)
+- [Find max intervals from given intervals such that none of them are overlapping](/greedy/question10.c)
+- [Number of railway platforms](/greedy/question11.c)
 
 ## Some important concepts to solve algos better
 

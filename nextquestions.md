@@ -64,3 +64,4 @@ TODO:
 - min heap implementation of PRIMS in greedy
 - solve KRUSKAL from greedy
 - solve DIJKSTRA alog from greedy
+- greedy question2 to be seen from geeks for geeks
