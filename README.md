@@ -134,6 +134,8 @@ used where if an element should be repeating a given number of times, you can ch
 i+given number of times to see if thats true or not.
 - In divide and conquer even number of multiplications can be reduced from n to logn to get the same result. Example is the pow function where the base value is square everytime and power is halved everytime to get the same answer in logn multiplications. In case the power value is odd, the result is given the base value such that power value is converted to even and then same operations are applied.
 - In binary search whatever the algo be, always start from the middle and compare values to the left or right. You may even compare the extreme left and the right values to see lower and upper bound or some pattern to solve the algo. But in binary search always start from the middle.
+- Sometimes rather than searching in left array or right array, it is better to divide into two components/groups and apply various operations like comparison, merges etc. Note: since its divide and conquer number of division should be done till the end where we will be left with one element in each group.
+- Sometimes, we apply binary search and on finding the middle element we apply the logic that is the crux of the algo to the middle element to find out whether to search in right array or left array.
 
 # Topic0: Programming Questions
 
@@ -320,7 +322,8 @@ i+given number of times to see if thats true or not.
 - [Nuts and bolts problem](/divide-and-conquer/question2.c)
 - [Write a custom C function to implement a pow function](/divide-and-conquer/question3.c)
 - [Select an element in sorted rotated array](/divide-and-conquer/question4.c)
-
+- [Count inversions in an array](/divide-and-conquer/question5.c)
+- [Find the missing number in arithmetic progression](/divide-and-conquer/question6.c)
 
 ## Some important concepts to solve algos better
 

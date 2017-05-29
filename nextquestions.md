@@ -68,4 +68,4 @@ TODO:
 - greedy question12 implementation
 - divide and conquer question1, method3 to be done
 - divide and conquer quick sort way for question2 not able to understand
-- better way to implement a pow function
+- divide and conquer question5 to be done

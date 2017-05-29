@@ -37,16 +37,31 @@ Space complexity: O(1) or O(logn) //iterative or recursive
 //METHOD2
 #include <stdio.h>
 #include <stdlib.h>
-
+//recursion
 int search(int *arr,int start,int end, int elm){
 	if(start > end) return -1;
 	int mid = (start + end)/2;
 	if(arr[mid] == elm) return mid;
 
-	if(arr[start] <= arr[mid]){
-		return (elm >= arr[start] && elm <=arr[mid])?search(arr,start,mid-1,elm):search(arr,mid+1,end,elm);
-	}	
-	return (elm >= arr[mid] && elm <= arr[end])?search(arr,mid+1,end,elm):search(arr,start,mid-1,elm);
+	if(arr[mid] <= arr[end]){
+		return (elm >= arr[mid] && elm <=arr[end])?search(arr,mid+1,end,elm):search(arr,start, mid-1,elm);	
+	}
+	return (elm >= arr[start] && elm <= arr[mid])?search(arr,start,mid-1,elm):search(arr,mid+1,end,elm);
+}
+//iteration
+int searchIterative(int *arr, int start, int end, int elm){
+	while(start <= end){
+		int mid = (start + end)/2;
+		if(arr[mid] == elm) return mid;
+		if(arr[mid] <= arr[end]){
+			start = (elm >= arr[mid] && elm <= arr[end])?mid+1:start;
+			end = (elm >= arr[mid] && elm <= arr[end])?end:mid-1;
+		}else{
+			end = (elm >= arr[start] && elm <=arr[mid])?mid-1:end;
+			start = (elm >= arr[start] && elm <=arr[mid])?start:mid+1;
+		}
+	}
+	return -1;
 }
 
 int main(){
@@ -56,7 +71,7 @@ int main(){
 	while(1){
 		printf("enter the element to be searched\n");
 		scanf("%d",&elm);
-		int index = search(arr,0,size-1,elm);
+		int index = searchIterative(arr,0,size-1,elm);
 		if(index < 0){
 			printf("element does not exist\n");
 		}else{
