@@ -133,9 +133,15 @@ max edge or path to be traversed to minimize work.
 used where if an element should be repeating a given number of times, you can check its value at i and then
 i+given number of times to see if thats true or not.
 - In divide and conquer even number of multiplications can be reduced from n to logn to get the same result. Example is the pow function where the base value is square everytime and power is halved everytime to get the same answer in logn multiplications. In case the power value is odd, the result is given the base value such that power value is converted to even and then same operations are applied.
-- In binary search whatever the algo be, always start from the middle and compare values to the left or right. You may even compare the extreme left and the right values to see lower and upper bound or some pattern to solve the algo. But in binary search always start from the middle.
+- In binary search whatever the algo be, always start from the middle and compare values to the left or right. You may even compare the extreme left and the right values to see lower and upper bound or some pattern to solve the algo. But in binary search always start from the middle. Also to break the recursion to return result successful condition will be a unique property trait at that index as per algo. Find that trait.
 - Sometimes rather than searching in left array or right array, it is better to divide into two components/groups and apply various operations like comparison, merges etc. Note: since its divide and conquer number of division should be done till the end where we will be left with one element in each group.
-- Sometimes, we apply binary search and on finding the middle element we apply the logic that is the crux of the algo to the middle element to find out whether to search in right array or left array.
+- Sometimes, we apply binary search and on finding the middle element we apply the logic that is the crux of the algo to the middle element to find out whether to search in right array or left array. Eg: crux of algo if is swapping we do swapping, if comparing we do comparing, if it is applying some formula, we do that.
+- To write the iterative version of a recursive version follow the steps below
+      - Replace the recursion break condition with the while loop which will run
+      - Apply the same conditions and update the value of the variables in that condition. These variables will be a part of the while loop also. Rather than calling the function with updated values, just update the values of the variables and while loop will handle the rest
+      - Make sure to assign both the variable values that are passed into the function in recursion while doing it in while loop as iteration
+      - The false condition (if any false value is to be returned for validation) will come after the end of while loop
+- To write recursive from iterative, replace while loop condition and its opposite should be break condition of recursion and reverse the sub steps
 
 # Topic0: Programming Questions
 
@@ -324,6 +330,11 @@ i+given number of times to see if thats true or not.
 - [Select an element in sorted rotated array](/divide-and-conquer/question4.c)
 - [Count inversions in an array](/divide-and-conquer/question5.c)
 - [Find the missing number in arithmetic progression](/divide-and-conquer/question6.c)
+- [Given an array containing 1's and 0's in which all 0's appear before all 1's, count the number of 1's in the array](/divide-and-conquer/question7.c)
+- [Given an array with 2n integer in the formal a1,a2,a3...b1,b2,b3.. Shuffle the array to a1b1 a2b2 a3b3 ...](/divide-and-conquer/question8.c)
+- [Given a sorted array of non repeated integers a[1--n]. Check whether there is an index i for which a[i]=i](/divide-and-conquer/question9.c)
+- [Find the maximum element index in an array which is first increasing and then decreasing](/divide-and-conquer/question10.c)
+- [Search an element in row wise and column wise sorted 2d array](/divide-and-conquer/question11.c)
 
 ## Some important concepts to solve algos better
 

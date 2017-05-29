@@ -48,11 +48,33 @@ struct node *searchMissing(int *arr, int start, int end, int cd){
 		temp = newNode(mid+1,arr[mid]+cd);
 		return temp;
 	}
-	struct node *left = NULL; struct node *right= NULL;
 	if(arr[mid] == tmid){
 		return searchMissing(arr,mid+1,end,cd);
 	}
 	return searchMissing(arr,start,mid-1,cd);
+}
+
+struct node *searchMissingIterative(int *arr, int start, int end, int cd){
+	struct node *temp = NULL;
+	while(start <= end){
+		int mid = (start + end)/2;
+		int tmid = arr[0] + mid*cd;
+		if(mid > 0 && arr[mid] - arr[mid-1] != cd){
+			temp = newNode(mid,arr[mid-1]+cd);
+			return temp;
+		}
+		if(arr[mid+1]-arr[mid] != cd){
+			temp = newNode(mid+1,arr[mid]+cd);
+			return temp;
+		}
+		if(arr[mid] == tmid){
+			start = mid + 1;
+			end = end;
+		}else{
+			start = start;
+			end = mid-1;
+		}
+	}
 }
 
 int findDifference(int *arr, int size){
@@ -65,7 +87,7 @@ int main(){
 
 	int cd = findDifference(arr,size);
 	
-	struct node *missing = searchMissing(arr,0,size-1,cd);
+	struct node *missing = searchMissingIterative(arr,0,size-1,cd);
 	if(missing){
 		printf("missing element is %d should be at index %d\n", missing->elm,missing->index);
 	}else{

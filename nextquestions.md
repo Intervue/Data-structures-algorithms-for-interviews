@@ -69,3 +69,5 @@ TODO:
 - divide and conquer question1, method3 to be done
 - divide and conquer quick sort way for question2 not able to understand
 - divide and conquer question5 to be done
+- make the iterative version for question8
+- last question of divide and conquer to be done (2d array)
