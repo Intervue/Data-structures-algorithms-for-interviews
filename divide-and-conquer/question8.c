@@ -49,19 +49,25 @@ void combineArrays(int *arr, int start, int end, int size){
 	combineArrays(arr,mid+1,end, size);
 }
 
-// void combineArraysIterative(int *arr, int start, int end, int size){
-// 	while(end-start+1>2){
-// 		int mid = (start+end)/2;
-// 		int i=(start+mid+1)/2,j=mid+1;
-// 		while(i<=mid && j<=(mid+end)/2){
-// 			printf("swapping %d and %d\n", arr[i], arr[j]);
-// 			swap(&arr[i],&arr[j]);
-// 			i++;j++;
-// 		}
-// 		start = start;
-// 		end=mid;
-// 	}
-// }
+void combineArraysIterative(int *arr, int start, int end, int size){
+	// int counter = 0;
+	while(end-start+1>2){
+		int mid = (start+end)/2;
+		int i=(start+mid+1)/2,j=mid+1;
+		while(i<=mid && j<=(mid+end)/2){
+			printf("swapping %d and %d\n", arr[i], arr[j]);
+			swap(&arr[i],&arr[j]);
+			i++;j++;
+		}
+		if(end-start+1 <= 2){
+			end = mid;	
+		}
+		if(end-start+1 > 2){
+			start = mid+1;
+			// counter++;
+		}
+	}
+}
 
 int main(){
 	int arr[] = {1,2,3,4,5,6,7,8};

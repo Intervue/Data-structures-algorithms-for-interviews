@@ -71,3 +71,5 @@ TODO:
 - divide and conquer question5 to be done
 - make the iterative version for question8
 - last question of divide and conquer to be done (2d array)
+- matrix chain multiplication using 2d array to be done later
+- longest common subsequence method to be done

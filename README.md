@@ -143,6 +143,11 @@ i+given number of times to see if thats true or not.
       - The false condition (if any false value is to be returned for validation) will come after the end of while loop
 - To write recursive from iterative, replace while loop condition and its opposite should be break condition of recursion and reverse the sub steps
 
+### Dynamic Programming
+
+- Programming in this means to use a table and we dynamically decide whether to call a function to do the computation or use this table
+- Dynamic programming is just like divide and conquer and can be applied to any problem with optimal substructure (given problems should be breakable into smaller problems and solution to sub problem is a part of the solution to the main problem) and overlapping sub problems and recusive eqns
+
 # Topic0: Programming Questions
 
 ## Note:
@@ -335,6 +340,11 @@ i+given number of times to see if thats true or not.
 - [Given a sorted array of non repeated integers a[1--n]. Check whether there is an index i for which a[i]=i](/divide-and-conquer/question9.c)
 - [Find the maximum element index in an array which is first increasing and then decreasing](/divide-and-conquer/question10.c)
 - [Search an element in row wise and column wise sorted 2d array](/divide-and-conquer/question11.c)
+
+### Dynamic Programming
+- [Algorithm to find optimized soln for matrix chain multiplication](/dynamic-programming/question1.c)
+- [Compute Longest common subsequence between two strings](/dynamic-programming/question1.c)
+
 
 ## Some important concepts to solve algos better
 
