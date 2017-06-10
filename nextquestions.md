@@ -73,3 +73,8 @@ TODO:
 - last question of divide and conquer to be done (2d array)
 - matrix chain multiplication using 2d array to be done later
 - longest common subsequence method to be done
+- DP question3 to be done
+- DP question4 to be done
+- DP question5 to be done
+- DP question6 to be done
+- DP question7 to be done

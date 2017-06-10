@@ -147,6 +147,7 @@ i+given number of times to see if thats true or not.
 
 - Programming in this means to use a table and we dynamically decide whether to call a function to do the computation or use this table
 - Dynamic programming is just like divide and conquer and can be applied to any problem with optimal substructure (given problems should be breakable into smaller problems and solution to sub problem is a part of the solution to the main problem) and overlapping sub problems and recusive eqns
+- In problems involving dynamic programming, we start from the basic case first (for eg in 0/1 knapsack), we see if the weight of knapsack is 1 and object weight is 1, then if weight is 2 and object weight is 1 and so on, we keep finding solution to every basic problem to derive the solution for the main problem.
 
 # Topic0: Programming Questions
 
@@ -343,8 +344,12 @@ i+given number of times to see if thats true or not.
 
 ### Dynamic Programming
 - [Algorithm to find optimized soln for matrix chain multiplication](/dynamic-programming/question1.c)
-- [Compute Longest common subsequence between two strings](/dynamic-programming/question1.c)
-
+- [Compute Longest common subsequence between two strings](/dynamic-programming/question2.c)
+- [Multistage graph dynamic programming algorithm](/dynamic-programming/question3.c)
+- [0/1 Knapsack dynamic programming algorithm](/dynamic-programming/question4.c)
+- [Find a subset in an array whose sum is w](/dynamic-programming/question5.c)
+- [Travelling salesman problem](/dynamic-programming/question6.c)
+- [All pair shortest path algorithm](/dynamic-programming/question7.c)
 
 ## Some important concepts to solve algos better
 
@@ -432,6 +437,11 @@ Even if there are repetitions, they are going to be same.
 - In PRIMS, whenever weights of edges are duplicates, there is a chance that we might get more than 1 spanning tree. But final cost will remaing the same for all in that case
 - Dijsktra algo cannot be applied to graphs having -ve weight edges because the algo does not have capability to find if that edge is -ve or its getting converted to a -ve weight cycle. If there is a -ve weight cycle in the graph shortest path will not exist as with each cycle path will keep on decreasing.
 - Tree is an acyclic graph
+- Greedy method and dynamic programming are the only two methods that can be applied to find the solution to optimization problems. Greedy may not give the right solution everytime for each problem but will work for some of them and it takes less time. Dynamic on the other hand takes a little more time but always gives the correct answer to such problems.
+- n factorial is nothing but n power n
+- In a graph represented by cost matrix, if two vertices have an edge, weight will be given otherwise
+if they dont have edge it is infinity.
+- Travelling salesman problem time complexity O(n^2 ^ 2^n)
 
 # C Programming - Topic1: Introduction
 
