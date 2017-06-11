@@ -1,49 +1,123 @@
 /*
 Given an array and an integer K, find max element for each and every contiguous subarray of size k
 
-METHOD1
-Only valid for less value of k eg given for k = 3
-Time Complexity: O(n)
-Space Complexity: O(1)
+METHOD1:
+Naive approach, for each sub array we see the max
+Time complexity: O(nk)
+Space complexity: o(1)
 
-METHOD2
+METHOD2:
+
 
 */
-
-
-// //METHOD1
+//METHOD1
 // #include <stdio.h>
 // #include <stdlib.h>
 
-// int main(){
-
-// 	int arr[] = {10,4,2,11,3,15,12,8,7,9,21,14};
-// 	int length = sizeof(arr)/sizeof(arr[0]);
-// 	int elm1, elm2, elm3, max;
-	
-// 	for(int i=0; i<length-2; i++){
-
-// 		elm1 = arr[i];
-// 		elm2 = arr[i+1];
-// 		elm3 = arr[i+2];
-
-// 		max = (elm1>elm2)?((elm1>elm3)?elm1:elm3):((elm2>elm3)?elm2:elm3);
-
-// 		printf("%d ", max);
-
+// void printMaxInK(int *arr, int size, int k){
+// 	int i,j;
+// 	int max;
+// 	for(i=0; i<size-k+1; i++){
+// 		max = arr[i];
+// 		for(j=i+1; j<k+i;j++){
+// 			if(arr[j] > max){
+// 				max = arr[j];
+// 			}
+// 		}
+// 		printf("%d\n", max);
 // 	}
-
 // }
 
+// int main(){
+// 	int arr[] = {8, 5, 10, 7, 9, 4, 15, 12, 90, 13};
+// 	int k =3;
+// 	int size = sizeof(arr)/sizeof(arr[0]);
 
-//METHOD1
+// 	printMaxInK(arr,size,k);
+// 	return 0;
+// }
+
+//METHOD2
 #include <stdio.h>
 #include <stdlib.h>
 
+struct node{
+	int data;
+	struct node *prev;
+	struct node *next;
+} *rear = NULL, *front = NULL;
+
+struct node *newNode(int data){
+	struct node *temp = (struct node *)malloc(sizeof(struct node));
+	temp->data = data;
+	temp->prev = NULL;
+	temp->next = NULL;
+	return temp;
+}
+
+void enqueue(int data){
+	struct node *temp;
+	if(!rear){
+		temp = newNode(data);
+		front = rear = temp;
+	}else{
+		while(rear->data < data){
+			struct node *temp = rear;
+			rear = rear->prev;
+			free(temp);
+			if(!rear){
+				front = rear;
+				break;
+			}
+		}
+		temp = newNode(data);
+		if(!rear){
+			front = rear = temp;
+		}else{
+			rear->next = temp;
+			temp->prev = rear;
+			if(!front->next){
+				front->next = temp;
+			}
+			rear = rear->next;
+		}
+	}
+}
+
+void printList(){
+	struct node *temp = front;
+	while(temp){
+		printf("%d\n", temp->data);
+		temp=temp->next;
+	}
+	// printf("=======================\n");
+}
+
+void printMaxInK(int *arr, int size, int k){
+	int i;
+	for(i=0; i<k;i++){
+		enqueue(arr[i]);
+	}
+	// printList();
+	printf("%d\n", front->data);
+	int last=i-k;
+	for(;i<size;i++){
+		// printf("enqueuing %d\n", arr[i]);
+		enqueue(arr[i]);
+		if(arr[last] == front->data){
+			front=front->next;
+			// printf("front now pointing to %d\n", front->data);
+			front->prev = NULL;
+		}
+		printf("%d\n", front->data);
+		// printList();
+		last++;
+	}
+}
+
 int main(){
-
-	int arr[] = {10,4,2,11,3,15,12,8,7,9,21,14};
-	
-	
-
+	int arr[] = {8, 5, 10, 7, 9, 4, 15, 12, 90, 13};
+	int size = sizeof(arr)/sizeof(arr[0]);
+	int k = 3;
+	printMaxInK(arr, size, k);
 }

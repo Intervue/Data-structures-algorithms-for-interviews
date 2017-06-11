@@ -259,6 +259,7 @@ i+given number of times to see if thats true or not.
 - [Consider a set of intervals, merge all overlapping intervals](/stacks-and-queues/question8.c)
 - [Check whether parenthesis are balanced or not](/stacks-and-queues/question9.c)
 - [The stock span problem](/stacks-and-queues/question10.c)
+- [Implement a queue using linked list](/stacks-and-queues/question11.c)
 
 
 ### Heaps
@@ -350,6 +351,7 @@ i+given number of times to see if thats true or not.
 - [Find a subset in an array whose sum is w](/dynamic-programming/question5.c)
 - [Travelling salesman problem](/dynamic-programming/question6.c)
 - [All pair shortest path algorithm](/dynamic-programming/question7.c)
+- [Find the maximum sum sub array](/dynamic-programming/question7.c)
 
 ## Some important concepts to solve algos better
 
