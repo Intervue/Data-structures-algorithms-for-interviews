@@ -1,9 +1,12 @@
+GOOD QUESTIONS:
+- question18.c (arrays)
+
+
 TODO: 
 - question14.c (general), 
 - question17.c (arrays), to be done after trees and linkedlist is done
-- question18.c (arrays), to be done after linkedlist is done 
 - question19.c (arrays): to be done after trees is done
-- question20.c (arrays): to be done after hashing (approach 2 and 3)
+- question20.c (arrays): to be done after hashing (method 3)
 
 
 ### COMING SOON

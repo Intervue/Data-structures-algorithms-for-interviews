@@ -7,9 +7,16 @@ Time complexity: O(nk)
 Space complexity: o(1)
 
 METHOD2:
+In this question we maintain a queue using a double linked list and each time if an element in the
+queue from the rear is lesser than the next element we move the rear to the prev node and free
+the memory. And in each iteration front is printed. Also if the last element in now no longer
+a part of the queue as it is not in the window, it has to be removed from the queue.
 
+Time complexity: O(n)
+Space complexity: O(k) //queue will be of size k only in worst case
 
 */
+
 //METHOD1
 // #include <stdio.h>
 // #include <stdlib.h>
@@ -118,6 +125,6 @@ void printMaxInK(int *arr, int size, int k){
 int main(){
 	int arr[] = {8, 5, 10, 7, 9, 4, 15, 12, 90, 13};
 	int size = sizeof(arr)/sizeof(arr[0]);
-	int k = 3;
+	int k = 4;
 	printMaxInK(arr, size, k);
 }

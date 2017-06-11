@@ -22,6 +22,12 @@ only if there is one number that repeats odd number of times
 which has to be returned
 - Sometimes if the algo seems to be complicated move to a generalized format where the result is assumed to be N and you are solving it for some x by going from solution to problem, and then try to figure out the algo. (refer question 28.c for more clarification)
 - Circular array can be used to implement a queue. Here the increment is not done just by incrementing by 1, but is done by incrementing by 1 and taking mod with array size. Like this you keep rotating the array. Refer question 2 stacks and queue for more info
+- For questions involving subarrays:
+    - Naive approach
+    - Can maintain another data structure (may be a queue) sometimes to solve the algo
+    - Can maintain a hash Table to solve the algo
+    - Can maintain multiple variables to solve the algo
+    - Can maintain two pointers to solve the algo
 
 ### For Linked Lists: (methods that can be applied)
 - Use multiple variables to not loose track of the linked list and keep moving them ahead in a manner such that various operations can be done on a linked list
