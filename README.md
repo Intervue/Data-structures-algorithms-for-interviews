@@ -28,6 +28,7 @@ which has to be returned
     - Can maintain a hash Table to solve the algo
     - Can maintain multiple variables to solve the algo
     - Can maintain two pointers to solve the algo
+    - Kabane's algo
 
 ### For Linked Lists: (methods that can be applied)
 - Use multiple variables to not loose track of the linked list and keep moving them ahead in a manner such that various operations can be done on a linked list
@@ -357,7 +358,8 @@ i+given number of times to see if thats true or not.
 - [Find a subset in an array whose sum is w](/dynamic-programming/question5.c)
 - [Travelling salesman problem](/dynamic-programming/question6.c)
 - [All pair shortest path algorithm](/dynamic-programming/question7.c)
-- [Find the maximum sum sub array](/dynamic-programming/question7.c)
+- [Find the maximum sum sub array](/dynamic-programming/question8.c)
+- [Find the maximum sum sub array](/dynamic-programming/question9.c)
 
 ## Some important concepts to solve algos better
 
