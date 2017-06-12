@@ -49,9 +49,7 @@ void longestSubSeq(int *arr, int size){
 	}
 	end = end + 1;
 	start = end-maxLength+1;
-	printf("max length is %d\n", maxLength);
-	printf("start value is %d\n", start);
-	printf("end value is %d\n", end);
+	
 	//print the subsequence
 	for(i=start;i<=end;i++){
 		printf("%d\n", arr[i]);
@@ -67,5 +65,64 @@ int main(){
 	qsort(arr,size,sizeof(int),cmpfunc);
 
 	longestSubSeq(arr, size);
+	return 0;
+}
+
+//================================================
+//METHOD2:
+#include <stdio.h>
+#include <stdlib.h>
+
+struct hash{
+	int data;
+};
+
+void find(int *arr, int size){
+	struct hash *hashArr = (struct hash *)malloc(sizeof(struct hash)*100); //fixed size
+
+	printf("%c\n", hashArr[0].data);
+
+	int i;
+	for(i=0; i<size;i++){
+		hashArr[arr[i]].data = 1;
+	}
+	int key, start, prev, maxLength = 0;
+	int startIndex = 0, endIndex = 0;
+	
+	for(i=0;i<size;i++){
+		key = arr[i];
+		prev = arr[i];
+
+		if(hashArr[key].data != 2){
+			while(hashArr[key].data == 1){
+				hashArr[key].data == 2;
+				key--;
+			}
+			start = key+1;
+			key = prev+1;
+			while(hashArr[key].data == 1){
+				hashArr[key].data = 2;
+				key++;
+			}
+			prev = --key;
+			if(maxLength < prev-start+1){
+				maxLength = prev-start+1;
+				startIndex = start;
+				endIndex = prev;
+			}
+		}
+	}
+	int j;
+	for(j=startIndex; j<=endIndex;j++){
+		printf("%d\n", j);
+	}
+}
+
+int main(){
+	int arr[] = {10,4,3,11,13,5,6,12,7};
+	int size = sizeof(arr)/sizeof(arr[0]);
+
+	find(arr,size);
+
 	return 0;
 }
