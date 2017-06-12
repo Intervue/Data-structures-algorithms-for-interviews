@@ -359,7 +359,8 @@ i+given number of times to see if thats true or not.
 - [Travelling salesman problem](/dynamic-programming/question6.c)
 - [All pair shortest path algorithm](/dynamic-programming/question7.c)
 - [Find the maximum sum sub array](/dynamic-programming/question8.c)
-- [Find the maximum sum sub array](/dynamic-programming/question9.c)
+- [Find the max sum increasing sub sequence](/dynamic-programming/question9.c)
+- [Find the longest subsequence in an array such that elements are consecutive](/dynamic-programming/question10.c)
 
 ## Some important concepts to solve algos better
 
