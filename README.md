@@ -155,6 +155,8 @@ i+given number of times to see if thats true or not.
 - Programming in this means to use a table and we dynamically decide whether to call a function to do the computation or use this table
 - Dynamic programming is just like divide and conquer and can be applied to any problem with optimal substructure (given problems should be breakable into smaller problems and solution to sub problem is a part of the solution to the main problem) and overlapping sub problems and recusive eqns
 - In problems involving dynamic programming, we start from the basic case first (for eg in 0/1 knapsack), we see if the weight of knapsack is 1 and object weight is 1, then if weight is 2 and object weight is 1 and so on, we keep finding solution to every basic problem to derive the solution for the main problem.
+- Questions involving subsequence, kadane's algo can be applied or hash table or pointers can be used
+- In questions involving matrices somehow, to calculate the next number as per the algo it will involve the diagnal, upper or left element as we did in most of the algos.
 
 # Topic0: Programming Questions
 
@@ -361,6 +363,8 @@ i+given number of times to see if thats true or not.
 - [Find the maximum sum sub array](/dynamic-programming/question8.c)
 - [Find the max sum increasing sub sequence](/dynamic-programming/question9.c)
 - [Find the longest subsequence in an array such that elements are consecutive](/dynamic-programming/question10.c)
+- [Given a binary matrix, find the largest square sub matrix with all 1's](/dynamic-programming/question11.c)
+- [](/dynamic-programming/question12.c)
 
 ## Some important concepts to solve algos better
 
