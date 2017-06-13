@@ -10,6 +10,9 @@ We can assume each cell in the matrix to be the bottom right most cell of a squa
 of the upper, left and the diagnal number to it. Whatever the min number is, if this number is 1, we add
 that min to it, if its zero we simply write it as zero. Reason being a matrix containing zero cannot be
 a square matrix containing all 1's. In this process we find the max size and print it.
+
+Time complexity: O(n^2)
+Space complexity: O(n^2)
 */
 
 #include <stdio.h>
