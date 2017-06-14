@@ -162,6 +162,10 @@ For eg: if a number that is needed should satisfy division by 2/3/5, we will rat
 number with 2/3/5 to generate the next one. Therefore a bigger problem to generate series was broken
 down to a smaller problem to generate the next number each time. To keep track of multiple generations
 sometimes, multiple variables can be used.
+- Sometimes a given problem can be solved by reducing it to another known problem whose solution
+is known.
+- For problems involving subsequences, we can break them down to smaller problems. Specifically for 
+linear array, array of length 1 less than total can be taken and a pattern can be found for dynamic programming to make recursive equations. 
 
 
 # Topic0: Programming Questions
@@ -371,6 +375,7 @@ sometimes, multiple variables can be used.
 - [Find the longest subsequence in an array such that elements are consecutive](/dynamic-programming/question10.c)
 - [Given a binary matrix, find the largest square sub matrix with all 1's](/dynamic-programming/question11.c)
 - [Find kth ugly number](/dynamic-programming/question12.c)
+- [Find the longest increasing subsequence](/dynamic-programming/question13.c)
 
 ## Some important concepts to solve algos better
 
