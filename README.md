@@ -376,6 +376,8 @@ linear array, array of length 1 less than total can be taken and a pattern can b
 - [Given a binary matrix, find the largest square sub matrix with all 1's](/dynamic-programming/question11.c)
 - [Find kth ugly number](/dynamic-programming/question12.c)
 - [Find the longest increasing subsequence](/dynamic-programming/question13.c)
+- [Find the longest decreasing subsequence](/dynamic-programming/question14.c)
+
 
 ## Some important concepts to solve algos better
 

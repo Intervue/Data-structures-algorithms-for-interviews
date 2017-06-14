@@ -82,4 +82,4 @@ TODO:
 - DP question6 to be done
 - DP question7 to be done
 - DP question11 (method1 naive) to be done
-- DP question13 (printing the subsequence to be done)
+- DP question13 and 14(printing the subsequence to be done)
