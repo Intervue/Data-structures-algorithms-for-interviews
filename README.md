@@ -166,7 +166,7 @@ sometimes, multiple variables can be used.
 is known.
 - For problems involving subsequences, we can break them down to smaller problems. Specifically for 
 linear array, array of length 1 less than total can be taken and a pattern can be found for dynamic programming to make recursive equations. 
-
+- Sometimes results of two DP solutions can be merged using some algo to find the final result.
 
 # Topic0: Programming Questions
 
@@ -377,6 +377,7 @@ linear array, array of length 1 less than total can be taken and a pattern can b
 - [Find kth ugly number](/dynamic-programming/question12.c)
 - [Find the longest increasing subsequence](/dynamic-programming/question13.c)
 - [Find the longest decreasing subsequence](/dynamic-programming/question14.c)
+- [Perfect hill longest subsequence](/dynamic-programming/question15.c)
 
 
 ## Some important concepts to solve algos better
