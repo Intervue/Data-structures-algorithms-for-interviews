@@ -378,6 +378,7 @@ linear array, array of length 1 less than total can be taken and a pattern can b
 - [Find the longest increasing subsequence](/dynamic-programming/question13.c)
 - [Find the longest decreasing subsequence](/dynamic-programming/question14.c)
 - [Perfect hill longest subsequence](/dynamic-programming/question15.c)
+- [Given two words, word1 and word2, find min operations to convert word1 to word2 with some given set of rules](/dynamic-programming/question16.c)
 
 
 ## Some important concepts to solve algos better
