@@ -167,6 +167,8 @@ is known.
 - For problems involving subsequences, we can break them down to smaller problems. Specifically for 
 linear array, array of length 1 less than total can be taken and a pattern can be found for dynamic programming to make recursive equations. 
 - Sometimes results of two DP solutions can be merged using some algo to find the final result.
+- To breakdown any question to DP (recursive equation), follow the crux of the question and break
+it down into a story and later generalize to form recursive equations
 
 # Topic0: Programming Questions
 
@@ -379,7 +381,10 @@ linear array, array of length 1 less than total can be taken and a pattern can b
 - [Find the longest decreasing subsequence](/dynamic-programming/question14.c)
 - [Perfect hill longest subsequence](/dynamic-programming/question15.c)
 - [Given two words, word1 and word2, find min operations to convert word1 to word2 with some given set of rules](/dynamic-programming/question16.c)
-
+- [Largest sum independent set in a binary tree](/dynamic-programming/question17.c)
+- [Find the number of n-bit integers which do not have any two consequent zeroes](/dynamic-programming/question18.c)
+- [Given a sentence without spaces between words. Break the words in such a way that they are meaningful](/dynamic-programming/question19.c)
+- [Partition problem](/dynamic-programming/question20.c)
 
 ## Some important concepts to solve algos better
 

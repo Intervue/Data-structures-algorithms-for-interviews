@@ -84,3 +84,7 @@ TODO:
 - DP question11 (method1 naive) to be done
 - DP question13 and 14(printing the subsequence to be done)
 - https://gsamaras.wordpress.com/code/caution-when-reading-char-with-scanf-c/
+- DP solution extension from geeks for geeks for question17  and course sol as well
+- program to find fibonacci number in logn time (geeks for geeks)
+- DP question 19 to be done
+
