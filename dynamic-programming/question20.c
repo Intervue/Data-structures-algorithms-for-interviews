@@ -76,31 +76,38 @@ int findPartition(int *arr, int size){
 		return 0;
 	}
 
-	int part[sum/2+1][size];
+	int part[sum/2+1][size+1];
 
-	for(i=0;i<size;i++){
+	for(i=0;i<=size;i++){
 		part[i][0] = 1;
-	}	
+	}
+	for(j=1;j<=sum/2;j++){
+		part[0][j] = 0;
+	}
 
-	for(i=0;i<size;i++){
+	for(i=1;i<=size;i++){
 		for(j=1;j<=sum/2;j++){
-			part[i][j] = part[i-1][j] || part[i-1][j-arr[i]];
+			if(arr[i-1] > j){
+				part[i][j] = part[i-1][j];
+			}else{
+				part[i][j] = part[i-1][j] || part[i-1][j-arr[i-1]];
+			}
 		}
 	}
 
-	 // uncomment this part to print table 
-     for (i = 0; i < size; i++)  
-     {
-       for (j = 0; j <= sum/2; j++)  
-          printf ("%4d", part[i][j]);
-       printf("\n");
-     } 
+	for(i=0;i<=size;i++){
+		for(j=0;j<=sum/2;j++){
+			printf("%d ", part[i][j]);
+		}
+		printf("\n");
+	}
 
-	return part[size-1][sum/2];
+	return part[size][sum/2];
+
 }
 
 int main(){
-	int arr[] = {3,1,5,9,12};
+	int arr[] = {3,5};
 	int size = sizeof(arr)/sizeof(arr[0]);
 	if(findPartition(arr,size)){
 		printf("can be divided\n");
