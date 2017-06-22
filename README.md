@@ -385,6 +385,7 @@ it down into a story and later generalize to form recursive equations
 - [Find the number of n-bit integers which do not have any two consequent zeroes](/dynamic-programming/question18.c)
 - [Given a sentence without spaces between words. Break the words in such a way that they are meaningful](/dynamic-programming/question19.c)
 - [Partition problem](/dynamic-programming/question20.c)
+- [Find the longest palindromic subsequence](/dynamic-programming/question21.c)
 
 ## Some important concepts to solve algos better
 
