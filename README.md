@@ -168,7 +168,15 @@ is known.
 linear array, array of length 1 less than total can be taken and a pattern can be found for dynamic programming to make recursive equations. 
 - Sometimes results of two DP solutions can be merged using some algo to find the final result.
 - To breakdown any question to DP (recursive equation), follow the crux of the question and break
-it down into a story and later generalize to form recursive equations
+it down into a story and later generalize to form recursive equations. For eg: in case of finding the longest palindrome subsequence in a given string, we compare the last two elements to see if they match or not, this is something that we also do in a normal palindrome question. Here on
+basis of that we are able to derive to equations if they match we move both pointers to next location, if they dont we move one of them (two cases) and find whichever is maximum. Then
+using these recursive equations we build a tree taking an example in mind. Then we find overlapping problems. To see unique problems we generalize the question for which we made the tree to i and j and rather finding how many values of j can exist for each value of i everytime. By that calculation we find unique solutions and solve the question making a table of that size.
+- See if a DP is becoming a fibonacci series. For eg: in the stairs problem
+total ways to reach the nth step  f(n) = f(n-1) + f(n-2)
+i.e from n-1 it can take you 1 step and from n-2 it can take you only 1 step of size 2. Therefore, this is
+nothing but fibonacci series.
+- In some algos involving DP you can start from n and in that case answer to n is dependent on n-1 and so on.
+
 
 # Topic0: Programming Questions
 
@@ -386,6 +394,7 @@ it down into a story and later generalize to form recursive equations
 - [Given a sentence without spaces between words. Break the words in such a way that they are meaningful](/dynamic-programming/question19.c)
 - [Partition problem](/dynamic-programming/question20.c)
 - [Find the longest palindromic subsequence](/dynamic-programming/question21.c)
+- [Given n-stairs, how many number of ways a person can climb to top from bottom using 1 step or 2 steps](/dynamic-programming/question22.c)
 
 ## Some important concepts to solve algos better
 

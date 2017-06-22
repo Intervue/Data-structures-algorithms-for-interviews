@@ -87,4 +87,5 @@ TODO:
 - DP solution extension from geeks for geeks for question17  and course sol as well
 - program to find fibonacci number in logn time (geeks for geeks)
 - DP question 19 to be done
+- finding all palindromes in a given string
 
