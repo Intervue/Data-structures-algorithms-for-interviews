@@ -56,11 +56,11 @@ int findCost(char *str1, char *str2, int cost1, int cost2){
 
 	sol[0][0] = 0;
 	
-	for(i=1;i<len1;i++){
+	for(i=1;i<len1+1;i++){
 		sol[i][0] = cost1*i;
 	}
 
-	for(j=1;j<len1;j++){
+	for(j=1;j<len2+1;j++){
 		sol[0][j] = cost2*j;		
 	}
 
@@ -71,6 +71,7 @@ int findCost(char *str1, char *str2, int cost1, int cost2){
 			}else{
 				sol[i][j] = findMin(sol[i-1][j]+1,sol[i][j-1] + 2);
 			}
+			// printf("adding value for (%d,%d) as %d\n", i,j,sol[i][j]);
 		}
 	}
 
