@@ -176,7 +176,8 @@ total ways to reach the nth step  f(n) = f(n-1) + f(n-2)
 i.e from n-1 it can take you 1 step and from n-2 it can take you only 1 step of size 2. Therefore, this is
 nothing but fibonacci series.
 - In some algos involving DP you can start from n and in that case answer to n is dependent on n-1 and so on.
-
+- Most problems involving strings can be taken as S(i,j), either we compare last characters then if equal
+it gets converted to i-1,j-1 or we take min or max of i,j-1 and i-1,j
 
 # Topic0: Programming Questions
 
@@ -395,6 +396,8 @@ nothing but fibonacci series.
 - [Partition problem](/dynamic-programming/question20.c)
 - [Find the longest palindromic subsequence](/dynamic-programming/question21.c)
 - [Given n-stairs, how many number of ways a person can climb to top from bottom using 1 step or 2 steps](/dynamic-programming/question22.c)
+- [Longest non-overlapping repeating sub string](/dynamic-programming/question23.c)
+- [Given two strings X and Y, find the minimum cost to make two strings equal using only delete operations. Cost to delete character in X is S and in Y is P](/dynamic-programming/question24.c)
 
 ## Some important concepts to solve algos better
 

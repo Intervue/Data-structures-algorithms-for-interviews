@@ -88,4 +88,7 @@ TODO:
 - program to find fibonacci number in logn time (geeks for geeks)
 - DP question 19 to be done
 - finding all palindromes in a given string
+- generalize the steps in question22 to m steps at a time
+- DP question23 to be done
+
 
