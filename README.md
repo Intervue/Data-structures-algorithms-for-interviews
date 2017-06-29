@@ -398,6 +398,7 @@ it gets converted to i-1,j-1 or we take min or max of i,j-1 and i-1,j
 - [Given n-stairs, how many number of ways a person can climb to top from bottom using 1 step or 2 steps](/dynamic-programming/question22.c)
 - [Longest non-overlapping repeating sub string](/dynamic-programming/question23.c)
 - [Given two strings X and Y, find the minimum cost to make two strings equal using only delete operations. Cost to delete character in X is S and in Y is P](/dynamic-programming/question24.c)
+- [Count the number of times string occured as the subsequence of the other string](/dynamic-programming/question25.c)
 
 ## Some important concepts to solve algos better
 
@@ -408,7 +409,7 @@ it gets converted to i-1,j-1 or we take min or max of i,j-1 and i-1,j
 - 'XOR' of zero with a number is the number itself
 - '1s compliment is number obtained by reversing all the bits in the binary representation of a number. o to 1 and 1 to 0'
 - Linear hashing is (h(k) + i)modm (where m is the size of the hash table, h(k) is the hash function that takes the key k and returns a value i is the parameter that is incremented to get different values)
-- Subarrays of an array are always contiguous whereas subsequence may not be contiguous
+- Subarrays of an array are always contiguous whereas subsequence may not be contiguous but needs to be in the increasing order. Same applies to a string as well.
 - There are only two ways to make any data structure one is to use an array (where size is fixed and memory is contiguous) OR you can use the heap memory (structures and linked list). So Array and linked list or combo of these two are used to implement any data structure. In most cases linked list takes more time to do operations if data structure is implemented using it. But advantage is dynamic memory allocation
 - For INFIX to POSTFIX conversion, data structure used is stack. In stack all the operators are stored. For evaluation of POSTFIX stack is used to store operands
 - Evaluating and expression = convert from INFIX to postfix --> Evaluate POSTFIX. Time complexity: O(n)
