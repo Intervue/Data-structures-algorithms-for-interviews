@@ -2,6 +2,10 @@ GOOD QUESTIONS:
 - question18.c (arrays)
 
 
+C concepts
+- dynamic memory allocation for 2d arrays
+- fgets,scanf, getc etc difference and when to use what
+
 TODO: 
 - question14.c (general), 
 - question17.c (arrays), to be done after trees and linkedlist is done

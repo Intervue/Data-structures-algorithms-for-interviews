@@ -178,6 +178,7 @@ nothing but fibonacci series.
 - In some algos involving DP you can start from n and in that case answer to n is dependent on n-1 and so on.
 - Most problems involving strings can be taken as S(i,j), either we compare last characters then if equal
 it gets converted to i-1,j-1 or we take min or max of i,j-1 and i-1,j
+- Somtimes if the problem is already a table, you need to reverse engineer it to find the min number of ways to do something. Example create a new table and start from the very bottom and construct the solution updwards. Answer in that case will be the cell 0,0
 
 # Topic0: Programming Questions
 
@@ -401,6 +402,7 @@ it gets converted to i-1,j-1 or we take min or max of i,j-1 and i-1,j
 - [Count the number of times string occured as the subsequence of the other string](/dynamic-programming/question25.c)
 - [Given an amount and some coints, find out in how many ways can this amount be formed](/dynamic-programming/question26.c)
 - [Given a 2xn board and tiles of size 2x1, count the number of ways to fill the board using 2x1 tiles](/dynamic-programming/question27.c)
+- [Given a cost matrix mxn having a cost at each cell. Find the min cost that it will take to reach cell (m-1,n-1) from top left corner cell (0,0) if the only allowed directions to move are right, down and diagnal down](/dynamic-programming/question28.c)
 
 ## Some important concepts to solve algos better
 
