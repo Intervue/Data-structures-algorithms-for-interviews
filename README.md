@@ -400,6 +400,7 @@ it gets converted to i-1,j-1 or we take min or max of i,j-1 and i-1,j
 - [Given two strings X and Y, find the minimum cost to make two strings equal using only delete operations. Cost to delete character in X is S and in Y is P](/dynamic-programming/question24.c)
 - [Count the number of times string occured as the subsequence of the other string](/dynamic-programming/question25.c)
 - [Given an amount and some coints, find out in how many ways can this amount be formed](/dynamic-programming/question26.c)
+- [Given a 2xn board and tiles of size 2x1, count the number of ways to fill the board using 2x1 tiles](/dynamic-programming/question27.c)
 
 ## Some important concepts to solve algos better
 
