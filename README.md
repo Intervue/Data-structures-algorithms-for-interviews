@@ -399,6 +399,7 @@ it gets converted to i-1,j-1 or we take min or max of i,j-1 and i-1,j
 - [Longest non-overlapping repeating sub string](/dynamic-programming/question23.c)
 - [Given two strings X and Y, find the minimum cost to make two strings equal using only delete operations. Cost to delete character in X is S and in Y is P](/dynamic-programming/question24.c)
 - [Count the number of times string occured as the subsequence of the other string](/dynamic-programming/question25.c)
+- [Given an amount and some coints, find out in how many ways can this amount be formed](/dynamic-programming/question26.c)
 
 ## Some important concepts to solve algos better
 

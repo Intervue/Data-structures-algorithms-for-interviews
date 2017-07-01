@@ -91,5 +91,6 @@ TODO:
 - generalize the steps in question22 to m steps at a time
 - DP question23 to be done
 - DP solution to be constructed for LCS problem
+- DP question26 second case
 
 
