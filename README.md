@@ -407,6 +407,7 @@ it gets converted to i-1,j-1 or we take min or max of i,j-1 and i-1,j
 - [Given a 2xn board and tiles of size 2x1, count the number of ways to fill the board using 2x1 tiles](/dynamic-programming/question27.c)
 - [Given a cost matrix mxn having a cost at each cell. Find the min cost that it will take to reach cell (m-1,n-1) from top left corner cell (0,0) if the only allowed directions to move are right, down and diagnal down](/dynamic-programming/question28.c)
 - [Given a string, find out if it becomes a palindrome or not after doing atmost k deletions](/dynamic-programming/question29.c)
+- [Find the sum of digits for all numbers from 1 to N for a given N](/dynamic-programming/question30.c)
 
 ## Some important concepts to solve algos better
 

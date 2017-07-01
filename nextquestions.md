@@ -99,5 +99,6 @@ TODO:
 - Fibonacci series indepth analysis
 - DP question27 variation where size of board is nxm and tile is mx1
 - longest bitonic sequence
+- DP question30 to be done
 
 
