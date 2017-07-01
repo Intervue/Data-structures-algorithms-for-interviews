@@ -179,6 +179,9 @@ nothing but fibonacci series.
 - Most problems involving strings can be taken as S(i,j), either we compare last characters then if equal
 it gets converted to i-1,j-1 or we take min or max of i,j-1 and i-1,j
 - Somtimes if the problem is already a table, you need to reverse engineer it to find the min number of ways to do something. Example create a new table and start from the very bottom and construct the solution updwards. Answer in that case will be the cell 0,0
+- If a string and its reversal have a common subsequence, then definately that common subsequence is going to be a palindrome
+- Whenever a problem is given involving string, check if LCS can be used
+- Whenever a generic problem is given check if it is becoming a fibonacci series or a form of it.
 
 # Topic0: Programming Questions
 
@@ -403,6 +406,7 @@ it gets converted to i-1,j-1 or we take min or max of i,j-1 and i-1,j
 - [Given an amount and some coints, find out in how many ways can this amount be formed](/dynamic-programming/question26.c)
 - [Given a 2xn board and tiles of size 2x1, count the number of ways to fill the board using 2x1 tiles](/dynamic-programming/question27.c)
 - [Given a cost matrix mxn having a cost at each cell. Find the min cost that it will take to reach cell (m-1,n-1) from top left corner cell (0,0) if the only allowed directions to move are right, down and diagnal down](/dynamic-programming/question28.c)
+- [Given a string, find out if it becomes a palindrome or not after doing atmost k deletions](/dynamic-programming/question29.c)
 
 ## Some important concepts to solve algos better
 
