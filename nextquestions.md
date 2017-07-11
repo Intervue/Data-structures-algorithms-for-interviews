@@ -54,7 +54,7 @@ TODO:
 - question8 in heaps to be done still
 - question9 and question 10 to be done still
 - delete part of trees question1 to be done
-- trees mirror tree implementation to be done
+- trees mirror tree implementation to be done (both check and mirror a tree)
 - level order traversal to be done using queue as linked list in trees
 - difference between scanf fgets and one more to be done
 - method 1 of trees question6 to be done
@@ -100,5 +100,7 @@ TODO:
 - DP question27 variation where size of board is nxm and tile is mx1
 - longest bitonic sequence
 - DP question30 to be done
-
+- watch DP second last video
+- trees question20 all methods (3) to be done GFG or R
+- geeks for geeks for DP
 

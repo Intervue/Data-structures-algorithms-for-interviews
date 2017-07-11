@@ -1,5 +1,5 @@
 /*
-Program to mirror a binary tree
+Program to make a mirror tree of a binary tree
 
 
 

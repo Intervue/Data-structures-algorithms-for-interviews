@@ -43,250 +43,275 @@ Space complexity: O(1) //iterative version
 #include <stdio.h>
 #include <stdlib.h>
 
+int max(int a,int b){
+	return a>b?a:b;
+}
+
 struct node{
 	int data;
 	struct node *left;
 	struct node *right;
-}*root=NULL, *temp = NULL, *t2, *t1;
+}*root = NULL,*temp = NULL,*t2,*t1;
 
-void search(struct node *ptr){
-	if((temp->data > ptr->data) && (ptr->right != NULL)){
-		search(ptr->right);
-	}else if((temp->data > ptr->data) && (ptr->right == NULL)){
-		ptr->right = temp;
-	}else if((temp->data < ptr->data) && (ptr->left != NULL)){
-		search(ptr->left);
-	}else if((temp->data < ptr->data) && (ptr->left == NULL)){
-		ptr->left = temp;
-	}
-}
-
-void create(){
-	int data;
-	printf("enter the data of the node to be inserted\n");
-	scanf("%d",&data);
+void create(int count){
+	int elm;
+	printf("enter the %d element\n", count);
+	scanf("%d",&elm);
 	temp = (struct node *)malloc(sizeof(struct node));
-	temp->data = data;
+	temp->data = elm;
 	temp->left = temp->right = NULL;
 }
 
-void insert(){
-	create();
-	if(root == NULL){
-		root = temp;
-	}else{
-		search(root);
+void search(struct node *t){
+	if(temp->data < t->data && t->left){
+		search(t->left);
+	}else if(temp->data < t->data && !t->left){
+		t->left = temp;
+	}else if(temp->data > t->data && t->right){
+		search(t->right);
+	}else if(temp->data > t->data && !t->right){
+		t->right = temp;
 	}
 }
 
-// void delete(){
-// 	if(root == NULL){
-// 		printf("tree is already empty\n");		
-// 		return;
-// 	}
-// 	int data;
-// 	printf("Enter the data to be deleted\n");
-// 	scanf("%d",&data);
+void insert(){
+	int num, counter = 0;
+	printf("enter the number of elements to be inserted\n");
+	scanf("%d", &num);
 
-// }
+	while(counter < num){
+		create(counter);
+		if(root){
+			search(root);
+		}else{
+			root = temp;
+		}
+		counter++;
+	}
+}
 
-void inorder(struct node *t){
-	if(t){
-		if(t->left){
-			inorder(t->left);	
+void findMin(){
+	if(root){
+		struct node *t = root;
+		while(t->left){
+			t = t->left;
 		}
-		printf("%d -> ", t->data);
-		if(t->right){
-			inorder(t->right);	
+		printf("min element is %d\n", t->data);
+	}else{
+		printf("tree is empty\n");
+	}
+}
+
+void findMax(){
+	if(root){
+		struct node *t = root;
+		while(t->right){
+			t = t->right;
 		}
-	}	
+		printf("max element is %d\n", t->data);
+	}else{
+		printf("tree is empty\n");
+	}
 }
 
 void preorder(struct node *t){
 	if(t){
-		printf("%d -> ", t->data);
-		if(t->left){
-			preorder(t->left);	
-		}
-		if(t->right){
-			preorder(t->right);	
-		}
-	}	
+		printf("%d\n", t->data);
+		preorder(t->left);
+		preorder(t->right);
+	}
 }
 
 void postorder(struct node *t){
 	if(t){
-		if(t->left){
-			postorder(t->left);	
-		}
-		if(t->right){
-			postorder(t->right);	
-		}
-		printf("%d -> ", t->data);
-	}	
+		postorder(t->left);
+		postorder(t->right);
+		printf("%d\n", t->data);
+	}
 }
 
-int findMax(struct node *t){
-	if(root==NULL){
-		printf("tree is empty\n");
-		return 0; 
+void inorder(struct node *t){
+	if(t){
+		inorder(t->left);
+		printf("%d\n", t->data);
+		inorder(t->right);
 	}
-	while(t->right){
-		t=t->right;
-	}
-	return t->data;
 }
 
-int findMin(struct node *t){
-	if(root==NULL){
-		printf("tree is empty\n");
-		return 0; 
-	}
-	
-	while(t->left){
-		t=t->left;
-	}
-	return t->data;
-}
-
-int height(struct node *t){
-	if(t == NULL){
+int numNodes(struct node *t){
+	if(!t){
 		return 0;
 	}
-	if(!t->left && !t->right){
-		return 0;
-	}
-	int l = height(t->left);
-	int r = height(t->right);
-	return 1+((l>r)?l:r);
+	return 1 + numNodes(t->left) + numNodes(t->right);
 }
 
-int countFullNodes(struct node *t){
+int numLeaves(struct node *t){
 	if(!t){
 		return 0;
 	}
 	if(!t->left && !t->right){
-		return 0;
+		return 1;
 	}
-	return countFullNodes(t->left)+countFullNodes(t->right)+((t->left && t->right)?1:0);
+	return numLeaves(t->left) + numLeaves(t->right);
 }
 
-int countNonLeaves(struct node *t){
-	if(t == NULL){
+int numFullNodes(struct node *t){
+	if(!t){
+		return 0;
+	}
+	if(t->left && t->right){
+		return 1 + numFullNodes(t->left) + numFullNodes(t->right);
+	}
+	return numFullNodes(t->left) + numFullNodes(t->right);
+}
+
+int findTreeHeight(struct node *t){
+	if(!t){
+		return 0;
+	}
+	return 1 + max(findTreeHeight(t->left),findTreeHeight(t->right));	
+}
+
+int checkTreeCompleteness(struct node *t){
+	if(!t){
 		return 0;
 	}
 	if(!t->left && !t->right){
-		return 0;
-	}else{
-		return 1+countNonLeaves(t->left) + countNonLeaves(t->right);
-	}
-}
-
-int countLeaves(struct node *t){
-	if(t == NULL){
-		return 0;
-	}
-	if(!t->left && !t->right){
-		return 1;
-	}else{
-		return countLeaves(t->left) + countLeaves(t->right);
-	}
-
-}
-
-int isComplete(struct node *t){
-	if(t==NULL){
 		return 1;
 	}
-	if(!t->left && !t->right){
-		return 1;
-	}else if(t->left && t->right){
-		return (isComplete(t->left)&&isComplete(t->right));
+	return checkTreeCompleteness(t->left) && checkTreeCompleteness(t->right);
+}
+
+struct node *findElement(struct node *root,int data){
+	if(root){
+		if(root->data == data){
+			return root;
+		}
+		if(data > root->data){
+			findElement(root->left, data);	
+		}else{
+			findElement(root->right, data);
+		}
+		
+	}
+	return NULL;
+}
+
+struct node *findPredecessor(struct node *root){
+	while(root->right){
+		root = root->right;
+	}
+	return root;
+}
+
+struct node *findElementAndDelete(struct node *root, int data){
+	if(!root){
+		printf("tree is empty\n");
+		return NULL;
+	}
+	if(root->data == data){
+		//case1: if no child
+		if(!root->left && !root->right){
+			free(root);
+			return NULL;
+		}
+
+		//case2: one child
+		if(!root->left && root->right){
+			struct node *temp = root;
+			free(temp);
+			return root->right;
+		}
+		if(root->left && !root->right){
+			struct node *temp = root;
+			free(temp);
+			return root->left;
+		}
+
+		//case3: two childs
+		struct node *temp = findPredecessor(root->left);
+		root->data = temp->data;
+		root->left = findElementAndDelete(root->left,temp->data);
+	}
+	if(data > root->data){
+		root->right = findElementAndDelete(root->right, data);
 	}else{
-		return 0;
+		root->left = findElementAndDelete(root->left, data);
 	}
+	return root;
 }
 
-int countNodes(struct node *t){
-	if(t == NULL){
-		return 0;
-	}
-	int num = 1 + countNodes(t->left) + countNodes(t->right);
-	return num;
+void delete(){
+	int elm;
+	printf("Enter the element to be deleted\n");
+	scanf("%d",&elm);
+	root = findElementAndDelete(root,elm);
 }
 
-int main(){	
-	int step,num, h;
-	printf("BST...\n");
+int main(){
+	int step, num, count;
+
 	while(1){
 		printf("1. Insert element\n");
 		printf("2. Delete element\n");
 		printf("3. Find max element\n");
 		printf("4. Find min element\n");
-		printf("5. Make BST\n");
-		printf("6. INORDER Traverse\n");
-		printf("7. PREORDER Traverse\n");
-		printf("8. POSTORDER Traverse\n");
-		printf("9. Give number of nodes\n");
-		printf("10. Give number of leaves\n");
-		printf("11. Give number of non-leaves\n");
-		printf("12. Give number of full-nodes\n");
-		printf("13. Height of the tree\n");
-		printf("14. Check tree completeness\n");
-		printf("15. exit\n");
-		scanf("%d",&step);
+		printf("5. PREORDER\n");
+		printf("6. INORDER\n");
+		printf("7. POSTORDER\n");
+		printf("8. Give number of nodes\n");
+		printf("9. Give number of leaves\n");
+		printf("10. Give number of non leaves\n");
+		printf("11. Give number of full nodes\n");
+		printf("12. Height of the tree\n");
+		printf("13. Check tree completeness\n");
+		printf("14. exit\n");
 
+		scanf("%d", &step);
 		switch(step){
-			case 1: insert();
+			case 1: insert();	
 				break;
-			case 2: 
-				// delete();
+			case 2: delete();
 				break;
-			case 3: num = findMax(root);
-				printf("max is... %d\n", num);
+			case 3: findMax();
 				break;
-			case 4: num = findMin(root);
-				printf("min is... %d\n", num);
+			case 4: findMin();
 				break;
-			case 5: 
-				break;
-			case 6: printf("INORDER...\n");
-				inorder(root);
-				printf("\n");
-				break;
-			case 7: printf("PREORDER...\n");
+			case 5: printf("preorder traversal is...\n"); 
 				preorder(root);
-				printf("\n");
 				break;
-			case 8: printf("POSTORDER...\n");
+			case 6: printf("inorder traversal is...\n"); 
+				inorder(root);
+				break;
+			case 7: printf("postorder traversal is...\n"); 
 				postorder(root);
-				printf("\n");
 				break;
-			case 9: num = countNodes(root); 
-				printf("number of nodes are %d\n", num);
+			case 8: count = numNodes(root);
+				printf("total number of nodes are %d\n", count);
 				break;
-			case 10: num = countLeaves(root);
-				printf("number of leaves are: %d\n", num);
+			case 9: count = numLeaves(root);
+				printf("total number of leaves are %d\n", count);
 				break;
-			case 11: num = countNonLeaves(root);
-				printf("number of non leaves are: %d\n", num);
+			case 10: count = numNodes(root) - numLeaves(root);
+				printf("total number of non-leaves are %d\n", count);
 				break;
-			case 12: num = countFullNodes(root);
-				printf("number of full nodes are: %d\n", num);
+			case 11: count = numFullNodes(root);
+				printf("total number of full nodes are %d\n", count);
 				break;
-			case 13: h = height(root);
-				printf("the height of the tree is: %d\n", h);
+			case 12: count = findTreeHeight(root);
+				printf("height of tree is %d\n", count-1);
 				break;
-			case 14: num = isComplete(root);
-				if(num > 0){
-					printf("the tree is complete\n");
+			case 13: count = checkTreeCompleteness(root);
+				if(count == 0){
+					printf("tree is complete\n");
 				}else{
-					printf("the tree is not complete\n");
+					printf("tree is incomplete\n");
 				}
 				break;
-			case 15: exit(1);
+			case 14: exit(1);
 				break;
-		}
-	}		
+
+		}	
+	}
 	return 0;
 }

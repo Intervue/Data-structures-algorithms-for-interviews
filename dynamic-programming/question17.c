@@ -22,6 +22,8 @@ Therefore LIS(root) = max {
 Therefore for each node the number of possibilities increase as we go down the tree. Hence,
 exponential time complexity.
 
+WATCH VIDEO SECOND LAST DP
+
 */
 //naive approach implementation
 #include <stdio.h>

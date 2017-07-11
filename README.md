@@ -100,7 +100,7 @@ time which is a better method.
 - Deleting paths in recursion means, just free the root.
 - Sometimes other functions can also be used inside recursion.
 - The nodes of a subtree will always occur together in case of any traversal. The order may be different but there will be no interleaving.
-- Sometimes to compare two subtrees, we can apply inorder and preorder OR inorder or postorder traversal and compare the o/p strings in the end. As studies earlier, preorder and inorder or postorder and inorder will 
+- Sometimes to compare two subtrees, we can apply inorder and preorder OR inorder or postorder traversal and compare the o/p strings in the end. As studied earlier, preorder and inorder or postorder and inorder will 
 always generate a unique tree.
 - In case of question involving single array using recursion where tree is made, make sure that proper
 start and end of array is chosen(specifically where array is split again and again)
@@ -182,6 +182,11 @@ it gets converted to i-1,j-1 or we take min or max of i,j-1 and i-1,j
 - If a string and its reversal have a common subsequence, then definately that common subsequence is going to be a palindrome
 - Whenever a problem is given involving string, check if LCS can be used
 - Whenever a generic problem is given check if it is becoming a fibonacci series or a form of it.
+
+## Advanced algos
+
+- Use KMP to find if a pattern exists in a text or not
+- For Graphs, Topological sort is possible only on directed acyclic graphs (one with no cycles). Useful when one task is dependent on other.
 
 # Topic0: Programming Questions
 
@@ -313,7 +318,7 @@ it gets converted to i-1,j-1 or we take min or max of i,j-1 and i-1,j
 
 - [Build a binary search tree and apply various operations on it](/trees/question1.c)
 - [Check whether two trees are identical or not](/trees/question2.c)
-- [Mirror tree](/trees/question3.c)
+- [Program to make a mirror tree of a binary tree](/trees/question3.c)
 - [Implementation of Level order traversal in case of trees](/trees/question4.c)
 - [Find lowest common ancestor of given two nodes in a binary search tree](/trees/question5.c)
 - [Solve the problem above for the binary tree](/trees/question6.c)
@@ -408,6 +413,17 @@ it gets converted to i-1,j-1 or we take min or max of i,j-1 and i-1,j
 - [Given a cost matrix mxn having a cost at each cell. Find the min cost that it will take to reach cell (m-1,n-1) from top left corner cell (0,0) if the only allowed directions to move are right, down and diagnal down](/dynamic-programming/question28.c)
 - [Given a string, find out if it becomes a palindrome or not after doing atmost k deletions](/dynamic-programming/question29.c)
 - [Find the sum of digits for all numbers from 1 to N for a given N](/dynamic-programming/question30.c)
+- [Given a string of digits, find the length of the longest substring of a string, such that the length of the substring is '2k' digits and sum of left k digits is equal to the sum of right k digits](/dynamic-programming/question31.c)
+- [Given a rod of length 'n' inches and an array of prices that contains prices of all pieces of size smaller than n, find the max value obtainable by cutting the rod and selling the pieces](/dynamic-programming/question32.c)
+
+### Graphs
+
+- [Implement a graph using adjacency matrix and list, implement DFS and BFS, BST and DST](/graphs/question1.c)
+- [Write a program to do topological sort in a graph](/graphs/question2.c)
+
+
+### Pattern Matching
+- [Given a text and a pattern, find all occurences of a pattern in a given text.](/pattern-matching/question1.c)
 
 ## Some important concepts to solve algos better
 
