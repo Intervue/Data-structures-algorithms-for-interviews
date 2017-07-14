@@ -419,7 +419,8 @@ it gets converted to i-1,j-1 or we take min or max of i,j-1 and i-1,j
 ### Graphs
 
 - [Implement a graph using adjacency matrix and list, implement DFS and BFS, BST and DST](/graphs/question1.c)
-- [Write a program to do topological sort in a graph](/graphs/question2.c)
+- [Implement a graph using adjacency matrix and do BFT in a different way for custom value of nodes](/graphs/question2.c)
+- [Write a program to do topological sort in a graph](/graphs/question3.c)
 
 
 ### Pattern Matching

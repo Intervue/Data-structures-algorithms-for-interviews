@@ -8,6 +8,12 @@ Adjacency matrix
 */
 #include <stdio.h>
 #include <stdlib.h>
+#define MAX 100
+
+int queue[MAX];
+int front, rear=0;
+
+int vertexCount = 0;
 
 struct node{
 	int data;
@@ -106,6 +112,62 @@ void printAdjacencyMatrix(int vertices, int adjMatrix[vertices][vertices]){
 	}	
 }
 
+void initArray(int *arr, int size){
+	int i;
+	for(i=0;i<size;i++){
+		arr[i] = 0;
+	}
+}
+
+// void enqueue(int node){
+// 	rear = (rear+1)%MAX;
+// 	if(rear == front){
+// 		printf("overflow...\n");
+// 		if(rear == 0){
+// 			rear = MAX - 1;
+// 		}else{
+// 			rear = rear-1;
+// 		}
+// 	}
+// 	queue[rear] = node;
+// }
+
+// void dequeue(){
+// 	if(front == rear){
+// 		return -1;
+// 	}
+// 	front = (front + 1)%MAX;
+// 	int data = queue[front];
+// 	return data;
+// }
+
+// void bstList(struct graph *newGraph){
+// 	int visited[newGraph->vertices + 1];
+// 	initArray(visited, newGraph->vertices+1);
+// 	visited[newGraph->arr[0]] = 1;
+	
+// 	int u = newGraph->arr[0];
+// 	int i;
+	
+// 	enqueue(u);
+	
+// 	while(rear != front){
+// 		int data = dequeue();
+// 		if(data != -1){
+// 			printf("%d\t", data);
+// 		}
+// 		struct node *t = newGraph->arr[counter].head;
+// 		while(t){
+// 			if(visited[t->data] != 1){
+// 				enqueue()		
+// 			}
+// 			t = t->next;
+// 		}
+		
+// 	}	
+
+// }
+
 int main(){
 	int vertices, edges;
 
@@ -126,8 +188,10 @@ int main(){
 		printf("2. Make graph using adjacency matrix\n");
 		printf("3. Print adjacency list\n");
 		printf("4. Print adjacency matrix\n");
-		printf("5. Do breath first traversal\n");
-		printf("6. Do depth first traversal\n");
+		printf("5. Do breath first traversal in list\n");
+		printf("6. Do breath first traversal in matrix\n");
+		printf("7. Do depth first traversal in list\n");
+		printf("8. Do depth first traversal in matrix\n");
 		
 		scanf("%d",&step);
 
@@ -140,7 +204,9 @@ int main(){
 				break;
 			case 4: printAdjacencyMatrix(vertices,adjMatrix);
 				break;
-			case 5: 
+			case 5: //bstList(newGraph);
+				break;
+			case 6: //bstMatrix();
 				break;
 
 		}
