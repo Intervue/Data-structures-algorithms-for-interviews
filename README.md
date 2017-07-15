@@ -183,6 +183,10 @@ it gets converted to i-1,j-1 or we take min or max of i,j-1 and i-1,j
 - Whenever a problem is given involving string, check if LCS can be used
 - Whenever a generic problem is given check if it is becoming a fibonacci series or a form of it.
 
+## Graphs
+
+- Most of the graph questions revolves around finding the adjacent nodes and doing operations on it. Finding adjacent nodes is easy as you can get it from the matrix easily by seeing if the value corresponding to that vertex and some i is 1 and that it has to be unvisited. So basically we either do DFS or BFS
+
 ## Advanced algos
 
 - Use KMP to find if a pattern exists in a text or not

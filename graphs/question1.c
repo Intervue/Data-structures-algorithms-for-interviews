@@ -8,171 +8,282 @@ Adjacency matrix
 */
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
+
 #define MAX 100
 
 int queue[MAX];
-int front, rear=0;
+int front=0, rear=-1;
 
 int vertexCount = 0;
+int queueItemCount = 0;
 
-struct node{
+struct CustomNode{
+	char label;
+	bool visited;
+};
+
+struct CustomNode *customNodes;
+
+struct AdjListNode{
 	int data;
-	struct node *next;
+	struct AdjListNode *next;
 };
 
-struct adjList{
-	struct node *head;
+struct AdjList{
+	struct AdjListNode *head;
 };
 
-struct graph{
-	int vertices;
-	int edges;
-	struct adjList *arr;
+struct Graph{
+	int vertices, edges;
+	struct AdjList *arr;
 };
 
-struct node *newNode(int data){
-	struct node *temp = (struct node *)malloc(sizeof(struct node));
+//queue methods
+void enqueue(int data){
+	queue[++rear] = data;
+	queueItemCount++;
+}
+
+int dequeue(){
+	queueItemCount--;
+	return queue[front++];
+}
+
+bool isQueueEmpty(){
+	return queueItemCount == 0;
+}
+
+//graph functions
+void displayVertex(int index){
+	printf(" %c\t", customNodes[index].label);
+}
+
+void initCustomNodes(int vertices, int edges){
+	customNodes = (struct CustomNode *)malloc(sizeof(struct CustomNode)*vertices);
+}
+
+struct Graph *initGraph(int vertices, int edges){
+	struct Graph *newGraph = (struct Graph *)malloc(sizeof(struct Graph));
+	newGraph->vertices = vertices;
+	newGraph->edges = edges;
+	newGraph->arr = (struct AdjList *)malloc(sizeof(struct AdjList)*vertices);
+	initCustomNodes(vertices, edges);
+	return newGraph;
+}
+
+void addCustomNodes(vertices){
+	char label;
+	int i;
+	for(i=0;i<vertices;i++){
+		printf("Enter the name of the %d vertex\n", i);
+		scanf(" %c",&label);
+		customNodes[i].label = label;
+		customNodes[i].visited = false;	
+	}
+}
+
+struct AdjListNode *createEdge(int data){
+	struct AdjListNode *temp = (struct AdjListNode *)malloc(sizeof(struct AdjListNode));
 	temp->data = data;
 	temp->next = NULL;
-	return temp;
+	return temp; 
 }
 
-void createEdge(struct graph *newGraph, int data1, int data2){
-	struct node *temp;
-	temp = newNode(data2);
-	if(!newGraph->arr[data1].head){
-		newGraph->arr[data1].head = temp;
+void addEdge(struct Graph *newGraph, int node1, int node2){
+	struct AdjListNode *temp = createEdge(node1);
+	if(newGraph->arr[node2].head){
+		temp->next = newGraph->arr[node2].head;
+		newGraph->arr[node2].head = temp;
 	}else{
-		temp->next = newGraph->arr[data1].head;
-		newGraph->arr[data1].head = temp;
+		newGraph->arr[node2].head = temp;
 	}
-	temp = newNode(data1);
-	if(!newGraph->arr[data2].head){
-		newGraph->arr[data2].head = temp;
+
+	temp = createEdge(node2);
+	if(newGraph->arr[node1].head){
+		temp->next = newGraph->arr[node1].head;
+		newGraph->arr[node1].head = temp;
 	}else{
-		temp->next = newGraph->arr[data2].head;
-		newGraph->arr[data2].head = temp;
+		newGraph->arr[node1].head = temp;	
 	}
 }
 
-void printAdjacencyList(struct graph *newGraph){
+void makeGraph(struct Graph *newGraph, int vertices, int adjMatrix[vertices][vertices]){
+	int i,j;
+
+	addCustomNodes(vertices);
+
+	int edgeValue;
+	for(i=0;i<vertices;i++){
+		for(j=i+1;j<vertices;j++){
+			printf("Is there an edge between %d, %d\n",i,j);
+			scanf("%d",&edgeValue);
+			if(edgeValue){
+				addEdge(newGraph, i,j);
+				adjMatrix[i][j] = 1;
+				adjMatrix[j][i] = 1;
+			}else{
+				adjMatrix[i][j] = 0;
+				adjMatrix[j][i] = 0;
+			}
+		}
+	}
+
+	//no self direction in the graph
+	for(i=0;i<vertices;i++){
+		adjMatrix[i][i] = 0;
+	}
+}
+
+void restoreDefaults(int vertices){
 	int i;
-	struct node *temp;
-	for(i=0;i<newGraph->vertices;i++){
-		temp = newGraph->arr[i].head;
-		printf("%d -->",i);
+
+	for(i=0;i<vertices;i++){
+		customNodes[i].visited = false;
+	}
+}
+
+void makeVisitedAndDisplay(int index){
+	customNodes[index].visited = true;
+	enqueue(index);
+	displayVertex(index);	
+}
+
+void breadthFirstSearchList(int index,struct Graph *newGraph){
+	
+	makeVisitedAndDisplay(index);
+	
+	while(!isQueueEmpty()){
+		int tempVertex = dequeue();
+	
+		struct AdjListNode *temp = newGraph->arr[tempVertex].head;
 		while(temp){
-			printf("%d - ",temp->data);
+			if(customNodes[temp->data].visited == false){
+	
+				customNodes[temp->data].visited = true;
+				displayVertex(temp->data);
+				enqueue(temp->data);
+	
+			}
+			temp = temp->next;
+		}
+	}
+}
+
+void bftList(struct Graph *newGraph){
+	int i;
+	for(i=0;i<newGraph->vertices;i++){
+		if(!customNodes[i].visited){
+			breadthFirstSearchList(i,newGraph);
+		}
+	}
+	restoreDefaults(newGraph->vertices);
+}
+
+void breadthFirstSearchMatrix(int index, int vertices, int adjMatrix[vertices][vertices]){
+	
+	makeVisitedAndDisplay(index);
+
+	while(!isQueueEmpty()){
+		int tempVertex = dequeue();
+		int i;
+		for(i=0;i<vertices;i++){
+			if(adjMatrix[tempVertex][i] && !customNodes[i].visited){
+				customNodes[i].visited = true;
+				displayVertex(i);
+				enqueue(i);	
+			}
+		}
+	}
+}
+
+void bftMatrix(int vertices, int adjMatrix[vertices][vertices]){
+	int i;
+	for(i=0;i<vertices;i++){
+		if(!customNodes[i].visited){
+			breadthFirstSearchMatrix(i,vertices,adjMatrix);
+		}
+	}
+	restoreDefaults(vertices);
+}
+
+void printAdjList(struct Graph *newGraph, int vertices){
+	int i;
+	
+	struct AdjListNode *temp;
+
+	for(i=0;i<vertices;i++){
+		temp = newGraph->arr[i].head;
+		printf(" %c-->", customNodes[i].label);
+		while(temp){
+			printf("%c--> ", customNodes[temp->data].label);
 			temp = temp->next;
 		}
 		printf("\n");
 	}
 }
 
-struct graph *initGraph(int size, int edges){
-	struct graph *newGraph = (struct graph *)malloc(sizeof(struct graph));
-	newGraph->vertices = size;
-	newGraph->edges = edges;
-	newGraph->arr = (struct adjList *)malloc(sizeof(struct adjList)*size);
-	int i;
-	for(i=0;i<size;i++){
-		newGraph->arr[i].head = NULL;
-	}
-	return newGraph;
-}
-
-void makeAdjacencyList(struct graph *newGraph,int vertices, int edges){
-	
-	int i;
-	int v1, v2;	
-	for(i=0;i<newGraph->edges;i++){
-		printf("enter the %dth edge\n", i);
-		scanf("%d %d", &v1, &v2);
-		createEdge(newGraph,v1,v2);
-	}	
-}
-
-void makeAdjacencyMatrix(int vertices, int adjMatrix[vertices][vertices]){
-	int i,j;
-	for(i=0;i<vertices;i++){
-		for(j=0;j<vertices;j++){
-			printf("Is there an edge between %d and %d\n", i,j);
-			scanf("%d", &adjMatrix[i][j]);
-		}
-	}
-}
-
 void printAdjacencyMatrix(int vertices, int adjMatrix[vertices][vertices]){
 	int i,j;
+
 	for(i=0;i<vertices;i++){
 		for(j=0;j<vertices;j++){
 			printf("%d ", adjMatrix[i][j]);
 		}
 		printf("\n");
-	}	
-}
-
-void initArray(int *arr, int size){
-	int i;
-	for(i=0;i<size;i++){
-		arr[i] = 0;
 	}
 }
 
-// void enqueue(int node){
-// 	rear = (rear+1)%MAX;
-// 	if(rear == front){
-// 		printf("overflow...\n");
-// 		if(rear == 0){
-// 			rear = MAX - 1;
-// 		}else{
-// 			rear = rear-1;
-// 		}
-// 	}
-// 	queue[rear] = node;
-// }
-
-// void dequeue(){
-// 	if(front == rear){
-// 		return -1;
-// 	}
-// 	front = (front + 1)%MAX;
-// 	int data = queue[front];
-// 	return data;
-// }
-
-// void bstList(struct graph *newGraph){
-// 	int visited[newGraph->vertices + 1];
-// 	initArray(visited, newGraph->vertices+1);
-// 	visited[newGraph->arr[0]] = 1;
+void depthFirstSearchList(int index, struct Graph *newGraph){
 	
-// 	int u = newGraph->arr[0];
-// 	int i;
-	
-// 	enqueue(u);
-	
-// 	while(rear != front){
-// 		int data = dequeue();
-// 		if(data != -1){
-// 			printf("%d\t", data);
-// 		}
-// 		struct node *t = newGraph->arr[counter].head;
-// 		while(t){
-// 			if(visited[t->data] != 1){
-// 				enqueue()		
-// 			}
-// 			t = t->next;
-// 		}
-		
-// 	}	
+	makeVisitedAndDisplay(index);
 
-// }
+	struct AdjListNode *temp = newGraph->arr[index].head;
+	while(temp){
+		if(!customNodes[temp->data].visited){
+			depthFirstSearchList(temp->data,newGraph);
+		}
+		temp=temp->next;
+	}
+
+}
+
+void depthFirstSearchMatrix(int index, int vertices, int adjMatrix[vertices][vertices]){
+
+	makeVisitedAndDisplay(index);
+	int i;
+	for(i=0;i<vertices;i++){
+		if(adjMatrix[index][i] && !customNodes[i].visited){
+			depthFirstSearchMatrix(i,vertices,adjMatrix);
+		}
+	}
+}
+
+void dftList(struct Graph *newGraph){
+	int i;
+	for(i=0;i<newGraph->vertices;i++){
+		if(!customNodes[i].visited){
+			depthFirstSearchList(i,newGraph);
+		}
+	}
+	restoreDefaults(newGraph->vertices);
+}
+
+void dftMatrix(int vertices, int adjMatrix[vertices][vertices]){
+	int i;
+	for(i=0;i<vertices;i++){
+		if(!customNodes[i].visited){
+			depthFirstSearchMatrix(i, vertices, adjMatrix);
+		}
+	}
+	restoreDefaults(vertices);
+}
 
 int main(){
 	int vertices, edges;
 
 	int step;
-	struct graph *newGraph;
+	struct Graph *newGraph;
 	
 	printf("enter the number of vertices in the graph\n");
 	scanf("%d",&vertices);
@@ -184,34 +295,35 @@ int main(){
 	int adjMatrix[vertices][vertices];	
 
 	while(1){
-		printf("1. Make graph using adjacency list\n");
-		printf("2. Make graph using adjacency matrix\n");
-		printf("3. Print adjacency list\n");
-		printf("4. Print adjacency matrix\n");
-		printf("5. Do breath first traversal in list\n");
-		printf("6. Do breath first traversal in matrix\n");
-		printf("7. Do depth first traversal in list\n");
-		printf("8. Do depth first traversal in matrix\n");
+		printf("1. Make a graph\n");
+		printf("2. Print adjacency list\n");
+		printf("3. Print adjacency matrix\n");
+		printf("4. Do breath first traversal in list\n");
+		printf("5. Do breath first traversal in matrix\n");
+
+		//@TODO
+		printf("6. Do depth first traversal in list\n");
+		printf("7. Do depth first traversal in matrix\n");
 		
 		scanf("%d",&step);
 
 		switch(step){
-			case 1: makeAdjacencyList(newGraph,vertices, edges);
+			case 1: makeGraph(newGraph, vertices, adjMatrix);
 				break;
-			case 2: makeAdjacencyMatrix(vertices,adjMatrix);
+			case 2: printAdjList(newGraph, vertices);
 				break;
-			case 3: printAdjacencyList(newGraph);
+			case 3: printAdjacencyMatrix(vertices,adjMatrix);
 				break;
-			case 4: printAdjacencyMatrix(vertices,adjMatrix);
+			case 4: bftList(newGraph);
 				break;
-			case 5: //bstList(newGraph);
+			case 5: bftMatrix(vertices, adjMatrix);
 				break;
-			case 6: //bstMatrix();
+			case 6: dftList(newGraph);
 				break;
-
+			case 7: dftMatrix(vertices, adjMatrix);
+				break;
 		}
 	}
-	
-	
+
 	return 0;
 }
