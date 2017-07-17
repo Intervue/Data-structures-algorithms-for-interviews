@@ -430,6 +430,11 @@ it gets converted to i-1,j-1 or we take min or max of i,j-1 and i-1,j
 ### Pattern Matching
 - [Given a text and a pattern, find all occurences of a pattern in a given text.](/pattern-matching/question1.c)
 
+### MISC
+
+- [Test whether given two strings are isomorphic or not](/misc/question1.c)
+- [Find the length of the longest suffix which is also a prefix](/misc/question2.c)
+
 ## Some important concepts to solve algos better
 
 - For extreme values refer to limits.h constants given by C

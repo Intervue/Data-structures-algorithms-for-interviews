@@ -38,6 +38,11 @@ Now each time if we traverse the array it will take us O(v) time, rather than do
 iteration only while setting the values, we push all the nodes having value zero onto a queue. Each time
 we update values in the array we push values in the queue and will printing we pop. This way
 topological sort can be done
+
+
+METHOD2:
+While doing DFT we can push elements on stack and then pop them once DFT is done. The order in which 
+elements are popped is the topological sort
 */
 
 #include <stdio.h>
@@ -48,6 +53,8 @@ topological sort can be done
 int incidents[MAX];
 int queue[MAX];
 int rear = -1, front = 0;
+
+int adjMatrix[MAX][MAX];
 
 int vertexCount = 0;
 
@@ -108,6 +115,9 @@ void addEdge(int start, int end){
 		printf("there is no head\n");
 		newGraph->arr[start].head = temp;	
 	}
+
+	//making a matrix as well
+	adjMatrix[start][end] = 1;
 }
 
 void initArray(vertices){
@@ -139,7 +149,7 @@ void findNodeWithZeroIncidents(){
 
 }
 
-void topologicalSort(){
+void topologicalSortList(){
 	
 	findNodeWithZeroIncidents();
 
@@ -160,6 +170,55 @@ void topologicalSort(){
 	}
 }
 
+void findNodeWithZeroIncidentsMatrix(int vertices){
+	int i,j;
+
+	bool noIncident = true;
+	int count = 0;
+
+	for(j=0;j<vertices;j++){
+		for(i=0;i<vertices;i++){
+
+			if(adjMatrix[i][j] != 0){
+				count++;
+				noIncident = false;
+			}
+		}
+		incidents[j] = count;
+		if(noIncident){
+			// printf("enqueueing %d\n", j);
+			enqueue(j);
+			printf("%c ", customNodes[j].label);
+		}
+		noIncident = true;
+		count = 0;
+	}
+}
+
+void topologicalSortMatrix(int vertices){
+
+	int j;
+
+	findNodeWithZeroIncidentsMatrix(vertices);
+
+	while(!isQueueEmpty()){
+		int tempVertex = dequeue();
+		// printf("dequeue %d\n", tempVertex);
+		incidents[tempVertex]=-1;
+		
+		for(j=0;j<vertices;j++){
+			if(adjMatrix[tempVertex][j] == 1){
+				incidents[j]--;
+				adjMatrix[tempVertex][j] = 0;
+				if(incidents[j] == 0){
+					// printf("enqueueing %d\n", j);
+					enqueue(j);		
+				}
+			}
+		}
+	}
+}
+
 void printAdjList(struct Graph *newGraph, int vertices){
 	int i;
 	
@@ -175,10 +234,23 @@ void printAdjList(struct Graph *newGraph, int vertices){
 	}
 }
 
+void initMatrix(int vertices){
+	int i,j;
+
+	for(i=0;i<vertices;i++){
+		for(j=0;j<vertices;j++){
+			adjMatrix[i][j] = 0;
+		}
+	}
+}
+
 int main(){
 	int vertices = 6;
 
 	initArray(vertices);
+
+	initMatrix(vertices);
+
 	//intializing the number of custom nodes as well the adjList basis number of vertices
 	customNodes = (struct CustomNode *)malloc(sizeof(struct CustomNode)*vertices);
 	newGraph = (struct Graph *)malloc(sizeof(struct Graph));
@@ -202,7 +274,13 @@ int main(){
 
 	printAdjList(newGraph, vertices);
 
-	topologicalSort();
+	printf("list:\n");
+	topologicalSortList();
+
+	initArray(vertices);
+	printf("\n");
+	printf("matrix:\n");
+	topologicalSortMatrix(vertices);
 
 	return 0;
 }
