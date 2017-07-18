@@ -185,7 +185,8 @@ it gets converted to i-1,j-1 or we take min or max of i,j-1 and i-1,j
 
 ## Graphs
 
-- Most of the graph questions revolves around finding the adjacent nodes and doing operations on it. Finding adjacent nodes is easy as you can get it from the matrix easily by seeing if the value corresponding to that vertex and some i is 1 and that it has to be unvisited. So basically we either do DFS or BFS
+- Most of the graph questions revolves around finding the adjacent nodes and doing operations on it. Finding adjacent nodes is easy as you can get it from the matrix easily by seeing if the value corresponding to that vertex and some i is 1 and that it has to be unvisited. So basically we either do DFS or BFS.
+- When path between two vertices is to be found, they need not be connected directly
 
 ## Advanced algos
 
@@ -425,6 +426,7 @@ it gets converted to i-1,j-1 or we take min or max of i,j-1 and i-1,j
 - [Implement a graph using adjacency matrix and list, implement DFS and BFS, BST and DST](/graphs/question1.c)
 - [Implement a graph using adjacency matrix and do BFT in a different way for custom value of nodes](/graphs/question2.c)
 - [Write a program to do topological sort in a graph](/graphs/question3.c)
+- [Find if there is a path between two vertices Vi and Vj in a directed graph](/graphs/question4.c)
 
 
 ### Pattern Matching
