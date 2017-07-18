@@ -104,4 +104,6 @@ TODO:
 - trees question20 all methods (3) to be done GFG or R
 - geeks for geeks for DP
 - Graph topological sort method2 and matrix implementation of topo
+- Write a program to detect a cycle in a graph (question5) method2
+- breadth and depth first traversal in a tree
 

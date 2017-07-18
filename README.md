@@ -186,12 +186,27 @@ it gets converted to i-1,j-1 or we take min or max of i,j-1 and i-1,j
 ## Graphs
 
 - Most of the graph questions revolves around finding the adjacent nodes and doing operations on it. Finding adjacent nodes is easy as you can get it from the matrix easily by seeing if the value corresponding to that vertex and some i is 1 and that it has to be unvisited. So basically we either do DFS or BFS.
-- When path between two vertices is to be found, they need not be connected directly
+- When path between two vertices is to be found, they need not be connected directly. There may be some vertices/ nodes in between.
 
-## Advanced algos
+## Advanced data
 
 - Use KMP to find if a pattern exists in a text or not
 - For Graphs, Topological sort is possible only on directed acyclic graphs (one with no cycles). Useful when one task is dependent on other.
+
+## Advanced data structures
+
+- Disjoint sets: If two nodes are connected or belong to the same category they will be a part of the same set. Disjoint sets can be represented in two ways.
+	1) Linked list
+	2) Trees
+
+There are three kind of operations that can be applied on such sets.
+	1) Find
+	2) Union
+	3) Create
+
+Implementation using trees is better as we can apply union by rank and path compression to make sure find happens in logn or constant time, create anyway happens in constant time only.
+In case of linked list find takes O(n) time and union also takes O(n) time and create takes O(1) time
+
 
 # Topic0: Programming Questions
 
@@ -427,6 +442,7 @@ it gets converted to i-1,j-1 or we take min or max of i,j-1 and i-1,j
 - [Implement a graph using adjacency matrix and do BFT in a different way for custom value of nodes](/graphs/question2.c)
 - [Write a program to do topological sort in a graph](/graphs/question3.c)
 - [Find if there is a path between two vertices Vi and Vj in a directed graph](/graphs/question4.c)
+- [Given an undirected graph, find if it has a cycle or not](/graphs/question5.c)
 
 
 ### Pattern Matching
