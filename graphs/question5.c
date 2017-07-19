@@ -98,7 +98,7 @@ int dfs(int index, int parent){
 		if(visited[temp->data] != 1){
 			parent = index;
 			dfs(temp->data, parent);
-		}else if(visited[temp->data] == 1 && temp->data != parent){
+		}else if(temp->data != parent){
 			return 1;
 		}
 		temp = temp->next;

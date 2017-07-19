@@ -187,6 +187,10 @@ it gets converted to i-1,j-1 or we take min or max of i,j-1 and i-1,j
 
 - Most of the graph questions revolves around finding the adjacent nodes and doing operations on it. Finding adjacent nodes is easy as you can get it from the matrix easily by seeing if the value corresponding to that vertex and some i is 1 and that it has to be unvisited. So basically we either do DFS or BFS.
 - When path between two vertices is to be found, they need not be connected directly. There may be some vertices/ nodes in between.
+- Sometimes a given matrix can be assumed to be a graph with a set of different rules and DFS or BFS can be applied on it.
+- Check question6 grapsh to check trick on how to access all surrounding elements of a cell in matrix using
+two arrays
+- In a bipartite graph a cycle will always be of even length
 
 ## Advanced data
 
@@ -443,6 +447,9 @@ In case of linked list find takes O(n) time and union also takes O(n) time and c
 - [Write a program to do topological sort in a graph](/graphs/question3.c)
 - [Find if there is a path between two vertices Vi and Vj in a directed graph](/graphs/question4.c)
 - [Given an undirected graph, find if it has a cycle or not](/graphs/question5.c)
+- [Given a 2D boolean matrix, find the number of islands](/graphs/question6.c)
+- [Check whether a given graph is biparite or not](/graphs/question7.c)
+- [Detect a cycle in a directed graph](/graphs/question8.c)
 
 
 ### Pattern Matching
