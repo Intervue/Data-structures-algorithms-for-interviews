@@ -22,6 +22,42 @@ Space complexity: O(1)
 METHOD2:
 */
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+void search(char *text, char *pattern){
+	int len1 = strlen(text);
+	int len2 = strlen(pattern);
+
+	int i,j;
+
+	for(i=0;i<=len1-len2;i++){
+		for(j=0;j<len2;j++){
+			if(text[i+j] != pattern[j]){
+				break;
+			}
+		}
+		if(j == len2){
+			printf("pattern found at %d\n", i);
+		}
+	}
+
+
+}
+
+int main(){
+	char text[100], pattern[100];
+	printf("enter the first string\n");
+	gets(text);
+
+	printf("Enter pattern string\n");
+	gets(pattern);
+
+	search(text, pattern);
+
+	return 0;
+}
 
 
 
