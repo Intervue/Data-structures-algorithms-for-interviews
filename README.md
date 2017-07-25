@@ -212,6 +212,22 @@ Implementation using trees is better as we can apply union by rank and path comp
 In case of linked list find takes O(n) time and union also takes O(n) time and create takes O(1) time
 
 
+## Back Tracking
+
+- Permutations means ordered combinations. Eg. My juice is made by a combination of 10 fruits (order does not matter), but in case of permutations the order does matter. Basically changing the order can change the outcome means permutations. Changing the order has no effect on outcome is combination
+- Backtracking uses recursion where each call in the stack has its stored values and backtracking makes
+use of those values to do decision making at a particular level in the recursion tree
+
+## Pattern Matching
+
+- For KMP to find all occurences of a pattern in a string, whenever the match is found, we assign the 
+pointer of pattern variable value that is there in the prefix suffix array at an index less then the
+current value of the pointer and we start comparing again.
+- Boyer-Moore algorithm is much more efficient than KMP at places where pattern to be searched has characters
+as different as possible. If the characters are same, then in worst case it will give a time complexity of
+O(mn) where it will end up comparing most of the characters, therefore, in case characters are mostly same
+use KMP
+
 # Topic0: Programming Questions
 
 ## Note:
@@ -439,6 +455,7 @@ In case of linked list find takes O(n) time and union also takes O(n) time and c
 - [Find the sum of digits for all numbers from 1 to N for a given N](/dynamic-programming/question30.c)
 - [Given a string of digits, find the length of the longest substring of a string, such that the length of the substring is '2k' digits and sum of left k digits is equal to the sum of right k digits](/dynamic-programming/question31.c)
 - [Given a rod of length 'n' inches and an array of prices that contains prices of all pieces of size smaller than n, find the max value obtainable by cutting the rod and selling the pieces](/dynamic-programming/question32.c)
+- [Fibonacci series](/dynamic-programming/question33.c)
 
 ### Graphs
 
@@ -453,7 +470,17 @@ In case of linked list find takes O(n) time and union also takes O(n) time and c
 
 
 ### Pattern Matching
+
 - [Given a text and a pattern, find all occurences of a pattern in a given text.](/pattern-matching/question1.c)
+- [Implement KMP algorithm to find all occurences of a pattern in a given text](/pattern-matching/question2.c)
+- [Boyer-Moore algorithm for string finding patterns](/pattern-matching/question3.c)
+- [Rabin-Karp for string finding patterns](/pattern-matching/question4.c)
+
+### Back Tracking
+
+- [Generate all permutations of a given string](/back-tracking/question1.c)
+- [Program to generate all strings of n bits](/back-tracking/question2.c)
+- [N-queens problem](/back-tracking/question3.c)
 
 ### MISC
 

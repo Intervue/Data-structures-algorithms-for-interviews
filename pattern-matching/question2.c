@@ -64,6 +64,12 @@ we should again start comparing from position 2 or alphabet number 3, as a chara
 holds that value in the array.
 
 Thats KMP algorithm.
+
+=================================
+
+For KMP to find all occurences of a pattern in a string, whenever the match is found, we assign the 
+pointer of pattern variable value that is there in the prefix suffix array at an index less then the
+current value of the pointer and we start comparing again
 */
 
 #include <stdio.h>
@@ -99,43 +105,36 @@ int findIndexKmp(char *text, char *pattern){
 	calculatePrefixSuffixArray(psa,pattern, plen);
 	
 	int i=0, j=0;
-	int start = 0;
-	int count = 0;
-
-	for(int k=0;k<plen;k++){
-		printf("%d ", psa[k]);
-	}
-
-	printf("\n");
-
-	while (i < tlen && j < plen) {
-		if(text[i] == pattern[j]){
-			i++;
+	
+	while(i<tlen){
+		if(pattern[j] == text[i]){
 			j++;
-			count++;
-			if(count == plen){
-				return start;
-			}
-		}else{
-			if(j == 0){
-				i++;
-			}else{
-				j = psa[j-1];	
-			}
-			start = i-j;
-			count = j;
+			i++;
 		}
 
+		if(j == plen){
+			printf("pattern found starting at index %d\n", i-j);
+			j = psa[j-1];
+		}
+
+		else if(i< tlen && pattern[j] != text[i]){
+			if(j != 0){
+				j = psa[j-1];
+			}else{
+				i++;
+			}
+		}
 	}
+
 	
 	return 0;
 }
 
 int main(){
 
-	char text[] = "abcxabcdabxabcdabcdabcy";
+	char text[] = "abababababababababab";
 
-	char pattern[] = "abcdabcy";
+	char pattern[] = "aba";
 
 	int index = findIndexKmp(text, pattern);
 

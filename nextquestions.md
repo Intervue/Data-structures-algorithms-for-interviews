@@ -108,4 +108,6 @@ TODO:
 - breadth and depth first traversal in a tree
 - Graphs question6 union and find method to be done
 - Graphs question8 to be done along with backedges
+- Try Boyer-Moore and Rabin-karp in pattern matchin question3 and 4
+- Back tracking - program to print all permutations question1 (some problem)
 
