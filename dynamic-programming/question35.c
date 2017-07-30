@@ -1,3 +1,18 @@
+/*
+Finding the maximum square sub-matrix with all equal elements
+
+This is similar to finding the largest square sub matrix with all 1s. The only difference here is
+that the numbers can be any. So basically in this case we maintain another matrix initiazed as zero.
+Then if there is a match between all the four elements, considering the right bottom most element
+to be the reference, we increment the count in the ref matrix at the place as min(i,j) + 1
+everytime. 
+
+Time and space complexity is same as that of prev matrix question with all 1's
+
+O(n^2) each
+
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
