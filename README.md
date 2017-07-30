@@ -456,6 +456,7 @@ use KMP
 - [Given a string of digits, find the length of the longest substring of a string, such that the length of the substring is '2k' digits and sum of left k digits is equal to the sum of right k digits](/dynamic-programming/question31.c)
 - [Given a rod of length 'n' inches and an array of prices that contains prices of all pieces of size smaller than n, find the max value obtainable by cutting the rod and selling the pieces](/dynamic-programming/question32.c)
 - [Fibonacci series](/dynamic-programming/question33.c)
+- [Max product sub array](/dynamic-programming/question34.c)
 
 ### Graphs
 

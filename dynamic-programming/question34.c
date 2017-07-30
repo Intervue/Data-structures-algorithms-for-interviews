@@ -1,3 +1,20 @@
+/*
+
+Find the max product sub array
+
+METHOD:
+Here we traverse the array from both the sides, handling corner cases.
+Also the algorithm takes into account the number of negative numbers
+
+This is not a DP question.
+
+Another method listed at GFG
+http://www.geeksforgeeks.org/maximum-product-subarray/
+
+
+
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>

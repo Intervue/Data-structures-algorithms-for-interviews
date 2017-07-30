@@ -63,3 +63,63 @@ int main(){
 	maxSumSubArr(arr, size);
 	return 0;
 }
+
+//this will handle negative cases as well because in that case the answer will be the max number in the
+//array. Also this can be done by simply comparing the negative value of curr with max and then seeing
+//is the assignment should be done and later assigning 0 to curr
+#include <stdio.h>
+#include <stdlib.h>
+
+void maxSumSubArray(int *arr, int size){
+	int i;
+	int max = arr[0];
+	int curr = arr[0];
+	int end = 0;
+
+	if(curr < 0){
+		curr = 0;
+	}
+
+	for(i=1;i<size;i++){
+		curr += arr[i];
+		
+		if(max < curr){
+			max = curr;
+			end = i;
+		}	
+
+		if(curr < 0){
+			curr = 0;
+		}
+	}
+
+	printf("max is %d\n", max);
+	printf("end is %d\n", end);
+
+	int temp = end;
+	int sum = 0, start;
+	while(temp >=0){
+		sum += arr[temp];
+		if(sum == max){
+			start = temp;
+			break;
+		}
+		temp--;
+	}
+
+	for(i=start;i<=end;i++){
+		printf("%d ", arr[i]);
+	}
+
+}
+
+int main(){
+
+	int arr[] = {-2,-3,-4,-1,-2,-1,-5,-3};
+
+	int size = sizeof(arr)/sizeof(arr[0]);
+
+	maxSumSubArray(arr, size);
+
+	return 0;
+}
