@@ -174,18 +174,153 @@ rectangle in a matrix with all 1s)
 19 ***) skipped (Given a sentence without spaces between words. Break the words in such a way that they are meaningful)
 	@@@@@@@@ (variation: word break part 2)
 
-20) Partition problem: we need to divide the array into two parts where the difference in the sum of the two parts is minimum.
+20) skipped (Partition problem: we need to divide the array into two parts where the difference in the sum of the two parts is minimum.) @@@@@@@@
+
+21 ***) Find the longest palindromic subsequence @@@@@@@@ (variations: longest palindromic substring, find all distinct continuous palindromic sub-strings, count all palindromic subsequences, given a string find min characters to be inserted to form a palindrome, Given a string, find out if it becomes a palindrome or not after doing atmost k deletions)
+
+	METHOD1:
+	Reverse the sequence and find LCS
+
+	METHOD2: (here i has to be less than j and we traverse diagnally)
+
+	LPS(i,j) = { //longest palindromic subsequence
+
+		2 + LPS(i+1,j-1) ;//if i<j and arr[i] == arr[j]
+
+		max(
+			LPS(i+1,j), 
+			LPS(i,j+1)  //if i<j and arr[i] != arr[j]
+		)
+
+		0;   if i > j
+
+ 	}
+
+ 	String questions can also be addressed by finding LCS and subtracting from length (check variations)
+
+22) Given n-stairs, how many number of ways a person can climb to top from bottom using 1 step or 2 steps
+
+	Either person can take 1 step from anywhere or two steps. Total can be all such combinations
+	Therefore
+	f(n)  = f(n-1) + f(n-2)
+
+23) skipped (Longest non-overlapping repeating sub string)	@@@@@@@@
+
+	Worst case method:
+	Find all substrings and find using KMP where it exists and maintain a counter
+
+24) Given two strings X and Y, find the minimum cost to make two strings equal using only delete operations. 
+Cost to delete character in X is S and in Y is P
+
+	METHOD1:
+	We find the LCS of the two strings and simply subtract LCS length from both the lengths and multiply
+	with their respective costs.
+
+	METHOD2:
+
+	C(i,j) = { //cost
+		C(i-1, j-1) //if str1[i] == str2[j]
+
+		min(
+			S + c(i-1,j),
+			P + c(i, j-1)
+		)
+
+		P *length j ; i = 0
+		S *length i ; j = 0
+	}
+
+25) Count the number of times string occured as the subsequence of the other string
+
+	METHOD1:
+	Find lcs and it will definitely have multiple solutions if we back track, we can count those.
+	In this case length of LCS will be equal to length of pattern
+
+	METHOD2:
+
+	N(i,j) = { //number of times
+
+		N(i-1,j-1) + N(i-1, j); //if str1[i] == str2[j]
+
+		N(i-1, j) ;//if str1[i] != str2[j]
+
+		0;  i = 0
+		1;  j = 0
+
+	}
+
+26 ***) Given an amount and some coins, find out in how many ways can this amount be formed (variation:
+finite and infinite supply of coins, find min coins to make up that amount)
+
+	When finite:
+
+	N(i,j) = { //number of coins (i is the coins, j is sum)
+
+		N(i-1,j-arr[i]) + N(i-1,j) ; if arr[i] <= S
+
+		N(i-1,j) ; if arr[i] > S
+
+		0	i = 0;
+		1	j = 0;
+	}
+
+	When infinite
+	N(i,j) = { //number of coins (i is the coins, j is sum)
+
+		N(i,j-arr[i]) + N(i-1,j) ; if arr[i] <= S
+
+		N(i-1,j) ; if arr[i] > S
+
+		0	i = 0;
+		1	j = 0;
+	}
+
+	In the variation where min coins have to be found, we simply take min instead of adding.
+
+27) Given a 2xn board and tiles of size 2x1, count the number of ways to fill the board using 2x1 tiles
+	(variation: size nxm, tile size 1xm)
+
+	f(n) = f(n-1) + f(n-2)
+
+	Either we can put 2x1 board horizontally or vertically. If vertical problem size reduces to n-1
+	If horizontal, problem size reduces n-2 as the other tile also can be place horizontally only
+
+
+	f(n) = f(n-1) + f(n-m)
+
+	Here 2 has been replaced by m simply. There m can be anything and applying the above logic, it will
+	give this equation
+
+	NOTE: 2xn will be same as nx2
+
+28) Given a cost matrix mxn having a cost at each cell. Find the min cost that it will take to reach cell (m-1,n-1) from top left corner cell (0,0) if the only allowed directions to move are right, down and diagnal down
 	
-	
+	There can be two ways to solve this condition: rightmost bottom as start or leftmost top as start
+
+	C(i,j) =  { //cost which is initialized taking values from matrix only
+
+		C(i,j) + min(                      if i>0 and j > 0
+				C(i-1, j-1),
+				C(i-1, j),
+				C(i, j-1)  
+			) 
+
+		C(i, j-1) + C(i,j) ; if i = 0
+		C(i-1, j) + C(i,j) ; if j = 0
+
+	}
+
+29) skipped (Find the sum of digits for all numbers from 1 to N for a given N)
+
+30) skipped (Given a string of digits, find the length of the longest substring of a string, such that the length of the substring is '2k' digits and sum of left k digits is equal to the sum of right k digits)
+
+31) skipped (cutting the road)
 
 	
 
 
 
-
-
-
-
+	
 
 
 

@@ -22,7 +22,9 @@ C(i,j) = {
 	
 	C(i-1,j-1) if s[i] == s[j],
 	min{ C(i-1,j),(j-1,i) } , if not equal
-
+	
+	0  ; i =0
+	1 ; i = 0 || j = 0
 
 }
 
