@@ -58,6 +58,8 @@ void init(int n, int arr[n][n]){
 	}
 }
 
+
+
 int main(){
 	int n;
 	printf("enter the value of n\n");
@@ -67,7 +69,7 @@ int main(){
 
 	init(n,arr);
 
-	findNQueen()
+	findNQueen(n, arr);
 	
 	return 0;
 }

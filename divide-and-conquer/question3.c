@@ -27,7 +27,7 @@ It also does not handle fractional power
 
 /*
 Here is a better function that runs faster and handle all the cases
-In this case each time exp value is converted to half and base value is doubled
+In this case each time exp value is converted to half and base value is squared
 */
 #include <stdio.h>
 #include <stdlib.h>

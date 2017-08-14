@@ -35,3 +35,109 @@ If time complexity in binary search tree is to be reduced, you will have to keep
 required). But that is costly.
 */
 
+#include <stdio.h>
+#include <stdlib.h>
+
+struct node{
+	int data;
+	struct node *next;
+};
+
+struct link{
+	int val;
+	struct node *head;
+};
+
+struct node *newNode(int data){
+	struct node *temp = (struct node *)malloc(sizeof(struct node));
+	temp->data = data;
+	temp->next = NULL;
+	return temp;
+}
+
+struct node *mergeSorted(struct node *list1, struct node *list2){
+
+	struct node *result = NULL;
+
+	if(!list1){
+		return list2;
+	}
+	if(!list2){
+		return list1;
+	}
+
+	if(list1->data <= list2->data){
+		result = list1;
+		result->next = mergeSorted(list1->next, list2);
+	}else{
+		result = list2;
+		result->next = mergeSorted(list1, list2->next);
+	}
+
+	return result;
+
+}
+
+struct node *mergeAll(struct link *arr, int last){
+
+	while(last){
+		int start = 0, end = last;
+		
+		while(start < end){
+			arr[start].head = mergeSorted(arr[start].head, arr[end].head);
+			start++;
+			end--;
+
+			if(start >= end){
+				last = end;
+			}
+
+		}
+	}
+
+	return arr[0].head;
+}
+
+int main(){
+	int cases;
+	scanf("%d",&cases);
+	int i;
+	for(i=0;i<cases;i++){
+		int n;
+		scanf("%d",&n);
+		int j;
+		struct link arr[n];
+		for(j=0;j<n;j++){
+			int elm;
+			scanf("%d", &elm);
+			int k;
+			arr[j].val = elm;
+			
+			struct node *move = NULL;
+			for(k=0;k<elm;k++){
+				int val;
+				scanf("%d",&val);
+			
+				struct node *temp = newNode(val);
+				if(move){
+					move->next = temp;	
+					move = move->next;
+				}else{
+					move = temp;
+					arr[j].head = move;
+				}
+			}
+			
+		}
+
+		struct node *temp = mergeAll(arr, n-1);	
+
+		while(temp){
+			printf("%d --> ", temp->data);
+			temp = temp->next;
+		}
+
+	}
+	return 0;
+}
+

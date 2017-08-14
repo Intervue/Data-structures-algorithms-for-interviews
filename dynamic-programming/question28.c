@@ -126,3 +126,59 @@ int main(){
 	return 0;
 }
 
+
+//Alternate from top down with same time complexity
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int findMin(int a, int b, int c){
+	return (a<b)?((a<c)?a:c):((b<c)?b:c);
+}
+
+int minCost(int rows, int columns, int arr[rows][columns]){
+
+	int dp[rows][columns];
+
+	int i,j;
+
+	for(i=0;i<rows;i++){
+		for(j=0;j<columns;j++){
+			dp[i][j] = arr[i][j];
+		}
+	}
+
+	int sum = 0;
+	for(i=1;i<rows;i++){
+		dp[i][0] += dp[i-1][0];
+	}
+	for(i=1;i<columns;i++){
+		dp[0][i] += dp[0][i-1];
+	}
+
+	for(i=1;i<rows;i++){
+		for(j=1;j<columns;j++){
+			dp[i][j] = dp[i][j] + findMin(dp[i-1][j-1],dp[i-1][j],dp[i][j-1]);
+		}
+	}
+
+	return dp[rows-1][columns-1];
+
+}
+
+int main(){
+
+	int arr[3][3] = {
+		{1,2,8},
+		{4,8,2},
+		{1,5,3}
+	};
+
+	int rows = sizeof(arr)/sizeof(arr[0]);
+	int columns = sizeof(arr[0])/sizeof(arr[0][0]);
+	
+	printf("min cost is %d\n", minCost(rows, columns, arr));
+
+}
+
+

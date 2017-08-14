@@ -259,6 +259,7 @@ use KMP
 - [question22.c](/general/question22.c)
 - [question23.c](/general/question23.c)
 - [question24.c](/general/question24.c)
+- [Find GCD and LCM of two numbers](/general/question25.c)
 
 ### Arrays
 
@@ -448,7 +449,7 @@ use KMP
 - [Longest non-overlapping repeating sub string](/dynamic-programming/question23.c)
 - [Given two strings X and Y, find the minimum cost to make two strings equal using only delete operations. Cost to delete character in X is S and in Y is P](/dynamic-programming/question24.c)
 - [Count the number of times string occured as the subsequence of the other string](/dynamic-programming/question25.c)
-- [Given an amount and some coints, find out in how many ways can this amount be formed](/dynamic-programming/question26.c)
+- [Given an amount and some coins, find out in how many ways can this amount be formed](/dynamic-programming/question26.c)
 - [Given a 2xn board and tiles of size 2x1, count the number of ways to fill the board using 2x1 tiles](/dynamic-programming/question27.c)
 - [Given a cost matrix mxn having a cost at each cell. Find the min cost that it will take to reach cell (m-1,n-1) from top left corner cell (0,0) if the only allowed directions to move are right, down and diagnal down](/dynamic-programming/question28.c)
 - [Given a string, find out if it becomes a palindrome or not after doing atmost k deletions](/dynamic-programming/question29.c)
@@ -468,7 +469,10 @@ use KMP
 - [Given a 2D boolean matrix, find the number of islands](/graphs/question6.c)
 - [Check whether a given graph is biparite or not](/graphs/question7.c)
 - [Detect a cycle in a directed graph](/graphs/question8.c)
-
+- [Kosaraju algorithm to find SCCs](/graphs/question9.c)
+- [Find if the given directed graph is eulerian](/graphs/question10.c)
+- [Find if the given undirected graph is eulerian](/graphs/question11.c)
+- [Dijkstra algorithm](/graphs/question12.c)
 
 ### Pattern Matching
 
@@ -487,6 +491,11 @@ use KMP
 
 - [Test whether given two strings are isomorphic or not](/misc/question1.c)
 - [Find the length of the longest suffix which is also a prefix](/misc/question2.c)
+
+### Bit Manipulation
+
+- [Find set bits in an integer](/bit-manipulation/question1.c)
+- [Find if a number is a power of 2](/bit-manipulation/question2.c)
 
 ## Some important concepts to solve algos better
 
@@ -580,6 +589,7 @@ Even if there are repetitions, they are going to be same.
 if they dont have edge it is infinity.
 - Travelling salesman problem time complexity O(n^2 ^ 2^n)
 - Ugly number is a one which can be written as a product of 2,3 or 5 or a combination of these numbers. 1 is also considered as ugly number as it is an exception.
+- Whenever highest or lowest power of two is to be found, use log operations
 
 
 # C Programming - Topic1: Introduction

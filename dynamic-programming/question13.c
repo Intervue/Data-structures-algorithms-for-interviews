@@ -41,49 +41,80 @@ Therefore answer here is 4. (longest possible subsequence)
 Time complexity: Since each element will be compared with its all prev elements in the newly formed
 array O(n^2)
 Space complexity: O(n) //table size is reduced here as compared to method1
+
+METHOD3: 
+Just like a deck of cards
+http://www.geeksforgeeks.org/longest-monotonically-increasing-subsequence-size-n-log-n/
+
+Time complexity: O(nlogn)
+Space complexity: O(1)
+
 */
 
 //METHOD2
+// #include <stdio.h>
+// #include <stdlib.h>
+
+// void longestIncreasingSub(int *arr, int size){
+// 	int sol[size];
+// 	int i,j;
+// 	sol[0] = 1; //base solution cannot be greater than 1.
+// 	int maxLength = 1;
+// 	int start = 0, end = 0;
+// 	int overallMax = 1;
+// 	for(i=1;i<size;i++){
+// 		int currentMax = 1;
+// 		for(j=i-1;j>=0;j--){
+// 			int key = 1;
+// 			if(arr[i] > arr[j]){
+// 				key = key + sol[j];
+// 				if(currentMax < key){
+// 					currentMax = key;
+// 				}
+// 			}
+// 			sol[i] = currentMax;
+// 		}
+// 		if(overallMax < sol[i]){
+// 			overallMax = sol[i];
+// 			end = i;
+// 		}
+// 	}
+
+// 	printf("total length of subsequence is: %d\n", overallMax);
+// 	printf("subsequence is:\n");
+
+// 	//for printing maybe a struct can be taken and element index for which current max
+// 	//is computed is noted down. That will be the answer Iterate like this backwards for all		
+
+// }
+
+// int main(){
+// 	int arr[] = {2,3,1,5,12,10,11};
+// 	int size = sizeof(arr)/sizeof(arr[0]);
+
+// 	longestIncreasingSub(arr,size);
+// 	return 0;
+// }
+
 #include <stdio.h>
 #include <stdlib.h>
 
-void longestIncreasingSub(int *arr, int size){
-	int sol[size];
-	int i,j;
-	sol[0] = 1; //base solution cannot be greater than 1.
-	int maxLength = 1;
-	int start = 0, end = 0;
-	int overallMax = 1;
-	for(i=1;i<size;i++){
-		int currentMax = 1;
-		for(j=i-1;j>=0;j--){
-			int key = 1;
-			if(arr[i] > arr[j]){
-				key = key + sol[j];
-				if(currentMax < key){
-					currentMax = key;
-				}
-			}
-			sol[i] = currentMax;
-		}
-		if(overallMax < sol[i]){
-			overallMax = sol[i];
-			end = i;
-		}
+int longestIncreasingSub(int *arr, int size){
+	int aux[size];
+
+	int i;
+	for(i=0;i<size;i++){
+		aux[i] = -1;
 	}
 
-	printf("total length of subsequence is: %d\n", overallMax);
-	printf("subsequence is:\n");
-
-	//for printing maybe a struct can be taken and element index for which current max
-	//is computed is noted down. That will be the answer Iterate like this backwards for all		
+	
 
 }
 
 int main(){
 	int arr[] = {2,3,1,5,12,10,11};
-	int size = sizeof(arr)/sizeof(arr[0]);
+	int size =sizeof(arr)/sizeof(arr[0]);
 
-	longestIncreasingSub(arr,size);
+	longestIncreasingSub(arr, size);
 	return 0;
 }

@@ -1,60 +1,35 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <limits.h>
-#include <string.h>
+#include <math.h>
 
-int findMin(int a, int b){
-	return a < b? a: b;
-}
 
-void initRef(int rows, int cols, int ref[rows][cols]){
-	int i,j;
-	for(i=0;i<rows;i++){
-		for(j=0;j<cols;j++){
-			ref[i][j] = 0;
-		}
+int ipow(int base, int exp){
+
+	if(!exp){
+		return 1;
 	}
-}
-
-void findLargestMatrix(int rows, int cols, int arr[rows][cols]){
-	
-	int i, j, max = 0;	
-	int a,b,c;
-	int ref[rows][cols];
-
-	initRef(rows, cols, ref);
-
-	for(i=1;i<rows;i++){
-		for(j=1;j<cols;j++){	
-			a = arr[i-1][j-1];
-			b = arr[i-1][j];
-			c = arr[i][j-1];
-			if(a == b && b == c && c == arr[i][j]){
-				ref[i][j] = findMin(i,j) + 1;
-				if(max < ref[i][j]){
-					max = ref[i][j];
-				}
-			}
-		}
+	int result = 1;
+	if(exp & 1){
+		result *= base;
 	}
+	exp >>= 1;
+	base *= base;
+	result *= pow(base, exp);
 
-	printf("%d\n", max);
+	return result;
+
 }
+
+
 
 int main(){
+
+	int n;
+	scanf("%d", &n);
+
 	
-	int arr[4][4] = {
-		{9,9,9,9},
-		{9,9,9,9},
-		{9,9,9,9},
-		{9,9,9,9}
-	};
 
-	int rows = sizeof(arr)/sizeof(arr[0]);
-
-	int cols = sizeof(arr[0])/sizeof(arr[0][0]);
-
-	findLargestMatrix(rows, cols, arr);
-
+	printf("power is %d\n", ipow(2,n));
+	
 	return 0;
 }
