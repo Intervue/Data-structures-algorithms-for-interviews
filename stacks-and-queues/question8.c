@@ -14,7 +14,7 @@ METHOD2:
 Sort the sets given on the basis of the starting element of each set. Once they are sorted, in a single
 iteration compare each element with its consequent element. If there is overlapping, merge them else move
 to the next one.
-Time complexity: O(n)
+Time complexity: O(nlogn)
 Space complexity: O(1)
 */
 

@@ -9,58 +9,69 @@ Therefore: O(nlogn)
 
 */
 #include <stdio.h>
-#include <math.h>
+#include <stdlib.h>
+#include <limits.h>
 
-void merge(int arr[],int p, int q, int r){
-  long unsigned int f = INFINITY;
-  int n1= q-p+1;
-  int n2 = r-q;
-  int left[n1+1], right[n2+1];
-  int i,j,k;
-  
-  for(i=0;i<n1;i++){
-    left[i]=arr[p+i];
-    printf("%d ", left[i]);
-  }
-  
-  for(j=0;j<n2;j++){
-    right[j]=arr[q+j+1];
-    printf("%d ", right[j]);
-  } 
-  
-  left[n1] = right[n2] = f;
-  i=j=0;
-  for(k=p;k<(r+1);k++){
-    if(left[i] < right[j]){
-      arr[k] = left[i];
-      i++;
-    }else{
-      arr[k] = right[j];
-      j++;
+
+void merge(int *arr, int start, int mid, int end) {
+
+    int len1 = mid - start + 2;
+    int len2 = end - mid + 1;
+
+    int left[len1], right[len2];
+
+    int i;
+    for(i=0; i<len1-1; i++) {
+        left[i] = arr[start + i];
     }
-  }
-  
-  for(int z=0; z<(r+1);z++){
-    printf("%d ", arr[z]);
-  }
-  
+
+    for(i=0; i<len2-1; i++) {
+        right[i] = arr[mid + i + 1];
+    }
+    
+    left[len1-1] = INT_MAX;
+    right[len2-1] = INT_MAX;
+
+    int k;
+    int j;
+    i=0,j=0;
+    for(k=start; k<=end; k++) {
+        if(left[i] < right[j]) {
+            arr[k] = left[i];
+            i++;
+        }else{
+            arr[k] = right[j];
+            j++;
+        }
+    }
+
 }
 
-void merge_sort(int arr[], int p, int r){
-  
-  int q;
-  if(p<r){
-    q = (p+r)/2;
-    merge_sort(arr,p,q);
-    merge_sort(arr,q+1,r);
-    merge(arr,p,q,r);
-  }
+void mergeSort(int *arr, int start, int end) {
+    int mid;
+    if(start < end) {
+        mid = (start + end)/2;
+        mergeSort(arr, start, mid);
+        mergeSort(arr, mid + 1, end);
+
+        merge(arr, start, mid, end);
+    }
 }
 
-int main(){
-  
-  int arr[] = {9,6,5,0,8,2};
-  int length = sizeof(arr)/sizeof(arr[0]);
-  merge_sort(arr,0,length-1);
+void display(int *arr, int size) {
+    int i;
+    for(i=0;i<size;i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+}   
 
+int main() {
+    int arr[] = {9,6,5,0,8,2};
+    int size = sizeof(arr)/sizeof(arr[0]);
+
+    mergeSort(arr,0,size-1);
+
+    display(arr, size);
+    return 0;
 }

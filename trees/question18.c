@@ -1,5 +1,5 @@
 /*
-Remove all paths of length k from root in a binary tree
+Remove all paths of length  < k from root in a binary tree
 
 METHOD:
 Do a post order traversal, and if length of the path from the root should be less than k, then from LST it

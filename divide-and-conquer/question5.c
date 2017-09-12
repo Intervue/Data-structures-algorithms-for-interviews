@@ -1,10 +1,17 @@
 /*
 Count inversions in an array
 
+
+
 Eg: inversion means if an array is in increasing order and there is  a number somewhere towards the right
 of which there are 3 numbers lesser than that (rather than greater than that), then it equals 3 inversions.
 Like this we need to check for each element
 Eg: 7 5 1 3 4 6 has 8 inversions 
+
+As 7 has 5 elements which are less than it and are present on its right
+5 as 3 of them
+Total 8
+
 
 METHOD1:
 Search for each element by comparing elements towards its right

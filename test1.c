@@ -1,35 +1,31 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
-
-
-int ipow(int base, int exp){
-
-	if(!exp){
-		return 1;
-	}
-	int result = 1;
-	if(exp & 1){
-		result *= base;
-	}
-	exp >>= 1;
-	base *= base;
-	result *= pow(base, exp);
-
-	return result;
-
-}
-
-
 
 int main(){
+  int cases;
+  int i;
+  scanf("%d",&cases);
+  for(i=0;i<cases;i++){
+    int n,k;
+    int arr[1001] = {0};
+    scanf("%d %d",&n, &k);
+    int j;
+    int val;
 
-	int n;
-	scanf("%d", &n);
+    for(j=0;j<k;j++){
+        scanf("%d",&val);
+        arr[val-1]++;
+    }
+    
+    int m;
+    printf("%d ", arr[0]);
+    for(m=1;m<n;m++){
+      arr[m] = arr[m] + arr[m-1];
+      printf("%d ", arr[m]);
+    }
+    printf("\n");
 
-	
-
-	printf("power is %d\n", ipow(2,n));
-	
-	return 0;
+  }
+  return 0;
 }
+

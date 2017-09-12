@@ -36,14 +36,9 @@ int checkSum(struct node *root){
 		return root->data;
 	}
 	int left = checkSum(root->left);
-	if(left == -1){
-		return -1;
-	}
 	int right = checkSum(root->right);
-	if(left == -1 ||  right == -1){
-		return -1;
-	}
-	if(root->left && root->right && root->data == left + right){
+
+	if(root->data == left + right){
 		return 2*root->data;
 	}
 	return -1;
@@ -54,13 +49,13 @@ int main(){
 	struct node *root = newNode(50);
 	root->left = newNode(15);
 	root->left->left = newNode(10);
-	root->left->right = newNode(15);
+	root->left->right = newNode(5);
 	root->right = newNode(10);
 	root->right->left = newNode(7);
 	root->right->right = newNode(3);
 
 	int isSumTree = checkSum(root);
-	printf("RaAHUL ARORA %d\n", isSumTree);
+	
 	if(isSumTree > 0){
 		printf("given tree is a sum tree\n");
 	}else{

@@ -103,55 +103,52 @@ void initColors(){
 	int i;
 	for(i=0;i<newGraph->vertices;i++){
 		color[i] = -1;
+		visited[i] = 0;
 	}
 }
 
 bool isBipartite(){
 
-	initColors();
+	visited[0] = 1;
 	enqueue(0);
 	color[0] = 1;
-
+	
 	while(!isQueueEmpty()){
-		int temp = dequeue();
-		
-		struct AdjListNode *tempVertex = newGraph->map[temp].head;
-		
-		while(tempVertex){
-			if(color[tempVertex->data] == -1){
-				enqueue(tempVertex->data);		
-			}
-			if(color[temp] == 1){
-				if(color[tempVertex->data] != -1 && color[tempVertex->data] != 2){
+		int index = dequeue();
+		struct AdjListNode *temp = newGraph->map[index].head;
+		while(temp) {
+			if(!visited[temp->data]){
+				visited[temp->data] = 1;
+				enqueue(temp->data);
+				if(color[index] >=0 && color[temp->data] == -1){
+					color[temp->data] = 1 - color[index];
+				}else if(color[index] >=0 && color[temp->data] == color[index]){
 					return false;
-				}
-				color[tempVertex->data] = 2;
-			}else{
-				if(color[tempVertex->data] != -1 && color[tempVertex->data] != 1){
+				}	
+			} 
+			else {
+				if(color[index] >=0 && color[temp->data] == color[index]){
 					return false;
-				}
-				color[tempVertex->data] = 1;
+				}	
 			}
-			tempVertex = tempVertex->next;
+			temp = temp->next;
 		}
 		
 	}
-	return true;	
-
+	return true;
 }
 
 int main(){
 
-	int vertices = 5;
+	int vertices = 3;
 
 	newGraph = (struct Graph *)malloc(sizeof(struct Graph));
 	newGraph->vertices = vertices;
 	newGraph->map = (struct AdjList *)calloc(sizeof(struct AdjList),vertices);
 
-	addEdge(0,2);
 	addEdge(0,1);
-	addEdge(2,3);
-	addEdge(1,3);
+	addEdge(1,2);
+	addEdge(2,0);
 	
 	displayAdjList();
 
@@ -161,10 +158,10 @@ int main(){
 		printf("Graph is not bipartite\n");
 	}	
 
-	int i;
-	for(i=0;i<vertices;i++){
-		printf("%d ", color[i]);
-	}
+	// int i;
+	// for(i=0;i<vertices;i++){
+	// 	printf("%d ", color[i]);
+	// }
 
 	return 0;
 }

@@ -24,7 +24,85 @@ Using heap.
 
 Google and code this algorithm
 */
-//MIN HEAP implementation
+//normal implementation
+
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <limits.h>
+// #define V 5
+
+// int minKey(int *near, int *visited) {
+// 	int min = INT_MAX, index;
+// 	int i;
+// 	for(i=0; i<V; i++) {
+// 		if(min > near[i] && visited[i] == 0) {
+// 			min = near[i];
+// 			index = i;
+// 		}
+// 	}
+// 	return index;
+// }
+
+// void printMST(int *parent, int graph[V][V]) {
+// 	printf("\nedge\tweight\n");
+// 	int i;
+// 	for(i=1;i<V;i++ ) {
+// 		printf("%d-%d\t%d\n", parent[i],i,graph[i][parent[i]]);
+// 	}
+// }
+
+// void primMST(int graph[V][V]) {
+// 	int visited[V];
+// 	int parent[V];
+// 	int near[V];
+// 	int i, j;
+// 	for(i=0;i<V;i++) {
+// 		visited[i] = 0;
+// 		near[i] = INT_MAX;
+// 	}
+
+// 	near[0] = 0;
+// 	parent[0] = -1;
+
+// 	for(i=0;i<V-1;i++) {
+// 		int u = minKey(near, visited);
+// 		visited[u] = 1;
+// 		for(j=0;j<V;j++) {
+// 			if(graph[u][j] && visited[j] == 0 && graph[u][j] < near[j]) {
+// 				near[j] = graph[u][j];
+// 				parent[j] = u;
+// 			}
+// 		}
+// 	}
+
+// 	printMST(parent,graph);
+
+// }
+
+// int main()
+// {
+// /* Let us create the following graph
+// 		2 3
+// 	(0)--(1)--(2)
+// 	| / \ |
+// 	6| 8/ \5 |7
+// 	| /	 \ |
+// 	(3)-------(4)
+// 			9		 */
+// 	int graph[V][V] = {
+// 					{0, 2, 0, 6, 0},
+// 					{2, 0, 3, 8, 5},
+// 					{0, 3, 0, 0, 7},
+// 					{6, 8, 0, 0, 9},
+// 					{0, 5, 7, 9, 0},
+// 					};
+
+// 	// Print the solution
+// 	primMST(graph);
+
+// 	return 0;
+// }
+
 
 
 //using min heap

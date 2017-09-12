@@ -30,12 +30,52 @@ Time complexity: O(n^2) //since every node ends up evaluating values from it til
 Space complexity:  O(n)//array + recursion stack , array in this case will be equal to the number of
 vertices.
 Space complexity is O(n^2) which is O(v^2) which is O(E) better than dijkstra algo.
+
+Simply take a 1d array and store values in bottom up fashion
+
 */
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <limits.h>
+
+int findDist(int vertices, int arr[vertices][vertices]) {
+
+	int ref[vertices];
+	int i;
+	for(i=0;i<vertices;i++){
+		ref[i] = 0;
+	}
+
+	int j;
+	for(i=vertices-2;i>=0;i--){
+		j = i + 1;
+		int min = INT_MAX;
+		while(j < vertices){
+			if(arr[i][j] && min > arr[i][j] + ref[j]){
+				min = arr[i][j] + ref[j];
+			}
+			j++;
+		}
+		ref[i] = min;	
+	}
+
+	return ref[0];
+}
 
 int main(){
-	
+	int vertices =  8;
+	int arr[8][8] = {
+		{0,1,2,5,0,0,0,0},
+		{0,0,0,0,4,11,0,0},
+		{0,0,0,0,9,5,16,0},
+		{0,0,0,0,0,0,2,0},
+		{0,0,0,0,0,0,0,18},
+		{0,0,0,0,0,0,0,13},
+		{0,0,0,0,0,0,0,2}
+	};
+
+	printf("distance is %d\n", findDist(vertices, arr));
+
 	return 0;
 }

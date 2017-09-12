@@ -1,5 +1,5 @@
 /*
-Given k-sorted lists, Find the minimum range to which at last one number belongs from every list
+Given k-sorted lists, Find the minimum range to which at least one number belongs from every list
 
 METHOD1:
 Naive approach:

@@ -400,7 +400,7 @@ use KMP
 - [Make a program to implement huffman encoding](/greedy/question2.c)
 - [Make a program to sequence given jobs with deadlines to maximize profits](/greedy/question3.c)
 - [Optimal merge patterns](/greedy/question4.c)
-- [Program for PRIMS algorithm](/greedy/question5.c)
+- [Program for PRIMS algorithm without min heap](/greedy/question5.c)
 - [Program for KRUSKALS algorithm](/greedy/question6.c)
 - [Program for DIJKSTRA algorithm](/greedy/question7.c)
 - [Program to implement a simple graph](/greedy/question8.c)
@@ -408,6 +408,7 @@ use KMP
 - [Find max intervals from given intervals such that none of them are overlapping](/greedy/question10.c)
 - [Number of railway platforms](/greedy/question11.c)
 - [Rearrange the string such that same characters are d distance away](/greedy/question12.c)
+- [Program for PRIMS algorithm using min heap](/greedy/question13.c)
 
 ### Divide and conquer
 
@@ -458,6 +459,9 @@ use KMP
 - [Given a rod of length 'n' inches and an array of prices that contains prices of all pieces of size smaller than n, find the max value obtainable by cutting the rod and selling the pieces](/dynamic-programming/question32.c)
 - [Fibonacci series](/dynamic-programming/question33.c)
 - [Max product sub array](/dynamic-programming/question34.c)
+- [Finding the maximum square sub-matrix with all equal elements](/dynamic-programming/question35.c)
+- [All pair shortest path algorithm (Floyd Warshall)](/dynamic-programming/question36.c)
+- [Collect max coins from the grid in two traversals](/dynamic-programming/question37.c)
 
 ### Graphs
 
@@ -472,7 +476,13 @@ use KMP
 - [Kosaraju algorithm to find SCCs](/graphs/question9.c)
 - [Find if the given directed graph is eulerian](/graphs/question10.c)
 - [Find if the given undirected graph is eulerian](/graphs/question11.c)
-- [Dijkstra algorithm](/graphs/question12.c)
+- [Dijkstra algorithm for matrix](/graphs/question12.c)
+- [Dijkstra algorithm for adjacency list](/graphs/question13.c)
+- [Articulation points and bridges in a graph](/graphs/question13.c)
+- [Print all jumping numbers smaller than or equal to a given value](/graphs/question15.c)
+- [Shortest path in directed acyclic graph](/graphs/question16.c)
+- [Longest path in directed acyclic graph](/graphs/question17.c)
+- [Hamiltonian cycle in a graph](/graphs/question18.c)
 
 ### Pattern Matching
 
@@ -491,11 +501,18 @@ use KMP
 
 - [Test whether given two strings are isomorphic or not](/misc/question1.c)
 - [Find the length of the longest suffix which is also a prefix](/misc/question2.c)
+- [Sort a stack](/misc/question66.c)
+- [Given two strings a and b print whether they contain any common subsequence (non empty) or not.](/misc/question67.c)
+
 
 ### Bit Manipulation
 
 - [Find set bits in an integer](/bit-manipulation/question1.c)
 - [Find if a number is a power of 2](/bit-manipulation/question2.c)
+
+
+### Trie
+
 
 ## Some important concepts to solve algos better
 

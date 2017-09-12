@@ -19,3 +19,58 @@ bigger than 2^n
 
 Build the algo yourself as it will involve a big matrix and two for loops with bottom-up approach.   
 */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int cost = 0;
+
+int tsp(int city, int vertices, int arr[vertices][vertices], int *visited){
+	int i, nearest_city = 999;
+	int min = 999, temp;
+	for(i=0;i<vertices;i++) {
+		if(arr[city][i] && visited[i] == 0) {
+			if(min > arr[city][i]){
+				min = arr[i][0] + arr[city][i];
+			}
+			temp = arr[city][i];
+			nearest_city = i;
+		}
+	}
+	if(min != 999) {
+		cost = cost + temp;
+	}
+	return nearest_city;
+}
+
+void minCost(int city, int vertices, int arr[vertices][vertices], int *visited) {
+	
+	int nearest_city;
+	visited[city] = 1;
+	nearest_city = tsp(city, vertices, arr, visited);
+	if(nearest_city == 999) {
+		nearest_city = 0;
+		cost = cost + arr[city][nearest_city];
+		return;
+	}
+	minCost(nearest_city, vertices, arr, visited);
+}
+
+int main() {
+	int vertices = 4;
+	int visited[vertices];
+	int i;
+	for(i=0;i<vertices;i++){
+		visited[i] = 0;
+	}
+	int arr[4][4] = {
+		{1,2,3,4},
+		{5,6,7,8},
+		{3,8,5,6},
+		{9,8,4,3},
+	};
+	minCost(0,vertices, arr, visited);
+	printf("cost is %d\n", cost);
+
+	return 0;
+}

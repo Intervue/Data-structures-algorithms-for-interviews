@@ -1,5 +1,7 @@
 	/*
 Build a binary search tree and apply various operations on it
+nlogn best cases
+n^2 worst case
 
 1.given normal numbers
 2.given INORDER/ PREORDER/ POST ORDER
